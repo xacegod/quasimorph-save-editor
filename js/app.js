@@ -47,6 +47,8 @@ import {
   loadPerkLibrary,
   loadPactLibrary,
   loadPassiveTriggerLibrary,
+  listPassiveTriggerLibrary,
+  getPassiveTriggerTemplate,
   mergedTalentCatalog,
   mergedUltimateCatalog,
   setTalent,
@@ -839,6 +841,10 @@ function renderMercDetail(m, all) {
             cat.set(id, perkDefaultTemplate(id));
           }
         }
+        for (const tmpl of listPassiveTriggerLibrary()) {
+          if (!tmpl?.PerkId || cat.has(tmpl.PerkId)) continue;
+          cat.set(tmpl.PerkId, getPassiveTriggerTemplate(tmpl.PerkId));
+        }
         for (const c of getMercClasses()) {
           for (const wp of c.perks || []) {
             if (!wp.internalName) continue;
@@ -852,18 +858,23 @@ function renderMercDetail(m, all) {
             if (resolved?.template) {
               cat.set(perkId, resolved.template);
             } else {
-              const type = /trigger/i.test(wp.mainClass || "") ? "Trigger" : "Passive";
-              cat.set(perkId, {
-                PerkId: perkId,
-                PerkType: type,
-                Parameters: [],
-                AIParameters: [],
-                NextPerkId: {},
-                LevelUpActionType: "None",
-                CurrentExp: "0",
-                ExpPerAction: "0",
-                MaxExp: "0",
-              });
+              const fromLib = getPassiveTriggerTemplate(perkId) || getPassiveTriggerTemplate(wp.internalName);
+              if (fromLib) {
+                cat.set(perkId, fromLib);
+              } else {
+                const type = /trigger/i.test(wp.mainClass || "") ? "Trigger" : "Passive";
+                cat.set(perkId, {
+                  PerkId: perkId,
+                  PerkType: type,
+                  Parameters: [],
+                  AIParameters: [],
+                  NextPerkId: {},
+                  LevelUpActionType: "None",
+                  CurrentExp: "0",
+                  ExpPerAction: "0",
+                  MaxExp: "0",
+                });
+              }
             }
           }
         }
