@@ -32,6 +32,9 @@ import {
   giveOneOfEachIds,
   loadRecycleList,
   saveRecycleList,
+  exportRecycleListText,
+  importRecycleList,
+  downloadRecycleListFile,
   moveMatchingToRecycler,
   moveSpoilablesToFridge,
   moveRowsToStore,
@@ -1345,6 +1348,7 @@ function renderCargo() {
       <button type="button" id="btnGiveAll" class="primary">Give one of each</button>
     </div>
     <h3>Always recycle + fridge</h3>
+    <p class="doc">The <strong>always-recycle</strong> id list is stored in this browser’s <code>localStorage</code> (survives reload; not tied to the save file). Use Export / Import to move it between machines or browsers.</p>
     <p class="doc"><strong>Fridge auto-move</strong> takes stacks from ship cargo tabs (not already in the fridge) if:
       (1) the item id contains <code>rotten</code>, or
       (2) it has <code>ExpireComponent</code> with <code>IsStarted=True</code>, <code>IsFrozen≠True</code>, and <code>ExpireDate</code> earlier than current game time.
@@ -1352,7 +1356,14 @@ function renderCargo() {
     <div class="toolbar">
       <button type="button" id="btnRunRecycle" class="ok" title="Move every stack whose id is on the always-recycle list from ship cargo into RecyclingStorage.">Move always-recycle list → recycler</button>
       <button type="button" id="btnSpoilFridge" class="ok">Move rotten / expired → fridge</button>
-      <button type="button" id="btnClearRecycle">Clear always-recycle list</button>
+      <button type="button" id="btnExportRecycle" title="Download JSON of the always-recycle ids">Export list…</button>
+      <button type="button" id="btnCopyRecycle" title="Copy JSON to clipboard">Copy list</button>
+      <label class="ok" style="display:inline-flex;align-items:center;gap:0.35rem;cursor:pointer" title="Import JSON or plain id list; merges with current list by default">
+        Import…
+        <input type="file" id="fileImportRecycle" accept=".json,.txt,application/json,text/plain" hidden />
+      </label>
+      <label title="Replace instead of merge on import"><input type="checkbox" id="recycleImportReplace" /> Replace on import</label>
+      <button type="button" id="btnClearRecycle" class="danger">Clear always-recycle list</button>
     </div>
     <div id="recycleList" class="muted"></div>
     <h3>Storage size (Width × Height = cell capacity)</h3>
@@ -1630,7 +1641,14 @@ function renderCargo() {
 
   function refreshRecycleList() {
     const ids = loadRecycleList();
-    spawn.querySelector("#recycleList").textContent = ids.length ? ids.join(", ") : "(empty — filter cargo then “Add filtered IDs to always-recycle”)";
+    const box = spawn.querySelector("#recycleList");
+    if (!ids.length) {
+      box.textContent = "(empty — filter cargo then “Add filtered IDs to always-recycle”; list is kept in localStorage)";
+      return;
+    }
+    box.innerHTML = `<strong>${ids.length} id(s) in localStorage</strong><pre class="json-mini" style="max-height:8rem;overflow:auto;margin:0.35rem 0 0">${ids
+      .map((id) => `${displayName(id)} (${id})`)
+      .join("\n")}</pre>`;
   }
   refreshRecycleList();
   spawn.querySelector("#btnRunRecycle").onclick = () => {
@@ -1645,9 +1663,43 @@ function renderCargo() {
     setStatus(`Moved ${n} spoilables to fridge`);
     renderCargo();
   };
+  spawn.querySelector("#btnExportRecycle").onclick = () => {
+    const n = loadRecycleList().length;
+    downloadRecycleListFile();
+    setStatus(`Exported always-recycle list (${n} ids)`);
+  };
+  spawn.querySelector("#btnCopyRecycle").onclick = async () => {
+    const text = exportRecycleListText();
+    try {
+      await navigator.clipboard.writeText(text);
+      setStatus(`Copied always-recycle JSON (${loadRecycleList().length} ids)`);
+    } catch {
+      prompt("Copy this always-recycle JSON:", text);
+    }
+  };
+  spawn.querySelector("#fileImportRecycle").onchange = async (e) => {
+    const file = e.target.files?.[0];
+    e.target.value = "";
+    if (!file) return;
+    try {
+      const text = await file.text();
+      const mode = spawn.querySelector("#recycleImportReplace")?.checked ? "replace" : "merge";
+      const r = importRecycleList(text, mode);
+      if (!r.ok) {
+        setStatus(r.message, "warn");
+        return;
+      }
+      refreshRecycleList();
+      setStatus(r.message);
+    } catch (err) {
+      setStatus(`Import failed: ${err.message}`, "error");
+    }
+  };
   spawn.querySelector("#btnClearRecycle").onclick = () => {
+    if (!confirm("Clear the always-recycle list from localStorage?")) return;
     saveRecycleList([]);
     refreshRecycleList();
+    setStatus("Always-recycle list cleared");
   };
 
   const sizes = listStorageSizes(state.data);

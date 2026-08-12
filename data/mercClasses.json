@@ -1,6 +1,6 @@
 {
   "source": "https://quasimorph.wiki.gg/wiki/Mercenary_Classes",
-  "scrapedAt": "2026-08-12T10:38:57.363Z",
+  "scrapedAt": "2026-08-12T13:57:19.851Z",
   "note": "classIdGuess matches MercClassId in saves. description from wiki. perks[].tierIds from local saves when available.",
   "classes": [
     {
@@ -1626,8 +1626,6 @@
       "classIdGuess": "unit_317",
       "section": "unlockable",
       "perks": [],
-      "rosterEmpty": true,
-      "rosterNote": "Wiki page has no perk roster yet — Apply class will not add Passive/Trigger perks until scrape fills this.",
       "description": "An operator who's been through Unit 317 stops having a feel for what you \"can't\" do under NCE regs. In the end, the urge to run nonconventional tactical protocols outweighs even the self-preservation module."
     },
     {
@@ -1635,10 +1633,8 @@
       "classIdGuess": "golem_group",
       "section": "unlockable",
       "perks": [],
-      "rosterEmpty": true,
-      "rosterNote": "Wiki page has no perk roster yet — Apply class will not add Passive/Trigger perks until scrape fills this.",
       "description": "A Golem Group operator can throw up an automated fire line fast, keeping hands-on work for absolute last resort."
     }
   ],
-  "metaBuiltAt": "2026-08-12T10:46:29.308Z"
+  "metaBuiltAt": "2026-08-12T13:57:29.820Z"
 }

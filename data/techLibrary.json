@@ -1,6 +1,6 @@
 {
   "source": "Ship_Upgrades cargo + technology tree pages",
-  "scrapedAt": "2026-08-12T11:51:12.224Z",
+  "scrapedAt": "2026-08-12T13:57:24.377Z",
   "note": "internalName matches MagnumProgression._purchasedPerks. MagnumProjects (equipment/merc) are separate.",
   "stats": {
     "techs": 118

@@ -24,7 +24,71 @@ export function loadRecycleList() {
 }
 
 export function saveRecycleList(ids) {
-  localStorage.setItem(RECYCLE_LIST_KEY, JSON.stringify([...new Set(ids)]));
+  localStorage.setItem(RECYCLE_LIST_KEY, JSON.stringify([...new Set(ids.filter(Boolean))]));
+}
+
+/** JSON text for export (stable, versioned). */
+export function exportRecycleListPayload() {
+  const ids = loadRecycleList().sort((a, b) => a.localeCompare(b));
+  return {
+    type: "quasimorph-always-recycle",
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    ids,
+  };
+}
+
+export function exportRecycleListText() {
+  return JSON.stringify(exportRecycleListPayload(), null, 2);
+}
+
+/**
+ * Parse import from JSON object/array or plain newline/comma id list.
+ * @returns {{ ok: boolean, ids?: string[], message: string }}
+ */
+export function parseRecycleListImport(text) {
+  const raw = String(text || "").trim();
+  if (!raw) return { ok: false, message: "Empty import" };
+  try {
+    const data = JSON.parse(raw);
+    let ids = [];
+    if (Array.isArray(data)) ids = data;
+    else if (data && typeof data === "object") ids = data.ids || data.itemIds || [];
+    else return { ok: false, message: "JSON must be an array or { ids: [...] }" };
+    ids = [...new Set(ids.map((x) => String(x || "").trim()).filter(Boolean))];
+    return { ok: true, ids, message: `${ids.length} id(s)` };
+  } catch {
+    const ids = [
+      ...new Set(
+        raw
+          .split(/[\s,;]+/)
+          .map((s) => s.trim())
+          .filter(Boolean)
+      ),
+    ];
+    if (!ids.length) return { ok: false, message: "No item ids found" };
+    return { ok: true, ids, message: `${ids.length} id(s) (plain text)` };
+  }
+}
+
+/** @param {"replace"|"merge"} mode */
+export function importRecycleList(text, mode = "merge") {
+  const parsed = parseRecycleListImport(text);
+  if (!parsed.ok) return parsed;
+  const next =
+    mode === "replace" ? parsed.ids : [...new Set([...loadRecycleList(), ...parsed.ids])];
+  saveRecycleList(next);
+  return { ok: true, ids: next, message: `${mode === "replace" ? "Replaced" : "Merged"} → ${next.length} id(s)` };
+}
+
+export function downloadRecycleListFile(filename = "quasimorph-always-recycle.json") {
+  const blob = new Blob([exportRecycleListText()], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
 }
 
 function parsePos(pos) {

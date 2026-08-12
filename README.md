@@ -71,7 +71,7 @@ Merc `CreatureData.Perks` mix several `PerkType` values. They are easy to confus
 - Filter by name/id, store, **newest N stacks on ShipCargo[0]** (new loot is appended at the end of that tab)
 - Empty table shows **No results** plus how many stacks remain and **Clear filter**
 - Set stack qty (`Count` may exceed `Max`; the game can split)
-- **Add filtered IDs to always-recycle** then **Move always-recycle list → recycler**, or **Move filtered → recycler**
+- **Add filtered IDs to always-recycle** then **Move always-recycle list → recycler**, or **Move filtered → recycler**. The always-recycle id list is kept in browser **localStorage** (survives reload). **Export list…** / **Copy list** / **Import…** move it between browsers or machines (JSON or plain id text; merge or replace).
 - **Fridge auto-move** (rotten / expired):
   - Rotten = item id contains `rotten`
   - Expired = `ExpireComponent` with `IsStarted=True`, not frozen, and `ExpireDate` **before** current `SpaceTime.Time`

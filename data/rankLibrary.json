@@ -1,6 +1,6 @@
 {
   "source": "https://quasimorph.wiki.gg/wiki/Rank + local save templates",
-  "builtAt": "2026-08-12T10:46:28.528Z",
+  "builtAt": "2026-08-12T13:57:29.069Z",
   "note": "Display names from wiki. Parameter defaults from local saves when present (preferred over wiki text).",
   "ranks": [
     {
