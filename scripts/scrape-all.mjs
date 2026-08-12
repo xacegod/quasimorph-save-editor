@@ -1,6 +1,10 @@
 /**
  * Run all wiki/data maintenance scrapers + builds in order.
- * Usage: node scripts/scrape-all.mjs [--skip-icons] [--skip-pacts]
+ * Each scrape retries incomplete / missing / error entries (not only brand-new
+ * list titles). Pass --no-retry-missing through to pacts via:
+ *   node scripts/scrape-all.mjs --no-retry-missing
+ *
+ * Usage: node scripts/scrape-all.mjs [--skip-icons] [--skip-pacts] [--no-retry-missing]
  */
 import { spawn } from "child_process";
 import path from "path";
@@ -10,8 +14,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const args = new Set(process.argv.slice(2));
 
+const pactExtra = [];
+if (args.has("--no-retry-missing")) pactExtra.push("--no-retry-missing");
+
 const steps = [
-  { name: "scrape:pacts", cmd: ["node", "scripts/scrape-wiki-pacts.mjs"], skip: args.has("--skip-pacts") },
+  { name: "scrape:pacts", cmd: ["node", "scripts/scrape-wiki-pacts.mjs", ...pactExtra], skip: args.has("--skip-pacts") },
   { name: "build:pacts", cmd: ["node", "scripts/build-pact-library.mjs"], skip: args.has("--skip-pacts") },
   { name: "build:pact-missing", cmd: ["node", "scripts/build-pact-missing.mjs"], skip: args.has("--skip-pacts") },
   { name: "scrape:classes", cmd: ["node", "scripts/scrape-merc-classes.mjs"] },
@@ -39,6 +46,7 @@ function run(cmd) {
 
 async function main() {
   console.log("=== scrape:all ===\n");
+  if (args.has("--no-retry-missing")) console.log("(pacts: --no-retry-missing)\n");
   for (const step of steps) {
     if (step.skip) {
       console.log(`— skip ${step.name}`);

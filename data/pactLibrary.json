@@ -1,6 +1,6 @@
 {
   "source": "data/wiki-scrape-progress.json (complete current List of Pacts only)",
-  "builtAt": "2026-08-12T13:57:07.739Z",
+  "builtAt": "2026-08-12T15:46:13.923Z",
   "stats": {
     "pacts": 103,
     "skippedIncompleteOrLegacy": 60,

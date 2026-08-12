@@ -1,6 +1,6 @@
 {
   "source": "local saves: slot_0_session.dat, slot_1_session.dat, slot_2_session.dat",
-  "builtAt": "2026-08-12T13:57:29.071Z",
+  "builtAt": "2026-08-12T15:46:35.114Z",
   "note": "Default Parameters/AIParameters/MaxExp/NextPerkId snapshots for Reset in the editor. Values are from a real save (difficulty ExpMult may already be applied to MaxExp).",
   "paramLabels": {
     "IDuration": "Duration (turns)",

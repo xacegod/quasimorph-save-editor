@@ -1,6 +1,6 @@
 {
   "source": "https://quasimorph.wiki.gg/wiki/Mercenary_Classes",
-  "scrapedAt": "2026-08-12T13:57:19.851Z",
+  "scrapedAt": "2026-08-12T15:46:25.896Z",
   "note": "classIdGuess matches MercClassId in saves. description from wiki. perks[].tierIds from local saves when available.",
   "classes": [
     {
@@ -1636,5 +1636,5 @@
       "description": "A Golem Group operator can throw up an automated fire line fast, keeping hands-on work for absolute last resort."
     }
   ],
-  "metaBuiltAt": "2026-08-12T13:57:29.820Z"
+  "metaBuiltAt": "2026-08-12T15:46:35.850Z"
 }

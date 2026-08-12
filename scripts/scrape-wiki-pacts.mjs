@@ -2,17 +2,18 @@
  * Resumable scrape of current (1.0+) S.K.U.L.L. Project pacts.
  *
  * Each run re-reads ==List of Pacts== from the live wiki, diffs against the
- * last snapshot (added / removed titles), and only scrapes current entries.
- * Pre-1.0 sections (Pre-0.9.9, Change History leftovers, etc.) are ignored.
+ * last snapshot (added / removed titles), and scrapes anything not yet complete
+ * (pending, incomplete, missing wiki pages, errors). Pre-1.0 sections are ignored.
  *
  * Incomplete / missing pages are checkpointed but excluded from the editor
- * library by build-pact-library.mjs.
+ * library by build-pact-library.mjs until they become complete.
  *
  * Usage:
  *   node scripts/scrape-wiki-pacts.mjs
  *   node scripts/scrape-wiki-pacts.mjs --status
- *   node scripts/scrape-wiki-pacts.mjs --retry-errors
- *   node scripts/scrape-wiki-pacts.mjs --force
+ *   node scripts/scrape-wiki-pacts.mjs --no-retry-missing  # skip known red-links
+ *   node scripts/scrape-wiki-pacts.mjs --retry-errors      # alias: same as default retry
+ *   node scripts/scrape-wiki-pacts.mjs --force             # re-fetch even complete pages
  */
 import fs from "fs";
 import path from "path";
@@ -28,8 +29,11 @@ const SOURCE_PAGE = "S.K.U.L.L._Project";
 
 const args = new Set(process.argv.slice(2));
 const force = args.has("--force");
-const retryErrors = args.has("--retry-errors");
+const noRetryMissing = args.has("--no-retry-missing");
 const statusOnly = args.has("--status");
+// --retry-errors kept for backwards compat; retries are now the default
+const _retryErrorsCompat = args.has("--retry-errors");
+void _retryErrorsCompat;
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
@@ -173,13 +177,15 @@ function parseWikiPage(title, wt, html) {
 function needsFetch(entry) {
   if (force) return true;
   if (!entry) return true;
+  // Complete pages: skip unless --force
   if (entry.status === "ok" && isCompletePage(entry)) return false;
-  if (entry.status === "ok" && !isCompletePage(entry)) return retryErrors || force;
-  if (entry.status === "incomplete") return retryErrors || force;
-  if (entry.status === "missing") return false;
-  if (entry.status === "error") return retryErrors || force;
+  // Historical / removed: never re-hit
   if (entry.status === "skipped-pre1" || entry.status === "skipped-legacy") return false;
   if (entry.status === "removed-from-list") return false;
+  // Known red-links: retry by default (wiki pages get added over time).
+  // Use --no-retry-missing to skip them and only pick up brand-new list titles.
+  if (entry.status === "missing" && noRetryMissing) return false;
+  // incomplete / missing / error / ok-but-incomplete → fetch again
   return true;
 }
 
@@ -368,13 +374,19 @@ async function main() {
   console.log(
     `Progress: ${summary.ok} complete, ${summary.incomplete} incomplete, ${summary.missing} missing, ${summary.error} errors, ${summary.pending} pending / ${summary.total}`
   );
+  const toFetch = list.titles.filter((t) => needsFetch(progress.pages[t]));
+  console.log(
+    `Will fetch ${toFetch.length} (new + incomplete/missing/error retries)${noRetryMissing ? " · --no-retry-missing" : ""}`
+  );
 
   if (statusOnly) {
-    const pending = list.titles.filter((t) => needsFetch(progress.pages[t]));
-    console.log(`Would fetch: ${pending.length}`);
+    console.log(`Would fetch: ${toFetch.length}`);
     if (added.length) console.log(`(includes ${added.length} newly listed pact(s))`);
-    pending.slice(0, 50).forEach((t) => console.log(" -", t));
-    if (pending.length > 50) console.log(` … +${pending.length - 50} more`);
+    toFetch.slice(0, 50).forEach((t) => {
+      const st = progress.pages[t]?.status || "pending";
+      console.log(" -", t, `(${st})`);
+    });
+    if (toFetch.length > 50) console.log(` … +${toFetch.length - 50} more`);
     return;
   }
 

@@ -1,6 +1,6 @@
 {
   "source": "https://quasimorph.wiki.gg/wiki/Mercenary_Classes + perk pages",
-  "scrapedAt": "2026-08-12T13:57:19.848Z",
+  "scrapedAt": "2026-08-12T15:46:25.894Z",
   "note": "internalName matches save PerkId for class passives/triggers (e.g. berserkgang). ExpNeed_* are wiki base thresholds; Difficulty ExpMult scales in-game MaxExp.",
   "stats": {
     "perks": 61,

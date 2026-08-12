@@ -128,7 +128,7 @@ Floor/mob entities are **not** in session files; only `RaidMetadata` exists for 
 - `data/passiveTriggerLibrary.json` — Passive/Trigger perk shapes harvested from local saves
 - `data/rankLibrary.json` — Rookie→Commander (`rank_0`…`rank_5`)
 - `data/perkDefaults.json` — Parameter / MaxExp / NextPerkId snapshots for Reset
-- `data/iconMap.json` + `data/icons/` — local item/perk icons (wiki CDN blocks browser hotlinking)
+- `data/iconMap.json` + `data/icons/` — local item/perk icons (wiki CDN blocks browser hotlinking). `npm run scrape:icons` harvests `Inv_`/`Perk_` from list pages (S.K.U.L.L. Project, Weapons, Equipments, …) then downloads; `npm run scrape:icons:all` also scans the full wiki file list. Maps `Inv_foo.png` → id `foo`, plus wiki `{{Item|Name}}` → catalog ids when names match.
 - `data/techLibrary.json` — Magnum tech-tree upgrades (`_purchasedPerks`)
 - `data/equipProjectLibrary.json` — equipment Magnum project templates + `bestByType` (mods only; CachedItems stripped for Pages size)
 - `data/unlockBaseline.json` — full unlock snapshot from a late-game save (includes `SaveVersion` meta)
@@ -154,7 +154,7 @@ npm test                    # Node smoke tests
 ```
 
 Rebuild pacts from the wiki (current **1.0+** List of Pacts only):
-1. `npm run scrape:pacts` — re-reads the live list each run, reports **added/removed** pacts, scrapes new links; ignores pre-1.0 sections
+1. `npm run scrape:pacts` — re-reads the live list each run, reports **added/removed** pacts, scrapes **new + previously missing/incomplete/error** pages (wiki red-links are retried so newly created pages get picked up). Use `--no-retry-missing` to skip known red-links.
 2. `npm run build:pacts` — writes only **complete** current entries to `data/pactLibrary.json`
 3. `npm run build:pact-missing` — writes `data/pactMissing.json` from scrape progress
 

@@ -1,6 +1,6 @@
 {
   "source": "local slot_*_session.dat MagnumProjects (equipment)",
-  "builtAt": "2026-08-12T13:57:30.273Z",
+  "builtAt": "2026-08-12T15:46:36.307Z",
   "note": "Templates for Add/buff in Projects. CachedItems stripped. bestByType = strongest mod profile per ProjectType. Weapon/armor slot caps come from MagnumProgression techs.",
   "stats": {
     "projects": 32,
