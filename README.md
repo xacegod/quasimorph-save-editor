@@ -86,7 +86,7 @@ Floor/mob entities are **not** in session files; only `RaidMetadata` exists for 
 
 ## Catalogs
 
-- `quasimorph Item name.txt` — display names
+- `data/quasimorph Item name.txt` — display names
 - `data/spawnableItems.txt` — spawnable non-quest ids (includes extras like `lens` and custom gear found in sample saves)
 - `data/questItems.txt` — protected quest ids (excluded from spawn lists)
 - `data/talentLibrary.json` — clean templates for all 15 talents

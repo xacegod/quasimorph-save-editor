@@ -14,7 +14,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const OUT = path.join(ROOT, "data", "pactLibrary.json");
 const PROGRESS = path.join(ROOT, "data", "wiki-scrape-progress.json");
-const NAMES = path.join(ROOT, "quasimorph Item name.txt");
+const NAMES = path.join(ROOT, "data", "quasimorph Item name.txt");
 
 function isCompletePage(page) {
   if (!page || page.status !== "ok") return false;

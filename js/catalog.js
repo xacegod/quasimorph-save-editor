@@ -61,7 +61,7 @@ async function fetchText(path) {
   return res.text();
 }
 
-export async function loadCatalogs({ spawnableUrl = "data/spawnableItems.txt", questUrl = "data/questItems.txt", namesUrl = "quasimorph Item name.txt" } = {}) {
+export async function loadCatalogs({ spawnableUrl = "data/spawnableItems.txt", questUrl = "data/questItems.txt", namesUrl = "data/quasimorph Item name.txt" } = {}) {
   const [spawnText, questText, namesText] = await Promise.all([
     fetchText(spawnableUrl).catch(() => ""),
     fetchText(questUrl).catch(() => ""),
