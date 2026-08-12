@@ -113,10 +113,10 @@ export const COPY_SECTIONS = [
   { id: "augments", label: "AugmentationMap", help: "Cyborg/body-part slots (BattleCyborgArm → part id)." },
   { id: "woundsockets", label: "WoundSlotMap (implants)", help: "Implant sockets per body slot." },
   { id: "augeffects", label: "Augment effects", help: "FromAugment wound effects + ImplicitAugEffect. IDs are remapped." },
-  { id: "rankPerks", label: "Class ranks", help: "PerkType Rank only (rank_4, rank_5). These come from class progression, not pacts." },
-  { id: "pactUltimate", label: "Pact / ultimate", help: "Ultimate perks + HasUltimate + skull item + pact level. Ultimates are unlocked via bramfatura pacts." },
-  { id: "talents", label: "Talents (traits)", help: "The single PerkType Talent on the merc (game allows one)." },
-  { id: "otherPerks", label: "Passives / triggers", help: "Passive and Trigger perks only (not talents, ranks, or ultimates)." },
+  { id: "rankPerks", label: "Class ranks", help: "PerkType Rank only (class progression; usually up to 6 ranks). Not from pacts." },
+  { id: "pactUltimate", label: "Pact / ultimate", help: "Ultimate perk + HasUltimate + skull. Prefer absorb/remove via items in-game for full pact flow." },
+  { id: "talents", label: "Talents (traits)", help: "PerkType Talent entries (character-tied; game normally allows one, stacking works in practice)." },
+  { id: "otherPerks", label: "Passives / triggers", help: "Passive and Trigger perks (class or character). Best place to experiment with custom parameter mixes." },
   { id: "stats", label: "Stats", help: "Numeric combat stats and ignore flags. Does not copy name or class id." },
 ];
 
@@ -125,25 +125,25 @@ export const PERK_GROUPS = [
     id: "Rank",
     title: "Class ranks",
     types: ["Rank"],
-    help: "Gained through the mercenary class (Magnum class project). Not from pacts.",
+    help: "PerkType <code>Rank</code> — tied to the mercenary <strong>class</strong> (Magnum class project), not the character talent slot. Typically up to legend (~6 ranks). Use <strong>Max exp</strong> to fill CurrentExp, or <strong>Max rank</strong> to jump to the highest <code>NextPerkId</code> tier found in this save. Difficulty <code>ExpMult</code> affects how much MaxExp is needed to level.",
   },
   {
     id: "Ultimate",
     title: "Pact ultimates",
     types: ["Ultimate"],
-    help: "One pact ultimate per merc. Set/replace from the library (synced with skull item + HasUltimate).",
+    help: "PerkType <code>Ultimate</code> — one active pact per merc. <strong>Fully reliable here:</strong> edit/remove the ultimate already on the merc (Remove clears skull + <code>HasUltimate</code>; same idea as the in-game Breaking the Pact item). <strong>To gain a different pact:</strong> put the skull in inventory and absorb it in-game — library Set/replace can sync ids for the current ultimate, but full pact activation (banes/charge/etc.) is meant to come from absorb.",
   },
   {
     id: "Talent",
     title: "Talents (traits)",
     types: ["Talent"],
-    help: "One talent per merc. Choose from the library to replace the current talent; edit Int/Float/Bool parameters as needed.",
+    help: "PerkType <code>Talent</code> — character-tied, <strong>not</strong> a leveling chain (<code>MaxExp</code> stays 0). Game UI normally allows <strong>one</strong>; stacking many Talents in the save has been observed to work. Use Set/replace for a clean single talent, or Add (stack) to keep several. Do not confuse with Rank (class) or Passive (can level).",
   },
   {
     id: "Other",
     title: "Passives and triggers",
     types: ["Passive", "Trigger"],
-    help: "Class/skill perks (not talents, ranks, or pact ultimates). Add by cloning a copy already in this save.",
+    help: "PerkType <code>Passive</code> / <code>Trigger</code> — most flexible. Can be class-gained or character-gained; many use exp toward <code>NextPerkId</code>. <strong>Max exp</strong> / <strong>Max tier</strong> available when the save has the next perk template. Difficulty <code>ExpMult</code> scales MaxExp. Remix <code>Parameters</code> only with a valid <code>PerkId</code>. Name prefixes: <code>I*</code> int, <code>F*</code> float, <code>B*</code> bool.",
   },
 ];
 

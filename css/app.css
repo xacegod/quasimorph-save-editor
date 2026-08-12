@@ -39,6 +39,10 @@ button:hover { border-color: var(--accent); }
 button.primary { background: #1f5f9a; border-color: var(--accent); }
 button.danger { background: #5a2222; border-color: var(--danger); }
 button.ok { background: #1d5a45; border-color: var(--accent2); }
+input.invalid, select.invalid {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 1px var(--danger);
+}
 button:disabled { opacity: 0.5; cursor: not-allowed; }
 input[type="text"], input[type="number"], select { min-width: 8rem; }
 .muted { color: var(--muted); }

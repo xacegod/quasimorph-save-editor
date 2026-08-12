@@ -1,0 +1,3532 @@
+{
+  "source": "https://quasimorph.wiki.gg/wiki/Mercenary_Classes + perk pages",
+  "scrapedAt": "2026-08-12T10:38:57.362Z",
+  "note": "internalName matches save PerkId for class passives/triggers (e.g. berserkgang). ExpNeed_* are wiki base thresholds; Difficulty ExpMult scales in-game MaxExp.",
+  "stats": {
+    "perks": 61,
+    "pages": 61
+  },
+  "perks": [
+    {
+      "wikiTitle": "Agent Training",
+      "internalName": "agent_training",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP. / Pistol",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Pistol accuracy +15% / Pistol Range +1",
+        "2": "Pistol accuracy +20% / Pistol Range +1",
+        "3": "Pistol accuracy +25% / Pistol Range +2",
+        "4": "Pistol accuracy +30% / Pistol Range +2"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Spaceborn Ghosts class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Agent_Training"
+    },
+    {
+      "wikiTitle": "Assault Reflex",
+      "internalName": "assault_reflex",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Scouts of Hades",
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": "Enemy missed attack on the player activates the trigger.",
+      "expGain": "Each trigger activation gives 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Extra Ap +1 for 2 turns",
+        "2": "Extra Ap +2 for 2 turns",
+        "3": "Extra Ap +2 for 3 turns",
+        "4": "Extra Ap +3 for 3 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "12",
+        "2": "11",
+        "3": "10",
+        "4": "9"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades and Spaceborn Ghosts class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Assault_Reflex"
+    },
+    {
+      "wikiTitle": "Athletics",
+      "internalName": "athletics",
+      "perkIdNumeric": "000055",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each turn of running gives 1 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "150",
+        "2": "350",
+        "3": "600"
+      },
+      "effects": {
+        "0": "",
+        "1": "Sprint affects accuracy -35%",
+        "2": "Sprint affects accuracy -50%",
+        "3": "Sprint affects accuracy -65%",
+        "4": "Sprint affects accuracy -80%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Eclipse Blades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Athletics"
+    },
+    {
+      "wikiTitle": "Axe Rage",
+      "internalName": "axe_rage",
+      "perkIdNumeric": "000187",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": "A wound inflicted in melee activates the trigger.",
+      "expGain": "Each trigger activation gives 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Extra Strikes +3 for 3 turns",
+        "2": "Extra Strikes +3 for 4 turns",
+        "3": "Extra Strikes +3 for 5 turns",
+        "4": "Extra Strikes +3 for 6 turns"
+      },
+      "cost": "25",
+      "cooldown": {
+        "1": "7",
+        "2": "6",
+        "3": "5",
+        "4": "4"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Terror Pack class. When active Axes, Clubs and Knives get three extra strikes.",
+      "source": "https://quasimorph.wiki.gg/wiki/Axe_Rage"
+    },
+    {
+      "wikiTitle": "Berserkgang",
+      "internalName": "berserkgang",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": "Getting a damaging wound activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Regen +4 / Pain Regeneration +3 / for 6 turns",
+        "2": "Regen +6 / Pain Regeneration +4 / for 6 turns",
+        "3": "Regen +8 / Pain Regeneration +5 / for 6 turns",
+        "4": "Regen +10 / Pain Regeneration +6 / for 6 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "14",
+        "2": "12",
+        "3": "10",
+        "4": "8"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Scouts of Hades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Berserkgang"
+    },
+    {
+      "wikiTitle": "Blind Fury",
+      "internalName": "blind_fury",
+      "perkIdNumeric": "000031",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": "A successful attack on the player activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "All damage +55% for 3 turns",
+        "2": "All damage +60% for 4 turns",
+        "3": "All damage +65% for 5 turns",
+        "4": "All damage +70% for 6 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "9"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Scouts of Hades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Blind_Fury"
+    },
+    {
+      "wikiTitle": "Blind Shot",
+      "internalName": "blind_shot",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": "A hit outside your sight range activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Perk Cooldown 2 for 6 turns",
+        "2": "Perk Cooldown 2 for 8 turns",
+        "3": "Perk Cooldown 2 for 10 turns",
+        "4": "Perk Cooldown 2 for 12 turns"
+      },
+      "cost": "60",
+      "cooldown": {
+        "1": "24",
+        "2": "21",
+        "3": "18",
+        "4": "15"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Angels of Spades class. Adds to current perk cooldown reduction modifier per turn after activation for the duration of the effect.",
+      "source": "https://quasimorph.wiki.gg/wiki/Blind_Shot"
+    },
+    {
+      "wikiTitle": "Bodybuilding",
+      "internalName": "bodybuilding",
+      "perkIdNumeric": "000035",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Co.B.R.A."
+      ],
+      "perkTrigger": null,
+      "expGain": "A successful attack on the player grants 1 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Health +20",
+        "2": "Health +40",
+        "3": "Health +60",
+        "4": "Health +80"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Co.B.R.A. class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Bodybuilding"
+    },
+    {
+      "wikiTitle": "Cannibalism",
+      "internalName": "cannibalism",
+      "perkIdNumeric": "000063",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": "Eating human meat activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "All damage +45% for 3 turns",
+        "2": "All damage +50% for 4 turns",
+        "3": "All damage +55% for 5 turns",
+        "4": "All damage +60% for 6 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "15"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Eclipse Blades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Cannibalism"
+    },
+    {
+      "wikiTitle": "Carnage",
+      "internalName": "carnage",
+      "perkIdNumeric": "000067",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": "A wound inflicted in melee activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Chance to Get AP Back 70% for 2 turns",
+        "2": "Chance to Get AP Back 85% for 2 turns",
+        "3": "Chance to Get AP Back 85% for 3 turns",
+        "4": "Chance to Get AP Back 100% for 3 turns"
+      },
+      "cost": "120",
+      "cooldown": {
+        "1": "20"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Eclipse Blades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Carnage"
+    },
+    {
+      "wikiTitle": "Cauterize",
+      "internalName": "cauterize",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": "Receiving combustion activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Burning Immunity for 3 turns / Regen +6 for 3 turns",
+        "2": "Burning Immunity for 3 turns / Regen +8 for 3 turns",
+        "3": "Burning Immunity for 4 turns / Regen +8 for 4 turns",
+        "4": "Burning Immunity for 4 turns / Regen +10 for 4 turns"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "7",
+        "2": "6",
+        "3": "5",
+        "4": "4"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Phoenix Brigade class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Cauterize"
+    },
+    {
+      "wikiTitle": "Caution",
+      "internalName": "cautious",
+      "perkIdNumeric": "000127",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": "Revealing a hidden enemy activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Crit. chance +30% / Crit. damage +50% / for 5 turns",
+        "2": "Crit. chance +35% / Crit. damage +60% / for 6 turns",
+        "3": "Crit. chance +45% / Crit. damage +70% / for 7 turns",
+        "4": "Crit. chance +50% / Crit. damage +80% / for 8 turns"
+      },
+      "cost": "120",
+      "cooldown": {
+        "1": "22",
+        "2": "20",
+        "3": "18",
+        "4": "16"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tunnel Rats class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Caution"
+    },
+    {
+      "wikiTitle": "Combat Focus",
+      "internalName": "battle_concentration",
+      "perkIdNumeric": "000027",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": "Attacks on the player (whether hit or not) activate the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Dodge chance +50% for 3 turns",
+        "2": "Dodge chance +55% for 3 turns",
+        "3": "Dodge chance +55% for 4 turns",
+        "4": "Dodge chance +60% for 4 turns"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "9",
+        "2": "8",
+        "3": "7",
+        "4": "6"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tongkong class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Combat_Focus"
+    },
+    {
+      "wikiTitle": "Combat Physicist",
+      "internalName": "battle_physicist",
+      "perkIdNumeric": "000107",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each energy weapon disassembly grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "200",
+        "3": "300"
+      },
+      "effects": {
+        "1": "Consume No Battery Chance 20%",
+        "2": "Consume No Battery Chance 25%",
+        "3": "Consume No Battery Chance 30%",
+        "4": "Consume No Battery Chance 35%"
+      },
+      "cost": "50",
+      "cooldown": {
+        "1": "30"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Phoenix Brigade class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Combat_Physicist"
+    },
+    {
+      "wikiTitle": "Combat Reflexes",
+      "internalName": "reaction_training",
+      "perkIdNumeric": "000059",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": null,
+      "expGain": "When an enemy misses the character, gain 4 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Dodge chance +10%",
+        "2": "Dodge chance +14%",
+        "3": "Dodge chance +18%",
+        "4": "Dodge chance +22%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Eclipse Blades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Combat_Reflexes"
+    },
+    {
+      "wikiTitle": "CQC-Specialist",
+      "internalName": "cqc_specialist",
+      "perkIdNumeric": "000023",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapong grants 2 XP / SMG, Shotgun, Assault Rifle",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Scatter -25% / Shooting accuracy +10%",
+        "2": "Scatter -30% / Shooting accuracy +15%",
+        "3": "Scatter -35% / Shooting accuracy +20%",
+        "4": "Scatter -40% / Shooting accuracy +25%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/CQC-Specialist"
+    },
+    {
+      "wikiTitle": "Devastation Tactic",
+      "internalName": "devastation_tactic",
+      "perkIdNumeric": "000123",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Martian Mech Inf"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit with 12.7 ammo grants 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Chance of 12.7 ammo explosion 30%",
+        "2": "Chance of 12.7 ammo explosion 35%",
+        "3": "Chance of 12.7 ammo explosion 45%",
+        "4": "Chance of 12.7 ammo explosion 50%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Martian Mech Inf class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Devastation_Tactic"
+    },
+    {
+      "wikiTitle": "Dirty Shot",
+      "internalName": "dirty_shot",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": "A critical hit activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Stun duration 1 turns / Number of enemies 1",
+        "2": "Stun duration 1 turns / Number of enemies 2",
+        "3": "Stun duration 2 turns / Number of enemies 2",
+        "4": "Stun duration 2 turns / Number of enemies 3"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "6"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tunnel Rats class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Dirty_Shot"
+    },
+    {
+      "wikiTitle": "Duty Shift",
+      "internalName": "duty_shift",
+      "perkIdNumeric": "000159",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": "Using activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Resist all +45% for 3 turns",
+        "2": "Resist all +45% for 4 turns",
+        "3": "Resist all +45% for 5 turns",
+        "4": "Resist all +45% for 6 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "22",
+        "2": "18",
+        "3": "14",
+        "4": "10"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Valkyrie Squad class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Duty_Shift"
+    },
+    {
+      "wikiTitle": "Enemy Anatomy",
+      "internalName": "enemy_anatomy",
+      "perkIdNumeric": "000099",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each physical wound inflicted grants 4 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Physical Wound Damage +3",
+        "2": "Physical Wound Damage +4",
+        "3": "Physical Wound Damage +5",
+        "4": "Physical Wound Damage +6"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Angels of Spades class. It gives extra damage over time on inflicted Blunt Wounds, Pierce Wounds and Laceration.",
+      "source": "https://quasimorph.wiki.gg/wiki/Enemy_Anatomy"
+    },
+    {
+      "wikiTitle": "Fear and Hunger",
+      "internalName": "fear_and_hunger",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each time you take damage from starvation grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Melee Damage/100 kcal Spent +3%",
+        "2": "Melee Damage/100 kcal Spent +4%",
+        "3": "Melee Damage/100 kcal Spent +5%",
+        "4": "Melee Damage/100 kcal Spent +6%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Terror Pack class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Fear_and_Hunger"
+    },
+    {
+      "wikiTitle": "Fire Transfer",
+      "internalName": "fire_transfer",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": "Killing activates the trigger.",
+      "expGain": "Each trigger activation gives 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Crit. chance +50% / SMG, Shotgun, Assault Rifle",
+        "2": "Crit. chance +55% / SMG, Shotgun, Assault Rifle",
+        "3": "Crit. chance +60% / SMG, Shotgun, Assault Rifle",
+        "4": "Crit. chance +65% / SMG, Shotgun, Assault Rifle"
+      },
+      "cost": "10",
+      "cooldown": {
+        "1": "5",
+        "2": "4",
+        "3": "3",
+        "4": "2"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Fire_Transfer"
+    },
+    {
+      "wikiTitle": "First Aid",
+      "internalName": "first_aid",
+      "perkIdNumeric": "000151",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each stabilized wound grants 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Heals wound +25%",
+        "2": "Heals wound +30%",
+        "3": "Heals wound +35%",
+        "4": "Heals wound +40%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Valkyrie Squad class. Increases wound chance healing for organic wounds.",
+      "source": "https://quasimorph.wiki.gg/wiki/First_Aid"
+    },
+    {
+      "wikiTitle": "Flame In The Dark",
+      "internalName": "revealing_flame",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": "Setting fire to an enemy activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Detection Radius +4 for 8 turns / Detects Enemies for 8 turns",
+        "2": "Detection Radius +5 for 8 turns / Detects Enemies for 8 turns",
+        "3": "Detection Radius +6 for 8 turns / Detects Enemies for 8 turns",
+        "4": "Detection Radius +7 for 8 turns / Detects Enemies for 8 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "12"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Phoenix Brigade class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Flame_In_The_Dark"
+    },
+    {
+      "wikiTitle": "Gear Maintenance",
+      "internalName": "gear_maintenance",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each physical hit reduced by armor grants 2 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Physical Resistances +15% / Armor Durability +15%",
+        "2": "Physical Resistances +20% / Armor Durability +30%",
+        "3": "Physical Resistances +25% / Armor Durability +45%",
+        "4": "Physical Resistances +30% / Armor Durability +60%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Gear_Maintenance"
+    },
+    {
+      "wikiTitle": "Ghost Killer",
+      "internalName": "blind_shot",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": "Killing activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Radius 3 / Chance of enemy panic 30% / Enemies become panicking",
+        "2": "Radius 3 / Chance of enemy panic 40% / Enemies become panicking",
+        "3": "Radius 4 / Chance of enemy panic 40% / Enemies become panicking",
+        "4": "Radius 4 / Chance of enemy panic 50% / Enemies become panicking"
+      },
+      "cost": "100",
+      "cooldown": {
+        "1": "20"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Angels of Spades class. Killing enemies with Marksman rifles activates the perk. Panicking causes enemies to run away instead of targeting the player.",
+      "source": "https://quasimorph.wiki.gg/wiki/Ghost_Killer"
+    },
+    {
+      "wikiTitle": "Grenadier",
+      "internalName": "grenadier",
+      "perkIdNumeric": "000087",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each grenade throw or grenade launcher shot grants 25 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Explosion damage +25%",
+        "2": "Explosion damage +35%",
+        "3": "Explosion damage +45%",
+        "4": "Explosion damage +55%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tifton's Elite class. Also affects Mines.",
+      "source": "https://quasimorph.wiki.gg/wiki/Grenadier"
+    },
+    {
+      "wikiTitle": "Heavy Fire",
+      "internalName": "piersing_burst",
+      "perkIdNumeric": "000155",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Pierce chance +30%",
+        "2": "Pierce chance +40%",
+        "3": "Pierce chance +50%",
+        "4": "Pierce chance +60%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tongkong class. Adds a bonus Pierce chance when using SMGs.",
+      "source": "https://quasimorph.wiki.gg/wiki/Heavy_Fire"
+    },
+    {
+      "wikiTitle": "Heavy Weapons",
+      "internalName": "heavy_weaponary",
+      "perkIdNumeric": "000079",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP. / Assault Rifle, Machine Gun, Minigun, Grenade Launcher, Rocket Launcher",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Scatter -25% / Shooting accuracy +10%",
+        "2": "Scatter -30% / Shooting accuracy +15%",
+        "3": "Scatter -35% / Shooting accuracy +20%",
+        "4": "Scatter -40% / Shooting accuracy +25%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tifton's Elite class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Heavy_Weapons"
+    },
+    {
+      "wikiTitle": "Insanity",
+      "internalName": "insanity",
+      "perkIdNumeric": "000183",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each change of quasimorphosis stages granst 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Q-morphosis affects the clone 30%",
+        "2": "Q-morphosis affects the clone 35%",
+        "3": "Q-morphosis affects the clone 40%",
+        "4": "Q-morphosis affects the clone 45%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Terror Pack class. It allows player to benefit from quasimorphosis buffs similar to quasimorphic entities.",
+      "source": "https://quasimorph.wiki.gg/wiki/Insanity"
+    },
+    {
+      "wikiTitle": "Knife Fight",
+      "internalName": "cold_weapon_wielding",
+      "perkIdNumeric": "000051",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit from a melee weapon gives 5 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Strike Accuracy +15%",
+        "2": "Strike Accuracy +20%",
+        "3": "Strike Accuracy +25%",
+        "4": "Strike Accuracy +30%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Eclipse Blades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Knife_Fight"
+    },
+    {
+      "wikiTitle": "Last Bullet",
+      "internalName": "last_bullet",
+      "perkIdNumeric": "000075",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": "Firing the last round will activate the trigger",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "All Damage +50% for 2 turns",
+        "2": "All Damage +55% for 3 turns",
+        "3": "All Damage +60% for 4 turns",
+        "4": "All Damage +65% for 5 turns"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "8"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tongkong class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Last_Bullet"
+    },
+    {
+      "wikiTitle": "Lightweight Gear",
+      "internalName": "lightweight_gear",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each 10 units of weight grants 1 XP when moving in stealth mode.",
+      "expNeed": {
+        "1": "150",
+        "2": "300",
+        "3": "500"
+      },
+      "effects": {
+        "1": "Equipment weight -25%",
+        "2": "Equipment weight -35%",
+        "3": "Equipment weight -45%",
+        "4": "Equipment weight -55%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Spaceborn Ghosts class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Lightweight_Gear"
+    },
+    {
+      "wikiTitle": "Lizard",
+      "internalName": "lizard",
+      "perkIdNumeric": "000103",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": null,
+      "expGain": "A successful attack on the player grants 5 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Max pain threshold +30% / Pain Regeneration +1",
+        "2": "Max pain threshold +40% / Pain Regeneration +1",
+        "3": "Max pain threshold +40% / Pain Regeneration +2",
+        "4": "Max pain threshold +50% / Pain Regeneration +2"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tongkong class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Lizard"
+    },
+    {
+      "wikiTitle": "Marauder",
+      "internalName": "marauder",
+      "perkIdNumeric": "000135",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each looting of a corpse gives 1 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Loot from Corpses +30% / Loot from Containers +30%",
+        "2": "Loot from Corpses +60% / Loot from Containers +60%",
+        "3": "Loot from Corpses +90% / Loot from Containers +90%",
+        "4": "Loot from Corpses +120% / Loot from Containers +120%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tunnel Rats class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Marauder"
+    },
+    {
+      "wikiTitle": "Masochism",
+      "internalName": "masochism",
+      "perkIdNumeric": "000179",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": "Exceeding the pain threshold activates the trigger.",
+      "expGain": "Each trigger activation gives 25 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Extra AP +2 for 3 turns",
+        "2": "Extra AP +2 for 4 turns",
+        "3": "Extra AP +2 for 4 turns",
+        "4": "Extra AP +2 for 5 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "20",
+        "2": "16",
+        "3": "12",
+        "4": "8"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Terror Pack class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Masochism"
+    },
+    {
+      "wikiTitle": "Medicus",
+      "internalName": "medicus",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each item created with the Medical Fabricator grants 1 XP per 10 item cost.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Medical Recipes<ul><li>Medical Glue</li></ul>",
+        "2": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li></ul>",
+        "3": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li><li>Adrenalin Military</li><li>First Aid Kit</li></ul>",
+        "4": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li><li>Adrenalin Military</li><li>First Aid Kit</li><li>Nanostim</li><li>Dr. Jones</li></ul>"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Valkyrie Squad class. Unlocks new medical recipes in the Medical Machine",
+      "source": "https://quasimorph.wiki.gg/wiki/Medicus"
+    },
+    {
+      "wikiTitle": "Muffled",
+      "internalName": "muffled",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each kill of an unaware enemy grants 8 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "No Sound Chance 50%",
+        "2": "No Sound Chance 60%",
+        "3": "No Sound Chance 70%",
+        "4": "No Sound Chance 80%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Spaceborn Ghosts class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Muffled"
+    },
+    {
+      "wikiTitle": "Overcharged Batteries",
+      "internalName": "reinforced_battery",
+      "perkIdNumeric": "000207",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit with energy ammo grants 2 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Battery damage +20%",
+        "2": "Battery damage +25%",
+        "3": "Battery damage +30%",
+        "4": "Battery damage +35%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Phoenix Brigade class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Overcharged_Batteries"
+    },
+    {
+      "wikiTitle": "Pocket Artillery",
+      "internalName": "enhanced_heavy_ammo",
+      "perkIdNumeric": "000199",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit with 7.97 ammo grants 2 XP",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "7.97 Ammo Damage +20%",
+        "2": "7.97 Ammo Damage +25%",
+        "3": "7.97 Ammo Damage +30%",
+        "4": "7.97 Ammo Damage +35%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Angels of Spades class. Increase the amount of damage inflicted with 7.97 Bullets, 7.97 AP and 7.97 API.",
+      "source": "https://quasimorph.wiki.gg/wiki/Pocket_Artillery"
+    },
+    {
+      "wikiTitle": "Possession",
+      "internalName": "possession",
+      "perkIdNumeric": "000171",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each use of a Pact ability grants 25 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Pact cooldown 50% / Pact cost 20%",
+        "2": "Pact cooldown 60% / Pact cost 30%",
+        "3": "Pact cooldown 70% / Pact cost 40%",
+        "4": "Pact cooldown 80% / Pact cost 50%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Terror Pack class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Possession"
+    },
+    {
+      "wikiTitle": "Precise Shot",
+      "internalName": "precise_shot",
+      "perkIdNumeric": "000163",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": "Skipping a turn in the stealth mode activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Ranged crit. chance +40% for 2 turns",
+        "2": "Ranged crit. chance +45% for 2 turns",
+        "3": "Ranged crit. chance +50% for 2 turns",
+        "4": "Ranged crit. chance +55% for 2 turns"
+      },
+      "cost": "10",
+      "cooldown": {
+        "1": "5",
+        "2": "4",
+        "3": "3",
+        "4": "2"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Angels of Spades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Precise_Shot"
+    },
+    {
+      "wikiTitle": "Pressure Points",
+      "internalName": "pressure_points",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Pain mod. +50% / Enemy Add. AP Loss from Pain 0",
+        "2": "Pain mod. +70% / Enemy Add. AP Loss from Pain 0",
+        "3": "Pain mod. +90% / Enemy Add. AP Loss from Pain 0",
+        "4": "Pain mod. +90% / Enemy Add. AP Loss from Pain 1"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Valkyrie Squad class. Increased pain generated using Pistols, SMGs or Shotguns",
+      "source": "https://quasimorph.wiki.gg/wiki/Pressure_Points"
+    },
+    {
+      "wikiTitle": "Pyromaniac",
+      "internalName": "pyromaniac",
+      "perkIdNumeric": "000119",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": null,
+      "expGain": "Setting fire to an enemy grants 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Fire duration +2 turns / Burning time +2 AP / Burn chance +15%",
+        "2": "Fire duration +2 turns / Burning time +2 AP / Burn chance +25%",
+        "3": "Fire duration +4 turns / Burning time +2 AP / Burn chance +25%",
+        "4": "Fire duration +4 turns / Burning time +2 AP / Burn chance +35%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tongkong class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Pyromaniac"
+    },
+    {
+      "wikiTitle": "Reinforced Ammo",
+      "internalName": "handmade_shotgun_ammo",
+      "perkIdNumeric": "000143",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit with shotgun ammo grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Shotgun ammo damage +25%",
+        "2": "Shotgun ammo damage +30%",
+        "3": "Shotgun ammo damage +35%",
+        "4": "Shotgun ammo damage +40%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tunnel Rats class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Reinforced_Ammo"
+    },
+    {
+      "wikiTitle": "Ritualism",
+      "internalName": "ritualism",
+      "perkIdNumeric": "000175",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": "Eating Gavvakh activates the trigger.",
+      "expGain": "Each trigger activation gives 20 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Perk Cooldown 3 for 2 turns",
+        "2": "Perk Cooldown 3 for 3 turns",
+        "3": "Perk Cooldown 4 for 3 turns",
+        "4": "Perk Cooldown 4 for 4 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "18",
+        "2": "16",
+        "3": "14",
+        "4": "12"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Terror Pack class. It allows player to convert enemies into allies when player consume Gavvakh with small chance.",
+      "source": "https://quasimorph.wiki.gg/wiki/Ritualism"
+    },
+    {
+      "wikiTitle": "Scholar (Item)",
+      "internalName": "Scholar",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each item created with the Industrial Fabricator grantes 1 XP per item cost.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Engineering Recipes<ul><li>Helper</li></ul>",
+        "2": "Engineering Recipes:<ul><li>Helper</li><li>Reanimatron</li><li>Quasimorphosis Sensor</li></ul>",
+        "3": "Engineering Recipes:<ul><li>Helper</li><li>Reanimatron</li><li>Quasimorphosis Sensor</li><li>Dataminer</li><li>MG-359</li></ul>",
+        "4": "Engineering Recipes:<ul><li>Helper</li><li>Reanimatron</li><li>Quasimorphosis Sensor</li><li>Dataminer</li><li>MG-359</li><li>Combat AR</li><li>Security Drone</li></ul>"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Phoenix Brigade class. Unlocks new Engineering Recipes in the Fabricator.",
+      "source": "https://quasimorph.wiki.gg/wiki/Scholar_(Item)"
+    },
+    {
+      "wikiTitle": "Self-healing",
+      "internalName": "selfhealing",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tifton's Elite",
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": "Getting hit in an organic body part activates the trigger.",
+      "expGain": "Each trigger activation gives 15 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Stabilizes Organic Wounds / Organic Wound Heal Chance +25% for 6 turns",
+        "2": "Stabilizes Organic Wounds / Organic Wound Heal Chance +30% for 6 turns",
+        "3": "Stabilizes Organic Wounds / Organic Wound Heal Chance +35% for 6 turns",
+        "4": "Stabilizes Organic Wounds / Organic Wound Heal Chance +40% for 6 turns"
+      },
+      "cost": "120",
+      "cooldown": {
+        "1": "25",
+        "2": "20",
+        "3": "15",
+        "4": "10"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tifton's Elite and Valkyrie Squad class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Self-healing"
+    },
+    {
+      "wikiTitle": "Shelters",
+      "internalName": "covermaster",
+      "perkIdNumeric": "000131",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": null,
+      "expGain": "When an enemy misses the character, gain 2 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Shot Block Chance in Cover +15% / Cover Protection Chance +15%",
+        "2": "Shot Block Chance in Cover +25% / Cover Protection Chance +25%",
+        "3": "Shot Block Chance in Cover +35% / Cover Protection Chance +35%",
+        "4": "Shot Block Chance in Cover +45% / Cover Protection Chance +45%"
+      },
+      "cost": "50",
+      "cooldown": {
+        "1": "30"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tunnel Rats class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Shelters"
+    },
+    {
+      "wikiTitle": "Shielding",
+      "internalName": "shielding",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each elemental hit reduced by armor grants 4 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "resist +25%",
+        "2": "resist +30",
+        "3": "resist +35%",
+        "4": "resist +40%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Phoenix Brigade class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Shielding"
+    },
+    {
+      "wikiTitle": "Shock and Awe",
+      "internalName": "shock_awe",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": "Damaging an enemy with an explosion activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Explosion Stun Chance +50% for 2 turns / Stun Duration 1",
+        "2": "Explosion Stun Chance +60% for 2 turns / Stun Duration 1",
+        "3": "Explosion Stun Chance +60% for 2 turns / Stun Duration 2",
+        "4": "Explosion Stun Chance +70% for 2 turns / Stun Duration 2"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "15"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tifton's Elite class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Shock_and_Awe"
+    },
+    {
+      "wikiTitle": "Sneaky Shot",
+      "internalName": "cheap_shot",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": "Each hit in stealth mode activates the trigger",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Crit. chance +25% for 6 turns",
+        "2": "Crit. chance +30% for 8 turns",
+        "3": "Crit. chance +35% for 10 turns",
+        "4": "Crit. chance +40% for 12 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "18",
+        "2": "16",
+        "3": "14",
+        "4": "12"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Spaceborn Ghosts class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Sneaky_Shot"
+    },
+    {
+      "wikiTitle": "Sniper Training",
+      "internalName": "sniper_training",
+      "perkIdNumeric": "000047",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Marksman Accuracy +15% / Optical Sight Range +1 / Marksman Rifle",
+        "2": "Marksman Accuracy +20% / Optical Sight Range +1",
+        "3": "Marksman Accuracy +25% / Optical Sight Range +2",
+        "4": "Marksman Accuracy +30% / Optical Sight Range +2"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Angels of Spades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Sniper_Training"
+    },
+    {
+      "wikiTitle": "Spray and Pray",
+      "internalName": "spray_and_pray",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": "Ammo dropping below 20% activates the trigger. / Machine Gun, Minigun",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Machinegun Damage +75% for 3 turns",
+        "2": "Machinegun Damage +75% for 3 turns",
+        "3": "Machinegun Damage +75% for 3 turns",
+        "4": "Machinegun Damage +75% for 3 turns"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "12",
+        "2": "10",
+        "3": "8",
+        "4": "6"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tifton's Elite class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Spray_and_Pray"
+    },
+    {
+      "wikiTitle": "Stationary Defense",
+      "internalName": "stationary_defense",
+      "perkIdNumeric": "000083",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": null,
+      "expGain": "Placing a deployable grants 50 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Deployable damage +25% / Deployable's health 25 / Placement Range +1",
+        "2": "Deployable damage +30% / Deployable's health 30 / Placement Range +1",
+        "3": "Deployable damage +35% / Deployable's health 35 / Placement Range +2",
+        "4": "Deployable damage +40% / Deployable's health 40 / Placement Range +2"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tifton's Elite class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Stationary_Defense"
+    },
+    {
+      "wikiTitle": "Steel Without",
+      "internalName": "steel_without",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Martian Mech Inf"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each wound stabilization of a robotic body part grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Augment Resistance Bonus +35% / Augment Resistance Penalty -50%",
+        "2": "Augment Resistance Bonus +40% / Augment Resistance Penalty -60%",
+        "3": "Augment Resistance Bonus +45% / Augment Resistance Penalty -70%",
+        "4": "Augment Resistance Bonus +50% / Augment Resistance Penalty -80%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Martian Mech Inf class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Steel_Without"
+    },
+    {
+      "wikiTitle": "Therapist",
+      "internalName": "therapist",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": null,
+      "expGain": "Dealing damage that applies an effect grants 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Status Effectiveness +35%",
+        "2": "Status Effectiveness +50%",
+        "3": "Status Effectiveness +65%",
+        "4": "Status Effectiveness +80%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Valkyrja Squad class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Therapist"
+    },
+    {
+      "wikiTitle": "Tomahawk",
+      "internalName": "tomahawk",
+      "perkIdNumeric": "000095",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Co.B.R.A."
+      ],
+      "perkTrigger": null,
+      "expGain": "Each melee weapon throw grants 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Throw Crit. Chance +30%",
+        "2": "Throw Crit. Chance +40%",
+        "3": "Throw Crit. Chance +50%",
+        "4": "Throw Crit. Chance +60%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Co.B.R.A. class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Tomahawk"
+    },
+    {
+      "wikiTitle": "Training",
+      "internalName": "military_training",
+      "perkIdNumeric": "000019",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Every 10 units of weight give 1 XP when moving.",
+      "expNeed": {
+        "1": "200",
+        "2": "500",
+        "3": "800"
+      },
+      "effects": {
+        "1": "Calorie consumption -2",
+        "2": "Calorie consumption -3",
+        "3": "Calorie consumption -4",
+        "4": "Calorie consumption -5"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Training"
+    },
+    {
+      "wikiTitle": "Vicious Symbiosis",
+      "internalName": "vicious_symbiosis",
+      "perkIdNumeric": "000111",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each time you get an addiction grants 5 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Damage per Addiction +9% / Resistance per Addiction +9%",
+        "2": "Damage per Addiction +12% / Resistance per Addiction +12%",
+        "3": "Damage per Addiction +15% / Resistance per Addiction +15%",
+        "4": "Damage per Addiction +18% / Resistance per Addiction +18%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tunnel Rats class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Vicious_Symbiosis"
+    },
+    {
+      "wikiTitle": "War Crime",
+      "internalName": "war_crime",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": "Killing activates the trigger",
+      "expGain": "Each trigger activation gives 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Stun duration 1 turns / Number of enemies 3",
+        "2": "Stun duration 1 turns / Number of enemies 4",
+        "3": "Stun duration 1 turns / Number of enemies 5",
+        "4": "Stun duration 1 turns / Number of enemies 6"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "10"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Spaceborn Ghosts class.",
+      "source": "https://quasimorph.wiki.gg/wiki/War_Crime"
+    }
+  ],
+  "byInternalName": {
+    "agent_training": {
+      "wikiTitle": "Agent Training",
+      "internalName": "agent_training",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP. / Pistol",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Pistol accuracy +15% / Pistol Range +1",
+        "2": "Pistol accuracy +20% / Pistol Range +1",
+        "3": "Pistol accuracy +25% / Pistol Range +2",
+        "4": "Pistol accuracy +30% / Pistol Range +2"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Spaceborn Ghosts class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Agent_Training"
+    },
+    "assault_reflex": {
+      "wikiTitle": "Assault Reflex",
+      "internalName": "assault_reflex",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Scouts of Hades",
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": "Enemy missed attack on the player activates the trigger.",
+      "expGain": "Each trigger activation gives 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Extra Ap +1 for 2 turns",
+        "2": "Extra Ap +2 for 2 turns",
+        "3": "Extra Ap +2 for 3 turns",
+        "4": "Extra Ap +3 for 3 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "12",
+        "2": "11",
+        "3": "10",
+        "4": "9"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades and Spaceborn Ghosts class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Assault_Reflex"
+    },
+    "athletics": {
+      "wikiTitle": "Athletics",
+      "internalName": "athletics",
+      "perkIdNumeric": "000055",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each turn of running gives 1 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "150",
+        "2": "350",
+        "3": "600"
+      },
+      "effects": {
+        "0": "",
+        "1": "Sprint affects accuracy -35%",
+        "2": "Sprint affects accuracy -50%",
+        "3": "Sprint affects accuracy -65%",
+        "4": "Sprint affects accuracy -80%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Eclipse Blades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Athletics"
+    },
+    "axe_rage": {
+      "wikiTitle": "Axe Rage",
+      "internalName": "axe_rage",
+      "perkIdNumeric": "000187",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": "A wound inflicted in melee activates the trigger.",
+      "expGain": "Each trigger activation gives 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Extra Strikes +3 for 3 turns",
+        "2": "Extra Strikes +3 for 4 turns",
+        "3": "Extra Strikes +3 for 5 turns",
+        "4": "Extra Strikes +3 for 6 turns"
+      },
+      "cost": "25",
+      "cooldown": {
+        "1": "7",
+        "2": "6",
+        "3": "5",
+        "4": "4"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Terror Pack class. When active Axes, Clubs and Knives get three extra strikes.",
+      "source": "https://quasimorph.wiki.gg/wiki/Axe_Rage"
+    },
+    "berserkgang": {
+      "wikiTitle": "Berserkgang",
+      "internalName": "berserkgang",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": "Getting a damaging wound activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Regen +4 / Pain Regeneration +3 / for 6 turns",
+        "2": "Regen +6 / Pain Regeneration +4 / for 6 turns",
+        "3": "Regen +8 / Pain Regeneration +5 / for 6 turns",
+        "4": "Regen +10 / Pain Regeneration +6 / for 6 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "14",
+        "2": "12",
+        "3": "10",
+        "4": "8"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Scouts of Hades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Berserkgang"
+    },
+    "blind_fury": {
+      "wikiTitle": "Blind Fury",
+      "internalName": "blind_fury",
+      "perkIdNumeric": "000031",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": "A successful attack on the player activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "All damage +55% for 3 turns",
+        "2": "All damage +60% for 4 turns",
+        "3": "All damage +65% for 5 turns",
+        "4": "All damage +70% for 6 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "9"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Scouts of Hades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Blind_Fury"
+    },
+    "blind_shot": {
+      "wikiTitle": "Ghost Killer",
+      "internalName": "blind_shot",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": "Killing activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Radius 3 / Chance of enemy panic 30% / Enemies become panicking",
+        "2": "Radius 3 / Chance of enemy panic 40% / Enemies become panicking",
+        "3": "Radius 4 / Chance of enemy panic 40% / Enemies become panicking",
+        "4": "Radius 4 / Chance of enemy panic 50% / Enemies become panicking"
+      },
+      "cost": "100",
+      "cooldown": {
+        "1": "20"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Angels of Spades class. Killing enemies with Marksman rifles activates the perk. Panicking causes enemies to run away instead of targeting the player.",
+      "source": "https://quasimorph.wiki.gg/wiki/Ghost_Killer"
+    },
+    "bodybuilding": {
+      "wikiTitle": "Bodybuilding",
+      "internalName": "bodybuilding",
+      "perkIdNumeric": "000035",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Co.B.R.A."
+      ],
+      "perkTrigger": null,
+      "expGain": "A successful attack on the player grants 1 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Health +20",
+        "2": "Health +40",
+        "3": "Health +60",
+        "4": "Health +80"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Co.B.R.A. class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Bodybuilding"
+    },
+    "cannibalism": {
+      "wikiTitle": "Cannibalism",
+      "internalName": "cannibalism",
+      "perkIdNumeric": "000063",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": "Eating human meat activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "All damage +45% for 3 turns",
+        "2": "All damage +50% for 4 turns",
+        "3": "All damage +55% for 5 turns",
+        "4": "All damage +60% for 6 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "15"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Eclipse Blades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Cannibalism"
+    },
+    "carnage": {
+      "wikiTitle": "Carnage",
+      "internalName": "carnage",
+      "perkIdNumeric": "000067",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": "A wound inflicted in melee activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Chance to Get AP Back 70% for 2 turns",
+        "2": "Chance to Get AP Back 85% for 2 turns",
+        "3": "Chance to Get AP Back 85% for 3 turns",
+        "4": "Chance to Get AP Back 100% for 3 turns"
+      },
+      "cost": "120",
+      "cooldown": {
+        "1": "20"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Eclipse Blades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Carnage"
+    },
+    "cauterize": {
+      "wikiTitle": "Cauterize",
+      "internalName": "cauterize",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": "Receiving combustion activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Burning Immunity for 3 turns / Regen +6 for 3 turns",
+        "2": "Burning Immunity for 3 turns / Regen +8 for 3 turns",
+        "3": "Burning Immunity for 4 turns / Regen +8 for 4 turns",
+        "4": "Burning Immunity for 4 turns / Regen +10 for 4 turns"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "7",
+        "2": "6",
+        "3": "5",
+        "4": "4"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Phoenix Brigade class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Cauterize"
+    },
+    "cautious": {
+      "wikiTitle": "Caution",
+      "internalName": "cautious",
+      "perkIdNumeric": "000127",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": "Revealing a hidden enemy activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Crit. chance +30% / Crit. damage +50% / for 5 turns",
+        "2": "Crit. chance +35% / Crit. damage +60% / for 6 turns",
+        "3": "Crit. chance +45% / Crit. damage +70% / for 7 turns",
+        "4": "Crit. chance +50% / Crit. damage +80% / for 8 turns"
+      },
+      "cost": "120",
+      "cooldown": {
+        "1": "22",
+        "2": "20",
+        "3": "18",
+        "4": "16"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tunnel Rats class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Caution"
+    },
+    "battle_concentration": {
+      "wikiTitle": "Combat Focus",
+      "internalName": "battle_concentration",
+      "perkIdNumeric": "000027",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": "Attacks on the player (whether hit or not) activate the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Dodge chance +50% for 3 turns",
+        "2": "Dodge chance +55% for 3 turns",
+        "3": "Dodge chance +55% for 4 turns",
+        "4": "Dodge chance +60% for 4 turns"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "9",
+        "2": "8",
+        "3": "7",
+        "4": "6"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tongkong class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Combat_Focus"
+    },
+    "battle_physicist": {
+      "wikiTitle": "Combat Physicist",
+      "internalName": "battle_physicist",
+      "perkIdNumeric": "000107",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each energy weapon disassembly grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "200",
+        "3": "300"
+      },
+      "effects": {
+        "1": "Consume No Battery Chance 20%",
+        "2": "Consume No Battery Chance 25%",
+        "3": "Consume No Battery Chance 30%",
+        "4": "Consume No Battery Chance 35%"
+      },
+      "cost": "50",
+      "cooldown": {
+        "1": "30"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Phoenix Brigade class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Combat_Physicist"
+    },
+    "reaction_training": {
+      "wikiTitle": "Combat Reflexes",
+      "internalName": "reaction_training",
+      "perkIdNumeric": "000059",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": null,
+      "expGain": "When an enemy misses the character, gain 4 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Dodge chance +10%",
+        "2": "Dodge chance +14%",
+        "3": "Dodge chance +18%",
+        "4": "Dodge chance +22%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Eclipse Blades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Combat_Reflexes"
+    },
+    "cqc_specialist": {
+      "wikiTitle": "CQC-Specialist",
+      "internalName": "cqc_specialist",
+      "perkIdNumeric": "000023",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapong grants 2 XP / SMG, Shotgun, Assault Rifle",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Scatter -25% / Shooting accuracy +10%",
+        "2": "Scatter -30% / Shooting accuracy +15%",
+        "3": "Scatter -35% / Shooting accuracy +20%",
+        "4": "Scatter -40% / Shooting accuracy +25%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/CQC-Specialist"
+    },
+    "devastation_tactic": {
+      "wikiTitle": "Devastation Tactic",
+      "internalName": "devastation_tactic",
+      "perkIdNumeric": "000123",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Martian Mech Inf"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit with 12.7 ammo grants 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Chance of 12.7 ammo explosion 30%",
+        "2": "Chance of 12.7 ammo explosion 35%",
+        "3": "Chance of 12.7 ammo explosion 45%",
+        "4": "Chance of 12.7 ammo explosion 50%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Martian Mech Inf class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Devastation_Tactic"
+    },
+    "dirty_shot": {
+      "wikiTitle": "Dirty Shot",
+      "internalName": "dirty_shot",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": "A critical hit activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Stun duration 1 turns / Number of enemies 1",
+        "2": "Stun duration 1 turns / Number of enemies 2",
+        "3": "Stun duration 2 turns / Number of enemies 2",
+        "4": "Stun duration 2 turns / Number of enemies 3"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "6"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tunnel Rats class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Dirty_Shot"
+    },
+    "duty_shift": {
+      "wikiTitle": "Duty Shift",
+      "internalName": "duty_shift",
+      "perkIdNumeric": "000159",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": "Using activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Resist all +45% for 3 turns",
+        "2": "Resist all +45% for 4 turns",
+        "3": "Resist all +45% for 5 turns",
+        "4": "Resist all +45% for 6 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "22",
+        "2": "18",
+        "3": "14",
+        "4": "10"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Valkyrie Squad class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Duty_Shift"
+    },
+    "enemy_anatomy": {
+      "wikiTitle": "Enemy Anatomy",
+      "internalName": "enemy_anatomy",
+      "perkIdNumeric": "000099",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each physical wound inflicted grants 4 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Physical Wound Damage +3",
+        "2": "Physical Wound Damage +4",
+        "3": "Physical Wound Damage +5",
+        "4": "Physical Wound Damage +6"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Angels of Spades class. It gives extra damage over time on inflicted Blunt Wounds, Pierce Wounds and Laceration.",
+      "source": "https://quasimorph.wiki.gg/wiki/Enemy_Anatomy"
+    },
+    "fear_and_hunger": {
+      "wikiTitle": "Fear and Hunger",
+      "internalName": "fear_and_hunger",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each time you take damage from starvation grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Melee Damage/100 kcal Spent +3%",
+        "2": "Melee Damage/100 kcal Spent +4%",
+        "3": "Melee Damage/100 kcal Spent +5%",
+        "4": "Melee Damage/100 kcal Spent +6%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Terror Pack class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Fear_and_Hunger"
+    },
+    "fire_transfer": {
+      "wikiTitle": "Fire Transfer",
+      "internalName": "fire_transfer",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": "Killing activates the trigger.",
+      "expGain": "Each trigger activation gives 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Crit. chance +50% / SMG, Shotgun, Assault Rifle",
+        "2": "Crit. chance +55% / SMG, Shotgun, Assault Rifle",
+        "3": "Crit. chance +60% / SMG, Shotgun, Assault Rifle",
+        "4": "Crit. chance +65% / SMG, Shotgun, Assault Rifle"
+      },
+      "cost": "10",
+      "cooldown": {
+        "1": "5",
+        "2": "4",
+        "3": "3",
+        "4": "2"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Fire_Transfer"
+    },
+    "first_aid": {
+      "wikiTitle": "First Aid",
+      "internalName": "first_aid",
+      "perkIdNumeric": "000151",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each stabilized wound grants 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Heals wound +25%",
+        "2": "Heals wound +30%",
+        "3": "Heals wound +35%",
+        "4": "Heals wound +40%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Valkyrie Squad class. Increases wound chance healing for organic wounds.",
+      "source": "https://quasimorph.wiki.gg/wiki/First_Aid"
+    },
+    "revealing_flame": {
+      "wikiTitle": "Flame In The Dark",
+      "internalName": "revealing_flame",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": "Setting fire to an enemy activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Detection Radius +4 for 8 turns / Detects Enemies for 8 turns",
+        "2": "Detection Radius +5 for 8 turns / Detects Enemies for 8 turns",
+        "3": "Detection Radius +6 for 8 turns / Detects Enemies for 8 turns",
+        "4": "Detection Radius +7 for 8 turns / Detects Enemies for 8 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "12"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Phoenix Brigade class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Flame_In_The_Dark"
+    },
+    "gear_maintenance": {
+      "wikiTitle": "Gear Maintenance",
+      "internalName": "gear_maintenance",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each physical hit reduced by armor grants 2 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Physical Resistances +15% / Armor Durability +15%",
+        "2": "Physical Resistances +20% / Armor Durability +30%",
+        "3": "Physical Resistances +25% / Armor Durability +45%",
+        "4": "Physical Resistances +30% / Armor Durability +60%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Gear_Maintenance"
+    },
+    "grenadier": {
+      "wikiTitle": "Grenadier",
+      "internalName": "grenadier",
+      "perkIdNumeric": "000087",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each grenade throw or grenade launcher shot grants 25 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Explosion damage +25%",
+        "2": "Explosion damage +35%",
+        "3": "Explosion damage +45%",
+        "4": "Explosion damage +55%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tifton's Elite class. Also affects Mines.",
+      "source": "https://quasimorph.wiki.gg/wiki/Grenadier"
+    },
+    "piersing_burst": {
+      "wikiTitle": "Heavy Fire",
+      "internalName": "piersing_burst",
+      "perkIdNumeric": "000155",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Pierce chance +30%",
+        "2": "Pierce chance +40%",
+        "3": "Pierce chance +50%",
+        "4": "Pierce chance +60%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tongkong class. Adds a bonus Pierce chance when using SMGs.",
+      "source": "https://quasimorph.wiki.gg/wiki/Heavy_Fire"
+    },
+    "heavy_weaponary": {
+      "wikiTitle": "Heavy Weapons",
+      "internalName": "heavy_weaponary",
+      "perkIdNumeric": "000079",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP. / Assault Rifle, Machine Gun, Minigun, Grenade Launcher, Rocket Launcher",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Scatter -25% / Shooting accuracy +10%",
+        "2": "Scatter -30% / Shooting accuracy +15%",
+        "3": "Scatter -35% / Shooting accuracy +20%",
+        "4": "Scatter -40% / Shooting accuracy +25%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tifton's Elite class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Heavy_Weapons"
+    },
+    "insanity": {
+      "wikiTitle": "Insanity",
+      "internalName": "insanity",
+      "perkIdNumeric": "000183",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each change of quasimorphosis stages granst 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Q-morphosis affects the clone 30%",
+        "2": "Q-morphosis affects the clone 35%",
+        "3": "Q-morphosis affects the clone 40%",
+        "4": "Q-morphosis affects the clone 45%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Terror Pack class. It allows player to benefit from quasimorphosis buffs similar to quasimorphic entities.",
+      "source": "https://quasimorph.wiki.gg/wiki/Insanity"
+    },
+    "cold_weapon_wielding": {
+      "wikiTitle": "Knife Fight",
+      "internalName": "cold_weapon_wielding",
+      "perkIdNumeric": "000051",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit from a melee weapon gives 5 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Strike Accuracy +15%",
+        "2": "Strike Accuracy +20%",
+        "3": "Strike Accuracy +25%",
+        "4": "Strike Accuracy +30%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Eclipse Blades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Knife_Fight"
+    },
+    "last_bullet": {
+      "wikiTitle": "Last Bullet",
+      "internalName": "last_bullet",
+      "perkIdNumeric": "000075",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": "Firing the last round will activate the trigger",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "All Damage +50% for 2 turns",
+        "2": "All Damage +55% for 3 turns",
+        "3": "All Damage +60% for 4 turns",
+        "4": "All Damage +65% for 5 turns"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "8"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tongkong class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Last_Bullet"
+    },
+    "lightweight_gear": {
+      "wikiTitle": "Lightweight Gear",
+      "internalName": "lightweight_gear",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each 10 units of weight grants 1 XP when moving in stealth mode.",
+      "expNeed": {
+        "1": "150",
+        "2": "300",
+        "3": "500"
+      },
+      "effects": {
+        "1": "Equipment weight -25%",
+        "2": "Equipment weight -35%",
+        "3": "Equipment weight -45%",
+        "4": "Equipment weight -55%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Spaceborn Ghosts class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Lightweight_Gear"
+    },
+    "lizard": {
+      "wikiTitle": "Lizard",
+      "internalName": "lizard",
+      "perkIdNumeric": "000103",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": null,
+      "expGain": "A successful attack on the player grants 5 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Max pain threshold +30% / Pain Regeneration +1",
+        "2": "Max pain threshold +40% / Pain Regeneration +1",
+        "3": "Max pain threshold +40% / Pain Regeneration +2",
+        "4": "Max pain threshold +50% / Pain Regeneration +2"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tongkong class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Lizard"
+    },
+    "marauder": {
+      "wikiTitle": "Marauder",
+      "internalName": "marauder",
+      "perkIdNumeric": "000135",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each looting of a corpse gives 1 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Loot from Corpses +30% / Loot from Containers +30%",
+        "2": "Loot from Corpses +60% / Loot from Containers +60%",
+        "3": "Loot from Corpses +90% / Loot from Containers +90%",
+        "4": "Loot from Corpses +120% / Loot from Containers +120%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tunnel Rats class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Marauder"
+    },
+    "masochism": {
+      "wikiTitle": "Masochism",
+      "internalName": "masochism",
+      "perkIdNumeric": "000179",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": "Exceeding the pain threshold activates the trigger.",
+      "expGain": "Each trigger activation gives 25 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Extra AP +2 for 3 turns",
+        "2": "Extra AP +2 for 4 turns",
+        "3": "Extra AP +2 for 4 turns",
+        "4": "Extra AP +2 for 5 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "20",
+        "2": "16",
+        "3": "12",
+        "4": "8"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Terror Pack class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Masochism"
+    },
+    "medicus": {
+      "wikiTitle": "Medicus",
+      "internalName": "medicus",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each item created with the Medical Fabricator grants 1 XP per 10 item cost.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Medical Recipes<ul><li>Medical Glue</li></ul>",
+        "2": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li></ul>",
+        "3": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li><li>Adrenalin Military</li><li>First Aid Kit</li></ul>",
+        "4": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li><li>Adrenalin Military</li><li>First Aid Kit</li><li>Nanostim</li><li>Dr. Jones</li></ul>"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Valkyrie Squad class. Unlocks new medical recipes in the Medical Machine",
+      "source": "https://quasimorph.wiki.gg/wiki/Medicus"
+    },
+    "muffled": {
+      "wikiTitle": "Muffled",
+      "internalName": "muffled",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each kill of an unaware enemy grants 8 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "No Sound Chance 50%",
+        "2": "No Sound Chance 60%",
+        "3": "No Sound Chance 70%",
+        "4": "No Sound Chance 80%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Spaceborn Ghosts class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Muffled"
+    },
+    "reinforced_battery": {
+      "wikiTitle": "Overcharged Batteries",
+      "internalName": "reinforced_battery",
+      "perkIdNumeric": "000207",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit with energy ammo grants 2 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Battery damage +20%",
+        "2": "Battery damage +25%",
+        "3": "Battery damage +30%",
+        "4": "Battery damage +35%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Phoenix Brigade class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Overcharged_Batteries"
+    },
+    "enhanced_heavy_ammo": {
+      "wikiTitle": "Pocket Artillery",
+      "internalName": "enhanced_heavy_ammo",
+      "perkIdNumeric": "000199",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit with 7.97 ammo grants 2 XP",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "7.97 Ammo Damage +20%",
+        "2": "7.97 Ammo Damage +25%",
+        "3": "7.97 Ammo Damage +30%",
+        "4": "7.97 Ammo Damage +35%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Angels of Spades class. Increase the amount of damage inflicted with 7.97 Bullets, 7.97 AP and 7.97 API.",
+      "source": "https://quasimorph.wiki.gg/wiki/Pocket_Artillery"
+    },
+    "possession": {
+      "wikiTitle": "Possession",
+      "internalName": "possession",
+      "perkIdNumeric": "000171",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each use of a Pact ability grants 25 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Pact cooldown 50% / Pact cost 20%",
+        "2": "Pact cooldown 60% / Pact cost 30%",
+        "3": "Pact cooldown 70% / Pact cost 40%",
+        "4": "Pact cooldown 80% / Pact cost 50%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Terror Pack class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Possession"
+    },
+    "precise_shot": {
+      "wikiTitle": "Precise Shot",
+      "internalName": "precise_shot",
+      "perkIdNumeric": "000163",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": "Skipping a turn in the stealth mode activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Ranged crit. chance +40% for 2 turns",
+        "2": "Ranged crit. chance +45% for 2 turns",
+        "3": "Ranged crit. chance +50% for 2 turns",
+        "4": "Ranged crit. chance +55% for 2 turns"
+      },
+      "cost": "10",
+      "cooldown": {
+        "1": "5",
+        "2": "4",
+        "3": "3",
+        "4": "2"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Angels of Spades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Precise_Shot"
+    },
+    "pressure_points": {
+      "wikiTitle": "Pressure Points",
+      "internalName": "pressure_points",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Pain mod. +50% / Enemy Add. AP Loss from Pain 0",
+        "2": "Pain mod. +70% / Enemy Add. AP Loss from Pain 0",
+        "3": "Pain mod. +90% / Enemy Add. AP Loss from Pain 0",
+        "4": "Pain mod. +90% / Enemy Add. AP Loss from Pain 1"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Valkyrie Squad class. Increased pain generated using Pistols, SMGs or Shotguns",
+      "source": "https://quasimorph.wiki.gg/wiki/Pressure_Points"
+    },
+    "pyromaniac": {
+      "wikiTitle": "Pyromaniac",
+      "internalName": "pyromaniac",
+      "perkIdNumeric": "000119",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": null,
+      "expGain": "Setting fire to an enemy grants 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Fire duration +2 turns / Burning time +2 AP / Burn chance +15%",
+        "2": "Fire duration +2 turns / Burning time +2 AP / Burn chance +25%",
+        "3": "Fire duration +4 turns / Burning time +2 AP / Burn chance +25%",
+        "4": "Fire duration +4 turns / Burning time +2 AP / Burn chance +35%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tongkong class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Pyromaniac"
+    },
+    "handmade_shotgun_ammo": {
+      "wikiTitle": "Reinforced Ammo",
+      "internalName": "handmade_shotgun_ammo",
+      "perkIdNumeric": "000143",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit with shotgun ammo grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Shotgun ammo damage +25%",
+        "2": "Shotgun ammo damage +30%",
+        "3": "Shotgun ammo damage +35%",
+        "4": "Shotgun ammo damage +40%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tunnel Rats class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Reinforced_Ammo"
+    },
+    "ritualism": {
+      "wikiTitle": "Ritualism",
+      "internalName": "ritualism",
+      "perkIdNumeric": "000175",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": "Eating Gavvakh activates the trigger.",
+      "expGain": "Each trigger activation gives 20 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Perk Cooldown 3 for 2 turns",
+        "2": "Perk Cooldown 3 for 3 turns",
+        "3": "Perk Cooldown 4 for 3 turns",
+        "4": "Perk Cooldown 4 for 4 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "18",
+        "2": "16",
+        "3": "14",
+        "4": "12"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Terror Pack class. It allows player to convert enemies into allies when player consume Gavvakh with small chance.",
+      "source": "https://quasimorph.wiki.gg/wiki/Ritualism"
+    },
+    "Scholar": {
+      "wikiTitle": "Scholar (Item)",
+      "internalName": "Scholar",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each item created with the Industrial Fabricator grantes 1 XP per item cost.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Engineering Recipes<ul><li>Helper</li></ul>",
+        "2": "Engineering Recipes:<ul><li>Helper</li><li>Reanimatron</li><li>Quasimorphosis Sensor</li></ul>",
+        "3": "Engineering Recipes:<ul><li>Helper</li><li>Reanimatron</li><li>Quasimorphosis Sensor</li><li>Dataminer</li><li>MG-359</li></ul>",
+        "4": "Engineering Recipes:<ul><li>Helper</li><li>Reanimatron</li><li>Quasimorphosis Sensor</li><li>Dataminer</li><li>MG-359</li><li>Combat AR</li><li>Security Drone</li></ul>"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Phoenix Brigade class. Unlocks new Engineering Recipes in the Fabricator.",
+      "source": "https://quasimorph.wiki.gg/wiki/Scholar_(Item)"
+    },
+    "selfhealing": {
+      "wikiTitle": "Self-healing",
+      "internalName": "selfhealing",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tifton's Elite",
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": "Getting hit in an organic body part activates the trigger.",
+      "expGain": "Each trigger activation gives 15 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Stabilizes Organic Wounds / Organic Wound Heal Chance +25% for 6 turns",
+        "2": "Stabilizes Organic Wounds / Organic Wound Heal Chance +30% for 6 turns",
+        "3": "Stabilizes Organic Wounds / Organic Wound Heal Chance +35% for 6 turns",
+        "4": "Stabilizes Organic Wounds / Organic Wound Heal Chance +40% for 6 turns"
+      },
+      "cost": "120",
+      "cooldown": {
+        "1": "25",
+        "2": "20",
+        "3": "15",
+        "4": "10"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tifton's Elite and Valkyrie Squad class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Self-healing"
+    },
+    "covermaster": {
+      "wikiTitle": "Shelters",
+      "internalName": "covermaster",
+      "perkIdNumeric": "000131",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": null,
+      "expGain": "When an enemy misses the character, gain 2 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Shot Block Chance in Cover +15% / Cover Protection Chance +15%",
+        "2": "Shot Block Chance in Cover +25% / Cover Protection Chance +25%",
+        "3": "Shot Block Chance in Cover +35% / Cover Protection Chance +35%",
+        "4": "Shot Block Chance in Cover +45% / Cover Protection Chance +45%"
+      },
+      "cost": "50",
+      "cooldown": {
+        "1": "30"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tunnel Rats class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Shelters"
+    },
+    "shielding": {
+      "wikiTitle": "Shielding",
+      "internalName": "shielding",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each elemental hit reduced by armor grants 4 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "resist +25%",
+        "2": "resist +30",
+        "3": "resist +35%",
+        "4": "resist +40%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Phoenix Brigade class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Shielding"
+    },
+    "shock_awe": {
+      "wikiTitle": "Shock and Awe",
+      "internalName": "shock_awe",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": "Damaging an enemy with an explosion activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Explosion Stun Chance +50% for 2 turns / Stun Duration 1",
+        "2": "Explosion Stun Chance +60% for 2 turns / Stun Duration 1",
+        "3": "Explosion Stun Chance +60% for 2 turns / Stun Duration 2",
+        "4": "Explosion Stun Chance +70% for 2 turns / Stun Duration 2"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "15"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tifton's Elite class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Shock_and_Awe"
+    },
+    "cheap_shot": {
+      "wikiTitle": "Sneaky Shot",
+      "internalName": "cheap_shot",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": "Each hit in stealth mode activates the trigger",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Crit. chance +25% for 6 turns",
+        "2": "Crit. chance +30% for 8 turns",
+        "3": "Crit. chance +35% for 10 turns",
+        "4": "Crit. chance +40% for 12 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "18",
+        "2": "16",
+        "3": "14",
+        "4": "12"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Spaceborn Ghosts class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Sneaky_Shot"
+    },
+    "sniper_training": {
+      "wikiTitle": "Sniper Training",
+      "internalName": "sniper_training",
+      "perkIdNumeric": "000047",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Marksman Accuracy +15% / Optical Sight Range +1 / Marksman Rifle",
+        "2": "Marksman Accuracy +20% / Optical Sight Range +1",
+        "3": "Marksman Accuracy +25% / Optical Sight Range +2",
+        "4": "Marksman Accuracy +30% / Optical Sight Range +2"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Angels of Spades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Sniper_Training"
+    },
+    "spray_and_pray": {
+      "wikiTitle": "Spray and Pray",
+      "internalName": "spray_and_pray",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": "Ammo dropping below 20% activates the trigger. / Machine Gun, Minigun",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Machinegun Damage +75% for 3 turns",
+        "2": "Machinegun Damage +75% for 3 turns",
+        "3": "Machinegun Damage +75% for 3 turns",
+        "4": "Machinegun Damage +75% for 3 turns"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "12",
+        "2": "10",
+        "3": "8",
+        "4": "6"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tifton's Elite class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Spray_and_Pray"
+    },
+    "stationary_defense": {
+      "wikiTitle": "Stationary Defense",
+      "internalName": "stationary_defense",
+      "perkIdNumeric": "000083",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": null,
+      "expGain": "Placing a deployable grants 50 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Deployable damage +25% / Deployable's health 25 / Placement Range +1",
+        "2": "Deployable damage +30% / Deployable's health 30 / Placement Range +1",
+        "3": "Deployable damage +35% / Deployable's health 35 / Placement Range +2",
+        "4": "Deployable damage +40% / Deployable's health 40 / Placement Range +2"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tifton's Elite class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Stationary_Defense"
+    },
+    "steel_without": {
+      "wikiTitle": "Steel Without",
+      "internalName": "steel_without",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Martian Mech Inf"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each wound stabilization of a robotic body part grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Augment Resistance Bonus +35% / Augment Resistance Penalty -50%",
+        "2": "Augment Resistance Bonus +40% / Augment Resistance Penalty -60%",
+        "3": "Augment Resistance Bonus +45% / Augment Resistance Penalty -70%",
+        "4": "Augment Resistance Bonus +50% / Augment Resistance Penalty -80%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Martian Mech Inf class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Steel_Without"
+    },
+    "therapist": {
+      "wikiTitle": "Therapist",
+      "internalName": "therapist",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": null,
+      "expGain": "Dealing damage that applies an effect grants 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Status Effectiveness +35%",
+        "2": "Status Effectiveness +50%",
+        "3": "Status Effectiveness +65%",
+        "4": "Status Effectiveness +80%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Valkyrja Squad class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Therapist"
+    },
+    "tomahawk": {
+      "wikiTitle": "Tomahawk",
+      "internalName": "tomahawk",
+      "perkIdNumeric": "000095",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Co.B.R.A."
+      ],
+      "perkTrigger": null,
+      "expGain": "Each melee weapon throw grants 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Throw Crit. Chance +30%",
+        "2": "Throw Crit. Chance +40%",
+        "3": "Throw Crit. Chance +50%",
+        "4": "Throw Crit. Chance +60%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Co.B.R.A. class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Tomahawk"
+    },
+    "military_training": {
+      "wikiTitle": "Training",
+      "internalName": "military_training",
+      "perkIdNumeric": "000019",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Every 10 units of weight give 1 XP when moving.",
+      "expNeed": {
+        "1": "200",
+        "2": "500",
+        "3": "800"
+      },
+      "effects": {
+        "1": "Calorie consumption -2",
+        "2": "Calorie consumption -3",
+        "3": "Calorie consumption -4",
+        "4": "Calorie consumption -5"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Training"
+    },
+    "vicious_symbiosis": {
+      "wikiTitle": "Vicious Symbiosis",
+      "internalName": "vicious_symbiosis",
+      "perkIdNumeric": "000111",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each time you get an addiction grants 5 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Damage per Addiction +9% / Resistance per Addiction +9%",
+        "2": "Damage per Addiction +12% / Resistance per Addiction +12%",
+        "3": "Damage per Addiction +15% / Resistance per Addiction +15%",
+        "4": "Damage per Addiction +18% / Resistance per Addiction +18%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tunnel Rats class.",
+      "source": "https://quasimorph.wiki.gg/wiki/Vicious_Symbiosis"
+    },
+    "war_crime": {
+      "wikiTitle": "War Crime",
+      "internalName": "war_crime",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": "Killing activates the trigger",
+      "expGain": "Each trigger activation gives 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Stun duration 1 turns / Number of enemies 3",
+        "2": "Stun duration 1 turns / Number of enemies 4",
+        "3": "Stun duration 1 turns / Number of enemies 5",
+        "4": "Stun duration 1 turns / Number of enemies 6"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "10"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Spaceborn Ghosts class.",
+      "source": "https://quasimorph.wiki.gg/wiki/War_Crime"
+    }
+  }
+}

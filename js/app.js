@@ -1,5 +1,5 @@
 import { parseSaveFile, downloadSave, getComponent } from "./parse.js";
-import { loadCatalogs, searchCatalog, displayName, mergeSpawnableFromSave, getSpawnableIds } from "./catalog.js";
+import { loadCatalogs, searchCatalog, displayName, mergeSpawnableFromSave, getSpawnableIds, matchesSearch } from "./catalog.js";
 import { indexItemsFromSave, getTemplateStats, createItemFromTemplates } from "./itemTemplates.js";
 import {
   getMercenaries,
@@ -43,7 +43,8 @@ import {
   findFreePos,
 } from "./cargo.js";
 import { fieldRow } from "./fields.js";
-import { loadPerkLibrary, loadPactLibrary, mergedTalentCatalog, mergedUltimateCatalog, setTalent, setUltimate, clearUltimate, pactLabel, pactMeta, getPactLibrary, perkHasExp, paramValueKey } from "./perkLibrary.js";
+import { loadPerkLibrary, loadPactLibrary, mergedTalentCatalog, mergedUltimateCatalog, setTalent, addTalent, setUltimate, clearUltimate, pactLabel, pactMeta, getPactLibrary, perkHasExp, paramValueKey, inferParamKind, paramTypeHint, applyParamValue, maxPerkExp, canPromotePerk, promotePerkToMaxRank, perkNextId } from "./perkLibrary.js";
+import { loadMercClasses, mercClassLabel, mercClassInfo, mercClassPerkLabels, classPerkInfo, classPerkSummary } from "./mercClasses.js";
 import {
   loadUnlockBaseline,
   getUnlockLists,
@@ -105,8 +106,9 @@ async function initCatalogs() {
     await loadUnlockBaseline();
     const talentN = await loadPerkLibrary();
     const pactN = await loadPactLibrary();
+    const classN = await loadMercClasses();
     state.catalogOk = true;
-    setStatus(`Catalogs ready: ${info.spawnableCount} items, ${talentN} talents, ${pactN} pacts. Open a save.`);
+    setStatus(`Catalogs ready: ${info.spawnableCount} items, ${talentN} talents, ${pactN} pacts, ${classN} classes. Open a save.`);
   } catch (e) {
     state.catalogOk = false;
     setStatus(`Catalog load failed (${e.message}). Serve this folder over HTTP, or continue — names may be missing.`, "warn");
@@ -218,10 +220,11 @@ function renderHome() {
     <div id="dropzone">Drop a <code>slot_*_session.dat</code> here, or use Open save…</div>
     <p class="muted">UTF-8 JSON with BOM. Scalars stay strings. Capacity is Width×Height (grow-only).</p>
     <ul class="muted">
-      <li>Mercs — stats, perks, copy kit to others, clear curse, finish training, heal wounds</li>
+      <li>Mercs — stats, perks (Talent / Rank / Passive / Ultimate hints), copy kit, clear curse, training, heal</li>
+      <li>Pacts — edit/remove the <em>current</em> ultimate here; unlock others by absorbing a skull in-game</li>
       <li>Cargo — filter, qty (Count may exceed Max), spawn / thin-spawn, recycle &amp; fridge autosort</li>
-      <li>Projects — delete equipment (≈10 slot cap), instant-finish, class mods, copy buffed merc</li>
-      <li>Unlocks — restore full unlocks from slot-2 baseline</li>
+      <li>Projects — delete equipment (≈10 slot cap), instant-finish all, class mods, copy buffed merc</li>
+      <li>Unlocks — restore full unlocks from late-game baseline</li>
     </ul>
   </div>`);
   main.appendChild(panel);
@@ -318,11 +321,10 @@ function renderMercDetail(m, all) {
     <h3>Health</h3>
     <div id="healthFields"></div>
     <h3>Pact / ultimate</h3>
-    <p class="doc">One pact ultimate per merc. Use <strong>Set / edit ultimate</strong> to replace it — that keeps <code>HasUltimate</code>, skull id, and the Ultimate perk in sync.</p>
+    <p class="doc"><strong>Reliable in this editor:</strong> edit parameters on the ultimate already on the merc, or <strong>Remove</strong> it (clears Ultimate perk + skull + <code>HasUltimate</code> — same outcome idea as the in-game <em>Breaking the Pact</em> item). <strong>To unlock a different pact properly:</strong> spawn/put the skull in inventory and <strong>absorb it in-game</strong>. Library Set/replace mainly keeps ids in sync for the <em>current</em> ultimate; it is not a full substitute for absorb (banes, charge, etc.).</p>
     <div id="pactFields"></div>
     <div id="ultPerks"></div>
     <h3>Class ranks</h3>
-    <p class="doc">PerkType <code>Rank</code> (rank_4, rank_5, …) comes from the mercenary class / Magnum class project.</p>
     <div id="rankPerks"></div>
     <h3>Talents (traits)</h3>
     <div id="talentPerks"></div>
@@ -335,7 +337,7 @@ function renderMercDetail(m, all) {
         <option value="BackpackStore">Backpack</option>
         <option value="VestStore">Vest</option>
       </select>
-      <input type="search" id="invItemQ" placeholder="Search item catalog…" style="min-width:12rem" />
+      <input type="search" id="invItemQ" placeholder="Search by display name or item id…" style="min-width:12rem" />
       <select id="invItemId" style="min-width:16rem"></select>
       <input type="number" id="invQty" value="1" min="1" style="width:5rem" title="Stack count" />
       <button type="button" id="btnAddInv" class="ok">Add stack</button>
@@ -355,6 +357,25 @@ function renderMercDetail(m, all) {
 
   const ident = box.querySelector("#identityFields");
   ident.appendChild(fieldRow(m, "State", { onChange: markDirty }));
+  if (m.MercClassId != null) {
+    const classInfo = mercClassInfo(m.MercClassId);
+    const row = el(`<div class="field-row"><label>MercClassId <abbr class="help" title="Class id from the save. Ranks and many passives/triggers come from this class.">?</abbr></label><div></div></div>`);
+    const span = document.createElement("code");
+    span.textContent = mercClassLabel(m.MercClassId);
+    row.lastChild.appendChild(span);
+    ident.appendChild(row);
+    const labels = mercClassPerkLabels(m.MercClassId);
+    if (labels.length) {
+      const tip = document.createElement("p");
+      tip.className = "doc muted";
+      tip.textContent = `Wiki class perks (${labels.length}): ${labels.join(", ")}`;
+      tip.title = classInfo?.perks
+        ?.map((p) => classPerkSummary(p.internalName || p.wikiTitle))
+        .filter(Boolean)
+        .join("\n\n") || "";
+      ident.appendChild(tip);
+    }
+  }
 
   const statBox = box.querySelector("#statFields");
   for (const f of STAT_FIELDS.filter((k) => k !== "HasUltimate")) {
@@ -379,25 +400,31 @@ function renderMercDetail(m, all) {
   }
   const skulls = [...skullSet].sort();
   const skullRow = el(`<div class="field-row"><label>UltimateSkullItemId <abbr class="help" title="Skull that grants the pact ultimate. Prefer Set ultimate below — it keeps skull + Ultimate perk in sync. Empty = none.">?</abbr></label></div>`);
+  const skullSearch = document.createElement("input");
+  skullSearch.type = "search";
+  skullSearch.placeholder = "Filter skull by display name or id…";
+  skullSearch.style.minWidth = "14rem";
+  skullSearch.style.marginRight = "0.4rem";
   const skullSel = document.createElement("select");
-  skullSel.innerHTML =
-    `<option value="">(none)</option>` +
-    skulls
-      .map((s) => {
-        const perkId = s.replace(/^skull_/, "");
-        const meta = pactMeta(perkId);
-        const label = meta?.displayName || displayName(s);
-        return `<option value="${s}">${label} (${s})</option>`;
-      })
-      .join("");
-  const curSkull = typeof cd.UltimateSkullItemId === "string" ? cd.UltimateSkullItemId : "";
-  if (curSkull && !skulls.includes(curSkull)) {
-    const o = document.createElement("option");
-    o.value = curSkull;
-    o.textContent = curSkull;
-    skullSel.appendChild(o);
+  function fillSkullOptions(filter) {
+    const prev = skullSel.value;
+    const curSkull = typeof cd.UltimateSkullItemId === "string" ? cd.UltimateSkullItemId : "";
+    const opts = [{ value: "", label: "(none)" }];
+    for (const s of skulls) {
+      const perkId = s.replace(/^skull_/, "");
+      const meta = pactMeta(perkId);
+      const label = meta?.displayName || displayName(s);
+      if (!matchesSearch(filter, s, perkId, label, meta?.wikiTitle)) continue;
+      opts.push({ value: s, label: `${label} (${s})` });
+    }
+    if (curSkull && !opts.some((o) => o.value === curSkull)) {
+      opts.push({ value: curSkull, label: curSkull });
+    }
+    skullSel.innerHTML = opts.map((o) => `<option value="${o.value}">${o.label}</option>`).join("");
+    skullSel.value = opts.some((o) => o.value === prev) ? prev : curSkull || "";
   }
-  skullSel.value = curSkull;
+  fillSkullOptions("");
+  skullSearch.oninput = () => fillSkullOptions(skullSearch.value);
   skullSel.onchange = () => {
     const skull = skullSel.value;
     if (!skull) {
@@ -411,31 +438,72 @@ function renderMercDetail(m, all) {
     markDirty();
     renderMercs();
   };
+  skullRow.appendChild(skullSearch);
   skullRow.appendChild(skullSel);
   pactBox.appendChild(skullRow);
 
   function paramEditor(param, onChange) {
+    const kind = inferParamKind(param);
     const key = paramValueKey(param);
-    if (param.ValType === "Boolean" || param[key] === "True" || param[key] === "False") {
+    if (kind === "Boolean") {
       const sel = document.createElement("select");
+      sel.title = paramTypeHint(param);
       sel.innerHTML = `<option value="True">True</option><option value="False">False</option>`;
-      sel.value = param[key] === "False" ? "False" : "True";
+      sel.value = param.BoolVal === "False" || param[key] === "False" ? "False" : "True";
       sel.onchange = () => {
-        param.BoolVal = sel.value;
-        param.ValType = "Boolean";
+        const r = applyParamValue(param, sel.value);
+        if (!r.ok) {
+          sel.classList.add("invalid");
+          return;
+        }
+        sel.classList.remove("invalid");
         onChange();
       };
       return sel;
     }
+    const wrap = document.createElement("span");
+    wrap.style.display = "inline-flex";
+    wrap.style.alignItems = "center";
+    wrap.style.gap = "0.35rem";
+    const badge = document.createElement("span");
+    badge.className = "badge";
+    badge.textContent = kind === "Float" ? "float" : "int";
+    badge.title = paramTypeHint(param);
     const input = document.createElement("input");
-    input.type = "number";
-    input.step = "any";
+    input.type = "text";
+    input.inputMode = kind === "Float" ? "decimal" : "numeric";
+    input.style.width = "7rem";
     input.value = param[key] ?? "";
-    input.onchange = () => {
-      param[key] = input.value;
+    input.title = paramTypeHint(param);
+    const err = document.createElement("span");
+    err.className = "muted";
+    err.style.color = "#c44";
+    err.style.fontSize = "0.85em";
+    const sync = () => {
+      const r = applyParamValue(param, input.value);
+      if (!r.ok) {
+        input.classList.add("invalid");
+        err.textContent = r.message;
+        return false;
+      }
+      input.classList.remove("invalid");
+      err.textContent = "";
+      input.value = r.value;
       onChange();
+      return true;
     };
-    return input;
+    input.onchange = sync;
+    input.onblur = sync;
+    wrap.appendChild(badge);
+    wrap.appendChild(input);
+    wrap.appendChild(err);
+    return wrap;
+  }
+
+  function difficultyExpNote() {
+    const expMult = getDifficultyPreset(state.data)?.ExpMult;
+    if (expMult == null) return "";
+    return ` Difficulty <code>ExpMult</code> is <strong>${expMult}</strong> — it scales how much exp is needed to level perks (MaxExp in the save already reflects your run).`;
   }
 
   function renderPerkGroup(container, group) {
@@ -445,60 +513,77 @@ function renderMercDetail(m, all) {
       .filter(({ p }) => typeSet.has(p.PerkType));
     const isTalent = group.id === "Talent";
     const isUltimate = group.id === "Ultimate";
-    const isSingle = isTalent || isUltimate;
     const cat = isTalent
       ? mergedTalentCatalog(state.data)
       : isUltimate
         ? mergedUltimateCatalog(state.data)
         : new Map();
-    if (!isSingle) {
+    if (!isTalent && !isUltimate) {
       for (const t of group.types) {
         for (const [id, perk] of collectPerkCatalogByType(state.data, t)) cat.set(id, perk);
       }
     }
-    const setLabel = isTalent ? "Set talent" : isUltimate ? "Set / edit ultimate" : "Add";
+    const primaryLabel = isTalent ? "Set / replace" : isUltimate ? "Set / edit ultimate" : "Add";
     const wrap = el(`<div>
-      <p class="doc">${group.help}</p>
+      <p class="doc">${group.help}${group.id === "Rank" || group.id === "Other" ? difficultyExpNote() : ""}</p>
       <div class="toolbar">
+        <input type="search" data-perkq placeholder="Filter by display name or perk id…" style="min-width:14rem" />
         <select data-add></select>
         <button type="button" class="ok" data-addbtn title="${
           isTalent
-            ? "Replaces the merc's current talent with the selected one (one talent only)."
+            ? "Replace all Talent perks on this merc with the selected one."
             : isUltimate
-              ? "Replaces the merc's current pact ultimate and syncs the skull item (one ultimate only)."
+              ? "Sync the current ultimate + skull for editing. Prefer absorb in-game to unlock a new pact."
               : "Clone this perk onto the merc from another copy in this save."
-        }">${setLabel}</button>
+        }">${primaryLabel}</button>
+        ${
+          isTalent
+            ? `<button type="button" data-stack title="Keep existing talents and add this one too. Game UI normally allows one; stacking often still works.">Add (stack)</button>`
+            : ""
+        }
       </div>
       <div data-list></div>
     </div>`);
     const sel = wrap.querySelector("[data-add]");
-    const currentId = isSingle ? rows[0]?.p?.PerkId : null;
-    for (const id of [...cat.keys()].sort((a, b) => {
-      if (isUltimate) return pactLabel(a).localeCompare(pactLabel(b)) || a.localeCompare(b);
-      return a.localeCompare(b);
-    })) {
-      const opt = document.createElement("option");
-      opt.value = id;
-      if (isUltimate) {
-        opt.textContent = id === currentId ? `${pactLabel(id)} (current)` : pactLabel(id);
-        if (id === currentId) opt.selected = true;
-      } else if (isTalent) {
-        opt.textContent = id === currentId ? `${id} (current)` : id;
-        if (id === currentId) opt.selected = true;
-      } else {
-        const owned = (cd.Perks || []).some((p) => p.PerkId === id);
-        opt.textContent = owned ? `${id} (on merc)` : id;
+    const perkQ = wrap.querySelector("[data-perkq]");
+    const currentUltimateId = isUltimate ? rows[0]?.p?.PerkId : null;
+
+    function fillPerkOptions(filter) {
+      const prev = sel.value;
+      const ids = [...cat.keys()].sort((a, b) => {
+        if (isUltimate) return pactLabel(a).localeCompare(pactLabel(b)) || a.localeCompare(b);
+        return a.localeCompare(b);
+      });
+      sel.innerHTML = "";
+      for (const id of ids) {
+        const meta = isUltimate ? pactMeta(id) : null;
+        const label = isUltimate ? pactLabel(id) : id;
+        if (!matchesSearch(filter, id, label, meta?.displayName, meta?.wikiTitle, meta?.skullId)) continue;
+        const opt = document.createElement("option");
+        opt.value = id;
+        if (isUltimate) {
+          opt.textContent = id === currentUltimateId ? `${label} (current)` : label;
+        } else {
+          const owned = (cd.Perks || []).some((p) => p.PerkId === id);
+          opt.textContent = owned ? `${label} (on merc)` : label;
+        }
+        sel.appendChild(opt);
       }
-      sel.appendChild(opt);
+      if (prev && [...sel.options].some((o) => o.value === prev)) sel.value = prev;
+      else if (currentUltimateId && [...sel.options].some((o) => o.value === currentUltimateId)) {
+        sel.value = currentUltimateId;
+      }
     }
+    fillPerkOptions("");
+    perkQ.oninput = () => fillPerkOptions(perkQ.value);
     wrap.querySelector("[data-addbtn]").onclick = () => {
       const id = sel.value;
       if (isTalent) {
         if (!setTalent(m, id, state.data)) return;
-        setStatus(`Talent set to ${id}`);
+        setStatus(`Talent set to ${id} (replaced other talents)`);
       } else if (isUltimate) {
         if (!setUltimate(m, id, state.data)) return;
-        setStatus(`Ultimate set to ${pactLabel(id)}`);
+        setStatus(`Ultimate set to ${pactLabel(id)} — prefer absorb in-game for a brand-new pact`);
       } else {
         const tmpl = cat.get(id);
         if (!tmpl) return;
@@ -508,21 +593,37 @@ function renderMercDetail(m, all) {
       markDirty();
       renderMercs();
     };
+    wrap.querySelector("[data-stack]")?.addEventListener("click", () => {
+      const id = sel.value;
+      if (!addTalent(m, id, state.data)) {
+        setStatus(`${id} is already on this merc`);
+        return;
+      }
+      markDirty();
+      setStatus(`Stacked talent ${id}`);
+      renderMercs();
+    });
 
     const list = wrap.querySelector("[data-list]");
     if (!rows.length) {
-      list.innerHTML = `<div class="empty-state">None on this merc. Use ${setLabel}.</div>`;
+      list.innerHTML = `<div class="empty-state">None on this merc. Use ${primaryLabel}${isTalent ? " or Add (stack)" : ""}.</div>`;
     } else {
       for (const { p, i } of rows) {
         const meta = isUltimate ? pactMeta(p.PerkId) : null;
-        const title = isUltimate ? pactLabel(p.PerkId) : p.PerkId;
+        const classPerk = !isUltimate ? classPerkInfo(p.PerkId) : null;
+        const title = isUltimate ? pactLabel(p.PerkId) : classPerk ? `${classPerk.wikiTitle} (${p.PerkId})` : p.PerkId;
+        const wikiBlurb = meta?.effect || classPerkSummary(p.PerkId) || "";
         const card = el(`<div class="panel" style="margin:0.5rem 0">
           <div class="toolbar">
-            <strong title="${(meta?.effect || "").replace(/"/g, "&quot;")}">${title}</strong>
+            <strong title="${wikiBlurb.replace(/"/g, "&quot;")}">${title}</strong>
             <span class="badge">${p.PerkType}</span>
-            <button type="button" class="danger" data-del>Remove</button>
+            <button type="button" class="danger" data-del title="${
+              isUltimate
+                ? "Clears Ultimate perk + skull + HasUltimate (like Breaking the Pact)."
+                : "Remove this perk from the merc."
+            }">Remove</button>
           </div>
-          ${meta?.effect ? `<p class="doc muted">${meta.effect}</p>` : ""}
+          ${wikiBlurb ? `<p class="doc muted">${wikiBlurb}</p>` : ""}
           <div data-params></div>
         </div>`);
         const toolbar = card.querySelector(".toolbar");
@@ -535,7 +636,7 @@ function renderMercDetail(m, all) {
           exp.type = "number";
           exp.style.width = "5rem";
           exp.value = p.CurrentExp || "0";
-          exp.title = `CurrentExp / MaxExp ${p.MaxExp}${p.NextPerkId && typeof p.NextPerkId === "string" ? ` → ${p.NextPerkId}` : ""}`;
+          exp.title = `CurrentExp / MaxExp ${p.MaxExp}${perkNextId(p) ? ` → ${perkNextId(p)}` : ""}. MaxExp is already shaped by difficulty ExpMult.`;
           exp.onchange = () => {
             p.CurrentExp = exp.value;
             markDirty();
@@ -543,9 +644,45 @@ function renderMercDetail(m, all) {
           const maxHint = document.createElement("span");
           maxHint.className = "muted";
           maxHint.textContent = `/ ${p.MaxExp}`;
+          const btnMaxExp = document.createElement("button");
+          btnMaxExp.type = "button";
+          btnMaxExp.className = "ok";
+          btnMaxExp.textContent = "Max exp";
+          btnMaxExp.title = "Set CurrentExp = MaxExp for this perk (does not promote to the next rank by itself).";
+          btnMaxExp.onclick = () => {
+            if (!maxPerkExp(p)) return;
+            markDirty();
+            setStatus(`Maxed exp on ${p.PerkId} (${p.CurrentExp}/${p.MaxExp})`);
+            renderMercs();
+          };
           toolbar.insertBefore(expLabel, delBtn);
           toolbar.insertBefore(exp, delBtn);
           toolbar.insertBefore(maxHint, delBtn);
+          toolbar.insertBefore(btnMaxExp, delBtn);
+        } else if (p.PerkType === "Talent") {
+          const tip = document.createElement("span");
+          tip.className = "muted";
+          tip.textContent = "no exp (Talent)";
+          tip.title = "Talent perks are not leveling chains.";
+          toolbar.insertBefore(tip, delBtn);
+        }
+        if (canPromotePerk(p, state.data)) {
+          const btnMaxRank = document.createElement("button");
+          btnMaxRank.type = "button";
+          btnMaxRank.className = "primary";
+          btnMaxRank.textContent = p.PerkType === "Rank" ? "Max rank" : "Max tier";
+          btnMaxRank.title = `Promote along NextPerkId using templates from this save (e.g. ${p.PerkId} → … → highest available).`;
+          btnMaxRank.onclick = () => {
+            const next = promotePerkToMaxRank(m, i, state.data);
+            if (!next) {
+              setStatus(`Cannot promote ${p.PerkId} — next tier not found in this save`);
+              return;
+            }
+            markDirty();
+            setStatus(`Promoted ${p.PerkId} → ${next.PerkId}`);
+            renderMercs();
+          };
+          toolbar.insertBefore(btnMaxRank, delBtn);
         }
         const paramsBox = card.querySelector("[data-params]");
         if (!(p.Parameters || []).length && !(p.AIParameters || []).length) {
@@ -555,13 +692,15 @@ function renderMercDetail(m, all) {
           const tb = table.querySelector("tbody");
           for (const param of p.Parameters || []) {
             const tr = document.createElement("tr");
-            tr.innerHTML = `<td><code>${param.Name}</code></td><td>${param.ValType}</td><td></td>`;
+            const kind = inferParamKind(param);
+            tr.innerHTML = `<td><code title="${paramTypeHint(param).replace(/"/g, "&quot;")}">${param.Name}</code></td><td>${kind}</td><td></td>`;
             tr.lastChild.appendChild(paramEditor(param, markDirty));
             tb.appendChild(tr);
           }
           for (const param of p.AIParameters || []) {
             const tr = document.createElement("tr");
-            tr.innerHTML = `<td><code>${param.Name}</code> <span class="badge">AI</span></td><td>${param.ValType}</td><td></td>`;
+            const kind = inferParamKind(param);
+            tr.innerHTML = `<td><code title="${paramTypeHint(param).replace(/"/g, "&quot;")}">${param.Name}</code> <span class="badge">AI</span></td><td>${kind}</td><td></td>`;
             tr.lastChild.appendChild(paramEditor(param, markDirty));
             tb.appendChild(tr);
           }

@@ -1,8 +1,10 @@
 /**
- * Talent + pact (ultimate) libraries. One talent and one ultimate per merc.
+ * Talent + pact (ultimate) libraries.
+ * Talent: character-tied, not a leveling chain; stacking often works.
+ * Ultimate: one pact; prefer absorb/break in-game for full flow.
  */
 import { deepClone } from "./parse.js";
-import { collectPerkCatalogByType, setUltimateSkull } from "./merc.js";
+import { collectPerkCatalogByType, setUltimateSkull, getMercenaries, listPerks } from "./merc.js";
 
 /** @type {Map<string, object>} */
 const talentLib = new Map();
@@ -130,12 +132,22 @@ export function mergedUltimateCatalog(data) {
   return map;
 }
 
-/** Replace any existing Talent perk(s) with the chosen one (game allows a single talent). */
+/** Replace any existing Talent perk(s) with the chosen one. */
 export function setTalent(merc, perkId, data = null) {
   const tmpl = talentTemplate(perkId) || (data ? collectPerkCatalogByType(data, "Talent").get(perkId) : null);
   if (!tmpl || !merc?.CreatureData) return false;
   const kept = (merc.CreatureData.Perks || []).filter((p) => p.PerkType !== "Talent");
   merc.CreatureData.Perks = [...kept, deepClone(tmpl)];
+  return true;
+}
+
+/** Stack another Talent (game UI normally allows one; multiple in the save often still work). */
+export function addTalent(merc, perkId, data = null) {
+  const tmpl = talentTemplate(perkId) || (data ? collectPerkCatalogByType(data, "Talent").get(perkId) : null);
+  if (!tmpl || !merc?.CreatureData) return false;
+  if (!merc.CreatureData.Perks) merc.CreatureData.Perks = [];
+  if (merc.CreatureData.Perks.some((p) => p.PerkId === perkId)) return false;
+  merc.CreatureData.Perks.push(deepClone(tmpl));
   return true;
 }
 
@@ -173,13 +185,136 @@ export function clearUltimate(merc, data = null) {
 }
 
 export function paramValueKey(param) {
-  if (param.ValType === "Float") return "FloatVal";
-  if (param.ValType === "Boolean") return "BoolVal";
+  const kind = inferParamKind(param);
+  if (kind === "Float") return "FloatVal";
+  if (kind === "Boolean") return "BoolVal";
   return "IntVal";
+}
+
+/** Infer Int / Float / Boolean from ValType and name prefix (I*, F*, B*). */
+export function inferParamKind(param) {
+  const name = String(param?.Name || "");
+  const vt = String(param?.ValType || "");
+  if (vt === "Boolean" || name.startsWith("B") || param?.BoolVal === "True" || param?.BoolVal === "False") {
+    return "Boolean";
+  }
+  if (vt === "Float" || name.startsWith("F") || param?.FloatVal != null) return "Float";
+  if (vt === "Int" || name.startsWith("I") || param?.IntVal != null) return "Int";
+  if (param?.FloatVal != null) return "Float";
+  if (param?.BoolVal != null) return "Boolean";
+  return "Int";
+}
+
+export function paramTypeHint(param) {
+  const kind = inferParamKind(param);
+  const name = param?.Name || "";
+  if (kind === "Int") return `${name}: Integer (IntVal) — whole number only`;
+  if (kind === "Float") return `${name}: Float (FloatVal) — numeric, e.g. 0.25 or -0.5`;
+  return `${name}: Boolean (True/False)`;
+}
+
+/**
+ * Validate and normalize a parameter value as a string for the save.
+ * @returns {{ ok: true, value: string, kind: string } | { ok: false, message: string, kind: string }}
+ */
+export function validateParamValue(param, raw) {
+  const kind = inferParamKind(param);
+  const s = String(raw ?? "").trim();
+  if (kind === "Boolean") {
+    if (s === "True" || s === "False") return { ok: true, value: s, kind };
+    return { ok: false, message: "Must be True or False", kind };
+  }
+  if (kind === "Int") {
+    if (!/^-?\d+$/.test(s)) {
+      return { ok: false, message: "Must be an integer (e.g. 2, -1)", kind };
+    }
+    return { ok: true, value: String(parseInt(s, 10)), kind };
+  }
+  // Float
+  if (s === "" || s === "." || s === "-" || s === "-.") {
+    return { ok: false, message: "Must be a number (float)", kind };
+  }
+  const n = Number(s);
+  if (!Number.isFinite(n)) {
+    return { ok: false, message: "Must be a number (float)", kind };
+  }
+  return { ok: true, value: s, kind };
+}
+
+export function applyParamValue(param, raw) {
+  const result = validateParamValue(param, raw);
+  if (!result.ok) return result;
+  const kind = result.kind;
+  param.ValType = kind === "Float" ? "Float" : kind === "Boolean" ? "Boolean" : "Int";
+  if (kind === "Boolean") {
+    param.BoolVal = result.value;
+    delete param.IntVal;
+    delete param.FloatVal;
+  } else if (kind === "Float") {
+    param.FloatVal = result.value;
+    delete param.IntVal;
+    delete param.BoolVal;
+  } else {
+    param.IntVal = result.value;
+    delete param.FloatVal;
+    delete param.BoolVal;
+  }
+  return result;
 }
 
 /** True when the perk uses CurrentExp toward MaxExp (leveling chain). */
 export function perkHasExp(p) {
   const max = parseInt(p?.MaxExp, 10);
   return Number.isFinite(max) && max > 0;
+}
+
+/** Set CurrentExp = MaxExp (does not auto-promote to NextPerkId). */
+export function maxPerkExp(p) {
+  if (!perkHasExp(p)) return false;
+  p.CurrentExp = String(p.MaxExp);
+  return true;
+}
+
+export function perkNextId(p) {
+  return typeof p?.NextPerkId === "string" && p.NextPerkId ? p.NextPerkId : null;
+}
+
+/** Follow NextPerkId using templates found in the open save; returns the highest available perk. */
+export function resolveMaxRankPerk(perk, data) {
+  const map = new Map();
+  if (data) {
+    for (const m of getMercenaries(data)) {
+      for (const p of listPerks(m)) {
+        if (p.PerkId && !map.has(p.PerkId)) map.set(p.PerkId, deepClone(p));
+      }
+    }
+  }
+  if (perk?.PerkId && !map.has(perk.PerkId)) map.set(perk.PerkId, deepClone(perk));
+
+  let cur = deepClone(perk);
+  const visited = new Set();
+  while (perkNextId(cur) && !visited.has(cur.PerkId)) {
+    visited.add(cur.PerkId);
+    const next = map.get(cur.NextPerkId);
+    if (!next) break;
+    cur = deepClone(next);
+  }
+  return cur;
+}
+
+export function canPromotePerk(perk, data) {
+  const maxed = resolveMaxRankPerk(perk, data);
+  return maxed?.PerkId && maxed.PerkId !== perk.PerkId;
+}
+
+/** Replace perk at index with the end of its NextPerkId chain (e.g. rank_4 → rank_5). */
+export function promotePerkToMaxRank(merc, perkIndex, data) {
+  const list = merc?.CreatureData?.Perks;
+  if (!Array.isArray(list) || perkIndex < 0 || perkIndex >= list.length) return null;
+  const current = list[perkIndex];
+  const maxed = resolveMaxRankPerk(current, data);
+  if (!maxed || maxed.PerkId === current.PerkId) return null;
+  // Preserve type if promoting within same family
+  list[perkIndex] = maxed;
+  return maxed;
 }

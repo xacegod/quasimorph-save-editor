@@ -1,0 +1,1497 @@
+{
+  "source": "https://quasimorph.wiki.gg/wiki/Mercenary_Classes",
+  "scrapedAt": "2026-08-12T10:38:57.363Z",
+  "note": "classIdGuess matches MercClassId. Perks enriched from individual wiki pages when available.",
+  "classes": [
+    {
+      "wikiTitle": "Scouts of Hades",
+      "classIdGuess": "scouts_of_hades",
+      "section": "starting",
+      "perks": [
+        {
+          "wikiTitle": "Assault Reflex",
+          "internalName": "assault_reflex",
+          "mainClass": "Trigger",
+          "perkTrigger": "Enemy missed attack on the player activates the trigger.",
+          "expGain": "Each trigger activation gives 5 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Extra Ap +1 for 2 turns",
+            "2": "Extra Ap +2 for 2 turns",
+            "3": "Extra Ap +2 for 3 turns",
+            "4": "Extra Ap +3 for 3 turns"
+          },
+          "cooldown": {
+            "1": "12",
+            "2": "11",
+            "3": "10",
+            "4": "9"
+          }
+        },
+        {
+          "wikiTitle": "Blind Fury",
+          "internalName": "blind_fury",
+          "mainClass": "Trigger",
+          "perkTrigger": "A successful attack on the player activates the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "All damage +55% for 3 turns",
+            "2": "All damage +60% for 4 turns",
+            "3": "All damage +65% for 5 turns",
+            "4": "All damage +70% for 6 turns"
+          },
+          "cooldown": {
+            "1": "9"
+          }
+        },
+        {
+          "wikiTitle": "CQC-Specialist",
+          "internalName": "cqc_specialist",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Shooting a weapong grants 2 XP / SMG, Shotgun, Assault Rifle",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Scatter -25% / Shooting accuracy +10%",
+            "2": "Scatter -30% / Shooting accuracy +15%",
+            "3": "Scatter -35% / Shooting accuracy +20%",
+            "4": "Scatter -40% / Shooting accuracy +25%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Fire Transfer",
+          "internalName": "fire_transfer",
+          "mainClass": "Trigger",
+          "perkTrigger": "Killing activates the trigger.",
+          "expGain": "Each trigger activation gives 2 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Crit. chance +50% / SMG, Shotgun, Assault Rifle",
+            "2": "Crit. chance +55% / SMG, Shotgun, Assault Rifle",
+            "3": "Crit. chance +60% / SMG, Shotgun, Assault Rifle",
+            "4": "Crit. chance +65% / SMG, Shotgun, Assault Rifle"
+          },
+          "cooldown": {
+            "1": "5",
+            "2": "4",
+            "3": "3",
+            "4": "2"
+          }
+        },
+        {
+          "wikiTitle": "Gear Maintenance",
+          "internalName": "gear_maintenance",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each physical hit reduced by armor grants 2 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Physical Resistances +15% / Armor Durability +15%",
+            "2": "Physical Resistances +20% / Armor Durability +30%",
+            "3": "Physical Resistances +25% / Armor Durability +45%",
+            "4": "Physical Resistances +30% / Armor Durability +60%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Training",
+          "internalName": "military_training",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Every 10 units of weight give 1 XP when moving.",
+          "expNeed": {
+            "1": "200",
+            "2": "500",
+            "3": "800"
+          },
+          "effects": {
+            "1": "Calorie consumption -2",
+            "2": "Calorie consumption -3",
+            "3": "Calorie consumption -4",
+            "4": "Calorie consumption -5"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        }
+      ]
+    },
+    {
+      "wikiTitle": "Eclipse Blades",
+      "classIdGuess": "eclipse_blades",
+      "section": "starting",
+      "perks": [
+        {
+          "wikiTitle": "Athletics",
+          "internalName": "athletics",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each turn of running gives 1 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "150",
+            "2": "350",
+            "3": "600"
+          },
+          "effects": {
+            "0": "",
+            "1": "Sprint affects accuracy -35%",
+            "2": "Sprint affects accuracy -50%",
+            "3": "Sprint affects accuracy -65%",
+            "4": "Sprint affects accuracy -80%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Berserkgang",
+          "internalName": "berserkgang",
+          "mainClass": "Trigger",
+          "perkTrigger": "Getting a damaging wound activates the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Regen +4 / Pain Regeneration +3 / for 6 turns",
+            "2": "Regen +6 / Pain Regeneration +4 / for 6 turns",
+            "3": "Regen +8 / Pain Regeneration +5 / for 6 turns",
+            "4": "Regen +10 / Pain Regeneration +6 / for 6 turns"
+          },
+          "cooldown": {
+            "1": "14",
+            "2": "12",
+            "3": "10",
+            "4": "8"
+          }
+        },
+        {
+          "wikiTitle": "Cannibalism",
+          "internalName": "cannibalism",
+          "mainClass": "Trigger",
+          "perkTrigger": "Eating human meat activates the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "All damage +45% for 3 turns",
+            "2": "All damage +50% for 4 turns",
+            "3": "All damage +55% for 5 turns",
+            "4": "All damage +60% for 6 turns"
+          },
+          "cooldown": {
+            "1": "15"
+          }
+        },
+        {
+          "wikiTitle": "Carnage",
+          "internalName": "carnage",
+          "mainClass": "Trigger",
+          "perkTrigger": "A wound inflicted in melee activates the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Chance to Get AP Back 70% for 2 turns",
+            "2": "Chance to Get AP Back 85% for 2 turns",
+            "3": "Chance to Get AP Back 85% for 3 turns",
+            "4": "Chance to Get AP Back 100% for 3 turns"
+          },
+          "cooldown": {
+            "1": "20"
+          }
+        },
+        {
+          "wikiTitle": "Combat Reflexes",
+          "internalName": "reaction_training",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "When an enemy misses the character, gain 4 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Dodge chance +10%",
+            "2": "Dodge chance +14%",
+            "3": "Dodge chance +18%",
+            "4": "Dodge chance +22%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Knife Fight",
+          "internalName": "cold_weapon_wielding",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each hit from a melee weapon gives 5 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Strike Accuracy +15%",
+            "2": "Strike Accuracy +20%",
+            "3": "Strike Accuracy +25%",
+            "4": "Strike Accuracy +30%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        }
+      ]
+    },
+    {
+      "wikiTitle": "Tifton's Elite",
+      "classIdGuess": "tiftons_elite",
+      "section": "unlockable",
+      "perks": [
+        {
+          "wikiTitle": "Grenadier",
+          "internalName": "grenadier",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each grenade throw or grenade launcher shot grants 25 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Explosion damage +25%",
+            "2": "Explosion damage +35%",
+            "3": "Explosion damage +45%",
+            "4": "Explosion damage +55%"
+          },
+          "cooldown": {}
+        },
+        {
+          "wikiTitle": "Heavy Weapons",
+          "internalName": "heavy_weaponary",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Shooting a weapon grants 2 XP. / Assault Rifle, Machine Gun, Minigun, Grenade Launcher, Rocket Launcher",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Scatter -25% / Shooting accuracy +10%",
+            "2": "Scatter -30% / Shooting accuracy +15%",
+            "3": "Scatter -35% / Shooting accuracy +20%",
+            "4": "Scatter -40% / Shooting accuracy +25%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Self-healing",
+          "internalName": "selfhealing",
+          "mainClass": "Trigger",
+          "perkTrigger": "Getting hit in an organic body part activates the trigger.",
+          "expGain": "Each trigger activation gives 15 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Stabilizes Organic Wounds / Organic Wound Heal Chance +25% for 6 turns",
+            "2": "Stabilizes Organic Wounds / Organic Wound Heal Chance +30% for 6 turns",
+            "3": "Stabilizes Organic Wounds / Organic Wound Heal Chance +35% for 6 turns",
+            "4": "Stabilizes Organic Wounds / Organic Wound Heal Chance +40% for 6 turns"
+          },
+          "cooldown": {
+            "1": "25",
+            "2": "20",
+            "3": "15",
+            "4": "10"
+          }
+        },
+        {
+          "wikiTitle": "Shock and Awe",
+          "internalName": "shock_awe",
+          "mainClass": "Trigger",
+          "perkTrigger": "Damaging an enemy with an explosion activates the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Explosion Stun Chance +50% for 2 turns / Stun Duration 1",
+            "2": "Explosion Stun Chance +60% for 2 turns / Stun Duration 1",
+            "3": "Explosion Stun Chance +60% for 2 turns / Stun Duration 2",
+            "4": "Explosion Stun Chance +70% for 2 turns / Stun Duration 2"
+          },
+          "cooldown": {
+            "1": "15"
+          }
+        },
+        {
+          "wikiTitle": "Spray and Pray",
+          "internalName": "spray_and_pray",
+          "mainClass": "Trigger",
+          "perkTrigger": "Ammo dropping below 20% activates the trigger. / Machine Gun, Minigun",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Machinegun Damage +75% for 3 turns",
+            "2": "Machinegun Damage +75% for 3 turns",
+            "3": "Machinegun Damage +75% for 3 turns",
+            "4": "Machinegun Damage +75% for 3 turns"
+          },
+          "cooldown": {
+            "1": "12",
+            "2": "10",
+            "3": "8",
+            "4": "6"
+          }
+        },
+        {
+          "wikiTitle": "Stationary Defense",
+          "internalName": "stationary_defense",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Placing a deployable grants 50 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Deployable damage +25% / Deployable's health 25 / Placement Range +1",
+            "2": "Deployable damage +30% / Deployable's health 30 / Placement Range +1",
+            "3": "Deployable damage +35% / Deployable's health 35 / Placement Range +2",
+            "4": "Deployable damage +40% / Deployable's health 40 / Placement Range +2"
+          },
+          "cooldown": {}
+        }
+      ]
+    },
+    {
+      "wikiTitle": "Tunnel Rats",
+      "classIdGuess": "tunnel_rats",
+      "section": "unlockable",
+      "perks": [
+        {
+          "wikiTitle": "Caution",
+          "internalName": "cautious",
+          "mainClass": "Trigger",
+          "perkTrigger": "Revealing a hidden enemy activates the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Crit. chance +30% / Crit. damage +50% / for 5 turns",
+            "2": "Crit. chance +35% / Crit. damage +60% / for 6 turns",
+            "3": "Crit. chance +45% / Crit. damage +70% / for 7 turns",
+            "4": "Crit. chance +50% / Crit. damage +80% / for 8 turns"
+          },
+          "cooldown": {
+            "1": "22",
+            "2": "20",
+            "3": "18",
+            "4": "16"
+          }
+        },
+        {
+          "wikiTitle": "Dirty Shot",
+          "internalName": "dirty_shot",
+          "mainClass": "Trigger",
+          "perkTrigger": "A critical hit activates the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Stun duration 1 turns / Number of enemies 1",
+            "2": "Stun duration 1 turns / Number of enemies 2",
+            "3": "Stun duration 2 turns / Number of enemies 2",
+            "4": "Stun duration 2 turns / Number of enemies 3"
+          },
+          "cooldown": {
+            "1": "6"
+          }
+        },
+        {
+          "wikiTitle": "Marauder",
+          "internalName": "marauder",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each looting of a corpse gives 1 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Loot from Corpses +30% / Loot from Containers +30%",
+            "2": "Loot from Corpses +60% / Loot from Containers +60%",
+            "3": "Loot from Corpses +90% / Loot from Containers +90%",
+            "4": "Loot from Corpses +120% / Loot from Containers +120%"
+          },
+          "cooldown": {}
+        },
+        {
+          "wikiTitle": "Reinforced Ammo",
+          "internalName": "handmade_shotgun_ammo",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each hit with shotgun ammo grants 2 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Shotgun ammo damage +25%",
+            "2": "Shotgun ammo damage +30%",
+            "3": "Shotgun ammo damage +35%",
+            "4": "Shotgun ammo damage +40%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Shelters",
+          "internalName": "covermaster",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "When an enemy misses the character, gain 2 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Shot Block Chance in Cover +15% / Cover Protection Chance +15%",
+            "2": "Shot Block Chance in Cover +25% / Cover Protection Chance +25%",
+            "3": "Shot Block Chance in Cover +35% / Cover Protection Chance +35%",
+            "4": "Shot Block Chance in Cover +45% / Cover Protection Chance +45%"
+          },
+          "cooldown": {
+            "1": "30"
+          }
+        },
+        {
+          "wikiTitle": "Vicious Symbiosis",
+          "internalName": "vicious_symbiosis",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each time you get an addiction grants 5 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Damage per Addiction +9% / Resistance per Addiction +9%",
+            "2": "Damage per Addiction +12% / Resistance per Addiction +12%",
+            "3": "Damage per Addiction +15% / Resistance per Addiction +15%",
+            "4": "Damage per Addiction +18% / Resistance per Addiction +18%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        }
+      ]
+    },
+    {
+      "wikiTitle": "Phoenix Brigade",
+      "classIdGuess": "phoenix_brigade",
+      "section": "unlockable",
+      "perks": [
+        {
+          "wikiTitle": "Cauterize",
+          "internalName": "cauterize",
+          "mainClass": "Trigger",
+          "perkTrigger": "Receiving combustion activates the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Burning Immunity for 3 turns / Regen +6 for 3 turns",
+            "2": "Burning Immunity for 3 turns / Regen +8 for 3 turns",
+            "3": "Burning Immunity for 4 turns / Regen +8 for 4 turns",
+            "4": "Burning Immunity for 4 turns / Regen +10 for 4 turns"
+          },
+          "cooldown": {
+            "1": "7",
+            "2": "6",
+            "3": "5",
+            "4": "4"
+          }
+        },
+        {
+          "wikiTitle": "Combat Physicist",
+          "internalName": "battle_physicist",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each energy weapon disassembly grants 2 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "200",
+            "3": "300"
+          },
+          "effects": {
+            "1": "Consume No Battery Chance 20%",
+            "2": "Consume No Battery Chance 25%",
+            "3": "Consume No Battery Chance 30%",
+            "4": "Consume No Battery Chance 35%"
+          },
+          "cooldown": {
+            "1": "30"
+          }
+        },
+        {
+          "wikiTitle": "Flame In The Dark",
+          "internalName": "revealing_flame",
+          "mainClass": "Trigger",
+          "perkTrigger": "Setting fire to an enemy activates the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Detection Radius +4 for 8 turns / Detects Enemies for 8 turns",
+            "2": "Detection Radius +5 for 8 turns / Detects Enemies for 8 turns",
+            "3": "Detection Radius +6 for 8 turns / Detects Enemies for 8 turns",
+            "4": "Detection Radius +7 for 8 turns / Detects Enemies for 8 turns"
+          },
+          "cooldown": {
+            "1": "12"
+          }
+        },
+        {
+          "wikiTitle": "Overcharged Batteries",
+          "internalName": "reinforced_battery",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each hit with energy ammo grants 2 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Battery damage +20%",
+            "2": "Battery damage +25%",
+            "3": "Battery damage +30%",
+            "4": "Battery damage +35%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Scholar (Item)",
+          "internalName": "Scholar",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each item created with the Industrial Fabricator grantes 1 XP per item cost.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Engineering Recipes<ul><li>Helper</li></ul>",
+            "2": "Engineering Recipes:<ul><li>Helper</li><li>Reanimatron</li><li>Quasimorphosis Sensor</li></ul>",
+            "3": "Engineering Recipes:<ul><li>Helper</li><li>Reanimatron</li><li>Quasimorphosis Sensor</li><li>Dataminer</li><li>MG-359</li></ul>",
+            "4": "Engineering Recipes:<ul><li>Helper</li><li>Reanimatron</li><li>Quasimorphosis Sensor</li><li>Dataminer</li><li>MG-359</li><li>Combat AR</li><li>Security Drone</li></ul>"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Shielding",
+          "internalName": "shielding",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each elemental hit reduced by armor grants 4 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "resist +25%",
+            "2": "resist +30",
+            "3": "resist +35%",
+            "4": "resist +40%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        }
+      ]
+    },
+    {
+      "wikiTitle": "Spaceborn Ghosts",
+      "classIdGuess": "spaceborn_ghosts",
+      "section": "unlockable",
+      "perks": [
+        {
+          "wikiTitle": "Agent Training",
+          "internalName": "agent_training",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Shooting a weapon grants 2 XP. / Pistol",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Pistol accuracy +15% / Pistol Range +1",
+            "2": "Pistol accuracy +20% / Pistol Range +1",
+            "3": "Pistol accuracy +25% / Pistol Range +2",
+            "4": "Pistol accuracy +30% / Pistol Range +2"
+          },
+          "cooldown": {}
+        },
+        {
+          "wikiTitle": "Assault Reflex",
+          "internalName": "assault_reflex",
+          "mainClass": "Trigger",
+          "perkTrigger": "Enemy missed attack on the player activates the trigger.",
+          "expGain": "Each trigger activation gives 5 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Extra Ap +1 for 2 turns",
+            "2": "Extra Ap +2 for 2 turns",
+            "3": "Extra Ap +2 for 3 turns",
+            "4": "Extra Ap +3 for 3 turns"
+          },
+          "cooldown": {
+            "1": "12",
+            "2": "11",
+            "3": "10",
+            "4": "9"
+          }
+        },
+        {
+          "wikiTitle": "Lightweight Gear",
+          "internalName": "lightweight_gear",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each 10 units of weight grants 1 XP when moving in stealth mode.",
+          "expNeed": {
+            "1": "150",
+            "2": "300",
+            "3": "500"
+          },
+          "effects": {
+            "1": "Equipment weight -25%",
+            "2": "Equipment weight -35%",
+            "3": "Equipment weight -45%",
+            "4": "Equipment weight -55%"
+          },
+          "cooldown": {}
+        },
+        {
+          "wikiTitle": "Muffled",
+          "internalName": "muffled",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each kill of an unaware enemy grants 8 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "No Sound Chance 50%",
+            "2": "No Sound Chance 60%",
+            "3": "No Sound Chance 70%",
+            "4": "No Sound Chance 80%"
+          },
+          "cooldown": {}
+        },
+        {
+          "wikiTitle": "Sneaky Shot",
+          "internalName": "cheap_shot",
+          "mainClass": "Trigger",
+          "perkTrigger": "Each hit in stealth mode activates the trigger",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Crit. chance +25% for 6 turns",
+            "2": "Crit. chance +30% for 8 turns",
+            "3": "Crit. chance +35% for 10 turns",
+            "4": "Crit. chance +40% for 12 turns"
+          },
+          "cooldown": {
+            "1": "18",
+            "2": "16",
+            "3": "14",
+            "4": "12"
+          }
+        },
+        {
+          "wikiTitle": "War Crime",
+          "internalName": "war_crime",
+          "mainClass": "Trigger",
+          "perkTrigger": "Killing activates the trigger",
+          "expGain": "Each trigger activation gives 5 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Stun duration 1 turns / Number of enemies 3",
+            "2": "Stun duration 1 turns / Number of enemies 4",
+            "3": "Stun duration 1 turns / Number of enemies 5",
+            "4": "Stun duration 1 turns / Number of enemies 6"
+          },
+          "cooldown": {
+            "1": "10"
+          }
+        }
+      ]
+    },
+    {
+      "wikiTitle": "Angels of Spades",
+      "classIdGuess": "angels_of_spades",
+      "section": "unlockable",
+      "perks": [
+        {
+          "wikiTitle": "Blind Shot",
+          "internalName": "blind_shot",
+          "mainClass": "Trigger",
+          "perkTrigger": "A hit outside your sight range activates the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Perk Cooldown 2 for 6 turns",
+            "2": "Perk Cooldown 2 for 8 turns",
+            "3": "Perk Cooldown 2 for 10 turns",
+            "4": "Perk Cooldown 2 for 12 turns"
+          },
+          "cooldown": {
+            "1": "24",
+            "2": "21",
+            "3": "18",
+            "4": "15"
+          }
+        },
+        {
+          "wikiTitle": "Enemy Anatomy",
+          "internalName": "enemy_anatomy",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each physical wound inflicted grants 4 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Physical Wound Damage +3",
+            "2": "Physical Wound Damage +4",
+            "3": "Physical Wound Damage +5",
+            "4": "Physical Wound Damage +6"
+          },
+          "cooldown": {}
+        },
+        {
+          "wikiTitle": "Ghost Killer",
+          "internalName": "blind_shot",
+          "mainClass": "Trigger",
+          "perkTrigger": "Killing activates the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Radius 3 / Chance of enemy panic 30% / Enemies become panicking",
+            "2": "Radius 3 / Chance of enemy panic 40% / Enemies become panicking",
+            "3": "Radius 4 / Chance of enemy panic 40% / Enemies become panicking",
+            "4": "Radius 4 / Chance of enemy panic 50% / Enemies become panicking"
+          },
+          "cooldown": {
+            "1": "20"
+          }
+        },
+        {
+          "wikiTitle": "Pocket Artillery",
+          "internalName": "enhanced_heavy_ammo",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each hit with 7.97 ammo grants 2 XP",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "7.97 Ammo Damage +20%",
+            "2": "7.97 Ammo Damage +25%",
+            "3": "7.97 Ammo Damage +30%",
+            "4": "7.97 Ammo Damage +35%"
+          },
+          "cooldown": {}
+        },
+        {
+          "wikiTitle": "Precise Shot",
+          "internalName": "precise_shot",
+          "mainClass": "Trigger",
+          "perkTrigger": "Skipping a turn in the stealth mode activates the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Ranged crit. chance +40% for 2 turns",
+            "2": "Ranged crit. chance +45% for 2 turns",
+            "3": "Ranged crit. chance +50% for 2 turns",
+            "4": "Ranged crit. chance +55% for 2 turns"
+          },
+          "cooldown": {
+            "1": "5",
+            "2": "4",
+            "3": "3",
+            "4": "2"
+          }
+        },
+        {
+          "wikiTitle": "Sniper Training",
+          "internalName": "sniper_training",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Shooting a weapon grants 2 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Marksman Accuracy +15% / Optical Sight Range +1 / Marksman Rifle",
+            "2": "Marksman Accuracy +20% / Optical Sight Range +1",
+            "3": "Marksman Accuracy +25% / Optical Sight Range +2",
+            "4": "Marksman Accuracy +30% / Optical Sight Range +2"
+          },
+          "cooldown": {}
+        }
+      ]
+    },
+    {
+      "wikiTitle": "Terror Pack",
+      "classIdGuess": "terror_pack",
+      "section": "unlockable",
+      "perks": [
+        {
+          "wikiTitle": "Axe Rage",
+          "internalName": "axe_rage",
+          "mainClass": "Trigger",
+          "perkTrigger": "A wound inflicted in melee activates the trigger.",
+          "expGain": "Each trigger activation gives 5 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Extra Strikes +3 for 3 turns",
+            "2": "Extra Strikes +3 for 4 turns",
+            "3": "Extra Strikes +3 for 5 turns",
+            "4": "Extra Strikes +3 for 6 turns"
+          },
+          "cooldown": {
+            "1": "7",
+            "2": "6",
+            "3": "5",
+            "4": "4"
+          }
+        },
+        {
+          "wikiTitle": "Fear and Hunger",
+          "internalName": "fear_and_hunger",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each time you take damage from starvation grants 2 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Melee Damage/100 kcal Spent +3%",
+            "2": "Melee Damage/100 kcal Spent +4%",
+            "3": "Melee Damage/100 kcal Spent +5%",
+            "4": "Melee Damage/100 kcal Spent +6%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Insanity",
+          "internalName": "insanity",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each change of quasimorphosis stages granst 5 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Q-morphosis affects the clone 30%",
+            "2": "Q-morphosis affects the clone 35%",
+            "3": "Q-morphosis affects the clone 40%",
+            "4": "Q-morphosis affects the clone 45%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Masochism",
+          "internalName": "masochism",
+          "mainClass": "Trigger",
+          "perkTrigger": "Exceeding the pain threshold activates the trigger.",
+          "expGain": "Each trigger activation gives 25 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Extra AP +2 for 3 turns",
+            "2": "Extra AP +2 for 4 turns",
+            "3": "Extra AP +2 for 4 turns",
+            "4": "Extra AP +2 for 5 turns"
+          },
+          "cooldown": {
+            "1": "20",
+            "2": "16",
+            "3": "12",
+            "4": "8"
+          }
+        },
+        {
+          "wikiTitle": "Possession",
+          "internalName": "possession",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each use of a Pact ability grants 25 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Pact cooldown 50% / Pact cost 20%",
+            "2": "Pact cooldown 60% / Pact cost 30%",
+            "3": "Pact cooldown 70% / Pact cost 40%",
+            "4": "Pact cooldown 80% / Pact cost 50%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Ritualism",
+          "internalName": "ritualism",
+          "mainClass": "Trigger",
+          "perkTrigger": "Eating Gavvakh activates the trigger.",
+          "expGain": "Each trigger activation gives 20 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Perk Cooldown 3 for 2 turns",
+            "2": "Perk Cooldown 3 for 3 turns",
+            "3": "Perk Cooldown 4 for 3 turns",
+            "4": "Perk Cooldown 4 for 4 turns"
+          },
+          "cooldown": {
+            "1": "18",
+            "2": "16",
+            "3": "14",
+            "4": "12"
+          }
+        }
+      ]
+    },
+    {
+      "wikiTitle": "Valkyrie Squad",
+      "classIdGuess": "valkyrie_squad",
+      "section": "unlockable",
+      "perks": [
+        {
+          "wikiTitle": "Duty Shift",
+          "internalName": "duty_shift",
+          "mainClass": "Trigger",
+          "perkTrigger": "Using activates the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Resist all +45% for 3 turns",
+            "2": "Resist all +45% for 4 turns",
+            "3": "Resist all +45% for 5 turns",
+            "4": "Resist all +45% for 6 turns"
+          },
+          "cooldown": {
+            "1": "22",
+            "2": "18",
+            "3": "14",
+            "4": "10"
+          }
+        },
+        {
+          "wikiTitle": "First Aid",
+          "internalName": "first_aid",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each stabilized wound grants 5 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Heals wound +25%",
+            "2": "Heals wound +30%",
+            "3": "Heals wound +35%",
+            "4": "Heals wound +40%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Medicus",
+          "internalName": "medicus",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each item created with the Medical Fabricator grants 1 XP per 10 item cost.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Medical Recipes<ul><li>Medical Glue</li></ul>",
+            "2": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li></ul>",
+            "3": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li><li>Adrenalin Military</li><li>First Aid Kit</li></ul>",
+            "4": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li><li>Adrenalin Military</li><li>First Aid Kit</li><li>Nanostim</li><li>Dr. Jones</li></ul>"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Pressure Points",
+          "internalName": "pressure_points",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Shooting a weapon grants 2 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Pain mod. +50% / Enemy Add. AP Loss from Pain 0",
+            "2": "Pain mod. +70% / Enemy Add. AP Loss from Pain 0",
+            "3": "Pain mod. +90% / Enemy Add. AP Loss from Pain 0",
+            "4": "Pain mod. +90% / Enemy Add. AP Loss from Pain 1"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Self-healing",
+          "internalName": "selfhealing",
+          "mainClass": "Trigger",
+          "perkTrigger": "Getting hit in an organic body part activates the trigger.",
+          "expGain": "Each trigger activation gives 15 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Stabilizes Organic Wounds / Organic Wound Heal Chance +25% for 6 turns",
+            "2": "Stabilizes Organic Wounds / Organic Wound Heal Chance +30% for 6 turns",
+            "3": "Stabilizes Organic Wounds / Organic Wound Heal Chance +35% for 6 turns",
+            "4": "Stabilizes Organic Wounds / Organic Wound Heal Chance +40% for 6 turns"
+          },
+          "cooldown": {
+            "1": "25",
+            "2": "20",
+            "3": "15",
+            "4": "10"
+          }
+        },
+        {
+          "wikiTitle": "Therapist",
+          "internalName": "therapist",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Dealing damage that applies an effect grants 5 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Status Effectiveness +35%",
+            "2": "Status Effectiveness +50%",
+            "3": "Status Effectiveness +65%",
+            "4": "Status Effectiveness +80%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        }
+      ]
+    },
+    {
+      "wikiTitle": "Martian Mech Inf",
+      "classIdGuess": "martian_mech_inf",
+      "section": "unlockable",
+      "perks": [
+        {
+          "wikiTitle": "Devastation Tactic",
+          "internalName": "devastation_tactic",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each hit with 12.7 ammo grants 10 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Chance of 12.7 ammo explosion 30%",
+            "2": "Chance of 12.7 ammo explosion 35%",
+            "3": "Chance of 12.7 ammo explosion 45%",
+            "4": "Chance of 12.7 ammo explosion 50%"
+          },
+          "cooldown": {}
+        },
+        {
+          "wikiTitle": "Steel Without",
+          "internalName": "steel_without",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each wound stabilization of a robotic body part grants 2 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Augment Resistance Bonus +35% / Augment Resistance Penalty -50%",
+            "2": "Augment Resistance Bonus +40% / Augment Resistance Penalty -60%",
+            "3": "Augment Resistance Bonus +45% / Augment Resistance Penalty -70%",
+            "4": "Augment Resistance Bonus +50% / Augment Resistance Penalty -80%"
+          },
+          "cooldown": {}
+        }
+      ]
+    },
+    {
+      "wikiTitle": "Tongkong",
+      "classIdGuess": "tongkong",
+      "section": "unlockable",
+      "perks": [
+        {
+          "wikiTitle": "Combat Focus",
+          "internalName": "battle_concentration",
+          "mainClass": "Trigger",
+          "perkTrigger": "Attacks on the player (whether hit or not) activate the trigger.",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Dodge chance +50% for 3 turns",
+            "2": "Dodge chance +55% for 3 turns",
+            "3": "Dodge chance +55% for 4 turns",
+            "4": "Dodge chance +60% for 4 turns"
+          },
+          "cooldown": {
+            "1": "9",
+            "2": "8",
+            "3": "7",
+            "4": "6"
+          }
+        },
+        {
+          "wikiTitle": "Heavy Fire",
+          "internalName": "piersing_burst",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Shooting a weapon grants 2 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Pierce chance +30%",
+            "2": "Pierce chance +40%",
+            "3": "Pierce chance +50%",
+            "4": "Pierce chance +60%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Last Bullet",
+          "internalName": "last_bullet",
+          "mainClass": "Trigger",
+          "perkTrigger": "Firing the last round will activate the trigger",
+          "expGain": "Each trigger activation gives 10 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "All Damage +50% for 2 turns",
+            "2": "All Damage +55% for 3 turns",
+            "3": "All Damage +60% for 4 turns",
+            "4": "All Damage +65% for 5 turns"
+          },
+          "cooldown": {
+            "1": "8"
+          }
+        },
+        {
+          "wikiTitle": "Lizard",
+          "internalName": "lizard",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "A successful attack on the player grants 5 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Max pain threshold +30% / Pain Regeneration +1",
+            "2": "Max pain threshold +40% / Pain Regeneration +1",
+            "3": "Max pain threshold +40% / Pain Regeneration +2",
+            "4": "Max pain threshold +50% / Pain Regeneration +2"
+          },
+          "cooldown": {}
+        },
+        {
+          "wikiTitle": "Pyromaniac",
+          "internalName": "pyromaniac",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Setting fire to an enemy grants 5 XP.",
+          "expNeed": {
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "1": "Fire duration +2 turns / Burning time +2 AP / Burn chance +15%",
+            "2": "Fire duration +2 turns / Burning time +2 AP / Burn chance +25%",
+            "3": "Fire duration +4 turns / Burning time +2 AP / Burn chance +25%",
+            "4": "Fire duration +4 turns / Burning time +2 AP / Burn chance +35%"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        }
+      ]
+    },
+    {
+      "wikiTitle": "Co.B.R.A.",
+      "classIdGuess": "cobra",
+      "section": "unlockable",
+      "perks": [
+        {
+          "wikiTitle": "Bodybuilding",
+          "internalName": "bodybuilding",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "A successful attack on the player grants 1 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Health +20",
+            "2": "Health +40",
+            "3": "Health +60",
+            "4": "Health +80"
+          },
+          "cooldown": {
+            "1": ""
+          }
+        },
+        {
+          "wikiTitle": "Tomahawk",
+          "internalName": "tomahawk",
+          "mainClass": "Passive",
+          "perkTrigger": null,
+          "expGain": "Each melee weapon throw grants 10 XP.",
+          "expNeed": {
+            "0": "",
+            "1": "100",
+            "2": "250",
+            "3": "400"
+          },
+          "effects": {
+            "0": "",
+            "1": "Throw Crit. Chance +30%",
+            "2": "Throw Crit. Chance +40%",
+            "3": "Throw Crit. Chance +50%",
+            "4": "Throw Crit. Chance +60%"
+          },
+          "cooldown": {}
+        }
+      ]
+    },
+    {
+      "wikiTitle": "Unit 317",
+      "classIdGuess": "unit_317",
+      "section": "unlockable",
+      "perks": []
+    },
+    {
+      "wikiTitle": "Golem Group",
+      "classIdGuess": "golem_group",
+      "section": "unlockable",
+      "perks": []
+    }
+  ]
+}

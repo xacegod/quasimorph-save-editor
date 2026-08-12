@@ -20,6 +20,37 @@ export function displayName(id) {
   return idToName.get(id) || id;
 }
 
+/** Normalize for loose search: lower case, underscores/hyphens → spaces. */
+export function normalizeSearchText(s) {
+  return String(s || "")
+    .toLowerCase()
+    .replace(/[_-]+/g, " ")
+    .replace(/[’']/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
+ * True if query matches any haystack (display name, item id, perk id, etc.).
+ * Matches substring on raw and normalized text; multi-word queries require all tokens.
+ */
+export function matchesSearch(query, ...haystacks) {
+  const raw = String(query || "").trim().toLowerCase();
+  if (!raw) return true;
+  const normQ = normalizeSearchText(raw);
+  const tokens = normQ.split(" ").filter(Boolean);
+  const fields = haystacks.filter((h) => h != null && h !== "").map(String);
+  if (!fields.length) return false;
+
+  for (const field of fields) {
+    const lower = field.toLowerCase();
+    const norm = normalizeSearchText(field);
+    if (lower.includes(raw) || norm.includes(normQ)) return true;
+    if (tokens.length > 1 && tokens.every((t) => norm.includes(t) || lower.includes(t))) return true;
+  }
+  return false;
+}
+
 export function getSpawnableIds() {
   return spawnableIds;
 }
@@ -32,11 +63,10 @@ export function searchCatalog(query, limitOrOpts = 50) {
   const opts = typeof limitOrOpts === "number" ? { limit: limitOrOpts, offset: 0 } : limitOrOpts || {};
   const limit = opts.limit ?? 80;
   const offset = opts.offset ?? 0;
-  const q = (query || "").trim().toLowerCase();
   const matched = [];
   for (const id of spawnableIds) {
     const name = displayName(id);
-    if (!q || id.toLowerCase().includes(q) || name.toLowerCase().includes(q)) {
+    if (matchesSearch(query, id, name)) {
       matched.push({ id, name });
     }
   }

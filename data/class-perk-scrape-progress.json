@@ -1,0 +1,3019 @@
+{
+  "updatedAt": "2026-08-12T10:38:56.449Z",
+  "pages": {
+    "Agent Training": {
+      "wikiTitle": "Agent Training",
+      "status": "ok",
+      "internalName": "agent_training",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP. / Pistol",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Pistol accuracy +15% / Pistol Range +1",
+        "2": "Pistol accuracy +20% / Pistol Range +1",
+        "3": "Pistol accuracy +25% / Pistol Range +2",
+        "4": "Pistol accuracy +30% / Pistol Range +2"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Spaceborn Ghosts class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "agent_training",
+        "Perk_ID": "",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Spaceborn Ghosts]]",
+        "PerkTrigger": "",
+        "ExpGain": "Shooting a weapon grants 2 XP.<br>[[:category:pistols|Pistol]]",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Pistol accuracy +15%<br>Pistol Range +1",
+        "Effect_2": "Pistol accuracy +20%<br>Pistol Range +1",
+        "Effect_3": "Pistol accuracy +25%<br>Pistol Range +2",
+        "Effect_4": "Pistol accuracy +30%<br>Pistol Range +2"
+      },
+      "scrapedAt": "2026-08-12T10:34:14.140Z"
+    },
+    "Assault Reflex": {
+      "wikiTitle": "Assault Reflex",
+      "status": "ok",
+      "internalName": "assault_reflex",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Scouts of Hades",
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": "Enemy missed attack on the player activates the trigger.",
+      "expGain": "Each trigger activation gives 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Extra Ap +1 for 2 turns",
+        "2": "Extra Ap +2 for 2 turns",
+        "3": "Extra Ap +2 for 3 turns",
+        "4": "Extra Ap +3 for 3 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "12",
+        "2": "11",
+        "3": "10",
+        "4": "9"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades and Spaceborn Ghosts class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "assault_reflex",
+        "Perk_ID": "",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Scouts of Hades]]<br>[[Spaceborn Ghosts]]",
+        "PerkTrigger": "Enemy missed attack on the player activates the trigger.",
+        "ExpGain": "Each trigger activation gives 5 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Extra Ap +1 for 2 turns",
+        "Effect_2": "Extra Ap +2 for 2 turns",
+        "Effect_3": "Extra Ap +2 for 3 turns",
+        "Effect_4": "Extra Ap +3 for 3 turns",
+        "Cost": "80",
+        "Cooldown": "12",
+        "Cooldown_2": "11",
+        "Cooldown_3": "10",
+        "Cooldown_4": "9"
+      },
+      "scrapedAt": "2026-08-12T10:38:18.460Z"
+    },
+    "Athletics": {
+      "wikiTitle": "Athletics",
+      "status": "ok",
+      "internalName": "athletics",
+      "perkIdNumeric": "000055",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each turn of running gives 1 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "150",
+        "2": "350",
+        "3": "600"
+      },
+      "effects": {
+        "0": "",
+        "1": "Sprint affects accuracy -35%",
+        "2": "Sprint affects accuracy -50%",
+        "3": "Sprint affects accuracy -65%",
+        "4": "Sprint affects accuracy -80%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Eclipse Blades class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "athletics",
+        "Perk_ID": "000055",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Eclipse Blades]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each turn of running gives 1 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "150",
+        "ExpNeed_2": "350",
+        "ExpNeed_3": "600",
+        "Effect_0": "",
+        "Effect_1": "Sprint affects accuracy -35%",
+        "Effect_2": "Sprint affects accuracy -50%",
+        "Effect_3": "Sprint affects accuracy -65%",
+        "Effect_4": "Sprint affects accuracy -80%",
+        "Penalty": "",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:38:19.620Z"
+    },
+    "Axe Rage": {
+      "wikiTitle": "Axe Rage",
+      "status": "ok",
+      "internalName": "axe_rage",
+      "perkIdNumeric": "000187",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": "A wound inflicted in melee activates the trigger.",
+      "expGain": "Each trigger activation gives 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Extra Strikes +3 for 3 turns",
+        "2": "Extra Strikes +3 for 4 turns",
+        "3": "Extra Strikes +3 for 5 turns",
+        "4": "Extra Strikes +3 for 6 turns"
+      },
+      "cost": "25",
+      "cooldown": {
+        "1": "7",
+        "2": "6",
+        "3": "5",
+        "4": "4"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Terror Pack class. When active Axes, Clubs and Knives get three extra strikes.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "axe_rage",
+        "Perk_ID": "000187",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Terror Pack]]",
+        "PerkTrigger": "A wound inflicted in melee activates the trigger.",
+        "ExpGain": "Each trigger activation gives 5 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Extra Strikes +3 for 3 turns",
+        "Effect_2": "Extra Strikes +3 for 4 turns",
+        "Effect_3": "Extra Strikes +3 for 5 turns",
+        "Effect_4": "Extra Strikes +3 for 6 turns",
+        "Penalty": "",
+        "Cost": "25",
+        "Cooldown": "7",
+        "Cooldown_2": "6",
+        "Cooldown_3": "5",
+        "Cooldown_4": "4"
+      },
+      "scrapedAt": "2026-08-12T10:34:17.638Z"
+    },
+    "Berserkgang": {
+      "wikiTitle": "Berserkgang",
+      "status": "ok",
+      "internalName": "berserkgang",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": "Getting a damaging wound activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Regen +4 / Pain Regeneration +3 / for 6 turns",
+        "2": "Regen +6 / Pain Regeneration +4 / for 6 turns",
+        "3": "Regen +8 / Pain Regeneration +5 / for 6 turns",
+        "4": "Regen +10 / Pain Regeneration +6 / for 6 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "14",
+        "2": "12",
+        "3": "10",
+        "4": "8"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Scouts of Hades class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "berserkgang",
+        "Perk_ID": "",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Eclipse Blades]]",
+        "PerkTrigger": "Getting a damaging wound activates the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Regen +4<br>Pain Regeneration +3<br>for 6 turns",
+        "Effect_2": "Regen +6<br>Pain Regeneration +4<br>for 6 turns",
+        "Effect_3": "Regen +8<br>Pain Regeneration +5<br>for 6 turns",
+        "Effect_4": "Regen +10<br>Pain Regeneration +6<br>for 6 turns",
+        "Cost": "80",
+        "Cooldown": "14",
+        "Cooldown_2": "12",
+        "Cooldown_3": "10",
+        "Cooldown_4": "8"
+      },
+      "scrapedAt": "2026-08-12T10:38:20.750Z"
+    },
+    "Blind Fury": {
+      "wikiTitle": "Blind Fury",
+      "status": "ok",
+      "internalName": "blind_fury",
+      "perkIdNumeric": "000031",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": "A successful attack on the player activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "All damage +55% for 3 turns",
+        "2": "All damage +60% for 4 turns",
+        "3": "All damage +65% for 5 turns",
+        "4": "All damage +70% for 6 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "9"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Scouts of Hades class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "blind_fury",
+        "Perk_ID": "000031",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Scouts of Hades]]",
+        "PerkTrigger": "A successful attack on the player activates the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "All damage +55% for 3 turns",
+        "Effect_2": "All damage +60% for 4 turns",
+        "Effect_3": "All damage +65% for 5 turns",
+        "Effect_4": "All damage +70% for 6 turns",
+        "Penalty": "",
+        "Cost": "80",
+        "Cooldown": "9"
+      },
+      "scrapedAt": "2026-08-12T10:38:21.911Z"
+    },
+    "Blind Shot": {
+      "wikiTitle": "Blind Shot",
+      "status": "ok",
+      "internalName": "blind_shot",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": "A hit outside your sight range activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Perk Cooldown 2 for 6 turns",
+        "2": "Perk Cooldown 2 for 8 turns",
+        "3": "Perk Cooldown 2 for 10 turns",
+        "4": "Perk Cooldown 2 for 12 turns"
+      },
+      "cost": "60",
+      "cooldown": {
+        "1": "24",
+        "2": "21",
+        "3": "18",
+        "4": "15"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Angels of Spades class. Adds to current perk cooldown reduction modifier per turn after activation for the duration of the effect.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "blind_shot",
+        "Perk_ID": "",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Angels of Spades]]",
+        "PerkTrigger": "A hit outside your sight range activates the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Perk Cooldown 2 for 6 turns",
+        "Effect_2": "Perk Cooldown 2 for 8 turns",
+        "Effect_3": "Perk Cooldown 2 for 10 turns",
+        "Effect_4": "Perk Cooldown 2 for 12 turns",
+        "Cost": "60",
+        "Cooldown": "24",
+        "Cooldown_2": "21",
+        "Cooldown_3": "18",
+        "Cooldown_4": "15"
+      },
+      "scrapedAt": "2026-08-12T10:34:21.235Z"
+    },
+    "Bodybuilding": {
+      "wikiTitle": "Bodybuilding",
+      "status": "ok",
+      "internalName": "bodybuilding",
+      "perkIdNumeric": "000035",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Co.B.R.A."
+      ],
+      "perkTrigger": null,
+      "expGain": "A successful attack on the player grants 1 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Health +20",
+        "2": "Health +40",
+        "3": "Health +60",
+        "4": "Health +80"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Co.B.R.A. class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "bodybuilding",
+        "Perk_ID": "000035",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Co.B.R.A.]]",
+        "PerkTrigger": "",
+        "ExpGain": "A successful attack on the player grants 1 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Health +20",
+        "Effect_2": "Health +40",
+        "Effect_3": "Health +60",
+        "Effect_4": "Health +80",
+        "Penalty": "",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:38:23.066Z"
+    },
+    "Cannibalism": {
+      "wikiTitle": "Cannibalism",
+      "status": "ok",
+      "internalName": "cannibalism",
+      "perkIdNumeric": "000063",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": "Eating human meat activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "All damage +45% for 3 turns",
+        "2": "All damage +50% for 4 turns",
+        "3": "All damage +55% for 5 turns",
+        "4": "All damage +60% for 6 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "15"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Eclipse Blades class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "cannibalism",
+        "Perk_ID": "000063",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Eclipse Blades]]",
+        "PerkTrigger": "Eating human meat activates the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "All damage +45% for 3 turns",
+        "Effect_2": "All damage +50% for 4 turns",
+        "Effect_3": "All damage +55% for 5 turns",
+        "Effect_4": "All damage +60% for 6 turns",
+        "Penalty": "",
+        "Cost": "80",
+        "Cooldown": "15"
+      },
+      "scrapedAt": "2026-08-12T10:38:24.233Z"
+    },
+    "Carnage": {
+      "wikiTitle": "Carnage",
+      "status": "ok",
+      "internalName": "carnage",
+      "perkIdNumeric": "000067",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": "A wound inflicted in melee activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Chance to Get AP Back 70% for 2 turns",
+        "2": "Chance to Get AP Back 85% for 2 turns",
+        "3": "Chance to Get AP Back 85% for 3 turns",
+        "4": "Chance to Get AP Back 100% for 3 turns"
+      },
+      "cost": "120",
+      "cooldown": {
+        "1": "20"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Eclipse Blades class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "carnage",
+        "Perk_ID": "000067",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Eclipse Blades]]",
+        "PerkTrigger": "A wound inflicted in melee activates the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Chance to Get AP Back 70% for 2 turns",
+        "Effect_2": "Chance to Get AP Back 85% for 2 turns",
+        "Effect_3": "Chance to Get AP Back 85% for 3 turns",
+        "Effect_4": "Chance to Get AP Back 100% for 3 turns",
+        "Penalty": "",
+        "Cost": "120",
+        "Cooldown": "20"
+      },
+      "scrapedAt": "2026-08-12T10:38:25.406Z"
+    },
+    "Cauterize": {
+      "wikiTitle": "Cauterize",
+      "status": "ok",
+      "internalName": "cauterize",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": "Receiving combustion activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Burning Immunity for 3 turns / Regen +6 for 3 turns",
+        "2": "Burning Immunity for 3 turns / Regen +8 for 3 turns",
+        "3": "Burning Immunity for 4 turns / Regen +8 for 4 turns",
+        "4": "Burning Immunity for 4 turns / Regen +10 for 4 turns"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "7",
+        "2": "6",
+        "3": "5",
+        "4": "4"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Phoenix Brigade class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "cauterize",
+        "Perk_ID": "",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Phoenix Brigade]]",
+        "PerkTrigger": "Receiving combustion activates the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Burning Immunity for 3 turns<br>Regen +6 for 3 turns",
+        "Effect_2": "Burning Immunity for 3 turns<br>Regen +8 for 3 turns",
+        "Effect_3": "Burning Immunity for 4 turns<br>Regen +8 for 4 turns",
+        "Effect_4": "Burning Immunity for 4 turns<br>Regen +10 for 4 turns",
+        "Penalty": "",
+        "Cost": "40",
+        "Cooldown_1": "7",
+        "Cooldown_2": "6",
+        "Cooldown_3": "5",
+        "Cooldown_4": "4"
+      },
+      "scrapedAt": "2026-08-12T10:38:26.556Z"
+    },
+    "Caution": {
+      "wikiTitle": "Caution",
+      "status": "ok",
+      "internalName": "cautious",
+      "perkIdNumeric": "000127",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": "Revealing a hidden enemy activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Crit. chance +30% / Crit. damage +50% / for 5 turns",
+        "2": "Crit. chance +35% / Crit. damage +60% / for 6 turns",
+        "3": "Crit. chance +45% / Crit. damage +70% / for 7 turns",
+        "4": "Crit. chance +50% / Crit. damage +80% / for 8 turns"
+      },
+      "cost": "120",
+      "cooldown": {
+        "1": "22",
+        "2": "20",
+        "3": "18",
+        "4": "16"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tunnel Rats class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "cautious",
+        "Perk_ID": "000127",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Tunnel Rats]]",
+        "PerkTrigger": "Revealing a hidden enemy activates the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Crit. chance +30%<br>Crit. damage +50%<br>for 5 turns",
+        "Effect_2": "Crit. chance +35%<br>Crit. damage +60%<br>for 6 turns",
+        "Effect_3": "Crit. chance +45%<br>Crit. damage +70%<br>for 7 turns",
+        "Effect_4": "Crit. chance +50%<br>Crit. damage +80%<br>for 8 turns",
+        "Cost": "120",
+        "Cooldown": "22",
+        "Cooldown_2": "20",
+        "Cooldown_3": "18",
+        "Cooldown_4": "16"
+      },
+      "scrapedAt": "2026-08-12T10:38:27.698Z"
+    },
+    "Combat Focus": {
+      "wikiTitle": "Combat Focus",
+      "status": "ok",
+      "internalName": "battle_concentration",
+      "perkIdNumeric": "000027",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": "Attacks on the player (whether hit or not) activate the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Dodge chance +50% for 3 turns",
+        "2": "Dodge chance +55% for 3 turns",
+        "3": "Dodge chance +55% for 4 turns",
+        "4": "Dodge chance +60% for 4 turns"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "9",
+        "2": "8",
+        "3": "7",
+        "4": "6"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tongkong class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "battle_concentration",
+        "Perk_ID": "000027",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Tongkong]]",
+        "PerkTrigger": "Attacks on the player (whether hit or not) activate the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Dodge chance +50% for 3 turns",
+        "Effect_2": "Dodge chance +55% for 3 turns",
+        "Effect_3": "Dodge chance +55% for 4 turns",
+        "Effect_4": "Dodge chance +60% for 4 turns",
+        "Cost": "40",
+        "Cooldown": "9",
+        "Cooldown_2": "8",
+        "Cooldown_3": "7",
+        "Cooldown_4": "6"
+      },
+      "scrapedAt": "2026-08-12T10:38:28.872Z"
+    },
+    "Combat Physicist": {
+      "wikiTitle": "Combat Physicist",
+      "status": "ok",
+      "internalName": "battle_physicist",
+      "perkIdNumeric": "000107",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each energy weapon disassembly grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "200",
+        "3": "300"
+      },
+      "effects": {
+        "1": "Consume No Battery Chance 20%",
+        "2": "Consume No Battery Chance 25%",
+        "3": "Consume No Battery Chance 30%",
+        "4": "Consume No Battery Chance 35%"
+      },
+      "cost": "50",
+      "cooldown": {
+        "1": "30"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Phoenix Brigade class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "battle_physicist",
+        "Perk_ID": "000107",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Phoenix Brigade]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each energy weapon disassembly grants 2 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "200",
+        "ExpNeed_3": "300",
+        "Effect_1": "Consume No [[:Category:battery Cell|Battery]] Chance 20%",
+        "Effect_2": "Consume No Battery Chance 25%",
+        "Effect_3": "Consume No Battery Chance 30%",
+        "Effect_4": "Consume No Battery Chance 35%",
+        "Cost": "50",
+        "Cooldown": "30"
+      },
+      "scrapedAt": "2026-08-12T10:38:30.003Z"
+    },
+    "Combat Reflexes": {
+      "wikiTitle": "Combat Reflexes",
+      "status": "ok",
+      "internalName": "reaction_training",
+      "perkIdNumeric": "000059",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": null,
+      "expGain": "When an enemy misses the character, gain 4 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Dodge chance +10%",
+        "2": "Dodge chance +14%",
+        "3": "Dodge chance +18%",
+        "4": "Dodge chance +22%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Eclipse Blades class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "reaction_training",
+        "Perk_ID": "000059",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Eclipse Blades]]",
+        "PerkTrigger": "",
+        "ExpGain": "When an enemy misses the character, gain 4 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Dodge chance +10%",
+        "Effect_2": "Dodge chance +14%",
+        "Effect_3": "Dodge chance +18%",
+        "Effect_4": "Dodge chance +22%",
+        "Penalty": "",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:38:31.143Z"
+    },
+    "CQC-Specialist": {
+      "wikiTitle": "CQC-Specialist",
+      "status": "ok",
+      "internalName": "cqc_specialist",
+      "perkIdNumeric": "000023",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapong grants 2 XP / SMG, Shotgun, Assault Rifle",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Scatter -25% / Shooting accuracy +10%",
+        "2": "Scatter -30% / Shooting accuracy +15%",
+        "3": "Scatter -35% / Shooting accuracy +20%",
+        "4": "Scatter -40% / Shooting accuracy +25%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "cqc_specialist",
+        "Perk_ID": "000023",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Scouts of Hades]]",
+        "PerkTrigger": "",
+        "ExpGain": "Shooting a weapong grants 2 XP<br>[[:Category:SMGs|SMG]], [[:Category:Shotguns|Shotgun]], [[:Category:Assault rifles|Assault Rifle]]",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Scatter -25%<br>Shooting accuracy +10%",
+        "Effect_2": "Scatter -30%<br>Shooting accuracy +15%",
+        "Effect_3": "Scatter -35%<br>Shooting accuracy +20%",
+        "Effect_4": "Scatter -40%<br>Shooting accuracy +25%",
+        "Penalty": "",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:38:32.315Z"
+    },
+    "Devastation Tactic": {
+      "wikiTitle": "Devastation Tactic",
+      "status": "ok",
+      "internalName": "devastation_tactic",
+      "perkIdNumeric": "000123",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Martian Mech Inf"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit with 12.7 ammo grants 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Chance of 12.7 ammo explosion 30%",
+        "2": "Chance of 12.7 ammo explosion 35%",
+        "3": "Chance of 12.7 ammo explosion 45%",
+        "4": "Chance of 12.7 ammo explosion 50%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Martian Mech Inf class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "devastation_tactic",
+        "Perk_ID": "000123",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Martian Mech Inf]]",
+        "ExpGain": "Each hit with 12.7 ammo grants 10 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Chance of 12.7 ammo explosion 30%",
+        "Effect_2": "Chance of 12.7 ammo explosion 35%",
+        "Effect_3": "Chance of 12.7 ammo explosion 45%",
+        "Effect_4": "Chance of 12.7 ammo explosion 50%"
+      },
+      "scrapedAt": "2026-08-12T10:38:33.439Z"
+    },
+    "Dirty Shot": {
+      "wikiTitle": "Dirty Shot",
+      "status": "ok",
+      "internalName": "dirty_shot",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": "A critical hit activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Stun duration 1 turns / Number of enemies 1",
+        "2": "Stun duration 1 turns / Number of enemies 2",
+        "3": "Stun duration 2 turns / Number of enemies 2",
+        "4": "Stun duration 2 turns / Number of enemies 3"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "6"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tunnel Rats class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "dirty_shot",
+        "Perk_ID": "",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Tunnel Rats]]",
+        "PerkTrigger": "A critical hit activates the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Stun duration 1 turns<br>Number of enemies 1",
+        "Effect_2": "Stun duration 1 turns<br>Number of enemies 2",
+        "Effect_3": "Stun duration 2 turns<br>Number of enemies 2",
+        "Effect_4": "Stun duration 2 turns<br>Number of enemies 3",
+        "Penalty": "",
+        "Cost": "40",
+        "Cooldown": "6"
+      },
+      "scrapedAt": "2026-08-12T10:38:34.612Z"
+    },
+    "Duty Shift": {
+      "wikiTitle": "Duty Shift",
+      "status": "ok",
+      "internalName": "duty_shift",
+      "perkIdNumeric": "000159",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": "Using activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Resist all +45% for 3 turns",
+        "2": "Resist all +45% for 4 turns",
+        "3": "Resist all +45% for 5 turns",
+        "4": "Resist all +45% for 6 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "22",
+        "2": "18",
+        "3": "14",
+        "4": "10"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Valkyrie Squad class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "duty_shift",
+        "Perk_ID": "000159",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Valkyrie Squad]]",
+        "PerkTrigger": "Using {{Tooltip|medicine|Morphine, Kosmos, Gavvakh, Idol, Quad Damage, Bay Twelve, Clan Traditions, Ancient Cognac}} activates the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Resist all +45% for 3 turns",
+        "Effect_2": "Resist all +45% for 4 turns",
+        "Effect_3": "Resist all +45% for 5 turns",
+        "Effect_4": "Resist all +45% for 6 turns",
+        "Penalty": "",
+        "Cost": "80",
+        "Cooldown": "22",
+        "Cooldown_2": "18",
+        "Cooldown_3": "14",
+        "Cooldown_4": "10"
+      },
+      "scrapedAt": "2026-08-12T10:34:35.439Z"
+    },
+    "Enemy Anatomy": {
+      "wikiTitle": "Enemy Anatomy",
+      "status": "ok",
+      "internalName": "enemy_anatomy",
+      "perkIdNumeric": "000099",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each physical wound inflicted grants 4 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Physical Wound Damage +3",
+        "2": "Physical Wound Damage +4",
+        "3": "Physical Wound Damage +5",
+        "4": "Physical Wound Damage +6"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Angels of Spades class. It gives extra damage over time on inflicted Blunt Wounds, Pierce Wounds and Laceration.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "enemy_anatomy",
+        "Perk_ID": "000099",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Angels of Spades]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each physical wound inflicted grants 4 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Physical Wound Damage +3",
+        "Effect_2": "Physical Wound Damage +4",
+        "Effect_3": "Physical Wound Damage +5",
+        "Effect_4": "Physical Wound Damage +6"
+      },
+      "scrapedAt": "2026-08-12T10:34:36.578Z"
+    },
+    "Fear and Hunger": {
+      "wikiTitle": "Fear and Hunger",
+      "status": "ok",
+      "internalName": "fear_and_hunger",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each time you take damage from starvation grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Melee Damage/100 kcal Spent +3%",
+        "2": "Melee Damage/100 kcal Spent +4%",
+        "3": "Melee Damage/100 kcal Spent +5%",
+        "4": "Melee Damage/100 kcal Spent +6%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Terror Pack class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "fear_and_hunger",
+        "Perk_ID": "",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Terror Pack]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each time you take damage from starvation grants 2 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Melee Damage/100 kcal Spent +3%",
+        "Effect_2": "Melee Damage/100 kcal Spent +4%",
+        "Effect_3": "Melee Damage/100 kcal Spent +5%",
+        "Effect_4": "Melee Damage/100 kcal Spent +6%",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:34:37.864Z"
+    },
+    "Fire Transfer": {
+      "wikiTitle": "Fire Transfer",
+      "status": "ok",
+      "internalName": "fire_transfer",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": "Killing activates the trigger.",
+      "expGain": "Each trigger activation gives 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Crit. chance +50% / SMG, Shotgun, Assault Rifle",
+        "2": "Crit. chance +55% / SMG, Shotgun, Assault Rifle",
+        "3": "Crit. chance +60% / SMG, Shotgun, Assault Rifle",
+        "4": "Crit. chance +65% / SMG, Shotgun, Assault Rifle"
+      },
+      "cost": "10",
+      "cooldown": {
+        "1": "5",
+        "2": "4",
+        "3": "3",
+        "4": "2"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "fire_transfer",
+        "Perk_ID": "",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Scouts of Hades]]",
+        "PerkTrigger": "Killing activates the trigger.",
+        "ExpGain": "Each trigger activation gives 2 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Crit. chance +50%<br>[[:Category:SMGs|SMG]], [[:Category:Shotguns|Shotgun]], [[:Category:Assault rifles|Assault Rifle]]",
+        "Effect_2": "Crit. chance +55%<br>SMG, Shotgun, Assault Rifle",
+        "Effect_3": "Crit. chance +60%<br>SMG, Shotgun, Assault Rifle",
+        "Effect_4": "Crit. chance +65%<br>SMG, Shotgun, Assault Rifle",
+        "Cost": "10",
+        "Cooldown": "5",
+        "Cooldown_2": "4",
+        "Cooldown_3": "3",
+        "Cooldown_4": "2"
+      },
+      "scrapedAt": "2026-08-12T10:38:35.756Z"
+    },
+    "First Aid": {
+      "wikiTitle": "First Aid",
+      "status": "ok",
+      "internalName": "first_aid",
+      "perkIdNumeric": "000151",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each stabilized wound grants 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Heals wound +25%",
+        "2": "Heals wound +30%",
+        "3": "Heals wound +35%",
+        "4": "Heals wound +40%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Valkyrie Squad class. Increases wound chance healing for organic wounds.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "first_aid",
+        "Perk_ID": "000151",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Valkyrie Squad]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each stabilized wound grants 5 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Heals wound +25%",
+        "Effect_2": "Heals wound +30%",
+        "Effect_3": "Heals wound +35%",
+        "Effect_4": "Heals wound +40%",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:34:40.170Z"
+    },
+    "Flame In The Dark": {
+      "wikiTitle": "Flame In The Dark",
+      "status": "ok",
+      "internalName": "revealing_flame",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": "Setting fire to an enemy activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Detection Radius +4 for 8 turns / Detects Enemies for 8 turns",
+        "2": "Detection Radius +5 for 8 turns / Detects Enemies for 8 turns",
+        "3": "Detection Radius +6 for 8 turns / Detects Enemies for 8 turns",
+        "4": "Detection Radius +7 for 8 turns / Detects Enemies for 8 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "12"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Phoenix Brigade class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "revealing_flame",
+        "Perk_ID": "",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Phoenix Brigade]]",
+        "PerkTrigger": "Setting fire to an enemy activates the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Detection Radius +4 for 8 turns<br>Detects Enemies for 8 turns",
+        "Effect_2": "Detection Radius +5 for 8 turns<br>Detects Enemies for 8 turns",
+        "Effect_3": "Detection Radius +6 for 8 turns<br>Detects Enemies for 8 turns",
+        "Effect_4": "Detection Radius +7 for 8 turns<br>Detects Enemies for 8 turns",
+        "Penalty": "",
+        "Cost": "80",
+        "Cooldown": "12"
+      },
+      "scrapedAt": "2026-08-12T10:38:36.920Z"
+    },
+    "Gear Maintenance": {
+      "wikiTitle": "Gear Maintenance",
+      "status": "ok",
+      "internalName": "gear_maintenance",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each physical hit reduced by armor grants 2 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Physical Resistances +15% / Armor Durability +15%",
+        "2": "Physical Resistances +20% / Armor Durability +30%",
+        "3": "Physical Resistances +25% / Armor Durability +45%",
+        "4": "Physical Resistances +30% / Armor Durability +60%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "gear_maintenance",
+        "Perk_ID": "",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Scouts of Hades]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each physical hit reduced by armor grants 2 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Physical Resistances +15%<br>Armor Durability +15%",
+        "Effect_2": "Physical Resistances +20%<br>Armor Durability +30%",
+        "Effect_3": "Physical Resistances +25%<br>Armor Durability +45%",
+        "Effect_4": "Physical Resistances +30%<br>Armor Durability +60%",
+        "Penalty": "",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:38:38.058Z"
+    },
+    "Ghost Killer": {
+      "wikiTitle": "Ghost Killer",
+      "status": "ok",
+      "internalName": "blind_shot",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": "Killing activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Radius 3 / Chance of enemy panic 30% / Enemies become panicking",
+        "2": "Radius 3 / Chance of enemy panic 40% / Enemies become panicking",
+        "3": "Radius 4 / Chance of enemy panic 40% / Enemies become panicking",
+        "4": "Radius 4 / Chance of enemy panic 50% / Enemies become panicking"
+      },
+      "cost": "100",
+      "cooldown": {
+        "1": "20"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Angels of Spades class. Killing enemies with Marksman rifles activates the perk. Panicking causes enemies to run away instead of targeting the player.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "blind_shot",
+        "Perk_ID": "",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Angels of Spades]]",
+        "PerkTrigger": "Killing activates the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Radius 3<br>Chance of enemy panic 30%<br>Enemies become panicking",
+        "Effect_2": "Radius 3<br>Chance of enemy panic 40%<br>Enemies become panicking",
+        "Effect_3": "Radius 4<br>Chance of enemy panic 40%<br>Enemies become panicking",
+        "Effect_4": "Radius 4<br>Chance of enemy panic 50%<br>Enemies become panicking",
+        "Cost": "100",
+        "Cooldown": "20"
+      },
+      "scrapedAt": "2026-08-12T10:34:43.626Z"
+    },
+    "Grenadier": {
+      "wikiTitle": "Grenadier",
+      "status": "ok",
+      "internalName": "grenadier",
+      "perkIdNumeric": "000087",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each grenade throw or grenade launcher shot grants 25 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Explosion damage +25%",
+        "2": "Explosion damage +35%",
+        "3": "Explosion damage +45%",
+        "4": "Explosion damage +55%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tifton's Elite class. Also affects Mines.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "grenadier",
+        "Perk_ID": "000087",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Tifton's Elite]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each grenade throw or grenade launcher shot grants 25 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Explosion damage +25%",
+        "Effect_2": "Explosion damage +35%",
+        "Effect_3": "Explosion damage +45%",
+        "Effect_4": "Explosion damage +55%"
+      },
+      "scrapedAt": "2026-08-12T10:38:39.205Z"
+    },
+    "Heavy Fire": {
+      "wikiTitle": "Heavy Fire",
+      "status": "ok",
+      "internalName": "piersing_burst",
+      "perkIdNumeric": "000155",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Pierce chance +30%",
+        "2": "Pierce chance +40%",
+        "3": "Pierce chance +50%",
+        "4": "Pierce chance +60%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tongkong class. Adds a bonus Pierce chance when using SMGs.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "piersing_burst",
+        "Perk_ID": "000155",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Tongkong]]",
+        "PerkTrigger": "",
+        "ExpGain": "Shooting a weapon grants 2 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Pierce chance +30%",
+        "Effect_2": "Pierce chance +40%",
+        "Effect_3": "Pierce chance +50%",
+        "Effect_4": "Pierce chance +60%",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:34:46.093Z"
+    },
+    "Heavy Weapons": {
+      "wikiTitle": "Heavy Weapons",
+      "status": "ok",
+      "internalName": "heavy_weaponary",
+      "perkIdNumeric": "000079",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP. / Assault Rifle, Machine Gun, Minigun, Grenade Launcher, Rocket Launcher",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Scatter -25% / Shooting accuracy +10%",
+        "2": "Scatter -30% / Shooting accuracy +15%",
+        "3": "Scatter -35% / Shooting accuracy +20%",
+        "4": "Scatter -40% / Shooting accuracy +25%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tifton's Elite class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "heavy_weaponary",
+        "Perk_ID": "000079",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Tifton's Elite]]",
+        "PerkTrigger": "",
+        "ExpGain": "Shooting a weapon grants 2 XP.<br>[[:Category:Assault rifles|Assault Rifle]], [[:Category:Machine guns|Machine Gun]], [[:Category:Miniguns|Minigun]], [[:Category:Grenade launchers|Grenade Launcher]], [[:Category:Rocket launchers|Rocket Launcher]]",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Scatter -25%<br>Shooting accuracy +10%",
+        "Effect_2": "Scatter -30%<br>Shooting accuracy +15%",
+        "Effect_3": "Scatter -35%<br>Shooting accuracy +20%",
+        "Effect_4": "Scatter -40%<br>Shooting accuracy +25%",
+        "Penalty": "",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:38:40.387Z"
+    },
+    "Insanity": {
+      "wikiTitle": "Insanity",
+      "status": "ok",
+      "internalName": "insanity",
+      "perkIdNumeric": "000183",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each change of quasimorphosis stages granst 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Q-morphosis affects the clone 30%",
+        "2": "Q-morphosis affects the clone 35%",
+        "3": "Q-morphosis affects the clone 40%",
+        "4": "Q-morphosis affects the clone 45%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Terror Pack class. It allows player to benefit from quasimorphosis buffs similar to quasimorphic entities.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "insanity",
+        "Perk_ID": "000183",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Terror Pack]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each change of [[quasimorphosis]] stages granst 5 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Q-morphosis affects the clone 30%",
+        "Effect_2": "Q-morphosis affects the clone 35%",
+        "Effect_3": "Q-morphosis affects the clone 40%",
+        "Effect_4": "Q-morphosis affects the clone 45%",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:34:48.536Z"
+    },
+    "Knife Fight": {
+      "wikiTitle": "Knife Fight",
+      "status": "ok",
+      "internalName": "cold_weapon_wielding",
+      "perkIdNumeric": "000051",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Eclipse Blades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit from a melee weapon gives 5 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Strike Accuracy +15%",
+        "2": "Strike Accuracy +20%",
+        "3": "Strike Accuracy +25%",
+        "4": "Strike Accuracy +30%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Eclipse Blades class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "cold_weapon_wielding",
+        "Perk_ID": "000051",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Eclipse Blades]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each hit from a melee weapon gives 5 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "[[:Category:Melee_weapons|Strike]] Accuracy +15%",
+        "Effect_2": "Strike Accuracy +20%",
+        "Effect_3": "Strike Accuracy +25%",
+        "Effect_4": "Strike Accuracy +30%",
+        "Penalty": "",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:38:41.541Z"
+    },
+    "Last Bullet": {
+      "wikiTitle": "Last Bullet",
+      "status": "ok",
+      "internalName": "last_bullet",
+      "perkIdNumeric": "000075",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": "Firing the last round will activate the trigger",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "All Damage +50% for 2 turns",
+        "2": "All Damage +55% for 3 turns",
+        "3": "All Damage +60% for 4 turns",
+        "4": "All Damage +65% for 5 turns"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "8"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tongkong class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "last_bullet",
+        "Perk_ID": "000075",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Tongkong]]",
+        "PerkTrigger": "Firing the last round will activate the trigger",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "All Damage +50% for 2 turns",
+        "Effect_2": "All Damage +55% for 3 turns",
+        "Effect_3": "All Damage +60% for 4 turns",
+        "Effect_4": "All Damage +65% for 5 turns",
+        "Cost": "40",
+        "Cooldown": "8"
+      },
+      "scrapedAt": "2026-08-12T10:38:42.705Z"
+    },
+    "Lightweight Gear": {
+      "wikiTitle": "Lightweight Gear",
+      "status": "ok",
+      "internalName": "lightweight_gear",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each 10 units of weight grants 1 XP when moving in stealth mode.",
+      "expNeed": {
+        "1": "150",
+        "2": "300",
+        "3": "500"
+      },
+      "effects": {
+        "1": "Equipment weight -25%",
+        "2": "Equipment weight -35%",
+        "3": "Equipment weight -45%",
+        "4": "Equipment weight -55%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Spaceborn Ghosts class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "lightweight_gear",
+        "Perk_ID": "",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Spaceborn Ghosts]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each 10 units of weight grants 1 XP when moving in stealth mode.",
+        "ExpNeed_1": "150",
+        "ExpNeed_2": "300",
+        "ExpNeed_3": "500",
+        "Effect_1": "Equipment weight -25%",
+        "Effect_2": "Equipment weight -35%",
+        "Effect_3": "Equipment weight -45%",
+        "Effect_4": "Equipment weight -55%"
+      },
+      "scrapedAt": "2026-08-12T10:34:51.962Z"
+    },
+    "Lizard": {
+      "wikiTitle": "Lizard",
+      "status": "ok",
+      "internalName": "lizard",
+      "perkIdNumeric": "000103",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": null,
+      "expGain": "A successful attack on the player grants 5 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Max pain threshold +30% / Pain Regeneration +1",
+        "2": "Max pain threshold +40% / Pain Regeneration +1",
+        "3": "Max pain threshold +40% / Pain Regeneration +2",
+        "4": "Max pain threshold +50% / Pain Regeneration +2"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tongkong class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "lizard",
+        "Perk_ID": "000103",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Tongkong]]",
+        "PerkTrigger": "",
+        "ExpGain": "A successful attack on the player grants 5 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Max pain threshold +30%<br>Pain Regeneration +1",
+        "Effect_2": "Max pain threshold +40%<br>Pain Regeneration +1",
+        "Effect_3": "Max pain threshold +40%<br>Pain Regeneration +2",
+        "Effect_4": "Max pain threshold +50%<br>Pain Regeneration +2"
+      },
+      "scrapedAt": "2026-08-12T10:34:53.104Z"
+    },
+    "Marauder": {
+      "wikiTitle": "Marauder",
+      "status": "ok",
+      "internalName": "marauder",
+      "perkIdNumeric": "000135",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each looting of a corpse gives 1 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Loot from Corpses +30% / Loot from Containers +30%",
+        "2": "Loot from Corpses +60% / Loot from Containers +60%",
+        "3": "Loot from Corpses +90% / Loot from Containers +90%",
+        "4": "Loot from Corpses +120% / Loot from Containers +120%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tunnel Rats class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "marauder",
+        "Perk_ID": "000135",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Tunnel Rats]]",
+        "ExpGain": "Each looting of a corpse gives 1 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Loot from Corpses +30%<br>Loot from Containers +30%",
+        "Effect_2": "Loot from Corpses +60%<br>Loot from Containers +60%",
+        "Effect_3": "Loot from Corpses +90%<br>Loot from Containers +90%",
+        "Effect_4": "Loot from Corpses +120%<br>Loot from Containers +120%"
+      },
+      "scrapedAt": "2026-08-12T10:38:43.851Z"
+    },
+    "Masochism": {
+      "wikiTitle": "Masochism",
+      "status": "ok",
+      "internalName": "masochism",
+      "perkIdNumeric": "000179",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": "Exceeding the pain threshold activates the trigger.",
+      "expGain": "Each trigger activation gives 25 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Extra AP +2 for 3 turns",
+        "2": "Extra AP +2 for 4 turns",
+        "3": "Extra AP +2 for 4 turns",
+        "4": "Extra AP +2 for 5 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "20",
+        "2": "16",
+        "3": "12",
+        "4": "8"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Terror Pack class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "masochism",
+        "Perk_ID": "000179",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Terror Pack]]",
+        "PerkTrigger": "Exceeding the pain threshold activates the trigger.",
+        "ExpGain": "Each trigger activation gives 25 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Extra AP +2 for 3 turns",
+        "Effect_2": "Extra AP +2 for 4 turns",
+        "Effect_3": "Extra AP +2 for 4 turns",
+        "Effect_4": "Extra AP +2 for 5 turns",
+        "Cost": "80",
+        "Cooldown": "20",
+        "Cooldown_2": "16",
+        "Cooldown_3": "12",
+        "Cooldown_4": "8"
+      },
+      "scrapedAt": "2026-08-12T10:34:55.416Z"
+    },
+    "Medicus": {
+      "wikiTitle": "Medicus",
+      "status": "ok",
+      "internalName": "medicus",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each item created with the Medical Fabricator grants 1 XP per 10 item cost.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Medical Recipes<ul><li>Medical Glue</li></ul>",
+        "2": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li></ul>",
+        "3": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li><li>Adrenalin Military</li><li>First Aid Kit</li></ul>",
+        "4": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li><li>Adrenalin Military</li><li>First Aid Kit</li><li>Nanostim</li><li>Dr. Jones</li></ul>"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Valkyrie Squad class. Unlocks new medical recipes in the Medical Machine",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "medicus",
+        "Perk_ID": "",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Valkyrie Squad]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each item created with the Medical Fabricator grants 1 XP per 10 item cost.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Medical Recipes<ul><li>Medical Glue</li></ul>",
+        "Effect_2": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li></ul>",
+        "Effect_3": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li><li>Adrenalin Military</li><li>First Aid Kit</li></ul>",
+        "Effect_4": "Medical Recipes<ul><li>Medical Glue</li><li>First Aid Kit</li><li>Adrenalin Military</li><li>First Aid Kit</li><li>Nanostim</li><li>Dr. Jones</li></ul>",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:34:56.557Z"
+    },
+    "Muffled": {
+      "wikiTitle": "Muffled",
+      "status": "ok",
+      "internalName": "muffled",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each kill of an unaware enemy grants 8 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "No Sound Chance 50%",
+        "2": "No Sound Chance 60%",
+        "3": "No Sound Chance 70%",
+        "4": "No Sound Chance 80%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Spaceborn Ghosts class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "muffled",
+        "Perk_ID": "",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Spaceborn Ghosts]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each kill of an unaware enemy grants 8 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "No Sound Chance 50%",
+        "Effect_2": "No Sound Chance 60%",
+        "Effect_3": "No Sound Chance 70%",
+        "Effect_4": "No Sound Chance 80%"
+      },
+      "scrapedAt": "2026-08-12T10:34:57.732Z"
+    },
+    "Overcharged Batteries": {
+      "wikiTitle": "Overcharged Batteries",
+      "status": "ok",
+      "internalName": "reinforced_battery",
+      "perkIdNumeric": "000207",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit with energy ammo grants 2 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Battery damage +20%",
+        "2": "Battery damage +25%",
+        "3": "Battery damage +30%",
+        "4": "Battery damage +35%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Phoenix Brigade class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "reinforced_battery",
+        "Perk_ID": "000207",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Phoenix Brigade]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each hit with [[:Category:Battery Cell|energy ammo]] grants 2 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Battery damage +20%",
+        "Effect_2": "Battery damage +25%",
+        "Effect_3": "Battery damage +30%",
+        "Effect_4": "Battery damage +35%",
+        "Penalty": "",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:38:44.994Z"
+    },
+    "Pocket Artillery": {
+      "wikiTitle": "Pocket Artillery",
+      "status": "ok",
+      "internalName": "enhanced_heavy_ammo",
+      "perkIdNumeric": "000199",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit with 7.97 ammo grants 2 XP",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "7.97 Ammo Damage +20%",
+        "2": "7.97 Ammo Damage +25%",
+        "3": "7.97 Ammo Damage +30%",
+        "4": "7.97 Ammo Damage +35%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Angels of Spades class. Increase the amount of damage inflicted with 7.97 Bullets, 7.97 AP and 7.97 API.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "enhanced_heavy_ammo",
+        "Perk_ID": "000199",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Angels of Spades]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each hit with 7.97 ammo grants 2 XP",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "7.97 Ammo Damage +20%",
+        "Effect_2": "7.97 Ammo Damage +25%",
+        "Effect_3": "7.97 Ammo Damage +30%",
+        "Effect_4": "7.97 Ammo Damage +35%"
+      },
+      "scrapedAt": "2026-08-12T10:35:00.012Z"
+    },
+    "Possession": {
+      "wikiTitle": "Possession",
+      "status": "ok",
+      "internalName": "possession",
+      "perkIdNumeric": "000171",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each use of a Pact ability grants 25 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Pact cooldown 50% / Pact cost 20%",
+        "2": "Pact cooldown 60% / Pact cost 30%",
+        "3": "Pact cooldown 70% / Pact cost 40%",
+        "4": "Pact cooldown 80% / Pact cost 50%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Terror Pack class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "possession",
+        "Perk_ID": "000171",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Terror Pack]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each use of a Pact ability grants 25 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "[[S.K.U.L.L._Project|Pact]] cooldown 50%<br>Pact cost 20%",
+        "Effect_2": "Pact cooldown 60%<br>Pact cost 30%",
+        "Effect_3": "Pact cooldown 70%<br>Pact cost 40%",
+        "Effect_4": "Pact cooldown 80%<br>Pact cost 50%",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:35:01.139Z"
+    },
+    "Precise Shot": {
+      "wikiTitle": "Precise Shot",
+      "status": "ok",
+      "internalName": "precise_shot",
+      "perkIdNumeric": "000163",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": "Skipping a turn in the stealth mode activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Ranged crit. chance +40% for 2 turns",
+        "2": "Ranged crit. chance +45% for 2 turns",
+        "3": "Ranged crit. chance +50% for 2 turns",
+        "4": "Ranged crit. chance +55% for 2 turns"
+      },
+      "cost": "10",
+      "cooldown": {
+        "1": "5",
+        "2": "4",
+        "3": "3",
+        "4": "2"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Angels of Spades class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "precise_shot",
+        "Perk_ID": "000163",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Angels of Spades]]",
+        "PerkTrigger": "Skipping a turn in the stealth mode activates the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Ranged crit. chance +40% for 2 turns",
+        "Effect_2": "Ranged crit. chance +45% for 2 turns",
+        "Effect_3": "Ranged crit. chance +50% for 2 turns",
+        "Effect_4": "Ranged crit. chance +55% for 2 turns",
+        "Cost": "10",
+        "Cooldown": "5",
+        "Cooldown_2": "4",
+        "Cooldown_3": "3",
+        "Cooldown_4": "2"
+      },
+      "scrapedAt": "2026-08-12T10:35:02.289Z"
+    },
+    "Pressure Points": {
+      "wikiTitle": "Pressure Points",
+      "status": "ok",
+      "internalName": "pressure_points",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Pain mod. +50% / Enemy Add. AP Loss from Pain 0",
+        "2": "Pain mod. +70% / Enemy Add. AP Loss from Pain 0",
+        "3": "Pain mod. +90% / Enemy Add. AP Loss from Pain 0",
+        "4": "Pain mod. +90% / Enemy Add. AP Loss from Pain 1"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Valkyrie Squad class. Increased pain generated using Pistols, SMGs or Shotguns",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "pressure_points",
+        "Perk_ID": "",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Valkyrie Squad]]",
+        "PerkTrigger": "",
+        "ExpGain": "Shooting a weapon grants 2 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Pain mod. +50%<br>Enemy Add. AP Loss from Pain 0",
+        "Effect_2": "Pain mod. +70%<br>Enemy Add. AP Loss from Pain 0",
+        "Effect_3": "Pain mod. +90%<br>Enemy Add. AP Loss from Pain 0",
+        "Effect_4": "Pain mod. +90%<br>Enemy Add. AP Loss from Pain 1",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:35:03.479Z"
+    },
+    "Pyromaniac": {
+      "wikiTitle": "Pyromaniac",
+      "status": "ok",
+      "internalName": "pyromaniac",
+      "perkIdNumeric": "000119",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tongkong"
+      ],
+      "perkTrigger": null,
+      "expGain": "Setting fire to an enemy grants 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Fire duration +2 turns / Burning time +2 AP / Burn chance +15%",
+        "2": "Fire duration +2 turns / Burning time +2 AP / Burn chance +25%",
+        "3": "Fire duration +4 turns / Burning time +2 AP / Burn chance +25%",
+        "4": "Fire duration +4 turns / Burning time +2 AP / Burn chance +35%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tongkong class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "pyromaniac",
+        "Perk_ID": "000119",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Tongkong]]",
+        "PerkTrigger": "",
+        "ExpGain": "Setting fire to an enemy grants 5 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Fire duration +2 turns<br>Burning time +2 AP<br>Burn chance +15%",
+        "Effect_2": "Fire duration +2 turns<br>Burning time +2 AP<br>Burn chance +25%",
+        "Effect_3": "Fire duration +4 turns<br>Burning time +2 AP<br>Burn chance +25%",
+        "Effect_4": "Fire duration +4 turns<br>Burning time +2 AP<br>Burn chance +35%",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:38:46.130Z"
+    },
+    "Reinforced Ammo": {
+      "wikiTitle": "Reinforced Ammo",
+      "status": "ok",
+      "internalName": "handmade_shotgun_ammo",
+      "perkIdNumeric": "000143",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each hit with shotgun ammo grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Shotgun ammo damage +25%",
+        "2": "Shotgun ammo damage +30%",
+        "3": "Shotgun ammo damage +35%",
+        "4": "Shotgun ammo damage +40%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tunnel Rats class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "handmade_shotgun_ammo",
+        "Perk_ID": "000143",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Tunnel Rats]]",
+        "ExpGain": "Each hit with [[:Category:Shell Ammo|shotgun ammo]] grants 2 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "[[:Category:Shell Ammo|Shotgun ammo]] damage +25%",
+        "Effect_2": "Shotgun ammo damage +30%",
+        "Effect_3": "Shotgun ammo damage +35%",
+        "Effect_4": "Shotgun ammo damage +40%",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:38:47.292Z"
+    },
+    "Ritualism": {
+      "wikiTitle": "Ritualism",
+      "status": "ok",
+      "internalName": "ritualism",
+      "perkIdNumeric": "000175",
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Terror Pack"
+      ],
+      "perkTrigger": "Eating Gavvakh activates the trigger.",
+      "expGain": "Each trigger activation gives 20 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Perk Cooldown 3 for 2 turns",
+        "2": "Perk Cooldown 3 for 3 turns",
+        "3": "Perk Cooldown 4 for 3 turns",
+        "4": "Perk Cooldown 4 for 4 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "18",
+        "2": "16",
+        "3": "14",
+        "4": "12"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Terror Pack class. It allows player to convert enemies into allies when player consume Gavvakh with small chance.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "ritualism",
+        "Perk_ID": "000175",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Terror Pack]]",
+        "PerkTrigger": "Eating [[Gavvakh]] activates the trigger.",
+        "ExpGain": "Each trigger activation gives 20 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Perk Cooldown 3 for 2 turns",
+        "Effect_2": "Perk Cooldown 3 for 3 turns",
+        "Effect_3": "Perk Cooldown 4 for 3 turns",
+        "Effect_4": "Perk Cooldown 4 for 4 turns",
+        "Cost": "80",
+        "Cooldown": "18",
+        "Cooldown_2": "16",
+        "Cooldown_3": "14",
+        "Cooldown_4": "12"
+      },
+      "scrapedAt": "2026-08-12T10:35:06.965Z"
+    },
+    "Scholar (Item)": {
+      "wikiTitle": "Scholar (Item)",
+      "status": "ok",
+      "internalName": "Scholar",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each item created with the Industrial Fabricator grantes 1 XP per item cost.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Engineering Recipes<ul><li>Helper</li></ul>",
+        "2": "Engineering Recipes:<ul><li>Helper</li><li>Reanimatron</li><li>Quasimorphosis Sensor</li></ul>",
+        "3": "Engineering Recipes:<ul><li>Helper</li><li>Reanimatron</li><li>Quasimorphosis Sensor</li><li>Dataminer</li><li>MG-359</li></ul>",
+        "4": "Engineering Recipes:<ul><li>Helper</li><li>Reanimatron</li><li>Quasimorphosis Sensor</li><li>Dataminer</li><li>MG-359</li><li>Combat AR</li><li>Security Drone</li></ul>"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Phoenix Brigade class. Unlocks new Engineering Recipes in the Fabricator.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "Scholar",
+        "Perk_ID": "",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Phoenix Brigade]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each item created with the [[Fabricator|Industrial Fabricator]] grantes 1 XP per item cost.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Engineering Recipes<ul><li>[[Helper]]</li></ul>",
+        "Effect_2": "Engineering Recipes:<ul><li>[[Helper]]</li><li>[[Reanimatron]]</li><li>[[Quasimorphosis Sensor]]</li></ul>",
+        "Effect_3": "Engineering Recipes:<ul><li>[[Helper]]</li><li>[[Reanimatron]]</li><li>[[Quasimorphosis Sensor]]</li><li>[[Dataminer]]</li><li>[[MG-359]]</li></ul>",
+        "Effect_4": "Engineering Recipes:<ul><li>[[Helper]]</li><li>[[Reanimatron]]</li><li>[[Quasimorphosis Sensor]]</li><li>[[Dataminer]]</li><li>[[MG-359]]</li><li>[[Combat AR]]</li><li>[[Security Drone]]</li></ul>",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:35:08.107Z"
+    },
+    "Self-healing": {
+      "wikiTitle": "Self-healing",
+      "status": "ok",
+      "internalName": "selfhealing",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tifton's Elite",
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": "Getting hit in an organic body part activates the trigger.",
+      "expGain": "Each trigger activation gives 15 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Stabilizes Organic Wounds / Organic Wound Heal Chance +25% for 6 turns",
+        "2": "Stabilizes Organic Wounds / Organic Wound Heal Chance +30% for 6 turns",
+        "3": "Stabilizes Organic Wounds / Organic Wound Heal Chance +35% for 6 turns",
+        "4": "Stabilizes Organic Wounds / Organic Wound Heal Chance +40% for 6 turns"
+      },
+      "cost": "120",
+      "cooldown": {
+        "1": "25",
+        "2": "20",
+        "3": "15",
+        "4": "10"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tifton's Elite and Valkyrie Squad class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "selfhealing",
+        "Perk_ID": "",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Tifton's Elite]], [[Valkyrie Squad]]",
+        "PerkTrigger": "Getting hit in an organic body part activates the trigger.",
+        "ExpGain": "Each trigger activation gives 15 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Stabilizes Organic Wounds<br>Organic Wound Heal Chance +25% for 6 turns",
+        "Effect_2": "Stabilizes Organic Wounds<br>Organic Wound Heal Chance +30% for 6 turns",
+        "Effect_3": "Stabilizes Organic Wounds<br>Organic Wound Heal Chance +35% for 6 turns",
+        "Effect_4": "Stabilizes Organic Wounds<br>Organic Wound Heal Chance +40% for 6 turns",
+        "Cost": "120",
+        "Cooldown": "25",
+        "Cooldown_2": "20",
+        "Cooldown_3": "15",
+        "Cooldown_4": "10"
+      },
+      "scrapedAt": "2026-08-12T10:38:48.446Z"
+    },
+    "Shelters": {
+      "wikiTitle": "Shelters",
+      "status": "ok",
+      "internalName": "covermaster",
+      "perkIdNumeric": "000131",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": null,
+      "expGain": "When an enemy misses the character, gain 2 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Shot Block Chance in Cover +15% / Cover Protection Chance +15%",
+        "2": "Shot Block Chance in Cover +25% / Cover Protection Chance +25%",
+        "3": "Shot Block Chance in Cover +35% / Cover Protection Chance +35%",
+        "4": "Shot Block Chance in Cover +45% / Cover Protection Chance +45%"
+      },
+      "cost": "50",
+      "cooldown": {
+        "1": "30"
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tunnel Rats class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "covermaster",
+        "Perk_ID": "000131",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Tunnel Rats]]",
+        "ExpGain": "When an enemy misses the character, gain 2 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Shot Block Chance in Cover +15%<br>Cover Protection Chance +15%",
+        "Effect_2": "Shot Block Chance in Cover +25%<br>Cover Protection Chance +25%",
+        "Effect_3": "Shot Block Chance in Cover +35%<br>Cover Protection Chance +35%",
+        "Effect_4": "Shot Block Chance in Cover +45%<br>Cover Protection Chance +45%",
+        "Penalty": "",
+        "Cost": "50",
+        "Cooldown": "30"
+      },
+      "scrapedAt": "2026-08-12T10:38:49.580Z"
+    },
+    "Shielding": {
+      "wikiTitle": "Shielding",
+      "status": "ok",
+      "internalName": "shielding",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Phoenix Brigade"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each elemental hit reduced by armor grants 4 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "resist +25%",
+        "2": "resist +30",
+        "3": "resist +35%",
+        "4": "resist +40%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Phoenix Brigade class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "shielding",
+        "Perk_ID": "",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Phoenix Brigade]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each elemental hit reduced by armor grants 4 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "{{Tooltip|Elemental|Fire, Cold, Poison, Shock, Beam}} resist +25%",
+        "Effect_2": "{{Tooltip|Elemental|Fire, Cold, Poison, Shock, Beam}} resist +30",
+        "Effect_3": "{{Tooltip|Elemental|Fire, Cold, Poison, Shock, Beam}} resist +35%",
+        "Effect_4": "{{Tooltip|Elemental|Fire, Cold, Poison, Shock, Beam}} resist +40%",
+        "Penalty": "",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:38:50.708Z"
+    },
+    "Shock and Awe": {
+      "wikiTitle": "Shock and Awe",
+      "status": "ok",
+      "internalName": "shock_awe",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": "Damaging an enemy with an explosion activates the trigger.",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Explosion Stun Chance +50% for 2 turns / Stun Duration 1",
+        "2": "Explosion Stun Chance +60% for 2 turns / Stun Duration 1",
+        "3": "Explosion Stun Chance +60% for 2 turns / Stun Duration 2",
+        "4": "Explosion Stun Chance +70% for 2 turns / Stun Duration 2"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "15"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tifton's Elite class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "shock_awe",
+        "Perk_ID": "",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Tifton's Elite]]",
+        "PerkTrigger": "Damaging an enemy with an explosion activates the trigger.",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Explosion Stun Chance +50% for 2 turns<br>Stun Duration 1",
+        "Effect_2": "Explosion Stun Chance +60% for 2 turns<br>Stun Duration 1",
+        "Effect_3": "Explosion Stun Chance +60% for 2 turns<br>Stun Duration 2",
+        "Effect_4": "Explosion Stun Chance +70% for 2 turns<br>Stun Duration 2",
+        "Cost": "80",
+        "Cooldown": "15"
+      },
+      "scrapedAt": "2026-08-12T10:38:51.833Z"
+    },
+    "Sneaky Shot": {
+      "wikiTitle": "Sneaky Shot",
+      "status": "ok",
+      "internalName": "cheap_shot",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": "Each hit in stealth mode activates the trigger",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Crit. chance +25% for 6 turns",
+        "2": "Crit. chance +30% for 8 turns",
+        "3": "Crit. chance +35% for 10 turns",
+        "4": "Crit. chance +40% for 12 turns"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "18",
+        "2": "16",
+        "3": "14",
+        "4": "12"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Spaceborn Ghosts class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "cheap_shot",
+        "Perk_ID": "",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Spaceborn Ghosts]]",
+        "PerkTrigger": "Each hit in stealth mode activates the trigger",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Crit. chance +25% for 6 turns",
+        "Effect_2": "Crit. chance +30% for 8 turns",
+        "Effect_3": "Crit. chance +35% for 10 turns",
+        "Effect_4": "Crit. chance +40% for 12 turns",
+        "Cost": "80",
+        "Cooldown": "18",
+        "Cooldown_2": "16",
+        "Cooldown_3": "14",
+        "Cooldown_4": "12"
+      },
+      "scrapedAt": "2026-08-12T10:35:13.842Z"
+    },
+    "Sniper Training": {
+      "wikiTitle": "Sniper Training",
+      "status": "ok",
+      "internalName": "sniper_training",
+      "perkIdNumeric": "000047",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Angels of Spades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Shooting a weapon grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Marksman Accuracy +15% / Optical Sight Range +1 / Marksman Rifle",
+        "2": "Marksman Accuracy +20% / Optical Sight Range +1",
+        "3": "Marksman Accuracy +25% / Optical Sight Range +2",
+        "4": "Marksman Accuracy +30% / Optical Sight Range +2"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Angels of Spades class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "sniper_training",
+        "Perk_ID": "000047",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Angels of Spades]]",
+        "PerkTrigger": "",
+        "ExpGain": "Shooting a weapon grants 2 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Marksman Accuracy +15%<br>Optical Sight Range +1<br>[[:category:marksman rifles|Marksman Rifle]]",
+        "Effect_2": "Marksman Accuracy +20%<br>Optical Sight Range +1",
+        "Effect_3": "Marksman Accuracy +25%<br>Optical Sight Range +2",
+        "Effect_4": "Marksman Accuracy +30%<br>Optical Sight Range +2"
+      },
+      "scrapedAt": "2026-08-12T10:35:14.987Z"
+    },
+    "Spray and Pray": {
+      "wikiTitle": "Spray and Pray",
+      "status": "ok",
+      "internalName": "spray_and_pray",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": "Ammo dropping below 20% activates the trigger. / Machine Gun, Minigun",
+      "expGain": "Each trigger activation gives 10 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Machinegun Damage +75% for 3 turns",
+        "2": "Machinegun Damage +75% for 3 turns",
+        "3": "Machinegun Damage +75% for 3 turns",
+        "4": "Machinegun Damage +75% for 3 turns"
+      },
+      "cost": "40",
+      "cooldown": {
+        "1": "12",
+        "2": "10",
+        "3": "8",
+        "4": "6"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Tifton's Elite class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "spray_and_pray",
+        "Perk_ID": "",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Tifton's Elite]]",
+        "PerkTrigger": "Ammo dropping below 20% activates the trigger.<br>Machine Gun, Minigun",
+        "PerkTrigger_2": "Ammo dropping below 30% activates the trigger.<br>Machine Gun, Minigun",
+        "PerkTrigger_3": "Ammo dropping below 35% activates the trigger.<br>Machine Gun, Minigun",
+        "PerkTrigger_4": "Ammo dropping below 40% activates the trigger.<br>Machine Gun, Minigun",
+        "ExpGain": "Each trigger activation gives 10 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Machinegun Damage +75% for 3 turns",
+        "Effect_2": "Machinegun Damage +75% for 3 turns",
+        "Effect_3": "Machinegun Damage +75% for 3 turns",
+        "Effect_4": "Machinegun Damage +75% for 3 turns",
+        "Cost": "40",
+        "Cooldown": "12",
+        "Cooldown_2": "10",
+        "Cooldown_3": "8",
+        "Cooldown_4": "6"
+      },
+      "scrapedAt": "2026-08-12T10:38:53.007Z"
+    },
+    "Stationary Defense": {
+      "wikiTitle": "Stationary Defense",
+      "status": "ok",
+      "internalName": "stationary_defense",
+      "perkIdNumeric": "000083",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tifton's Elite"
+      ],
+      "perkTrigger": null,
+      "expGain": "Placing a deployable grants 50 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Deployable damage +25% / Deployable's health 25 / Placement Range +1",
+        "2": "Deployable damage +30% / Deployable's health 30 / Placement Range +1",
+        "3": "Deployable damage +35% / Deployable's health 35 / Placement Range +2",
+        "4": "Deployable damage +40% / Deployable's health 40 / Placement Range +2"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tifton's Elite class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "stationary_defense",
+        "Perk_ID": "000083",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Tifton's Elite]]",
+        "PerkTrigger": "",
+        "ExpGain": "Placing a [[:Category:Deployables|deployable]] grants 50 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Deployable damage +25%<br>Deployable's health 25<br>Placement Range +1",
+        "Effect_2": "Deployable damage +30%<br>Deployable's health 30<br>Placement Range +1",
+        "Effect_3": "Deployable damage +35%<br>Deployable's health 35<br>Placement Range +2",
+        "Effect_4": "Deployable damage +40%<br>Deployable's health 40<br>Placement Range +2"
+      },
+      "scrapedAt": "2026-08-12T10:38:54.136Z"
+    },
+    "Steel Without": {
+      "wikiTitle": "Steel Without",
+      "status": "ok",
+      "internalName": "steel_without",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Martian Mech Inf"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each wound stabilization of a robotic body part grants 2 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Augment Resistance Bonus +35% / Augment Resistance Penalty -50%",
+        "2": "Augment Resistance Bonus +40% / Augment Resistance Penalty -60%",
+        "3": "Augment Resistance Bonus +45% / Augment Resistance Penalty -70%",
+        "4": "Augment Resistance Bonus +50% / Augment Resistance Penalty -80%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Martian Mech Inf class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "steel_without",
+        "Perk_ID": "",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Martian Mech Inf]]",
+        "ExpGain": "Each wound stabilization of a robotic body part grants 2 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Augment Resistance Bonus +35%<br>Augment Resistance Penalty -50%",
+        "Effect_2": "Augment Resistance Bonus +40%<br>Augment Resistance Penalty -60%",
+        "Effect_3": "Augment Resistance Bonus +45%<br>Augment Resistance Penalty -70%",
+        "Effect_4": "Augment Resistance Bonus +50%<br>Augment Resistance Penalty -80%"
+      },
+      "scrapedAt": "2026-08-12T10:38:55.297Z"
+    },
+    "Therapist": {
+      "wikiTitle": "Therapist",
+      "status": "ok",
+      "internalName": "therapist",
+      "perkIdNumeric": null,
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Valkyrie Squad"
+      ],
+      "perkTrigger": null,
+      "expGain": "Dealing damage that applies an effect grants 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Status Effectiveness +35%",
+        "2": "Status Effectiveness +50%",
+        "3": "Status Effectiveness +65%",
+        "4": "Status Effectiveness +80%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Valkyrja Squad class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "therapist",
+        "Perk_ID": "",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Valkyrie Squad]]",
+        "PerkTrigger": "",
+        "ExpGain": "Dealing damage that applies an effect grants 5 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Status Effectiveness +35%",
+        "Effect_2": "Status Effectiveness +50%",
+        "Effect_3": "Status Effectiveness +65%",
+        "Effect_4": "Status Effectiveness +80%",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:35:19.792Z"
+    },
+    "Tomahawk": {
+      "wikiTitle": "Tomahawk",
+      "status": "ok",
+      "internalName": "tomahawk",
+      "perkIdNumeric": "000095",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Co.B.R.A."
+      ],
+      "perkTrigger": null,
+      "expGain": "Each melee weapon throw grants 10 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Throw Crit. Chance +30%",
+        "2": "Throw Crit. Chance +40%",
+        "3": "Throw Crit. Chance +50%",
+        "4": "Throw Crit. Chance +60%"
+      },
+      "cost": null,
+      "cooldown": {},
+      "details": "<b></b> is a combat perk in . It is a passive perk for Co.B.R.A. class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "tomahawk",
+        "Perk_ID": "000095",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Co.B.R.A.]]",
+        "PerkTrigger": "",
+        "ExpGain": "Each melee weapon throw grants 10 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Throw Crit. Chance +30%",
+        "Effect_2": "Throw Crit. Chance +40%",
+        "Effect_3": "Throw Crit. Chance +50%",
+        "Effect_4": "Throw Crit. Chance +60%"
+      },
+      "scrapedAt": "2026-08-12T10:35:20.930Z"
+    },
+    "Training": {
+      "wikiTitle": "Training",
+      "status": "ok",
+      "internalName": "military_training",
+      "perkIdNumeric": "000019",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Scouts of Hades"
+      ],
+      "perkTrigger": null,
+      "expGain": "Every 10 units of weight give 1 XP when moving.",
+      "expNeed": {
+        "1": "200",
+        "2": "500",
+        "3": "800"
+      },
+      "effects": {
+        "1": "Calorie consumption -2",
+        "2": "Calorie consumption -3",
+        "3": "Calorie consumption -4",
+        "4": "Calorie consumption -5"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Scouts of Hades class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "military_training",
+        "Perk_ID": "000019",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Scouts of Hades]]",
+        "PerkTrigger": "",
+        "ExpGain": "Every 10 units of weight give 1 XP when moving.",
+        "ExpNeed_1": "200",
+        "ExpNeed_2": "500",
+        "ExpNeed_3": "800",
+        "Effect_1": "Calorie consumption -2",
+        "Effect_2": "Calorie consumption -3",
+        "Effect_3": "Calorie consumption -4",
+        "Effect_4": "Calorie consumption -5",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:35:22.066Z"
+    },
+    "Vicious Symbiosis": {
+      "wikiTitle": "Vicious Symbiosis",
+      "status": "ok",
+      "internalName": "vicious_symbiosis",
+      "perkIdNumeric": "000111",
+      "mainClass": "Passive",
+      "mercClasses": [
+        "Tunnel Rats"
+      ],
+      "perkTrigger": null,
+      "expGain": "Each time you get an addiction grants 5 XP.",
+      "expNeed": {
+        "0": "",
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "0": "",
+        "1": "Damage per Addiction +9% / Resistance per Addiction +9%",
+        "2": "Damage per Addiction +12% / Resistance per Addiction +12%",
+        "3": "Damage per Addiction +15% / Resistance per Addiction +15%",
+        "4": "Damage per Addiction +18% / Resistance per Addiction +18%"
+      },
+      "cost": null,
+      "cooldown": {
+        "1": ""
+      },
+      "details": "<b></b> is a combat perk in . It is a passive perk for Tunnel Rats class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "vicious_symbiosis",
+        "Perk_ID": "000111",
+        "Mainclass": "Passive",
+        "Mercclass": "[[Tunnel Rats]]",
+        "ExpGain": "Each time you get an addiction grants 5 XP.",
+        "ExpNeed_0": "",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_0": "",
+        "Effect_1": "Damage per Addiction +9%<br>Resistance per Addiction +9%",
+        "Effect_2": "Damage per Addiction +12%<br>Resistance per Addiction +12%",
+        "Effect_3": "Damage per Addiction +15%<br>Resistance per Addiction +15%",
+        "Effect_4": "Damage per Addiction +18%<br>Resistance per Addiction +18%",
+        "Penalty": "",
+        "Cost": "",
+        "Cooldown": ""
+      },
+      "scrapedAt": "2026-08-12T10:38:56.449Z"
+    },
+    "War Crime": {
+      "wikiTitle": "War Crime",
+      "status": "ok",
+      "internalName": "war_crime",
+      "perkIdNumeric": null,
+      "mainClass": "Trigger",
+      "mercClasses": [
+        "Spaceborn Ghosts"
+      ],
+      "perkTrigger": "Killing activates the trigger",
+      "expGain": "Each trigger activation gives 5 XP.",
+      "expNeed": {
+        "1": "100",
+        "2": "250",
+        "3": "400"
+      },
+      "effects": {
+        "1": "Stun duration 1 turns / Number of enemies 3",
+        "2": "Stun duration 1 turns / Number of enemies 4",
+        "3": "Stun duration 1 turns / Number of enemies 5",
+        "4": "Stun duration 1 turns / Number of enemies 6"
+      },
+      "cost": "80",
+      "cooldown": {
+        "1": "10"
+      },
+      "details": "<b></b> is a combat perk in . It is a trigger perk for Spaceborn Ghosts class.",
+      "rawInfobox": {
+        "image": "Perk {{lc:{{PAGENAME}}}}.png",
+        "InternalName": "war_crime",
+        "Perk_ID": "",
+        "Mainclass": "Trigger",
+        "Mercclass": "[[Spaceborn Ghosts]]",
+        "PerkTrigger": "Killing activates the trigger",
+        "ExpGain": "Each trigger activation gives 5 XP.",
+        "ExpNeed_1": "100",
+        "ExpNeed_2": "250",
+        "ExpNeed_3": "400",
+        "Effect_1": "Stun duration 1 turns<br>Number of enemies 3",
+        "Effect_2": "Stun duration 1 turns<br>Number of enemies 4",
+        "Effect_3": "Stun duration 1 turns<br>Number of enemies 5",
+        "Effect_4": "Stun duration 1 turns<br>Number of enemies 6",
+        "Cost": "80",
+        "Cooldown": "10"
+      },
+      "scrapedAt": "2026-08-12T10:35:24.335Z"
+    }
+  }
+}

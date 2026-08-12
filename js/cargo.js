@@ -2,7 +2,7 @@
  * Magnum cargo: filter, qty, stacks, spawn, destroy, storage height, auto-recycle/fridge.
  */
 import { getComponent, deepClone } from "./parse.js";
-import { displayName, isQuestItem, getSpawnableIds } from "./catalog.js";
+import { displayName, isQuestItem, getSpawnableIds, matchesSearch } from "./catalog.js";
 import { createItemFromTemplates, clonePickupItem } from "./itemTemplates.js";
 
 const RECYCLE_LIST_KEY = "qm_always_recycle_ids";
@@ -123,7 +123,6 @@ export function listCargoEntries(data) {
 }
 
 export function filterCargoRows(rows, { query = "", store = "", hideQuest = false, onlyQuest = false, newestCargo0 = 0 } = {}) {
-  const q = query.trim().toLowerCase();
   let out = rows;
   if (newestCargo0 > 0) {
     // Game appends new loot at the end of ShipCargo[0]. Take those stacks first, then apply text filter.
@@ -134,8 +133,8 @@ export function filterCargoRows(rows, { query = "", store = "", hideQuest = fals
   return out.filter((r) => {
     if (hideQuest && r.quest) return false;
     if (onlyQuest && !r.quest) return false;
-    if (!q) return true;
-    return r.id.toLowerCase().includes(q) || r.name.toLowerCase().includes(q);
+    if (!query.trim()) return true;
+    return matchesSearch(query, r.id, r.name);
   });
 }
 
