@@ -1,0 +1,213 @@
+[
+  {
+    "Parameters": [
+      { "Name": "IWeaponDistance", "ValType": "Int", "IntVal": "2" },
+      { "Name": "IEnemyHuntBonus", "ValType": "Int", "IntVal": "-2" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_sniper",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "IResists", "ValType": "Int", "IntVal": "12" },
+      { "Name": "FWeightMeleeDmgIncrease", "ValType": "Float", "FloatVal": "0.12" },
+      { "Name": "IKiloDmgThreshold", "ValType": "Int", "IntVal": "10" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_invincible",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "BIgnoreInfection", "ValType": "Boolean", "BoolVal": "True" },
+      { "Name": "FMissingHealthDamageIncrease", "ValType": "Float", "FloatVal": "0.05" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_beneficial_mutation",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "BIgnorePain", "ValType": "Boolean", "BoolVal": "True" },
+      { "Name": "FIncomeCritMult", "ValType": "Float", "FloatVal": "-0.5" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_feel_no_pain",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "BBackstabResistIgnore", "ValType": "Boolean", "BoolVal": "True" },
+      { "Name": "IRevealRange", "ValType": "Int", "IntVal": "4" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_preparation",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "BThirdWeaponSlot", "ValType": "Boolean", "BoolVal": "True" },
+      { "Name": "FExplosionIncomeDamageMult", "ValType": "Float", "FloatVal": "-0.5" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_one_man_army",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "IVestSlots", "ValType": "Int", "IntVal": "3" },
+      { "Name": "FLootCorpseItem", "ValType": "Float", "FloatVal": "0.5" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_organization",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "IQMorphGain", "ValType": "Int", "IntVal": "-1" },
+      { "Name": "IAILosBonus", "ValType": "Int", "IntVal": "-1" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_dreamer",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "IAddedProj", "ValType": "Int", "IntVal": "1" },
+      { "Name": "IConstReload", "ValType": "Int", "IntVal": "1" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_tactical_reload",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "IHealthRegen", "ValType": "Int", "IntVal": "2" },
+      { "Name": "IPerkCooldownBonus", "ValType": "Int", "IntVal": "-3" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_dog_of_war",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "FStarvDelta", "ValType": "Float", "FloatVal": "-0.6" },
+      { "Name": "BIgnoreAddiction", "ValType": "Boolean", "BoolVal": "True" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_slow_metabolism",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "FPistolAccuracy", "ValType": "Float", "FloatVal": "0.4" },
+      { "Name": "FCritDamage", "ValType": "Float", "FloatVal": "0.4" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_gunslinger",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "BRunActions", "ValType": "Boolean", "BoolVal": "True" },
+      { "Name": "FUsedApDodgeBonus", "ValType": "Float", "FloatVal": "0.1" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_strafe",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "IFixationHeal", "ValType": "Int", "IntVal": "3" },
+      { "Name": "FImplantDropChance", "ValType": "Float", "FloatVal": "0.25" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_field_medic",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  },
+  {
+    "Parameters": [
+      { "Name": "FWeightAffectDodge", "ValType": "Float", "FloatVal": "0.6" },
+      { "Name": "IThrowRangeBonus", "ValType": "Int", "IntVal": "2" }
+    ],
+    "AIParameters": [],
+    "PerkId": "talent_ninjutsu",
+    "NextPerkId": {},
+    "LevelUpActionType": "None",
+    "CurrentExp": "0",
+    "ExpPerAction": "0",
+    "MaxExp": "0",
+    "PerkType": "Talent"
+  }
+]

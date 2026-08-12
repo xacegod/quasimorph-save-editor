@@ -1,0 +1,267 @@
+:root {
+  --bg: #0f1419;
+  --panel: #1a2332;
+  --panel2: #243044;
+  --border: #2f3f55;
+  --text: #e7eef7;
+  --muted: #8fa3b8;
+  --accent: #3d9cf0;
+  --accent2: #2ecc9a;
+  --danger: #e85d5d;
+  --warn: #e6b84d;
+  --mono: "Cascadia Code", "Fira Code", Consolas, monospace;
+  --sans: "Segoe UI", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.35rem 0.6rem;
+}
+button {
+  cursor: pointer;
+  background: #2a3d56;
+}
+button:hover { border-color: var(--accent); }
+button.primary { background: #1f5f9a; border-color: var(--accent); }
+button.danger { background: #5a2222; border-color: var(--danger); }
+button.ok { background: #1d5a45; border-color: var(--accent2); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+input[type="text"], input[type="number"], select { min-width: 8rem; }
+.muted { color: var(--muted); }
+.warn { color: var(--warn); }
+.error { color: var(--danger); }
+
+#topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.6rem 0.9rem;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+#topbar h1 {
+  font-size: 1.05rem;
+  margin: 0 0.75rem 0 0;
+  font-weight: 600;
+}
+#status {
+  flex: 1;
+  min-width: 12rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+#layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  min-height: 0;
+}
+#nav {
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  padding: 0.5rem;
+  overflow: auto;
+}
+#nav button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.25rem;
+  background: transparent;
+}
+#nav button.active {
+  background: var(--panel2);
+  border-color: var(--accent);
+}
+
+#main {
+  overflow: auto;
+  padding: 0.9rem 1rem 2rem;
+}
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.85rem;
+}
+.panel h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+}
+.panel h3 {
+  margin: 0.8rem 0 0.4rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.field-row {
+  display: grid;
+  grid-template-columns: minmax(10rem, 16rem) 1fr;
+  gap: 0.5rem;
+  align-items: start;
+  margin-bottom: 0.35rem;
+}
+.field-row label { color: var(--muted); font-size: 0.9rem; padding-top: 0.35rem; }
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+table.data th, table.data td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.35rem 0.45rem;
+  text-align: left;
+  vertical-align: top;
+}
+table.data th { color: var(--muted); font-weight: 600; position: sticky; top: 0; background: var(--panel); }
+table.data tr:hover td { background: rgba(61, 156, 240, 0.06); }
+table.data tr.selected td { background: rgba(61, 156, 240, 0.15); }
+.scroll-table { max-height: 55vh; overflow: auto; border: 1px solid var(--border); border-radius: 8px; }
+
+.list-col {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 0.75rem;
+  min-height: 50vh;
+}
+.list {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 70vh;
+  background: var(--panel2);
+}
+.list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  font-size: 0.85rem;
+}
+.list button.active { background: #1f4a72; }
+
+.checks { display: flex; flex-direction: column; gap: 0.25rem; }
+.checks label { display: flex; gap: 0.4rem; align-items: center; font-size: 0.9rem; }
+
+.tabs { display: flex; gap: 0.35rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
+.tabs button.active { background: #1f5f9a; border-color: var(--accent); }
+
+pre.json-mini, pre.raw {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  background: #0c1016;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem;
+  overflow: auto;
+  max-height: 40vh;
+  white-space: pre-wrap;
+}
+.schema-node { font-size: 0.82rem; }
+.schema-node ul { margin: 0.2rem 0 0.2rem 1rem; padding: 0; }
+.samples { color: #9fd0a8; font-family: var(--mono); font-size: 0.75rem; }
+.indent { margin-left: 1rem; }
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 999px;
+  background: #31465f;
+  color: var(--muted);
+}
+.badge.warn { background: #5a4a20; color: var(--warn); }
+.badge.ok { background: #1d4a3a; color: var(--accent2); }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+@media (max-width: 900px) {
+  #layout { grid-template-columns: 1fr; }
+  .list-col, .grid-2 { grid-template-columns: 1fr; }
+  #nav { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+  #nav button { width: auto; }
+}
+
+.hidden { display: none !important; }
+#dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted);
+  margin: 1rem 0;
+}
+#dropzone.drag { border-color: var(--accent); color: var(--text); }
+
+.help {
+  cursor: help;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.75rem;
+  border-bottom: 1px dotted var(--accent);
+  text-decoration: none;
+}
+.doc {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin: 0 0 0.7rem;
+  line-height: 1.45;
+}
+.empty-state {
+  padding: 1.6rem 1rem;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  margin: 0.5rem 0;
+}
+.catalog-list {
+  max-height: 260px;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0c1016;
+}
+.catalog-list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+  font-size: 0.82rem;
+}
+.catalog-list button.active { background: #1f4a72; }
+.catalog-meta { font-size: 0.8rem; color: var(--muted); margin: 0.25rem 0 0.4rem; }
+.size-group { font-size: 0.8rem; color: var(--accent2); margin: 0.6rem 0 0.2rem; }

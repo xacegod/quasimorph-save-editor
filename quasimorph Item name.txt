@@ -1,0 +1,1232 @@
+display_name item_id status name_source
+.42 Bullets medium_basic_ammo exact localized name resources.assets: item.medium_basic_ammo.name
+.42 Rubber medium_police_ammo exact localized name resources.assets: item.medium_police_ammo.name
+.42F Cryo medium_cold_ammo exact localized name resources.assets: item.medium_cold_ammo.name
+12.7 heavy_basic_ammo exact localized name resources.assets: item.heavy_basic_ammo.name
+12.7 FlaK heavy_flak_ammo exact localized name resources.assets: item.heavy_flak_ammo.name
+12.7 IR heavy_incendiary_ammo exact localized name resources.assets: item.heavy_incendiary_ammo.name
+12g Buckshot shotgun_shrapnel_ammo exact localized name resources.assets: item.shotgun_shrapnel_ammo.name
+12ga Slugs shotgun_bullet_ammo exact localized name resources.assets: item.shotgun_bullet_ammo.name
+160mm Disc sawblade_ammo exact localized name resources.assets: item.sawblade_ammo.name
+7.97 AP rifle_armorpierce_ammo exact localized name resources.assets: item.rifle_armorpierce_ammo.name
+7.97 API rifle_plasma_ammo exact localized name resources.assets: item.rifle_plasma_ammo.name
+7.97 Bullets rifle_basic_ammo exact localized name resources.assets: item.rifle_basic_ammo.name
+77 Punks common_glasses_2 exact localized name resources.assets: item.common_glasses_2.name
+90mm Nails nail_bolts_ammo exact localized name resources.assets: item.nail_bolts_ammo.name
+9mm Bullets small_basic_ammo exact localized name resources.assets: item.small_basic_ammo.name
+9mm Exploding small_burst_ammo exact localized name resources.assets: item.small_burst_ammo.name
+9mm HP small_expansive_ammo exact localized name resources.assets: item.small_expansive_ammo.name
+A.P.O.K. dil_sound_assault_1 exact localized name resources.assets: item.dil_sound_assault_1.name
+A.R.C. dil_shock_smg_1 exact localized name resources.assets: item.dil_shock_smg_1.name
+AAD-Barracuda anc_shotgun_2 exact localized name resources.assets: item.anc_shotgun_2.name
+Abd skull_mercury_mass_displacement exact localized name resources.assets: item.skull_mercury_mass_displacement.name
+Abd skull_mercury_vacuum exact localized name resources.assets: item.skull_mercury_vacuum.name
+Absolution chu_plasma_sniper_1 exact localized name resources.assets: item.chu_plasma_sniper_1.name
+Acatl Parts venus_melee_parts exact localized name resources.assets: item.venus_melee_parts.name
+Acid acid exact localized name resources.assets: item.acid.name
+Acid Gland acid_gland exact localized name resources.assets: item.acid_gland.name
+Adrenalin syringe_adrenaline exact localized name resources.assets: item.syringe_adrenaline.name
+Adrenaline Injector adrenaline_injector exact localized name resources.assets: item.adrenaline_injector.name
+AEP-Alpha anc_quasi_pistol_1 exact localized name resources.assets: item.anc_quasi_pistol_1.name
+Aeschylith ron_mask_1 exact localized name resources.assets: item.ron_mask_1.name
+AEV-Supremacy anc_quasi_assault_1 exact localized name resources.assets: item.anc_quasi_assault_1.name
+Agni Missile rocket_fire_ammo exact localized name resources.assets: item.rocket_fire_ammo.name
+Agony MAF fra_security_smg_2 exact localized name resources.assets: item.fra_security_smg_2.name
+AI Module ai_module exact localized name resources.assets: item.ai_module.name
+Al Kalba mercury_rags exact localized name resources.assets: item.mercury_rags.name
+Al-Masahib mercury_pants_1 exact localized name resources.assets: item.mercury_pants_1.name
+Alcohol Package alcohol_container exact localized name resources.assets: item.alcohol_container.name
+Amergin skull_flauros_dangerous_spores exact localized name resources.assets: item.skull_flauros_dangerous_spores.name
+Amergin skull_flauros_druid exact localized name resources.assets: item.skull_flauros_druid.name
+AMW - Snow Wolf anc_marksman_1 exact localized name resources.assets: item.anc_marksman_1.name
+Anathema chu_shotgun_1 exact localized name resources.assets: item.chu_shotgun_1.name
+Ancient Cognac armagnac_bottle_1 exact localized name resources.assets: item.armagnac_bottle_1.name
+Ancom Chip anc_chip exact localized name resources.assets: item.anc_chip.name
+ANDR-X nanorobot_grenade exact localized name resources.assets: item.nanorobot_grenade.name
+Andromalius skull_scrivnus_dominate exact localized name resources.assets: item.skull_scrivnus_dominate.name
+Andromalius skull_scrivnus_impaling_ring exact localized name resources.assets: item.skull_scrivnus_impaling_ring.name
+Angerlings quasi_darts_ammo exact localized name resources.assets: item.quasi_darts_ammo.name
+Antibiotics pills_antibiotics exact localized name resources.assets: item.pills_antibiotics.name
+Antidote syringe_antidote exact localized name resources.assets: item.syringe_antidote.name
+Antigrav antigravity_module exact localized name resources.assets: item.antigravity_module.name
+Antikinetic Gel kinetic_gel exact localized name resources.assets: item.kinetic_gel.name
+Antiradin pills_antiradin exact localized name resources.assets: item.pills_antiradin.name
+Anvil M6 unc_autogun_1 exact localized name resources.assets: item.unc_autogun_1.name
+Apollo civ_plasma_assault_1 exact localized name resources.assets: item.civ_plasma_assault_1.name
+APT-Taurus anc_quasi_smg_1 exact localized name resources.assets: item.anc_quasi_smg_1.name
+Arawn skull_flauros_root_network exact localized name resources.assets: item.skull_flauros_root_network.name
+Arawn skull_flauros_spiked_vines exact localized name resources.assets: item.skull_flauros_spiked_vines.name
+Arbiter anc_medium_armor_2 exact localized name resources.assets: item.anc_medium_armor_2.name
+Arbiter anc_medium_boots_2 exact localized name resources.assets: item.anc_medium_boots_2.name
+Arbiter anc_medium_mask_1 exact localized name resources.assets: item.anc_medium_mask_1.name
+Arbiter anc_medium_pants_2 exact localized name resources.assets: item.anc_medium_pants_2.name
+Archangel sun_servo_backpack_1 exact localized name resources.assets: item.sun_servo_backpack_1.name
+Archbishop army_sniper_2 exact localized name resources.assets: item.army_sniper_2.name
+Architect cor_worker_hmg_1 exact localized name resources.assets: item.cor_worker_hmg_1.name
+Archpriest chu_fireclub_1 exact localized name resources.assets: item.chu_fireclub_1.name
+Arm human_hand exact localized name resources.assets: item.human_hand.name
+Armor Case armor_container exact localized name resources.assets: item.armor_container.name
+Armor of Igva warp_armor exact localized name resources.assets: item.warp_armor.name
+Armor Plate armor_plates exact localized name resources.assets: item.armor_plates.name
+Armored Shield placeable_barrel exact localized name resources.assets: item.placeable_barrel.name
+Arrow throwing_knife exact localized name resources.assets: item.throwing_knife.name
+Artificial Musculature artificial_musculature exact localized name resources.assets: item.artificial_musculature.name
+As-Sifara mercury_hat_2 exact localized name resources.assets: item.mercury_hat_2.name
+Ash skull_mars_solar_flare exact localized name resources.assets: item.skull_mars_solar_flare.name
+Ash Shakina mercury_heavy_armor_1 exact localized name resources.assets: item.mercury_heavy_armor_1.name
+Ash Shakina mercury_heavy_helmet_1 exact localized name resources.assets: item.mercury_heavy_helmet_1.name
+Ash Shakina mercury_heavy_pants_1 exact localized name resources.assets: item.mercury_heavy_pants_1.name
+Ash-Shamsa's Staff mercury_staff_sniper_1 exact localized name resources.assets: item.mercury_staff_sniper_1.name
+ASP-Wader anc_pistol_2 exact localized name resources.assets: item.anc_pistol_2.name
+Aspid ddr_toxic_shotgun_1 exact localized name resources.assets: item.ddr_toxic_shotgun_1.name
+At the Gates of Tartarus skull_cattaram_stonewalk exact localized name resources.assets: item.skull_cattaram_stonewalk.name
+At-Taufana mercury_shirt_2 exact localized name resources.assets: item.mercury_shirt_2.name
+Atzumarka venus_blowpipe_1 exact localized name resources.assets: item.venus_blowpipe_1.name
+Auditory Amplifier auditory_amplifier exact localized name resources.assets: item.auditory_amplifier.name
+Augmentation Chip augment_chip exact localized name resources.assets: item.augment_chip.name
+Aurora Pattern sbn_medium_armor_1 exact localized name resources.assets: item.sbn_medium_armor_1.name
+Aurora Pattern sbn_medium_boots_1 exact localized name resources.assets: item.sbn_medium_boots_1.name
+Aurora Pattern sbn_medium_helmet_1 exact localized name resources.assets: item.sbn_medium_helmet_1.name
+Aurora Pattern sbn_medium_pants_1 exact localized name resources.assets: item.sbn_medium_pants_1.name
+Autoinjector med_auto_injector exact localized name resources.assets: item.med_auto_injector.name
+Avatar Restore matrix_medical_kit exact localized name resources.assets: item.matrix_medical_kit.name
+AZ-120 unc_assault_1 exact localized name resources.assets: item.unc_assault_1.name
+AZ-96 trash_assault_1 exact localized name resources.assets: item.trash_assault_1.name
+Badr mercury_medium_armor_1 exact localized name resources.assets: item.mercury_medium_armor_1.name
+Badr mercury_medium_boots_1 exact localized name resources.assets: item.mercury_medium_boots_1.name
+Badr mercury_medium_helmet_1 exact localized name resources.assets: item.mercury_medium_helmet_1.name
+Badr mercury_medium_pants_1 exact localized name resources.assets: item.mercury_medium_pants_1.name
+Balaclava military_mask_1 exact localized name resources.assets: item.military_mask_1.name
+Balance Stabilizer balance_stabilizer exact localized name resources.assets: item.balance_stabilizer.name
+Balm "Star" goldenstar_balm exact localized name resources.assets: item.goldenstar_balm.name
+Bandage bandage exact localized name resources.assets: item.bandage.name
+Banewind Game entertainment_software exact localized name resources.assets: item.entertainment_software.name
+Barafenil pills_painkillers exact localized name resources.assets: item.pills_painkillers.name
+Barakunarash's Hoof mars_baron_leg exact localized name resources.assets: item.mars_baron_leg.name
+Barrier fra_shock_smg_1 exact localized name resources.assets: item.fra_shock_smg_1.name
+Barzakh skull_mercury_beam exact localized name resources.assets: item.skull_mercury_beam.name
+Barzakh skull_mercury_entropy_link exact localized name resources.assets: item.skull_mercury_entropy_link.name
+Bascinet moon_medium_helmet_1 exact localized name resources.assets: item.moon_medium_helmet_1.name
+Basic Item Chip low_chip exact localized name resources.assets: item.low_chip.name
+Bathin skull_ron_animate_shadow exact localized name resources.assets: item.skull_ron_animate_shadow.name
+Bathin skull_ron_dark_zone exact localized name resources.assets: item.skull_ron_dark_zone.name
+Battery battery_basic_ammo exact localized name resources.assets: item.battery_basic_ammo.name
+Battue rwa_boots_1 exact localized name resources.assets: item.rwa_boots_1.name
+Battue rwa_light_helmet_1 exact localized name resources.assets: item.rwa_light_helmet_1.name
+Battue rwa_pants_1 exact localized name resources.assets: item.rwa_pants_1.name
+Battue rwa_shirt_1 exact localized name resources.assets: item.rwa_shirt_1.name
+Bay Twelve vodka_bottle_1 exact localized name resources.assets: item.vodka_bottle_1.name
+Bean Mass canned_food_3 exact localized name resources.assets: item.canned_food_3.name
+Beast military_minigun_1 exact localized name resources.assets: item.military_minigun_1.name
+Beat of the Damaru skull_olirna_frozen_nova exact localized name resources.assets: item.skull_olirna_frozen_nova.name
+Bell of Repentance flesh_bell exact localized name resources.assets: item.flesh_bell.name
+Bicha-Ku she_plasma_assault_1 exact localized name resources.assets: item.she_plasma_assault_1.name
+Big Bone bone_knife exact localized name resources.assets: item.bone_knife.name
+Bio-Boosters bio_boosters exact localized name resources.assets: item.bio_boosters.name
+Bioaccumulator bio_accumulator exact localized name resources.assets: item.bio_accumulator.name
+Biomonitor biomonitor exact localized name resources.assets: item.biomonitor.name
+Bionic Lungs bionic_lungs exact localized name resources.assets: item.bionic_lungs.name
+Bioplastic Blood Vessels bioplastic_vessels exact localized name resources.assets: item.bioplastic_vessels.name
+Biowaste Tank biomass_tank exact localized name resources.assets: item.biomass_tank.name
+Bishop army_sniper_1 exact localized name resources.assets: item.army_sniper_1.name
+Bistrophe-93 dil_chaos_smg_1 exact localized name resources.assets: item.dil_chaos_smg_1.name
+Black Buttondown common_blouse_2 exact localized name resources.assets: item.common_blouse_2.name
+Black Caviar luxury_canned_food_1 exact localized name resources.assets: item.luxury_canned_food_1.name
+Blacksmith armor_repair_kit exact localized name resources.assets: item.armor_repair_kit.name
+Blade-23 cyborg_recreation_blade exact localized name resources.assets: item.cyborg_recreation_blade.name
+Blasphemy skull_flauros_blood_moon exact localized name resources.assets: item.skull_flauros_blood_moon.name
+Blood Filtration blood_filtration exact localized name resources.assets: item.blood_filtration.name
+Blood Prints of Topilzin skull_venus_coagulation_trap exact localized name resources.assets: item.skull_venus_coagulation_trap.name
+Blood Pump blood_pump exact localized name resources.assets: item.blood_pump.name
+Bloodbath Pattern rwa_light_armor_1 exact localized name resources.assets: item.rwa_light_armor_1.name
+Bloodbath Pattern rwa_light_boots_1 exact localized name resources.assets: item.rwa_light_boots_1.name
+Bloodbath Pattern rwa_light_helmet_2 exact localized name resources.assets: item.rwa_light_helmet_2.name
+Bloodbath Pattern rwa_light_pants_1 exact localized name resources.assets: item.rwa_light_pants_1.name
+Bloodhound common_hat_4 exact localized name resources.assets: item.common_hat_4.name
+Bloodhound common_hoodie_2 exact localized name resources.assets: item.common_hoodie_2.name
+Bloodhound common_sport_pants_2 exact localized name resources.assets: item.common_sport_pants_2.name
+Blue Feather quasi_venus_feather exact localized name resources.assets: item.quasi_venus_feather.name
+Blue Guard anc_reinforced_hat_1 exact localized name resources.assets: item.anc_reinforced_hat_1.name
+Blue Guard anc_reinforced_pants_1 exact localized name resources.assets: item.anc_reinforced_pants_1.name
+Blue Guard anc_reinforced_shirt_1 exact localized name resources.assets: item.anc_reinforced_shirt_1.name
+Border Chief common_shotgun_3 exact localized name resources.assets: item.common_shotgun_3.name
+Border FN-4 common_shotgun_1 exact localized name resources.assets: item.common_shotgun_1.name
+Border Mark-2 common_shotgun_2 exact localized name resources.assets: item.common_shotgun_2.name
+Branded Nail Gun cor_worker_pistol_1 exact localized name resources.assets: item.cor_worker_pistol_1.name
+Breaking The Pact anulator exact localized name resources.assets: item.anulator.name
+Breakpoint dil_ion_smg_1 exact localized name resources.assets: item.dil_ion_smg_1.name
+Brigand prison_light_armor_1 exact localized name resources.assets: item.prison_light_armor_1.name
+Brigand prison_light_boots_1 exact localized name resources.assets: item.prison_light_boots_1.name
+Brigand prison_light_pants_1 exact localized name resources.assets: item.prison_light_pants_1.name
+Brigand prison_mask_1 exact localized name resources.assets: item.prison_mask_1.name
+Broadcaster sbn_smg_1 exact localized name resources.assets: item.sbn_smg_1.name
+Brood of Tartarus skull_cattaram_aftermath exact localized name resources.assets: item.skull_cattaram_aftermath.name
+Brown Jeans common_pants_5 exact localized name resources.assets: item.common_pants_5.name
+Brutella prison_medium_armor_1 exact localized name resources.assets: item.prison_medium_armor_1.name
+Brutella prison_medium_boots_1 exact localized name resources.assets: item.prison_medium_boots_1.name
+Brutella prison_medium_pants_1 exact localized name resources.assets: item.prison_medium_pants_1.name
+Buccaneer unc_medium_armor_2 exact localized name resources.assets: item.unc_medium_armor_2.name
+Buccaneer unc_medium_boots_2 exact localized name resources.assets: item.unc_medium_boots_2.name
+Buccaneer unc_medium_helmet_2 exact localized name resources.assets: item.unc_medium_helmet_2.name
+Buccaneer unc_medium_pants_2 exact localized name resources.assets: item.unc_medium_pants_2.name
+Bucket Hat common_hat_2 exact localized name resources.assets: item.common_hat_2.name
+Buffalo big_backpack_1 exact localized name resources.assets: item.big_backpack_1.name
+Builder worker_hmg_1 exact localized name resources.assets: item.worker_hmg_1.name
+Bulwark of al-Jariya ethereal_resonator exact localized name resources.assets: item.ethereal_resonator.name
+Cable wire exact localized name resources.assets: item.wire.name
+Cadet military_medium_armor_1 exact localized name resources.assets: item.military_medium_armor_1.name
+Cadet military_medium_boots_1 exact localized name resources.assets: item.military_medium_boots_1.name
+Cadet military_medium_helmet_1 exact localized name resources.assets: item.military_medium_helmet_1.name
+Cadet military_medium_pants_1 exact localized name resources.assets: item.military_medium_pants_1.name
+Canned Food canned_food_1 exact localized name resources.assets: item.canned_food_1.name
+Canned Food canned_food_2 exact localized name resources.assets: item.canned_food_2.name
+Capacitor capacitor_parts exact localized name resources.assets: item.capacitor_parts.name
+Cargo Pants military_pants_1 exact localized name resources.assets: item.military_pants_1.name
+Carnage Pattern rwa_heavy_armor_1 exact localized name resources.assets: item.rwa_heavy_armor_1.name
+Carnage Pattern rwa_heavy_boots_1 exact localized name resources.assets: item.rwa_heavy_boots_1.name
+Carnage Pattern rwa_heavy_helmet_1 exact localized name resources.assets: item.rwa_heavy_helmet_1.name
+Carnage Pattern rwa_heavy_pants_1 exact localized name resources.assets: item.rwa_heavy_pants_1.name
+Carnifex skull_scrivnus_baron_form exact localized name resources.assets: item.skull_scrivnus_baron_form.name
+Carver common_blouse_3 exact localized name resources.assets: item.common_blouse_3.name
+Casey prison_mask_3 exact localized name resources.assets: item.prison_mask_3.name
+Castigor Tenebrarum ripper exact localized name resources.assets: item.ripper.name
+Cataclysm skull_cattaram_earthquake exact localized name resources.assets: item.skull_cattaram_earthquake.name
+Cathbad skull_flauros_pandemic exact localized name resources.assets: item.skull_flauros_pandemic.name
+Cathbad skull_flauros_thorned_thicket exact localized name resources.assets: item.skull_flauros_thorned_thicket.name
+Cauteris skull_moon_shatter exact localized name resources.assets: item.skull_moon_shatter.name
+Cauteris skull_moon_stalwart exact localized name resources.assets: item.skull_moon_stalwart.name
+Ceramic Plate ceramite_plates exact localized name resources.assets: item.ceramite_plates.name
+Cerberus fra_heavy_armor_1 exact localized name resources.assets: item.fra_heavy_armor_1.name
+Cerberus fra_heavy_boots_1 exact localized name resources.assets: item.fra_heavy_boots_1.name
+Cerberus fra_heavy_mask_1 exact localized name resources.assets: item.fra_heavy_mask_1.name
+Cerberus fra_heavy_pants_1 exact localized name resources.assets: item.fra_heavy_pants_1.name
+Ch skull_olirna_baron_form exact localized name resources.assets: item.skull_olirna_baron_form.name
+Chain Mail armored_vest_1 exact localized name resources.assets: item.armored_vest_1.name
+Chainblade trash_sawblade_1 exact localized name resources.assets: item.trash_sawblade_1.name
+Chalchiuitl venus_hat_1 exact localized name resources.assets: item.venus_hat_1.name
+Chelonopyre turtle_gun exact localized name resources.assets: item.turtle_gun.name
+Chemguard ddr_chem_boots_1 exact localized name resources.assets: item.ddr_chem_boots_1.name
+Chemguard ddr_chem_coat_1 exact localized name resources.assets: item.ddr_chem_coat_1.name
+Chemguard ddr_chem_helmet_1 exact localized name resources.assets: item.ddr_chem_helmet_1.name
+Chemguard ddr_chem_pants_1 exact localized name resources.assets: item.ddr_chem_pants_1.name
+Chemical Processor chemical_analyzer exact localized name resources.assets: item.chemical_analyzer.name
+Chemtrail toxic_ammo exact localized name resources.assets: item.toxic_ammo.name
+Chick-Chick ration_pack_3 exact localized name resources.assets: item.ration_pack_3.name
+Chimalli tez_heavy_armor_1 exact localized name resources.assets: item.tez_heavy_armor_1.name
+Chitin spider_chitin exact localized name resources.assets: item.spider_chitin.name
+Chitin Pants spider_light_pants_1 exact localized name resources.assets: item.spider_light_pants_1.name
+Chitin Shell spider_light_armor_1 exact localized name resources.assets: item.spider_light_armor_1.name
+Chitin Shell spider_light_helmet_1 exact localized name resources.assets: item.spider_light_helmet_1.name
+Chlorine Missile rocket_poison_ammo exact localized name resources.assets: item.rocket_poison_ammo.name
+Choppa prison_axe_1 exact localized name resources.assets: item.prison_axe_1.name
+Christmas Hat christmas_hat exact localized name resources.assets: item.christmas_hat.name
+Church of Revelation Chip chu_chip exact localized name resources.assets: item.chu_chip.name
+Clan Traditions wiskey_bottle_1 exact localized name resources.assets: item.wiskey_bottle_1.name
+Class Chip class_chip exact localized name resources.assets: item.class_chip.name
+Claw common_knife_1 exact localized name resources.assets: item.common_knife_1.name
+Clobber police_heavy_armor_1 exact localized name resources.assets: item.police_heavy_armor_1.name
+Clobber police_heavy_boots_1 exact localized name resources.assets: item.police_heavy_boots_1.name
+Clobber police_heavy_helmet_2 exact localized name resources.assets: item.police_heavy_helmet_2.name
+Clobber police_heavy_pants_1 exact localized name resources.assets: item.police_heavy_pants_1.name
+Cloning Control System medical_equipment exact localized name resources.assets: item.medical_equipment.name
+Coffey prison_heavy_armor_1 exact localized name resources.assets: item.prison_heavy_armor_1.name
+Coffey prison_heavy_helmet_1 exact localized name resources.assets: item.prison_heavy_helmet_1.name
+Coffey prison_heavy_pants_1 exact localized name resources.assets: item.prison_heavy_pants_1.name
+Coil Tentacle ron_shock_wrist documented fallback Uses the exact localized name of the corresponding Ron shock-tentacle item
+Combat AR packaged_security_robot exact localized name resources.assets: item.packaged_security_robot.name
+Commando military_light_helmet_1 exact localized name resources.assets: item.military_light_helmet_1.name
+Commando military_pants_2 exact localized name resources.assets: item.military_pants_2.name
+Commando military_shirt_3 exact localized name resources.assets: item.military_shirt_3.name
+Common Item Chip medium_chip exact localized name resources.assets: item.medium_chip.name
+Condemned prison_reinforced_pants_1 exact localized name resources.assets: item.prison_reinforced_pants_1.name
+Condemned prison_reinforced_shirt_1 exact localized name resources.assets: item.prison_reinforced_shirt_1.name
+Condor 2189 smoke_grenade exact localized name resources.assets: item.smoke_grenade.name
+Conflagrate skull_mars_orbital_incineration exact localized name resources.assets: item.skull_mars_orbital_incineration.name
+Consecration skull_flauros_baron_form exact localized name resources.assets: item.skull_flauros_baron_form.name
+Construction Drone construction_equipment exact localized name resources.assets: item.construction_equipment.name
+Controller cyborg_chest exact localized name resources.assets: item.cyborg_chest.name
+Coreward Mg Chip cor_chip exact localized name resources.assets: item.cor_chip.name
+Corpsman military_doc_armor_1 exact localized name resources.assets: item.military_doc_armor_1.name
+Corpsman military_doc_helmet_1 exact localized name resources.assets: item.military_doc_helmet_1.name
+Corpsman military_doc_pants_1 exact localized name resources.assets: item.military_doc_pants_1.name
+Corsair unc_light_armor_1 exact localized name resources.assets: item.unc_light_armor_1.name
+Corsair unc_light_boots_1 exact localized name resources.assets: item.unc_light_boots_1.name
+Corsair unc_light_helmet_1 exact localized name resources.assets: item.unc_light_helmet_1.name
+Corsair unc_light_pants_1 exact localized name resources.assets: item.unc_light_pants_1.name
+Cortex Bomb cortex_bomb exact localized name resources.assets: item.cortex_bomb.name
+Cortex Stimulator cortex_stimulator exact localized name resources.assets: item.cortex_stimulator.name
+Course Miltex pmc_smg_4 exact localized name resources.assets: item.pmc_smg_4.name
+Course VKT pmc_smg_2 exact localized name resources.assets: item.pmc_smg_2.name
+Crash 17 trash_smg_1 exact localized name resources.assets: item.trash_smg_1.name
+Crash Mod.P police_smg_1 exact localized name resources.assets: item.police_smg_1.name
+Cricket civ_pistol_2 exact localized name resources.assets: item.civ_pistol_2.name
+Crossbow moon_crossbow_sniper_1 exact localized name resources.assets: item.moon_crossbow_sniper_1.name
+Crowbar worker_crowbar_1 exact localized name resources.assets: item.worker_crowbar_1.name
+Crucifier moon_minigun_1 exact localized name resources.assets: item.moon_minigun_1.name
+Crude Mechanism coarse_parts exact localized name resources.assets: item.coarse_parts.name
+Cruel Edict skull_ron_eye_of_the_storm exact localized name resources.assets: item.skull_ron_eye_of_the_storm.name
+Crusader sun_laser_marksman_1 exact localized name resources.assets: item.sun_laser_marksman_1.name
+Crusher miner_breaker_1 exact localized name resources.assets: item.miner_breaker_1.name
+Cryonova frost_grenade exact localized name resources.assets: item.frost_grenade.name
+Cryopentol pills_cryopentol exact localized name resources.assets: item.pills_cryopentol.name
+CS M249 rwa_military_hmg_1 exact localized name resources.assets: item.rwa_military_hmg_1.name
+Cuetlaxtli venus_boots_1 exact localized name resources.assets: item.venus_boots_1.name
+Cuirass armored_expanded_vest_1 exact localized name resources.assets: item.armored_expanded_vest_1.name
+Curse possessed_medium_armor_1 exact localized name resources.assets: item.possessed_medium_armor_1.name
+Curse possessed_medium_boots_1 exact localized name resources.assets: item.possessed_medium_boots_1.name
+Curse possessed_medium_helmet_1 exact localized name resources.assets: item.possessed_medium_helmet_1.name
+Curse possessed_medium_pants_1 exact localized name resources.assets: item.possessed_medium_pants_1.name
+Cursed Rags possessed_shirt_1 exact localized name resources.assets: item.possessed_shirt_1.name
+Cutter worker_discthrower_1 exact localized name resources.assets: item.worker_discthrower_1.name
+Cyber chemical_barrier exact localized name resources.assets: item.chemical_barrier.name
+Cyber Heart cyber_heart exact localized name resources.assets: item.cyber_heart.name
+Cyber Trojan cyber_trojan exact localized name resources.assets: item.cyber_trojan.name
+Cyborg's Arm cyborg_hand exact localized name resources.assets: item.cyborg_hand.name
+Cyborg's Head cyborg_head exact localized name resources.assets: item.cyborg_head.name
+Cyborg's Leg cyborg_leg exact localized name resources.assets: item.cyborg_leg.name
+D olirna_cryobeam_rifle_1 exact localized name resources.assets: item.olirna_cryobeam_rifle_1.name
+D olirna_frost_shotgun_1 exact localized name resources.assets: item.olirna_frost_shotgun_1.name
+D olirna_icicle_minigun_1 exact localized name resources.assets: item.olirna_icicle_minigun_1.name
+Dance of Tenochtli blood_dance exact localized name resources.assets: item.blood_dance.name
+Dark Brood of Morax skull_cattaram_wall_that_walks exact localized name resources.assets: item.skull_cattaram_wall_that_walks.name
+Dark Cargo common_pants_3 exact localized name resources.assets: item.common_pants_3.name
+Darknet Unit darknet_unit exact localized name resources.assets: item.darknet_unit.name
+Data Lock data_lock exact localized name resources.assets: item.data_lock.name
+Dataminer automap exact localized name resources.assets: item.automap.name
+Dawn Pattern sbn_light_armor_1 exact localized name resources.assets: item.sbn_light_armor_1.name
+Dawn Pattern sbn_light_boots_1 exact localized name resources.assets: item.sbn_light_boots_1.name
+Dawn Pattern sbn_light_helmet_1 exact localized name resources.assets: item.sbn_light_helmet_1.name
+Dawn Pattern sbn_light_pants_1 exact localized name resources.assets: item.sbn_light_pants_1.name
+Daydream Chems Chip ddr_chip exact localized name resources.assets: item.ddr_chip.name
+Defibrillator defibrillator_device exact localized name resources.assets: item.defibrillator_device.name
+Desolation she_gas_shotgun_1 exact localized name resources.assets: item.she_gas_shotgun_1.name
+Devourer plasma_assault_1 exact localized name resources.assets: item.plasma_assault_1.name
+Dhulfaqar mercury_blade_1 exact localized name resources.assets: item.mercury_blade_1.name
+Digger cyborg_drill exact localized name resources.assets: item.cyborg_drill.name
+Digital Knife matrix_knife exact localized name resources.assets: item.matrix_knife.name
+Digital Pants matrix_hyber_pants exact localized name resources.assets: item.matrix_hyber_pants.name
+Digital Shirt matrix_hybershirt exact localized name resources.assets: item.matrix_hybershirt.name
+Digital Staff matrix_staff exact localized name resources.assets: item.matrix_staff.name
+Digital Thrower matrix_disc exact localized name resources.assets: item.matrix_disc.name
+Dilthey Battery dil_battery_ammo exact localized name resources.assets: item.dil_battery_ammo.name
+Dilthey Chip dil_chip exact localized name resources.assets: item.dil_chip.name
+Discharge Chamber discharge_chamber exact localized name resources.assets: item.discharge_chamber.name
+Discharger plasma_shotgun_2 exact localized name resources.assets: item.plasma_shotgun_2.name
+Disruption Burst matrix_interference_generator exact localized name resources.assets: item.matrix_interference_generator.name
+Divider ddr_disruptor_pistol_1 exact localized name resources.assets: item.ddr_disruptor_pistol_1.name
+Dog Collar dog_collar exact localized name resources.assets: item.dog_collar.name
+Dog Meat dog_meat exact localized name resources.assets: item.dog_meat.name
+Dog Pelt dog_skin exact localized name resources.assets: item.dog_skin.name
+Dog Skull dog_skull exact localized name resources.assets: item.dog_skull.name
+Dog Teeth dog_teeth exact localized name resources.assets: item.dog_teeth.name
+Domitra skull_moon_self_flagellation exact localized name resources.assets: item.skull_moon_self_flagellation.name
+Domitra skull_moon_submission_of_will exact localized name resources.assets: item.skull_moon_submission_of_will.name
+Dr. Jones surgical_kit exact localized name resources.assets: item.surgical_kit.name
+Dragon Volley shotgun_dragon_ammo exact localized name resources.assets: item.shotgun_dragon_ammo.name
+Dragon-412 fire_turret exact localized name resources.assets: item.fire_turret.name
+Driller mining_equipment exact localized name resources.assets: item.mining_equipment.name
+Drugs Package drug_cargo exact localized name resources.assets: item.drug_cargo.name
+Duffel Bag rags_backpack_1 exact localized name resources.assets: item.rags_backpack_1.name
+Duggur skull_moon_pain_wall exact localized name resources.assets: item.skull_moon_pain_wall.name
+Duggur skull_moon_shrink_armor exact localized name resources.assets: item.skull_moon_shrink_armor.name
+Duggur's Morning Star moon_mace_1 exact localized name resources.assets: item.moon_mace_1.name
+Duggur's Saber moon_blade_1 exact localized name resources.assets: item.moon_blade_1.name
+Dustline grh_light_armor_1 exact localized name resources.assets: item.grh_light_armor_1.name
+Dustline grh_light_boots_1 exact localized name resources.assets: item.grh_light_boots_1.name
+Dustline grh_light_helmet_1 exact localized name resources.assets: item.grh_light_helmet_1.name
+Dustline grh_light_pants_1 exact localized name resources.assets: item.grh_light_pants_1.name
+DVL-T Saw sawblade_poison_ammo exact localized name resources.assets: item.sawblade_poison_ammo.name
+E.C.H.O. dil_sound_pistol_1 exact localized name resources.assets: item.dil_sound_pistol_1.name
+EAF-S fire_extinguisher exact localized name resources.assets: item.fire_extinguisher.name
+Eagle pmc_pistol_1 exact localized name resources.assets: item.pmc_pistol_1.name
+Eagle ST-13 pmc_pistol_3 exact localized name resources.assets: item.pmc_pistol_3.name
+Eannis Redfire mars_gas_ammo exact localized name resources.assets: item.mars_gas_ammo.name
+Ear human_ear exact localized name resources.assets: item.human_ear.name
+Echo Proxy matrix_hologram exact localized name resources.assets: item.matrix_hologram.name
+Electrical Parts electrical_parts_container exact localized name resources.assets: item.electrical_parts_container.name
+Elerium quasi_energy_ammo exact localized name resources.assets: item.quasi_energy_ammo.name
+Eliminator ddr_reinforced_chem_coat_1 exact localized name resources.assets: item.ddr_reinforced_chem_coat_1.name
+Eliminator ddr_reinforced_chem_helmet_1 exact localized name resources.assets: item.ddr_reinforced_chem_helmet_1.name
+Eliminator ddr_reinforced_chem_pants_1 exact localized name resources.assets: item.ddr_reinforced_chem_pants_1.name
+Elite Knife military_knife_1 exact localized name resources.assets: item.military_knife_1.name
+Emerald Hand venus_warrior_smg exact localized name resources.assets: item.venus_warrior_smg.name
+EMG-764 energy_turret exact localized name resources.assets: item.energy_turret.name
+Employee ID personal_key exact localized name resources.assets: item.personal_key.name
+End of Dream skull_moon_mass_decay exact localized name resources.assets: item.skull_moon_mass_decay.name
+Energy Booster energy_booster exact localized name resources.assets: item.energy_booster.name
+Energy Collector energy_collector exact localized name resources.assets: item.energy_collector.name
+Energy Shield energy_shield exact localized name resources.assets: item.energy_shield.name
+Engineer engineering_repair_kit exact localized name resources.assets: item.engineering_repair_kit.name
+Enigma rail_pistol_2 exact localized name resources.assets: item.rail_pistol_2.name
+Enigma Supreme rail_marksman_1 exact localized name resources.assets: item.rail_marksman_1.name
+Enigma-M2 rail_pistol_3 exact localized name resources.assets: item.rail_pistol_3.name
+Enigma-PT rail_pistol_1 exact localized name resources.assets: item.rail_pistol_1.name
+Enlightenment MK sun_laser_sniper_1 exact localized name resources.assets: item.sun_laser_sniper_1.name
+EVA laborer_medium_armor_1 exact localized name resources.assets: item.laborer_medium_armor_1.name
+EVA laborer_medium_boots_1 exact localized name resources.assets: item.laborer_medium_boots_1.name
+EVA laborer_medium_helmet_1 exact localized name resources.assets: item.laborer_medium_helmet_1.name
+EVA laborer_medium_pants_1 exact localized name resources.assets: item.laborer_medium_pants_1.name
+Event Horizon skull_scrivnus_slaughter exact localized name resources.assets: item.skull_scrivnus_slaughter.name
+Exorcist sun_laser_assault_1 exact localized name resources.assets: item.sun_laser_assault_1.name
+Exosuite laborer_exoskeleton_1 exact localized name resources.assets: item.laborer_exoskeleton_1.name
+Experion science_gasmask_1 exact localized name resources.assets: item.science_gasmask_1.name
+Experion science_reinforced_boots_1 exact localized name resources.assets: item.science_reinforced_boots_1.name
+Experion science_reinforced_pants_1 exact localized name resources.assets: item.science_reinforced_pants_1.name
+Experion science_reinforced_shirt_1 exact localized name resources.assets: item.science_reinforced_shirt_1.name
+Explosives explosives exact localized name resources.assets: item.explosives.name
+Eye human_eye exact localized name resources.assets: item.human_eye.name
+Eye of Karrokh demonic_eye exact localized name resources.assets: item.demonic_eye.name
+Eye of Rarrug revealing_eye exact localized name resources.assets: item.revealing_eye.name
+Eye of Wrath quasi_grenade exact localized name resources.assets: item.quasi_grenade.name
+FA Scale dil_light_armor_1 exact localized name resources.assets: item.dil_light_armor_1.name
+FA Scale dil_light_boots_1 exact localized name resources.assets: item.dil_light_boots_1.name
+FA Scale dil_light_helmet_1 exact localized name resources.assets: item.dil_light_helmet_1.name
+FA Scale dil_light_pants_1 exact localized name resources.assets: item.dil_light_pants_1.name
+Fana skull_mercury_astral_form exact localized name resources.assets: item.skull_mercury_astral_form.name
+Fang skrivnus_knife exact localized name resources.assets: item.skrivnus_knife.name
+Faris Onslaught skull_mercury_blink exact localized name resources.assets: item.skull_mercury_blink.name
+Faris Tempo skull_mercury_surge exact localized name resources.assets: item.skull_mercury_surge.name
+Feces human_poop exact localized name resources.assets: item.human_poop.name
+Ferrugo skull_moon_baron_form exact localized name resources.assets: item.skull_moon_baron_form.name
+Ferrugo skull_moon_decay exact localized name resources.assets: item.skull_moon_decay.name
+FGP Type-7 frag_mine exact localized name resources.assets: item.frag_mine.name
+Fibromin pills_fibromine exact localized name resources.assets: item.pills_fibromine.name
+Field Emitter field_emitter exact localized name resources.assets: item.field_emitter.name
+Fighter medium_backpack_1 exact localized name resources.assets: item.medium_backpack_1.name
+Fikr mercury_hat_1 exact localized name resources.assets: item.mercury_hat_1.name
+Filibuster unc_reinforced_cap_1 exact localized name resources.assets: item.unc_reinforced_cap_1.name
+Filibuster unc_reinforced_pants_1 exact localized name resources.assets: item.unc_reinforced_pants_1.name
+Filibuster unc_reinforced_shirt_1 exact localized name resources.assets: item.unc_reinforced_shirt_1.name
+Firefly worker_torch_1 exact localized name resources.assets: item.worker_torch_1.name
+First Aid Kit medical_kit_1 exact localized name resources.assets: item.medical_kit_1.name
+Flash laser_pistol_1 exact localized name resources.assets: item.laser_pistol_1.name
+Flash MG-76 laser_smg_1 exact localized name resources.assets: item.laser_smg_1.name
+Flash-M laser_pistol_2 exact localized name resources.assets: item.laser_pistol_2.name
+Flauros skull_flauros_poison_darts exact localized name resources.assets: item.skull_flauros_poison_darts.name
+Flauros skull_flauros_wild_hunt exact localized name resources.assets: item.skull_flauros_wild_hunt.name
+Flechette 12 shotgun_flechette_ammo exact localized name resources.assets: item.shotgun_flechette_ammo.name
+Fletus moon_heavy_helmet_1 exact localized name resources.assets: item.moon_heavy_helmet_1.name
+Flies flauros_ammo exact localized name resources.assets: item.flauros_ammo.name
+FMAF 300 fra_security_assault_1 exact localized name resources.assets: item.fra_security_assault_1.name
+Fokerma skull_moon_animate_weapons exact localized name resources.assets: item.skull_moon_animate_weapons.name
+Fokerma skull_moon_disarm exact localized name resources.assets: item.skull_moon_disarm.name
+Fomorian Blight skull_flauros_plague exact localized name resources.assets: item.skull_flauros_plague.name
+Food regular_food_container exact localized name resources.assets: item.regular_food_container.name
+Foot human_feet exact localized name resources.assets: item.human_feet.name
+Foots prison_sneakers_1 exact localized name resources.assets: item.prison_sneakers_1.name
+Foreman miner_boots_1 exact localized name resources.assets: item.miner_boots_1.name
+Foreman miner_hard_cap_1 exact localized name resources.assets: item.miner_hard_cap_1.name
+Foreman miner_pants_1 exact localized name resources.assets: item.miner_pants_1.name
+Foreman miner_shirt_1 exact localized name resources.assets: item.miner_shirt_1.name
+Forge-furnace mars_meltathrower exact localized name resources.assets: item.mars_meltathrower.name
+Forgeborns skull_moon_disco exact localized name resources.assets: item.skull_moon_disco.name
+Forged Arm mars_cyborg_hand exact localized name resources.assets: item.mars_cyborg_hand.name
+Forged Controller mars_cyborg_chest exact localized name resources.assets: item.mars_cyborg_chest.name
+Forged Head mars_cyborg_head exact localized name resources.assets: item.mars_cyborg_head.name
+Forged Junction mars_cyborg_stomach exact localized name resources.assets: item.mars_cyborg_stomach.name
+Forged Leg mars_cyborg_leg exact localized name resources.assets: item.mars_cyborg_leg.name
+Forged Servo mars_cyborg_knee exact localized name resources.assets: item.mars_cyborg_knee.name
+Frag-12 shotgun_explosion_ammo exact localized name resources.assets: item.shotgun_explosion_ammo.name
+Frame cyborg_guts exact localized name resources.assets: item.cyborg_guts.name
+Frame military_power_armor_1 exact localized name resources.assets: item.military_power_armor_1.name
+Frame military_power_boots_1 exact localized name resources.assets: item.military_power_boots_1.name
+Frame military_power_helmet_1 exact localized name resources.assets: item.military_power_helmet_1.name
+Frame military_power_pants_1 exact localized name resources.assets: item.military_power_pants_1.name
+Franche-Comte PS Chip fra_chip exact localized name resources.assets: item.fra_chip.name
+FrayVector dil_chaos_assault_1 exact localized name resources.assets: item.dil_chaos_assault_1.name
+Fried Meat roasted_human_meat exact localized name resources.assets: item.roasted_human_meat.name
+Fried Octopus roasted_ron_tentacle exact localized name resources.assets: item.roasted_ron_tentacle.name
+Fried Spider roasted_spider_meat exact localized name resources.assets: item.roasted_spider_meat.name
+Frog Hat common_froghat_1 exact localized name resources.assets: item.common_froghat_1.name
+Frontier grh_trucker_marksman_1 exact localized name resources.assets: item.grh_trucker_marksman_1.name
+Frostman laborer_warm_boots_1 exact localized name resources.assets: item.laborer_warm_boots_1.name
+Frostman laborer_warm_hat_1 exact localized name resources.assets: item.laborer_warm_hat_1.name
+Frostman laborer_warm_pants_1 exact localized name resources.assets: item.laborer_warm_pants_1.name
+Frostman laborer_warm_shirt_1 exact localized name resources.assets: item.laborer_warm_shirt_1.name
+Fukabirna Pulse skull_mercury_vortex exact localized name resources.assets: item.skull_mercury_vortex.name
+Fukabirna Surface skull_mercury_reflect_shield exact localized name resources.assets: item.skull_mercury_reflect_shield.name
+Fulgurite skull_ron_baron_form exact localized name resources.assets: item.skull_ron_baron_form.name
+Furcas skull_scrivnus_execution exact localized name resources.assets: item.skull_scrivnus_execution.name
+Furcas skull_scrivnus_terrorize exact localized name resources.assets: item.skull_scrivnus_terrorize.name
+Furuncle human_organ_1 exact localized name resources.assets: item.human_organ_1.name
+Galand common_pistol_1 exact localized name resources.assets: item.common_pistol_1.name
+Galand Novo common_pistol_2 exact localized name resources.assets: item.common_pistol_2.name
+Galand Ultim common_pistol_3 exact localized name resources.assets: item.common_pistol_3.name
+Gannix Rags quasi_venus_rags exact localized name resources.assets: item.quasi_venus_rags.name
+Gas Mask common_gasmask_1 exact localized name resources.assets: item.common_gasmask_1.name
+Gavvakh quasi_medical_kit_1 exact localized name resources.assets: item.quasi_medical_kit_1.name
+Gavvakh Vesicle gavaah_injector exact localized name resources.assets: item.gavaah_injector.name
+Gehenna miner_power_armor_1 exact localized name resources.assets: item.miner_power_armor_1.name
+Gehenna miner_power_boots_1 exact localized name resources.assets: item.miner_power_boots_1.name
+Gehenna miner_power_helmet_1 exact localized name resources.assets: item.miner_power_helmet_1.name
+Gehenna miner_power_pants_1 exact localized name resources.assets: item.miner_power_pants_1.name
+Genie's Hand mercury_baron_smg exact localized name resources.assets: item.mercury_baron_smg.name
+Geoscanner geoscanner_device exact localized name resources.assets: item.geoscanner_device.name
+Ghost Mantis rwa_military_smg_1 exact localized name resources.assets: item.rwa_military_smg_1.name
+Giant Hand possessed_bigarm_hand exact localized name resources.assets: item.possessed_bigarm_hand.name
+Gibil urparp_grenade exact localized name resources.assets: item.urparp_grenade.name
+Gibil's Blackfire skull_mars_reactive_pyre exact localized name resources.assets: item.skull_mars_reactive_pyre.name
+Gibil's Extra skull_mars_overclock exact localized name resources.assets: item.skull_mars_overclock.name
+Gka-2 venus_quasi_shotgun_1 exact localized name resources.assets: item.venus_quasi_shotgun_1.name
+Gladiator military_common_vest_1 exact localized name resources.assets: item.military_common_vest_1.name
+Glass glass exact localized name resources.assets: item.glass.name
+Glass Bottle glass_bottle exact localized name resources.assets: item.glass_bottle.name
+Glass Shank trash_knife_1 exact localized name resources.assets: item.trash_knife_1.name
+Glory military_light_armor_1 exact localized name resources.assets: item.military_light_armor_1.name
+Glory military_light_boots_1 exact localized name resources.assets: item.military_light_boots_1.name
+Glory military_light_gasmask_1 exact localized name resources.assets: item.military_light_gasmask_1.name
+Glory military_light_pants_1 exact localized name resources.assets: item.military_light_pants_1.name
+Gnyann's Binding skull_olirna_ice_age exact localized name resources.assets: item.skull_olirna_ice_age.name
+Gnyann's Gaze skull_olirna_glaciation exact localized name resources.assets: item.skull_olirna_glaciation.name
+God of Fire cor_worker_flamethrower_1 exact localized name resources.assets: item.cor_worker_flamethrower_1.name
+Golden Calf skull_mars_avatar_of_flame exact localized name resources.assets: item.skull_mars_avatar_of_flame.name
+Gorgon toxic_thrower_1 exact localized name resources.assets: item.toxic_thrower_1.name
+Gothic moon_medium_armor_2 exact localized name resources.assets: item.moon_medium_armor_2.name
+Gothic moon_medium_boots_1 exact localized name resources.assets: item.moon_medium_boots_1.name
+Gothic moon_medium_pants_1 exact localized name resources.assets: item.moon_medium_pants_1.name
+Goulash jupiter_goulash exact localized name resources.assets: item.jupiter_goulash.name
+Grasshopper Technologies Chip gra_chip exact localized name resources.assets: item.gra_chip.name
+Green Jacket military_shirt_2 exact localized name resources.assets: item.military_shirt_2.name
+Greyhound common_hat_3 exact localized name resources.assets: item.common_hat_3.name
+Greyhound common_hoodie_1 exact localized name resources.assets: item.common_hoodie_1.name
+Greyhound common_sport_pants_1 exact localized name resources.assets: item.common_sport_pants_1.name
+Grin unc_gasmask_1 exact localized name resources.assets: item.unc_gasmask_1.name
+Gringos chips_pack_2 exact localized name resources.assets: item.chips_pack_2.name
+Guardsmen Clothing security_clothing_container exact localized name resources.assets: item.security_clothing_container.name
+Guerrilla civ_heavy_armor_1 exact localized name resources.assets: item.civ_heavy_armor_1.name
+Guerrilla civ_heavy_boots_1 exact localized name resources.assets: item.civ_heavy_boots_1.name
+Guerrilla civ_heavy_helmet_1 exact localized name resources.assets: item.civ_heavy_helmet_1.name
+Guerrilla civ_heavy_pants_1 exact localized name resources.assets: item.civ_heavy_pants_1.name
+Gunbang Magazine gunbang_magazine exact localized name resources.assets: item.gunbang_magazine.name
+Gunsmith firearm_repair_kit exact localized name resources.assets: item.firearm_repair_kit.name
+H.F.C. tech_hfg_1 exact localized name resources.assets: item.tech_hfg_1.name
+H.O.W.L. dil_sound_pistol_2 exact localized name resources.assets: item.dil_sound_pistol_2.name
+Hafizun skull_mercury_baron_form exact localized name resources.assets: item.skull_mercury_baron_form.name
+Hafizun skull_mercury_time_stop exact localized name resources.assets: item.skull_mercury_time_stop.name
+Hairband prison_hat_1 exact localized name resources.assets: item.prison_hat_1.name
+Hammer Driver cor_nail_shotgun_1 exact localized name resources.assets: item.cor_nail_shotgun_1.name
+Han Dao tia_blade_1 exact localized name resources.assets: item.tia_blade_1.name
+Handyman laborer_cap_1 exact localized name resources.assets: item.laborer_cap_1.name
+Handyman laborer_pants_1 exact localized name resources.assets: item.laborer_pants_1.name
+Handyman laborer_shirt_1 exact localized name resources.assets: item.laborer_shirt_1.name
+Hangover civ_powerfist_1 exact localized name resources.assets: item.civ_powerfist_1.name
+Hardcore chu_sniper_1 exact localized name resources.assets: item.chu_sniper_1.name
+Harpy ddr_disruptor_marksman_1 exact localized name resources.assets: item.ddr_disruptor_marksman_1.name
+Hawk military_axe_1 exact localized name resources.assets: item.military_axe_1.name
+Hazmat science_chem_boots_1 exact localized name resources.assets: item.science_chem_boots_1.name
+Hazmat science_chem_helmet_1 exact localized name resources.assets: item.science_chem_helmet_1.name
+Hazmat science_chem_pants_1 exact localized name resources.assets: item.science_chem_pants_1.name
+Hazmat science_chem_shirt_1 exact localized name resources.assets: item.science_chem_shirt_1.name
+Head of Cabbage cabbage exact localized name resources.assets: item.cabbage.name
+Heart throwable_heart exact localized name resources.assets: item.throwable_heart.name
+Heart of Eitsekhor steadfast_heart exact localized name resources.assets: item.steadfast_heart.name
+Heatdeath sun_cryolaser_hmg_1 exact localized name resources.assets: item.sun_cryolaser_hmg_1.name
+Heavy Chitine spider_light_boots_1 exact localized name resources.assets: item.spider_light_boots_1.name
+Hel Trinity ddr_frost_pistol_1 exact localized name resources.assets: item.ddr_frost_pistol_1.name
+Hell March skull_mars_great_awakening exact localized name resources.assets: item.skull_mars_great_awakening.name
+Hellcrab Carapace mars_crab_stomach exact localized name resources.assets: item.mars_crab_stomach.name
+Hellcrab Chitin mars_skin exact localized name resources.assets: item.mars_skin.name
+Hellcrab Meat mars_crab_meat exact localized name resources.assets: item.mars_crab_meat.name
+Hellcrab Pincer mars_crab_hand exact localized name resources.assets: item.mars_crab_hand.name
+Helper servo_backpack_1 exact localized name resources.assets: item.servo_backpack_1.name
+Hematite skull_venus_baron_form exact localized name resources.assets: item.skull_venus_baron_form.name
+Hemophilia skull_venus_hemostatic_shock exact localized name resources.assets: item.skull_venus_hemostatic_shock.name
+Hemostasis skull_venus_barotrauma exact localized name resources.assets: item.skull_venus_barotrauma.name
+Herald of the Flies flauros_smg_1 exact localized name resources.assets: item.flauros_smg_1.name
+Heretic military_shotgun_1 exact localized name resources.assets: item.military_shotgun_1.name
+Hessian unc_boots_1 exact localized name resources.assets: item.unc_boots_1.name
+Hi-Tek tech_repair_kit exact localized name resources.assets: item.tech_repair_kit.name
+Hiberpants common_hyber_pants_1 exact localized name resources.assets: item.common_hyber_pants_1.name
+Hiberpants common_hyber_pants_2 exact localized name resources.assets: item.common_hyber_pants_2.name
+Hibershirt common_hybershirt_1 exact localized name resources.assets: item.common_hybershirt_1.name
+Hibershirt common_hybershirt_2 exact localized name resources.assets: item.common_hybershirt_2.name
+Hierarch police_club_1 exact localized name resources.assets: item.police_club_1.name
+High Noon grh_trucker_assault_2 exact localized name resources.assets: item.grh_trucker_assault_2.name
+High-Tech Item Chip high_chip exact localized name resources.assets: item.high_chip.name
+Hinjal mercury_sickle_1 exact localized name resources.assets: item.mercury_sickle_1.name
+Hobo trash_armored_vest_1 exact localized name resources.assets: item.trash_armored_vest_1.name
+Holographic Projector holographic_projector exact localized name resources.assets: item.holographic_projector.name
+Horde Cog mars_gear exact localized name resources.assets: item.mars_gear.name
+Horncall skull_flauros_titan exact localized name resources.assets: item.skull_flauros_titan.name
+Hot Dog roasted_dog_meat exact localized name resources.assets: item.roasted_dog_meat.name
+HREn plb_pistol_1 exact localized name resources.assets: item.plb_pistol_1.name
+Huipil xio_pants_1 exact localized name resources.assets: item.xio_pants_1.name
+Human Leather possessed_shirt_3 exact localized name resources.assets: item.possessed_shirt_3.name
+Hunter trucker_marksman_1 exact localized name resources.assets: item.trucker_marksman_1.name
+Hunter Rx trucker_marksman_2 exact localized name resources.assets: item.trucker_marksman_2.name
+Hurricane SCD plb_marksman_1 exact localized name resources.assets: item.plb_marksman_1.name
+Hydra-12 military_pistol_1 exact localized name resources.assets: item.military_pistol_1.name
+Hydra-24 military_pistol_2 exact localized name resources.assets: item.military_pistol_2.name
+Hydra-33S military_pistol_3 exact localized name resources.assets: item.military_pistol_3.name
+Hydraulic Pump hydraulic_pump exact localized name resources.assets: item.hydraulic_pump.name
+Hydrogel Bandage hydrogel_bandage exact localized name resources.assets: item.hydrogel_bandage.name
+Ibn Sina medical_heavy_armor_1 exact localized name resources.assets: item.medical_heavy_armor_1.name
+Ibn Sina medical_heavy_boots_1 exact localized name resources.assets: item.medical_heavy_boots_1.name
+Ibn Sina medical_heavy_helmet_1 exact localized name resources.assets: item.medical_heavy_helmet_1.name
+Ibn Sina medical_heavy_pants_1 exact localized name resources.assets: item.medical_heavy_pants_1.name
+Igvas quasi_basic_ammo exact localized name resources.assets: item.quasi_basic_ammo.name
+Igvas-Spitter venus_quasi_pistol_1 exact localized name resources.assets: item.venus_quasi_pistol_1.name
+Immune Enhancer immune_enhancer exact localized name resources.assets: item.immune_enhancer.name
+Impactor civ_medium_armor_1 exact localized name resources.assets: item.civ_medium_armor_1.name
+Impactor civ_medium_boots_1 exact localized name resources.assets: item.civ_medium_boots_1.name
+Impactor civ_medium_helmet_1 exact localized name resources.assets: item.civ_medium_helmet_1.name
+Impactor civ_medium_pants_1 exact localized name resources.assets: item.civ_medium_pants_1.name
+In the Form of Mujtahid skull_mercury_rewind exact localized name resources.assets: item.skull_mercury_rewind.name
+Incarnate Blind Shift skull_mercury_arcane_escape exact localized name resources.assets: item.skull_mercury_arcane_escape.name
+Induction Frame induction_frame exact localized name resources.assets: item.induction_frame.name
+Industrial AR packaged_industrial_robot exact localized name resources.assets: item.packaged_industrial_robot.name
+Industrial Spare Parts engineering_parts_container exact localized name resources.assets: item.engineering_parts_container.name
+Inferno hellfire_grenade exact localized name resources.assets: item.hellfire_grenade.name
+Insulating Tape tape exact localized name resources.assets: item.tape.name
+Insulators insulators exact localized name resources.assets: item.insulators.name
+Integrated Holster integrated_holster exact localized name resources.assets: item.integrated_holster.name
+Integrated Launcher rocket_injector exact localized name resources.assets: item.rocket_injector.name
+Integrated Magazine integrated_magazine exact localized name resources.assets: item.integrated_magazine.name
+Integumentum plb_power_armor_1 exact localized name resources.assets: item.plb_power_armor_1.name
+Integumentum plb_power_boots_1 exact localized name resources.assets: item.plb_power_boots_1.name
+Integumentum plb_power_helmet_1 exact localized name resources.assets: item.plb_power_helmet_1.name
+Integumentum plb_power_pants_1 exact localized name resources.assets: item.plb_power_pants_1.name
+Internationale AR civ_common_assault_2 exact localized name resources.assets: item.civ_common_assault_2.name
+Ironclad miner_medium_armor_1 exact localized name resources.assets: item.miner_medium_armor_1.name
+Ironclad miner_medium_boots_1 exact localized name resources.assets: item.miner_medium_boots_1.name
+Ironclad miner_medium_helmet_1 exact localized name resources.assets: item.miner_medium_helmet_1.name
+Ironclad miner_medium_pants_1 exact localized name resources.assets: item.miner_medium_pants_1.name
+Ishtakol venus_pants_1 exact localized name resources.assets: item.venus_pants_1.name
+Itzpapalotl venus_spear_hmg_1 exact localized name resources.assets: item.venus_spear_hmg_1.name
+Itzpapalotl Blood Debt skull_venus_reapers_harvest exact localized name resources.assets: item.skull_venus_reapers_harvest.name
+Itzpapalotl Green Shard skull_venus_arterial_pulse exact localized name resources.assets: item.skull_venus_arterial_pulse.name
+Jackboots military_boots_1 exact localized name resources.assets: item.military_boots_1.name
+Jahannam mercury_assault_staff_1 exact localized name resources.assets: item.mercury_assault_staff_1.name
+Jeans common_pants_4 exact localized name resources.assets: item.common_pants_4.name
+Jeffhammer trucker_shotgun_1 exact localized name resources.assets: item.trucker_shotgun_1.name
+Jeffhammer MD trucker_shotgun_2 exact localized name resources.assets: item.trucker_shotgun_2.name
+Jhammer-C22 trucker_shotgun_3 exact localized name resources.assets: item.trucker_shotgun_3.name
+Jotunheim frost_gas_grenade exact localized name resources.assets: item.frost_gas_grenade.name
+Judge ABC cyborg_battle_machinegun exact localized name resources.assets: item.cyborg_battle_machinegun.name
+Jupiterian Innards jupiter_guts exact localized name resources.assets: item.jupiter_guts.name
+Jyggalag she_smg_1 exact localized name resources.assets: item.she_smg_1.name
+K mercury_hmg_staff_1 exact localized name resources.assets: item.mercury_hmg_staff_1.name
+Karnonos sun_medium_armor_1 exact localized name resources.assets: item.sun_medium_armor_1.name
+Karnonos sun_medium_boots_1 exact localized name resources.assets: item.sun_medium_boots_1.name
+Karnonos sun_medium_helmet_1 exact localized name resources.assets: item.sun_medium_helmet_1.name
+Karnonos sun_medium_pants_1 exact localized name resources.assets: item.sun_medium_pants_1.name
+Karzur's Bone Needle skull_scrivnus_torment exact localized name resources.assets: item.skull_scrivnus_torment.name
+Karzurs' Bonebreak skull_scrivnus_impale exact localized name resources.assets: item.skull_scrivnus_impale.name
+Kasten-Brust moon_medium_armor_1 exact localized name resources.assets: item.moon_medium_armor_1.name
+Kevlar Layer kevlar_layer exact localized name resources.assets: item.kevlar_layer.name
+Khatm as-Sihr chaos_orb exact localized name resources.assets: item.chaos_orb.name
+Kinetic Absorber kinetic_absorber exact localized name resources.assets: item.kinetic_absorber.name
+Kinetic Buffer kinetic_buffer exact localized name resources.assets: item.kinetic_buffer.name
+Kinetic Stabilizer kinetic_stabilizer exact localized name resources.assets: item.kinetic_stabilizer.name
+Knifemaker melee_repair_kit exact localized name resources.assets: item.melee_repair_kit.name
+Knuckles trash_fist_1 exact localized name resources.assets: item.trash_fist_1.name
+Kor-Key Juice soda_can_2 exact localized name resources.assets: item.soda_can_2.name
+Kosmos cigarettes_1 exact localized name resources.assets: item.cigarettes_1.name
+Kovrov 025MP grh_trucker_assault_1 exact localized name resources.assets: item.grh_trucker_assault_1.name
+Kovrov 3301 grh_common_smg_1 exact localized name resources.assets: item.grh_common_smg_1.name
+Kryolith ice_crystal exact localized name resources.assets: item.ice_crystal.name
+Kuangji tia_disc_assault_1 exact localized name resources.assets: item.tia_disc_assault_1.name
+Labform science_coat_1 exact localized name resources.assets: item.science_coat_1.name
+Labform science_mask_1 exact localized name resources.assets: item.science_mask_1.name
+Labform science_pants_1 exact localized name resources.assets: item.science_pants_1.name
+Laboratory Clothes scientist_clothing_container exact localized name resources.assets: item.scientist_clothing_container.name
+Lads chips_pack_1 exact localized name resources.assets: item.chips_pack_1.name
+Lament of Cronuth skull_cattaram_upheaval exact localized name resources.assets: item.skull_cattaram_upheaval.name
+Lamp bulb exact localized name resources.assets: item.bulb.name
+Law chu_trucker_pistol_1 exact localized name resources.assets: item.chu_trucker_pistol_1.name
+Le MAF 2150 fra_security_pistol_1 exact localized name resources.assets: item.fra_security_pistol_1.name
+Le MAF 2199 fra_security_pistol_2 exact localized name resources.assets: item.fra_security_pistol_2.name
+Lead Bull moon_maul_1 exact localized name resources.assets: item.moon_maul_1.name
+Leap of al-Abarsa warp_accelerator exact localized name resources.assets: item.warp_accelerator.name
+Ledger ledger_book exact localized name resources.assets: item.ledger_book.name
+Leg human_leg exact localized name resources.assets: item.human_leg.name
+Legacy army_hmg_1 exact localized name resources.assets: item.army_hmg_1.name
+Legend Armor military_heavy_armor_1 exact localized name resources.assets: item.military_heavy_armor_1.name
+Legend Boots military_heavy_boots_1 exact localized name resources.assets: item.military_heavy_boots_1.name
+Legend Helmet military_heavy_helmet_1 exact localized name resources.assets: item.military_heavy_helmet_1.name
+Legend Pants military_heavy_pants_1 exact localized name resources.assets: item.military_heavy_pants_1.name
+Lemonjuice juice_pack_2 exact localized name resources.assets: item.juice_pack_2.name
+Liberator trucker_pistol_1 exact localized name resources.assets: item.trucker_pistol_1.name
+Liberator M trucker_pistol_2 exact localized name resources.assets: item.trucker_pistol_2.name
+Linerunner laborer_boots_1 exact localized name resources.assets: item.laborer_boots_1.name
+Linerunner laborer_hard_cap_1 exact localized name resources.assets: item.laborer_hard_cap_1.name
+Linerunner laborer_pants_3 exact localized name resources.assets: item.laborer_pants_3.name
+Linerunner laborer_shirt_3 exact localized name resources.assets: item.laborer_shirt_3.name
+Load of Gold Bars precious_metals exact localized name resources.assets: item.precious_metals.name
+Long Blade pierce_parts exact localized name resources.assets: item.pierce_parts.name
+Longhu spec_shotgun_1 exact localized name resources.assets: item.spec_shotgun_1.name
+Lord of the Flies flauros_assault_1 exact localized name resources.assets: item.flauros_assault_1.name
+LPS Whip cor_laser_sniper_1 exact localized name resources.assets: item.cor_laser_sniper_1.name
+Lunar Bone moon_weapon_parts exact localized name resources.assets: item.moon_weapon_parts.name
+Lunar Innards moon_guts exact localized name resources.assets: item.moon_guts.name
+Lux sbn_pants_1 exact localized name resources.assets: item.sbn_pants_1.name
+Lux sbn_shirt_1 exact localized name resources.assets: item.sbn_shirt_1.name
+Luxury Belt snake_vest_1 exact localized name resources.assets: item.snake_vest_1.name
+Luxury Lunches luxury_food_container exact localized name resources.assets: item.luxury_food_container.name
+M-24 thermal_grenade exact localized name resources.assets: item.thermal_grenade.name
+Machete trash_blade_1 exact localized name resources.assets: item.trash_blade_1.name
+Macuahuitl venus_club_1 exact localized name resources.assets: item.venus_club_1.name
+Magnetic Deflector magnetic_deflector exact localized name resources.assets: item.magnetic_deflector.name
+Magnetic Generator magnetic_generator exact localized name resources.assets: item.magnetic_generator.name
+Magnetic Stabilizer magnetic_stabilizer exact localized name resources.assets: item.magnetic_stabilizer.name
+Makeshift Battery battery_crafted_ammo exact localized name resources.assets: item.battery_crafted_ammo.name
+Makeshift Grenade handmade_frag_grenade exact localized name resources.assets: item.handmade_frag_grenade.name
+Makeshift Smoke Bomb handmade_smoke_grenade exact localized name resources.assets: item.handmade_smoke_grenade.name
+Malice she_military_minigun_1 exact localized name resources.assets: item.she_military_minigun_1.name
+Man-Of-War unc_pistol_2 exact localized name resources.assets: item.unc_pistol_2.name
+Management Unit management_unit exact localized name resources.assets: item.management_unit.name
+Manipulator cyborg_wrist exact localized name resources.assets: item.cyborg_wrist.name
+Mantis M3 military_smg_1 exact localized name resources.assets: item.military_smg_1.name
+Marah skull_olirna_frost_guardian exact localized name resources.assets: item.skull_olirna_frost_guardian.name
+Marah's Mantle skull_olirna_carapace exact localized name resources.assets: item.skull_olirna_carapace.name
+Marduk's Blazing Charge skull_mars_shatter_grenade exact localized name resources.assets: item.skull_mars_shatter_grenade.name
+Marduk's Power Soak skull_mars_scorched_armory exact localized name resources.assets: item.skull_mars_scorched_armory.name
+Mardukan mars_flamehead exact localized name resources.assets: item.mars_flamehead.name
+Marked prison_tshirt_1 exact localized name resources.assets: item.prison_tshirt_1.name
+Masahalba mercury_glass exact localized name resources.assets: item.mercury_glass.name
+Meat Grinder cor_worker_discthrower_1 exact localized name resources.assets: item.cor_worker_discthrower_1.name
+Mechanism Parts venus_weapon_parts exact localized name resources.assets: item.venus_weapon_parts.name
+Med Hazmat medical_chem_helmet_1 exact localized name resources.assets: item.medical_chem_helmet_1.name
+Med Hazmat medical_chem_pants_1 exact localized name resources.assets: item.medical_chem_pants_1.name
+Med Hazmat medical_chem_shirt_1 exact localized name resources.assets: item.medical_chem_shirt_1.name
+Medical Components medical_components exact localized name resources.assets: item.medical_components.name
+Medical Glue medical_glue exact localized name resources.assets: item.medical_glue.name
+Medical Interface medical_interface exact localized name resources.assets: item.medical_interface.name
+Memory Records memory_software exact localized name resources.assets: item.memory_software.name
+Menesios Ribspace skull_cattaram_entomb exact localized name resources.assets: item.skull_cattaram_entomb.name
+Menesios Spiked Ridge skull_cattaram_wall exact localized name resources.assets: item.skull_cattaram_wall.name
+Mengele ddr_poisonknife_1 exact localized name resources.assets: item.ddr_poisonknife_1.name
+Mercurian Innards mercury_guts exact localized name resources.assets: item.mercury_guts.name
+Meta-gem cattaram_geode exact localized name resources.assets: item.cattaram_geode.name
+Meta-matter cattaram_stone exact localized name resources.assets: item.cattaram_stone.name
+Metabolic Booster metabolic_booster exact localized name resources.assets: item.metabolic_booster.name
+Metal Pipe trash_pipe_1 exact localized name resources.assets: item.trash_pipe_1.name
+MG-359 stationary_turret exact localized name resources.assets: item.stationary_turret.name
+Miami Punch juice_pack_1 exact localized name resources.assets: item.juice_pack_1.name
+Miasma skull_olirna_mountain_breath exact localized name resources.assets: item.skull_olirna_mountain_breath.name
+Microchip microelectronics_parts exact localized name resources.assets: item.microelectronics_parts.name
+Microreactor microreactor_module exact localized name resources.assets: item.microreactor_module.name
+Mictlaxotla venus_rocketlauncher_1 exact localized name resources.assets: item.venus_rocketlauncher_1.name
+Military Arm cyborg_battle_hand exact localized name resources.assets: item.cyborg_battle_hand.name
+Military Cap military_cap_1 exact localized name resources.assets: item.military_cap_1.name
+Military Controller cyborg_battle_chest exact localized name resources.assets: item.cyborg_battle_chest.name
+Military First Aid Kit medical_kit_2 exact localized name resources.assets: item.medical_kit_2.name
+Military Frame cyborg_battle_guts exact localized name resources.assets: item.cyborg_battle_guts.name
+Military Head cyborg_battle_head exact localized name resources.assets: item.cyborg_battle_head.name
+Military Leg cyborg_battle_leg exact localized name resources.assets: item.cyborg_battle_leg.name
+Military Manipulator cyborg_battle_wrist exact localized name resources.assets: item.cyborg_battle_wrist.name
+Military Parts military_parts_container exact localized name resources.assets: item.military_parts_container.name
+Military Pedipulator cyborg_battle_feet exact localized name resources.assets: item.cyborg_battle_feet.name
+Military Rations military_food_container exact localized name resources.assets: item.military_food_container.name
+Military Servo cyborg_battle_knee exact localized name resources.assets: item.cyborg_battle_knee.name
+Military Unit military_unit exact localized name resources.assets: item.military_unit.name
+Mind Chip mercenary_chip exact localized name resources.assets: item.mercenary_chip.name
+Mini Pig cor_hmg_1 exact localized name resources.assets: item.cor_hmg_1.name
+Mining Workwear miner_clothing_container exact localized name resources.assets: item.miner_clothing_container.name
+Mirror Armor mercury_light_armor_1 exact localized name resources.assets: item.mercury_light_armor_1.name
+Molotov Cocktail handmade_thermal_grenade exact localized name resources.assets: item.handmade_thermal_grenade.name
+Moneykeeper grh_revolver_pistol_1 exact localized name resources.assets: item.grh_revolver_pistol_1.name
+Moo-Moo ration_pack_4 exact localized name resources.assets: item.ration_pack_4.name
+Morax skull_cattaram_arena exact localized name resources.assets: item.skull_cattaram_arena.name
+Morphine syringe_morphine exact localized name resources.assets: item.syringe_morphine.name
+Morriganah skull_flauros_falcon exact localized name resources.assets: item.skull_flauros_falcon.name
+Morriganah skull_flauros_lycanthropy exact localized name resources.assets: item.skull_flauros_lycanthropy.name
+Morrigania Seed flauros_seed exact localized name resources.assets: item.flauros_seed.name
+MPL-95 military_shovel_1 exact localized name resources.assets: item.military_shovel_1.name
+Mr Meatie burger_pack_1 exact localized name resources.assets: item.burger_pack_1.name
+Mr Meatie rotten_burger_pack_1 exact localized name resources.assets: item.rotten_burger_pack_1.name
+Mr Veggie burger_pack_2 exact localized name resources.assets: item.burger_pack_2.name
+Mr Veggie rotten_burger_pack_2 exact localized name resources.assets: item.rotten_burger_pack_2.name
+MRS-21 army_rocketlauncher_1 exact localized name resources.assets: item.army_rocketlauncher_1.name
+Mujahada skull_mercury_meteor exact localized name resources.assets: item.skull_mercury_meteor.name
+Mujtahid skull_mercury_the_world exact localized name resources.assets: item.skull_mercury_the_world.name
+Mustard Plaster mustard_patch exact localized name resources.assets: item.mustard_patch.name
+Mutated Hand possessed_hand exact localized name resources.assets: item.possessed_hand.name
+Mutilated Claw possessed_centaur_hand exact localized name resources.assets: item.possessed_centaur_hand.name
+Mutilator X1 fra_security_hmg_1 exact localized name resources.assets: item.fra_security_hmg_1.name
+Mutiny skull_moon_mass_disarm exact localized name resources.assets: item.skull_moon_mass_disarm.name
+Myrmex sbn_boots_1 exact localized name resources.assets: item.sbn_boots_1.name
+Myrmex sbn_cap_1 exact localized name resources.assets: item.sbn_cap_1.name
+Myrmex sbn_pants_2 exact localized name resources.assets: item.sbn_pants_2.name
+Myrmex sbn_shirt_2 exact localized name resources.assets: item.sbn_shirt_2.name
+Myrmidon sbn_heavy_armor_1 exact localized name resources.assets: item.sbn_heavy_armor_1.name
+Myrmidon sbn_heavy_boots_1 exact localized name resources.assets: item.sbn_heavy_boots_1.name
+Myrmidon sbn_heavy_helmet_1 exact localized name resources.assets: item.sbn_heavy_helmet_1.name
+Myrmidon sbn_heavy_pants_1 exact localized name resources.assets: item.sbn_heavy_pants_1.name
+Mystery Pattern anc_medium_armor_1 exact localized name resources.assets: item.anc_medium_armor_1.name
+Mystery Pattern anc_medium_boots_1 exact localized name resources.assets: item.anc_medium_boots_1.name
+Mystery Pattern anc_medium_helmet_1 exact localized name resources.assets: item.anc_medium_helmet_1.name
+Mystery Pattern anc_medium_pants_1 exact localized name resources.assets: item.anc_medium_pants_1.name
+Nagual skull_venus_eccolapse exact localized name resources.assets: item.skull_venus_eccolapse.name
+Nagual skull_venus_spike exact localized name resources.assets: item.skull_venus_spike.name
+Nail Gun worker_pistol_1 exact localized name resources.assets: item.worker_pistol_1.name
+Nails of Pain quasi_bolts_ammo exact localized name resources.assets: item.quasi_bolts_ammo.name
+Nakhjir civ_marksman_1 exact localized name resources.assets: item.civ_marksman_1.name
+Naloxone syringe_naloxone exact localized name resources.assets: item.syringe_naloxone.name
+Nanauatzin Death Rite skull_venus_sacrifice exact localized name resources.assets: item.skull_venus_sacrifice.name
+Nanoregenerator nanoregenerator exact localized name resources.assets: item.nanoregenerator.name
+Nanostim syringe_nanoinjection exact localized name resources.assets: item.syringe_nanoinjection.name
+Nergal's Cuneiform skull_mars_incendiary_rain exact localized name resources.assets: item.skull_mars_incendiary_rain.name
+Nergal's Red Edict skull_mars_molten_jet exact localized name resources.assets: item.skull_mars_molten_jet.name
+Neural Jack neural_jack exact localized name resources.assets: item.neural_jack.name
+Neural Scope neural_scope exact localized name resources.assets: item.neural_scope.name
+Neural Sonar neural_sonar exact localized name resources.assets: item.neural_sonar.name
+Neuro Relaxant neuro_relaxant exact localized name resources.assets: item.neuro_relaxant.name
+Neurocortex neurocortex exact localized name resources.assets: item.neurocortex.name
+Nightreed jupiter_grass exact localized name resources.assets: item.jupiter_grass.name
+Ninurtagun mars_baron_hand exact localized name resources.assets: item.mars_baron_hand.name
+Noodles ration_pack_1 exact localized name resources.assets: item.ration_pack_1.name
+Noodles ration_pack_2 exact localized name resources.assets: item.ration_pack_2.name
+Oblivion skull_mercury_times_marching_on exact localized name resources.assets: item.skull_mercury_times_marching_on.name
+Ocelotheque xio_light_armor_2 exact localized name resources.assets: item.xio_light_armor_2.name
+Ocelotheque xio_light_helmet_2 exact localized name resources.assets: item.xio_light_helmet_2.name
+Omega II plasma_shotgun_1 exact localized name resources.assets: item.plasma_shotgun_1.name
+Optical Suppressor optical_suppressor exact localized name resources.assets: item.optical_suppressor.name
+Order chu_trucker_pistol_2 exact localized name resources.assets: item.chu_trucker_pistol_2.name
+Ore Cargo ore_cargo exact localized name resources.assets: item.ore_cargo.name
+Orthopedic Cast plaster exact localized name resources.assets: item.plaster.name
+Ossuary impaler exact localized name resources.assets: item.impaler.name
+Osteodron pills_osteodron exact localized name resources.assets: item.pills_osteodron.name
+Overdue Soup rotten_soup_can_1 exact localized name resources.assets: item.rotten_soup_can_1.name
+Overgrown Muscles deformed_musculature exact localized name resources.assets: item.deformed_musculature.name
+Overman cor_worker_hmg_2 exact localized name resources.assets: item.cor_worker_hmg_2.name
+Pacification skull_moon_psychic_resonance exact localized name resources.assets: item.skull_moon_psychic_resonance.name
+Paimon skull_flauros_elder_guardian exact localized name resources.assets: item.skull_flauros_elder_guardian.name
+Paimon skull_flauros_mark_target exact localized name resources.assets: item.skull_flauros_mark_target.name
+Painhibitor painhibitor exact localized name resources.assets: item.painhibitor.name
+Pale Sign sun_cryolaser_smg_1 exact localized name resources.assets: item.sun_cryolaser_smg_1.name
+Pants common_pants_1 exact localized name resources.assets: item.common_pants_1.name
+Panzer heavy_armored_vest_1 exact localized name resources.assets: item.heavy_armored_vest_1.name
+Paper Towels paper_towel exact localized name resources.assets: item.paper_towel.name
+Partisan civ_boots_2 exact localized name resources.assets: item.civ_boots_2.name
+Partisan civ_gasmask_1 exact localized name resources.assets: item.civ_gasmask_1.name
+Partisan civ_pants_4 exact localized name resources.assets: item.civ_pants_4.name
+Partisan civ_reinforced_shirt_1 exact localized name resources.assets: item.civ_reinforced_shirt_1.name
+Pathfinder trash_common_vest_1 exact localized name resources.assets: item.trash_common_vest_1.name
+Pedipulator cyborg_feet exact localized name resources.assets: item.cyborg_feet.name
+Penance chu_meltathrower_1 exact localized name resources.assets: item.chu_meltathrower_1.name
+People's Front civ_medium_armor_2 exact localized name resources.assets: item.civ_medium_armor_2.name
+People's Front civ_medium_boots_2 exact localized name resources.assets: item.civ_medium_boots_2.name
+People's Front civ_medium_helmet_2 exact localized name resources.assets: item.civ_medium_helmet_2.name
+People's Front civ_medium_pants_2 exact localized name resources.assets: item.civ_medium_pants_2.name
+Perfect miner_gasmask_1 exact localized name resources.assets: item.miner_gasmask_1.name
+Persi Cola soda_can_1 exact localized name resources.assets: item.soda_can_1.name
+Pestilence toxic_gas_grenade exact localized name resources.assets: item.toxic_gas_grenade.name
+Pharmacist ddr_coat_1 exact localized name resources.assets: item.ddr_coat_1.name
+Pharmacist ddr_gasmask_1 exact localized name resources.assets: item.ddr_gasmask_1.name
+Pharmacist ddr_pants exact localized name resources.assets: item.ddr_pants.name
+Phurba of Golden Halls skull_olirna_cooled_rumble exact localized name resources.assets: item.skull_olirna_cooled_rumble.name
+Piece of Flesh human_meat exact localized name resources.assets: item.human_meat.name
+Pirogov medical_medium_armor_1 exact localized name resources.assets: item.medical_medium_armor_1.name
+Pirogov medical_medium_boots_1 exact localized name resources.assets: item.medical_medium_boots_1.name
+Pirogov medical_medium_helmet_1 exact localized name resources.assets: item.medical_medium_helmet_1.name
+Pirogov medical_medium_pants_1 exact localized name resources.assets: item.medical_medium_pants_1.name
+Plague toxic_grenade exact localized name resources.assets: item.toxic_grenade.name
+Plague of Balar pathogenic exact localized name resources.assets: item.pathogenic.name
+Planetbridge Chip plb_chip exact localized name resources.assets: item.plb_chip.name
+Plastic plastic exact localized name resources.assets: item.plastic.name
+PMC MRE mre_pack_1 exact localized name resources.assets: item.mre_pack_1.name
+Pointsman police_medium_armor_1 exact localized name resources.assets: item.police_medium_armor_1.name
+Pointsman police_medium_boots_1 exact localized name resources.assets: item.police_medium_boots_1.name
+Pointsman police_medium_helmet_1 exact localized name resources.assets: item.police_medium_helmet_1.name
+Pointsman police_medium_pants_1 exact localized name resources.assets: item.police_medium_pants_1.name
+Poppy Straw poppy_box exact localized name resources.assets: item.poppy_box.name
+Powder powder exact localized name resources.assets: item.powder.name
+Power Barrier placeable_barrier exact localized name resources.assets: item.placeable_barrier.name
+Priest's Pants chu_manager_pants_1 exact localized name resources.assets: item.chu_manager_pants_1.name
+Priest's Shoes chu_manager_boots_1 exact localized name resources.assets: item.chu_manager_boots_1.name
+Printed Circuit Board circuit_board exact localized name resources.assets: item.circuit_board.name
+Prism laser_sniper_1 exact localized name resources.assets: item.laser_sniper_1.name
+Prison Jacket prison_tshirt_2 exact localized name resources.assets: item.prison_tshirt_2.name
+Prison Pants prison_pants_1 exact localized name resources.assets: item.prison_pants_1.name
+Prometheus civ_plasma_pistol_1 exact localized name resources.assets: item.civ_plasma_pistol_1.name
+Prophet sun_power_helmet_1 exact localized name resources.assets: item.sun_power_helmet_1.name
+Prophet Pattern sun_power_armor_1 exact localized name resources.assets: item.sun_power_armor_1.name
+Prophet Pattern sun_power_boots_1 exact localized name resources.assets: item.sun_power_boots_1.name
+Prophet Pattern sun_power_pants_1 exact localized name resources.assets: item.sun_power_pants_1.name
+Prototype Blueprint prototype_schematics exact localized name resources.assets: item.prototype_schematics.name
+Psychopomp sun_rocketlauncher_1 exact localized name resources.assets: item.sun_rocketlauncher_1.name
+Punishment military_assault_1 exact localized name resources.assets: item.military_assault_1.name
+PV-277 laser_marksman_1 exact localized name resources.assets: item.laser_marksman_1.name
+Quad Damage beer_can_1 exact localized name resources.assets: item.beer_can_1.name
+Quasi-resonator quasi_resonator exact localized name resources.assets: item.quasi_resonator.name
+Quasi-Samples quasisamples exact localized name resources.assets: item.quasisamples.name
+Quasibronze venus_armor_plates exact localized name resources.assets: item.venus_armor_plates.name
+Quasimorphic Data quasiresearch_disk exact localized name resources.assets: item.quasiresearch_disk.name
+Quasimorphosis Sensor quasi_sensor_device exact localized name resources.assets: item.quasi_sensor_device.name
+Quasiplumbum moon_armor_plates exact localized name resources.assets: item.moon_armor_plates.name
+Quauhololli venus_mace_1 exact localized name resources.assets: item.venus_mace_1.name
+Quautemec tez_heavy_armor_2 exact localized name resources.assets: item.tez_heavy_armor_2.name
+Quautemec tez_heavy_boots_1 exact localized name resources.assets: item.tez_heavy_boots_1.name
+Quautemec tez_heavy_helmet_2 exact localized name resources.assets: item.tez_heavy_helmet_2.name
+Quautemec tez_heavy_pants_1 exact localized name resources.assets: item.tez_heavy_pants_1.name
+Quetzal xio_light_helmet_3 exact localized name resources.assets: item.xio_light_helmet_3.name
+Quetzal-Zinkli xio_light_armor_1 exact localized name resources.assets: item.xio_light_armor_1.name
+Quetzal-Zinkli xio_light_boots_1 exact localized name resources.assets: item.xio_light_boots_1.name
+Quetzal-Zinkli xio_light_helmet_1 exact localized name resources.assets: item.xio_light_helmet_1.name
+R.O.A.R. dil_sound_shotgun_1 exact localized name resources.assets: item.dil_sound_shotgun_1.name
+Rackham Jack unc_pants_1 exact localized name resources.assets: item.unc_pants_1.name
+Rackham Jack unc_shirt_1 exact localized name resources.assets: item.unc_shirt_1.name
+Radio Jack radio_jack exact localized name resources.assets: item.radio_jack.name
+Rag rags exact localized name resources.assets: item.rags.name
+Raider M16T unc_assault_2 exact localized name resources.assets: item.unc_assault_2.name
+Raptor ANCM anc_shotgun_1 exact localized name resources.assets: item.anc_shotgun_1.name
+Rattling Tear of Cronuth skull_cattaram_pillar exact localized name resources.assets: item.skull_cattaram_pillar.name
+Razor tech_blade_1 exact localized name resources.assets: item.tech_blade_1.name
+Realware Chip rwa_chip exact localized name resources.assets: item.rwa_chip.name
+Reanimatron robot_resurrect_device exact localized name resources.assets: item.robot_resurrect_device.name
+Reaper scrivnus_blade_1 exact localized name resources.assets: item.scrivnus_blade_1.name
+Rebis cattaram_mine exact localized name resources.assets: item.cattaram_mine.name
+Recoil Suppressor recoil_suppressor exact localized name resources.assets: item.recoil_suppressor.name
+Recreational AR packaged_recreational_robot exact localized name resources.assets: item.packaged_recreational_robot.name
+Red and Gold Guard skull_mars_bulls_horns exact localized name resources.assets: item.skull_mars_bulls_horns.name
+Red and Gold Idol skull_mars_idol_of_ur exact localized name resources.assets: item.skull_mars_idol_of_ur.name
+Red Deer energy_can_1 exact localized name resources.assets: item.energy_can_1.name
+Red Frenzy of Nanauatzin skull_venus_blood_rain exact localized name resources.assets: item.skull_venus_blood_rain.name
+Red Front civ_pants_1 exact localized name resources.assets: item.civ_pants_1.name
+Red Front civ_shirt_1 exact localized name resources.assets: item.civ_shirt_1.name
+Red Outcast civ_common_assault_1 exact localized name resources.assets: item.civ_common_assault_1.name
+Red Seal blood_mine exact localized name resources.assets: item.blood_mine.name
+Redeemer trucker_pistol_3 exact localized name resources.assets: item.trucker_pistol_3.name
+Reflex Module reflex_module exact localized name resources.assets: item.reflex_module.name
+Regular Clothes regular_clothing_container exact localized name resources.assets: item.regular_clothing_container.name
+Reinforced Epidermis reinforced_epidermis exact localized name resources.assets: item.reinforced_epidermis.name
+Renli tia_boots_1 exact localized name resources.assets: item.tia_boots_1.name
+Renli tia_gasmask_1 exact localized name resources.assets: item.tia_gasmask_1.name
+Renli tia_pants_1 exact localized name resources.assets: item.tia_pants_1.name
+Renli tia_shirt_1 exact localized name resources.assets: item.tia_shirt_1.name
+Research Dump Disk research_disk exact localized name resources.assets: item.research_disk.name
+Research Station scientific_equipment exact localized name resources.assets: item.scientific_equipment.name
+Retribution rwa_military_assault_1 exact localized name resources.assets: item.rwa_military_assault_1.name
+RGD-20 frag_grenade exact localized name resources.assets: item.frag_grenade.name
+Rib human_rib exact localized name resources.assets: item.human_rib.name
+Rib Reinforcement rib_reinforcement exact localized name resources.assets: item.rib_reinforcement.name
+Ricochet prison_light_helmet_1 exact localized name resources.assets: item.prison_light_helmet_1.name
+Rihla skull_mercury_transportation exact localized name resources.assets: item.skull_mercury_transportation.name
+Ripper army_pistol_4 exact localized name resources.assets: item.army_pistol_4.name
+Roasted Hellcrab roasted_mars_crab_meat exact localized name resources.assets: item.roasted_mars_crab_meat.name
+Robot Parts robot_parts_container exact localized name resources.assets: item.robot_parts_container.name
+Rocket candy_1 exact localized name resources.assets: item.candy_1.name
+Rod rod_parts exact localized name resources.assets: item.rod_parts.name
+Rogue AR common_assault_1 exact localized name resources.assets: item.common_assault_1.name
+Rookie pmc_common_vest_1 exact localized name resources.assets: item.pmc_common_vest_1.name
+Rooster prison_mask_2 exact localized name resources.assets: item.prison_mask_2.name
+Rotten Dog Flesh rotten_dog_meat exact localized name resources.assets: item.rotten_dog_meat.name
+Rotten Meat rotten_human_meat exact localized name resources.assets: item.rotten_human_meat.name
+Rotten Skin rotten_human_skin exact localized name resources.assets: item.rotten_human_skin.name
+Rotten Spider Flesh rotten_spider_meat exact localized name resources.assets: item.rotten_spider_meat.name
+Rough Cleaver trash_axe_1 exact localized name resources.assets: item.trash_axe_1.name
+RPG-77 common_rocketlauncher_1 exact localized name resources.assets: item.common_rocketlauncher_1.name
+Rubber rubber exact localized name resources.assets: item.rubber.name
+Rubberized Arm cyborg_recreation_hand exact localized name resources.assets: item.cyborg_recreation_hand.name
+Rubberized Controller cyborg_recreation_chest exact localized name resources.assets: item.cyborg_recreation_chest.name
+Rubberized Frame cyborg_recreation_guts exact localized name resources.assets: item.cyborg_recreation_guts.name
+Rubberized Head cyborg_recreation_head exact localized name resources.assets: item.cyborg_recreation_head.name
+Rubberized Leg cyborg_recreation_leg exact localized name resources.assets: item.cyborg_recreation_leg.name
+Rubberized Manipulator cyborg_recreation_wrist exact localized name resources.assets: item.cyborg_recreation_wrist.name
+Rubberized Pedipulator cyborg_recreation_feet exact localized name resources.assets: item.cyborg_recreation_feet.name
+Rubberized Servo cyborg_recreation_knee exact localized name resources.assets: item.cyborg_recreation_knee.name
+Rusty Metal rusty_plates exact localized name resources.assets: item.rusty_plates.name
+Rusty Parts broken_weapon exact localized name resources.assets: item.broken_weapon.name
+Sa mercury_shotgun_staff_1 exact localized name resources.assets: item.mercury_shotgun_staff_1.name
+Sang-B syringe_bloodbag exact localized name resources.assets: item.syringe_bloodbag.name
+Sapphirite skull_cattaram_baron_form exact localized name resources.assets: item.skull_cattaram_baron_form.name
+Saw Blade Bat trash_club_1 exact localized name resources.assets: item.trash_club_1.name
+SBN Chip sbn_chip exact localized name resources.assets: item.sbn_chip.name
+SBN Shorts sbn_shorts exact localized name resources.assets: item.sbn_shorts.name
+Scadi ddr_frost_shotgun_1 exact localized name resources.assets: item.ddr_frost_shotgun_1.name
+Scales mercury_scales exact localized name resources.assets: item.mercury_scales.name
+Scalp Missile rocket_basic_ammo exact localized name resources.assets: item.rocket_basic_ammo.name
+Scarlet Boy rwa_cap_1 exact localized name resources.assets: item.rwa_cap_1.name
+Scarlet Boy rwa_shirt_2 exact localized name resources.assets: item.rwa_shirt_2.name
+Scionics science_coat_2 exact localized name resources.assets: item.science_coat_2.name
+Scionics science_pants_2 exact localized name resources.assets: item.science_pants_2.name
+Scorpion civ_pistol_1 exact localized name resources.assets: item.civ_pistol_1.name
+Scrub-5 medical_pants_1 exact localized name resources.assets: item.medical_pants_1.name
+Scrub-5 medical_sneakers_1 exact localized name resources.assets: item.medical_sneakers_1.name
+Scrub-5 medical_sneakers_2 exact localized name resources.assets: item.medical_sneakers_2.name
+Scrub-5 medical_tshirt_1 exact localized name resources.assets: item.medical_tshirt_1.name
+Scrub-5 medical_tshirt_2 exact localized name resources.assets: item.medical_tshirt_2.name
+Seal of Silicon Throne horcrux exact localized name resources.assets: item.horcrux.name
+Secure Shell matrix_shield exact localized name resources.assets: item.matrix_shield.name
+Security Drone packaged_drone exact localized name resources.assets: item.packaged_drone.name
+Seismic Generator seismic_generator exact localized name resources.assets: item.seismic_generator.name
+Sensory Detector sensory_detector exact localized name resources.assets: item.sensory_detector.name
+Seraph Pattern chu_power_armor_1 exact localized name resources.assets: item.chu_power_armor_1.name
+Seraph Pattern chu_power_boots_1 exact localized name resources.assets: item.chu_power_boots_1.name
+Seraph Pattern chu_power_pants_1 exact localized name resources.assets: item.chu_power_pants_1.name
+Serpent's Mouth venus_marksman_1 exact localized name resources.assets: item.venus_marksman_1.name
+Serpentwoven venus_shirt_1 exact localized name resources.assets: item.venus_shirt_1.name
+Serrava skull_moon_dancing_blade exact localized name resources.assets: item.skull_moon_dancing_blade.name
+Serrava skull_moon_torture_chamber exact localized name resources.assets: item.skull_moon_torture_chamber.name
+Servo cyborg_knee exact localized name resources.assets: item.cyborg_knee.name
+Shachong tia_rocketlauncher_1 exact localized name resources.assets: item.tia_rocketlauncher_1.name
+Shadow Pattern anc_agent_armor_1 exact localized name resources.assets: item.anc_agent_armor_1.name
+Shadow Pattern anc_agent_boots_1 exact localized name resources.assets: item.anc_agent_boots_1.name
+Shadow Pattern anc_agent_mask_1 exact localized name resources.assets: item.anc_agent_mask_1.name
+Shadow Pattern anc_agent_pants_1 exact localized name resources.assets: item.anc_agent_pants_1.name
+Shaker grenade_launcher_1 exact localized name resources.assets: item.grenade_launcher_1.name
+Shar-ur mars_knight_hand exact localized name resources.assets: item.mars_knight_hand.name
+Shard quasi_repair_kit exact localized name resources.assets: item.quasi_repair_kit.name
+Sharen tia_disc_pistol_1 exact localized name resources.assets: item.tia_disc_pistol_1.name
+Sharvara rwa_military_pistol_1 exact localized name resources.assets: item.rwa_military_pistol_1.name
+Shatter Grenade shatter_grenade documented fallback Readable fallback; no direct item localization key in this build
+Shavva ron_blood exact localized name resources.assets: item.ron_blood.name
+Shavvashine ron_moonshine exact localized name resources.assets: item.ron_moonshine.name
+Shedu's False Gifts skull_mars_brass_conversion exact localized name resources.assets: item.skull_mars_brass_conversion.name
+Shedu's Thousand Fires skull_mars_flame_shield exact localized name resources.assets: item.skull_mars_flame_shield.name
+Shenli tia_heavy_armor_1 exact localized name resources.assets: item.tia_heavy_armor_1.name
+Shenli tia_heavy_boots_1 exact localized name resources.assets: item.tia_heavy_boots_1.name
+Shenli tia_heavy_helmet_1 exact localized name resources.assets: item.tia_heavy_helmet_1.name
+Shenli tia_heavy_pants_1 exact localized name resources.assets: item.tia_heavy_pants_1.name
+Shielded Skull shielded_skull exact localized name resources.assets: item.shielded_skull.name
+Shinar skull_mars_siege_breaker exact localized name resources.assets: item.skull_mars_siege_breaker.name
+Shinar skull_mars_wrath_of_ur exact localized name resources.assets: item.skull_mars_wrath_of_ur.name
+Shiv miner_knife_1 exact localized name resources.assets: item.miner_knife_1.name
+Short Pipe blunt_parts exact localized name resources.assets: item.blunt_parts.name
+Shroud of Ash-Shakin ethereal_barrier exact localized name resources.assets: item.ethereal_barrier.name
+Shu'la At-Talif mercury_shirt_1 exact localized name resources.assets: item.mercury_shirt_1.name
+Shumerr mars_headgun exact localized name resources.assets: item.mars_headgun.name
+Sidhe Call skull_flauros_plant_zombies exact localized name resources.assets: item.skull_flauros_plant_zombies.name
+Sidhe Chainmail skull_flauros_barkskin exact localized name resources.assets: item.skull_flauros_barkskin.name
+Silent Eagle pmc_pistol_2 exact localized name resources.assets: item.pmc_pistol_2.name
+Silver-SAR sbn_rail_assault_1 exact localized name resources.assets: item.sbn_rail_assault_1.name
+Silver-SED sbn_rail_shotgun_1 exact localized name resources.assets: item.sbn_rail_shotgun_1.name
+Silver-SEP sbn_rail_pistol_1 exact localized name resources.assets: item.sbn_rail_pistol_1.name
+Silver-SEPp sbn_rail_smg_1 exact localized name resources.assets: item.sbn_rail_smg_1.name
+Sinews of Zharm quasi_generator exact localized name resources.assets: item.quasi_generator.name
+Sirm al-Akhtar mercury_boots_1 exact localized name resources.assets: item.mercury_boots_1.name
+Sirrim skull_mercury_azure_shield exact localized name resources.assets: item.skull_mercury_azure_shield.name
+Sirrim skull_mercury_prism exact localized name resources.assets: item.skull_mercury_prism.name
+Skin human_skin exact localized name resources.assets: item.human_skin.name
+Skrivnus Pain Cant skull_scrivnus_sadism exact localized name resources.assets: item.skull_scrivnus_sadism.name
+Skrivnus Sentence skull_scrivnus_decimation exact localized name resources.assets: item.skull_scrivnus_decimation.name
+Skull human_skull exact localized name resources.assets: item.human_skull.name
+Skull of Amaxatli skull_of_the_damned exact localized name resources.assets: item.skull_of_the_damned.name
+Smoked Lard roasted_human_skin exact localized name resources.assets: item.roasted_human_skin.name
+Smuggler unc_medium_armor_1 exact localized name resources.assets: item.unc_medium_armor_1.name
+Smuggler unc_medium_boots_1 exact localized name resources.assets: item.unc_medium_boots_1.name
+Smuggler unc_medium_helmet_1 exact localized name resources.assets: item.unc_medium_helmet_1.name
+Smuggler unc_medium_pants_1 exact localized name resources.assets: item.unc_medium_pants_1.name
+Sneakers common_sneakers_1 exact localized name resources.assets: item.common_sneakers_1.name
+Sneakers common_sneakers_2 exact localized name resources.assets: item.common_sneakers_2.name
+Snickpick chocolate_pack_1 exact localized name resources.assets: item.chocolate_pack_1.name
+Solve et Coagula skull_mercury_disintegrate exact localized name resources.assets: item.skull_mercury_disintegrate.name
+Soma quasi_ron_medicine_1 exact localized name resources.assets: item.quasi_ron_medicine_1.name
+Sorbent pills_sorbent exact localized name resources.assets: item.pills_sorbent.name
+Spears of the Mashetani skull_ron_discharge exact localized name resources.assets: item.skull_ron_discharge.name
+Specialist Rosters expert_disk exact localized name resources.assets: item.expert_disk.name
+Spectral Jack possessed_light_armor_1 exact localized name resources.assets: item.possessed_light_armor_1.name
+Spectral Jack possessed_light_helmet_1 exact localized name resources.assets: item.possessed_light_helmet_1.name
+Speed Drive speed_drive exact localized name resources.assets: item.speed_drive.name
+Spider Brain spider_brain exact localized name resources.assets: item.spider_brain.name
+Spider Claw spider_claw exact localized name resources.assets: item.spider_claw.name
+Spider Cocoon spider_cocoon exact localized name resources.assets: item.spider_cocoon.name
+Spider Eye spider_eye exact localized name resources.assets: item.spider_eye.name
+Spider Flesh spider_meat exact localized name resources.assets: item.spider_meat.name
+Spider Joint spider_joint exact localized name resources.assets: item.spider_joint.name
+Spider Soup soup_can_1 exact localized name resources.assets: item.soup_can_1.name
+Spiritual Bonds chu_head_device_1 exact localized name resources.assets: item.chu_head_device_1.name
+Spit ddr_toxic_pistol_1 exact localized name resources.assets: item.ddr_toxic_pistol_1.name
+Splint splint exact localized name resources.assets: item.splint.name
+Spore Blister spore_mine exact localized name resources.assets: item.spore_mine.name
+Spring spring exact localized name resources.assets: item.spring.name
+Squall ANCM anc_smg_1 exact localized name resources.assets: item.anc_smg_1.name
+SR-78 pmc_assault_1 exact localized name resources.assets: item.pmc_assault_1.name
+SST-2 stun_grenade exact localized name resources.assets: item.stun_grenade.name
+Stakhanovets common_boots_1 exact localized name resources.assets: item.common_boots_1.name
+Star Way common_glasses_1 exact localized name resources.assets: item.common_glasses_1.name
+Starblade sun_laser_powersword_1 exact localized name resources.assets: item.sun_laser_powersword_1.name
+Starlock 2 army_pistol_1 exact localized name resources.assets: item.army_pistol_1.name
+Starlock ADP army_pistol_3 exact localized name resources.assets: item.army_pistol_3.name
+Starlock MD-6 army_pistol_2 exact localized name resources.assets: item.army_pistol_2.name
+Starwalker med_lightblade_1 exact localized name resources.assets: item.med_lightblade_1.name
+Stealth Skin stealth_skin exact localized name resources.assets: item.stealth_skin.name
+Steps of Bodb stunning_stride exact localized name resources.assets: item.stunning_stride.name
+Steps of Grigenchosach plague_drive exact localized name resources.assets: item.plague_drive.name
+Sterling A2L4 plb_pistol_2 exact localized name resources.assets: item.plb_pistol_2.name
+Sterling Mk-16 plb_smg_1 exact localized name resources.assets: item.plb_smg_1.name
+Steroid Cybergland steroid_cybergland exact localized name resources.assets: item.steroid_cybergland.name
+Stillpoint dil_ion_pistol_1 exact localized name resources.assets: item.dil_ion_pistol_1.name
+Sting she_heavy_pistol_1 exact localized name resources.assets: item.she_heavy_pistol_1.name
+Stonecrusher miner_exoskeleton_1 exact localized name resources.assets: item.miner_exoskeleton_1.name
+Stoner 93 plb_hmg_1 exact localized name resources.assets: item.plb_hmg_1.name
+Storm ANCM pmc_smg_3 exact localized name resources.assets: item.pmc_smg_3.name
+Storm TT pmc_smg_1 exact localized name resources.assets: item.pmc_smg_1.name
+Stormpiercer dil_shock_sniper_1 exact localized name resources.assets: item.dil_shock_sniper_1.name
+Stratum plb_medium_armor_1 exact localized name resources.assets: item.plb_medium_armor_1.name
+Stratum plb_medium_boots_1 exact localized name resources.assets: item.plb_medium_boots_1.name
+Stratum plb_medium_helmet_1 exact localized name resources.assets: item.plb_medium_helmet_1.name
+Stratum plb_medium_pants_1 exact localized name resources.assets: item.plb_medium_pants_1.name
+Strike civ_cap_1 exact localized name resources.assets: item.civ_cap_1.name
+Strike civ_pants_2 exact localized name resources.assets: item.civ_pants_2.name
+Strike civ_shirt_2 exact localized name resources.assets: item.civ_shirt_2.name
+String-21M sun_laser_pistol_1 exact localized name resources.assets: item.sun_laser_pistol_1.name
+Stryker police_cap_1 exact localized name resources.assets: item.police_cap_1.name
+Stryker police_pants_1 exact localized name resources.assets: item.police_pants_1.name
+Stryker police_shirt_1 exact localized name resources.assets: item.police_shirt_1.name
+Sunlight Coven Chip sun_chip exact localized name resources.assets: item.sun_chip.name
+Superdermal Layer superdermal_layer exact localized name resources.assets: item.superdermal_layer.name
+Supernova-7K sun_laser_shotgun_1 exact localized name resources.assets: item.sun_laser_shotgun_1.name
+Surgeon medical_gasmask_1 exact localized name resources.assets: item.medical_gasmask_1.name
+Sutana chu_manager_shirt_1 exact localized name resources.assets: item.chu_manager_shirt_1.name
+Switchboard communication_relay exact localized name resources.assets: item.communication_relay.name
+Sylvester common_jacket_1 exact localized name resources.assets: item.common_jacket_1.name
+Sylvester common_reinforced_pants_1 exact localized name resources.assets: item.common_reinforced_pants_1.name
+T-Shirt common_shirt_1 exact localized name resources.assets: item.common_shirt_1.name
+T-Shirt common_shirt_2 exact localized name resources.assets: item.common_shirt_2.name
+T-Shirt common_shirt_3 exact localized name resources.assets: item.common_shirt_3.name
+Tactile Sensor tactile_sensor exact localized name resources.assets: item.tactile_sensor.name
+Taiga ANCM pmc_shotgun_2 exact localized name resources.assets: item.pmc_shotgun_2.name
+Taiga M pmc_shotgun_1 exact localized name resources.assets: item.pmc_shotgun_1.name
+Teccatl tez_heavy_helmet_1 exact localized name resources.assets: item.tez_heavy_helmet_1.name
+Tecpatl venus_knife_1 exact localized name resources.assets: item.venus_knife_1.name
+Teibi t94 spec_smg_1 exact localized name resources.assets: item.spec_smg_1.name
+Telnyashka military_shirt_1 exact localized name resources.assets: item.military_shirt_1.name
+Tenebris moon_light_armor_1 exact localized name resources.assets: item.moon_light_armor_1.name
+Tenebris moon_light_helmet_1 exact localized name resources.assets: item.moon_light_helmet_1.name
+Tentacle ron_tentacle exact localized name resources.assets: item.ron_tentacle.name
+Teohuatzin's Hand venus_warrior_hand exact localized name resources.assets: item.venus_warrior_hand.name
+Tepeiolotl tez_heavy_armor_3 exact localized name resources.assets: item.tez_heavy_armor_3.name
+Tepeiolotl tez_heavy_helmet_3 exact localized name resources.assets: item.tez_heavy_helmet_3.name
+Tepeiolotl tez_heavy_pants_2 exact localized name resources.assets: item.tez_heavy_pants_2.name
+Tepoztli venus_axe_1 exact localized name resources.assets: item.venus_axe_1.name
+Tepoztli venus_poleaxe_1 exact localized name resources.assets: item.venus_poleaxe_1.name
+Tezcatlipoca skull_venus_blood_mirror exact localized name resources.assets: item.skull_venus_blood_mirror.name
+Tezcatlipoca skull_venus_run_cold exact localized name resources.assets: item.skull_venus_run_cold.name
+Tezctlan skull_venus_blood_boil exact localized name resources.assets: item.skull_venus_blood_boil.name
+Tezctlan skull_venus_drain_life exact localized name resources.assets: item.skull_venus_drain_life.name
+The Kangling skull_olirna_icicle exact localized name resources.assets: item.skull_olirna_icicle.name
+Thermal Absorber thermal_absorber exact localized name resources.assets: item.thermal_absorber.name
+Thermal Coating thermal_coating exact localized name resources.assets: item.thermal_coating.name
+Thermal Container organs_box exact localized name resources.assets: item.organs_box.name
+Thermal Emitter thermal_emitter exact localized name resources.assets: item.thermal_emitter.name
+Thermal Regulator thermal_regulator exact localized name resources.assets: item.thermal_regulator.name
+Thermostat grh_microwave_marksman_1 exact localized name resources.assets: item.grh_microwave_marksman_1.name
+Thunderstorm plb_worker_shockgun_1 exact localized name resources.assets: item.plb_worker_shockgun_1.name
+Tianming Chip tia_chip exact localized name resources.assets: item.tia_chip.name
+Tiara mercury_light_helmet_1 exact localized name resources.assets: item.mercury_light_helmet_1.name
+Tilmatli xio_light_armor_3 exact localized name resources.assets: item.xio_light_armor_3.name
+Tin tin exact localized name resources.assets: item.tin.name
+Tissue Regenerator tissue_regenerator exact localized name resources.assets: item.tissue_regenerator.name
+Tlenamacac skull_venus_blood_vortex exact localized name resources.assets: item.skull_venus_blood_vortex.name
+Tonal skull_venus_baptism exact localized name resources.assets: item.skull_venus_baptism.name
+Tonal skull_venus_sanguine_echo exact localized name resources.assets: item.skull_venus_sanguine_echo.name
+Tonatiuh skull_venus_blood_barrier exact localized name resources.assets: item.skull_venus_blood_barrier.name
+Tonatiuh skull_venus_bloodbath exact localized name resources.assets: item.skull_venus_bloodbath.name
+Toolbox tool_container exact localized name resources.assets: item.tool_container.name
+Topiltzin skull_venus_dismember exact localized name resources.assets: item.skull_venus_dismember.name
+Torment MAF fra_security_smg_1 exact localized name resources.assets: item.fra_security_smg_1.name
+Torture she_common_assault_1 exact localized name resources.assets: item.she_common_assault_1.name
+Tourist small_backpack_1 exact localized name resources.assets: item.small_backpack_1.name
+Tranexam pills_tranexam exact localized name resources.assets: item.pills_tranexam.name
+Transformer transformer exact localized name resources.assets: item.transformer.name
+Tremor fra_shock_pistol_1 exact localized name resources.assets: item.fra_shock_pistol_1.name
+Tremor Module tremor_module exact localized name resources.assets: item.tremor_module.name
+Trigger Special grh_trucker_marksman_2 exact localized name resources.assets: item.grh_trucker_marksman_2.name
+Tripatekpatl venus_battlefist_1 exact localized name resources.assets: item.venus_battlefist_1.name
+Trousers common_pants_2 exact localized name resources.assets: item.common_pants_2.name
+Truckie laborer_pants_2 exact localized name resources.assets: item.laborer_pants_2.name
+Truckie laborer_shirt_2 exact localized name resources.assets: item.laborer_shirt_2.name
+Truffle Oil oil_bottle_1 exact localized name resources.assets: item.oil_bottle_1.name
+Tsernunnos skull_flauros_hunters_instinct exact localized name resources.assets: item.skull_flauros_hunters_instinct.name
+Tsernunnos Seed skull_flauros_acid_bloom exact localized name resources.assets: item.skull_flauros_acid_bloom.name
+Tuna Steak luxury_ration_pack_2 exact localized name resources.assets: item.luxury_ration_pack_2.name
+Tunneler miner_hard_cap_2 exact localized name resources.assets: item.miner_hard_cap_2.name
+Tunneler miner_reinforced_boots_1 exact localized name resources.assets: item.miner_reinforced_boots_1.name
+Tunneler miner_reinforced_pants_1 exact localized name resources.assets: item.miner_reinforced_pants_1.name
+Tunneler miner_reinforced_shirt_1 exact localized name resources.assets: item.miner_reinforced_shirt_1.name
+Type 77 spec_pistol_1 exact localized name resources.assets: item.spec_pistol_1.name
+Type 88S spec_pistol_2 exact localized name resources.assets: item.spec_pistol_2.name
+Type-Leijing tia_shock_assault_1 exact localized name resources.assets: item.tia_shock_assault_1.name
+Ultimatum Missile rocket_nuke_ammo exact localized name resources.assets: item.rocket_nuke_ammo.name
+Ultravoice ultravoice exact localized name resources.assets: item.ultravoice.name
+Umbra anc_boots_1 exact localized name resources.assets: item.anc_boots_1.name
+Umbra anc_pants_1 exact localized name resources.assets: item.anc_pants_1.name
+Umbra anc_shirt_1 exact localized name resources.assets: item.anc_shirt_1.name
+Uprising-C77 civ_common_smg_1 exact localized name resources.assets: item.civ_common_smg_1.name
+Uprising-D20 civ_common_smg_2 exact localized name resources.assets: item.civ_common_smg_2.name
+Urban Monkey civ_boots_1 exact localized name resources.assets: item.civ_boots_1.name
+Urban Monkey civ_pants_3 exact localized name resources.assets: item.civ_pants_3.name
+Urban Monkey civ_shirt_3 exact localized name resources.assets: item.civ_shirt_3.name
+Urparp's Living Seal skull_mars_enforced_order exact localized name resources.assets: item.skull_mars_enforced_order.name
+Urparp's Ziggurat skull_mars_brazen_armor exact localized name resources.assets: item.skull_mars_brazen_armor.name
+Ushkuynik unc_reinforced_pants_2 exact localized name resources.assets: item.unc_reinforced_pants_2.name
+Ushkuynik unc_reinforced_shirt_2 exact localized name resources.assets: item.unc_reinforced_shirt_2.name
+Vae Victis common_hat_1 exact localized name resources.assets: item.common_hat_1.name
+Varangian common_axe_1 exact localized name resources.assets: item.common_axe_1.name
+Veil of Mashetani skull_ron_blindness exact localized name resources.assets: item.skull_ron_blindness.name
+Venusian Innards venus_guts exact localized name resources.assets: item.venus_guts.name
+Vercetti common_blouse_4 exact localized name resources.assets: item.common_blouse_4.name
+Verdict fra_security_shotgun_1 exact localized name resources.assets: item.fra_security_shotgun_1.name
+Vermin Killer worker_flamethrower_1 exact localized name resources.assets: item.worker_flamethrower_1.name
+Vertis moon_heavy_armor_1 exact localized name resources.assets: item.moon_heavy_armor_1.name
+Vertis moon_heavy_boots_1 exact localized name resources.assets: item.moon_heavy_boots_1.name
+Vertis moon_heavy_helmet_2 exact localized name resources.assets: item.moon_heavy_helmet_2.name
+Vertis moon_heavy_pants_1 exact localized name resources.assets: item.moon_heavy_pants_1.name
+Veteran military_armored_vest_1 exact localized name resources.assets: item.military_armored_vest_1.name
+Vimes police_boots_2 exact localized name resources.assets: item.police_boots_2.name
+Vimes police_cap_2 exact localized name resources.assets: item.police_cap_2.name
+Vimes police_pants_2 exact localized name resources.assets: item.police_pants_2.name
+Vimes police_reinforced_shirt_1 exact localized name resources.assets: item.police_reinforced_shirt_1.name
+Vincar skull_moon_die exact localized name resources.assets: item.skull_moon_die.name
+Vincar's Cold Warden skull_moon_iron_maiden exact localized name resources.assets: item.skull_moon_iron_maiden.name
+Vintage SEVEN14 ddr_shotgun_1 exact localized name resources.assets: item.ddr_shotgun_1.name
+Visage of Righteous chu_manager_mask_1 exact localized name resources.assets: item.chu_manager_mask_1.name
+Visage of Seraph chu_power_helmet_1 exact localized name resources.assets: item.chu_power_helmet_1.name
+Vivisection Pattern ddr_power_armor_1 exact localized name resources.assets: item.ddr_power_armor_1.name
+Vivisection Pattern ddr_power_boots_1 exact localized name resources.assets: item.ddr_power_boots_1.name
+Vivisection Pattern ddr_power_helmet_1 exact localized name resources.assets: item.ddr_power_helmet_1.name
+Vivisection Pattern ddr_power_pants_1 exact localized name resources.assets: item.ddr_power_pants_1.name
+Voglea skull_moon_animate_golem exact localized name resources.assets: item.skull_moon_animate_golem.name
+Voglea skull_moon_shrapnel exact localized name resources.assets: item.skull_moon_shrapnel.name
+Volcano plasma_hmg_1 exact localized name resources.assets: item.plasma_hmg_1.name
+VoltGuard common_shock_pistol_1 exact localized name resources.assets: item.common_shock_pistol_1.name
+Vorpal Ax moon_axe_1 exact localized name resources.assets: item.moon_axe_1.name
+Vortex-30M unc_smg_2 exact localized name resources.assets: item.unc_smg_2.name
+Vulture unc_sniper_1 exact localized name resources.assets: item.unc_sniper_1.name
+Waack skull_ron_darkness exact localized name resources.assets: item.skull_ron_darkness.name
+Waack skull_ron_revelation exact localized name resources.assets: item.skull_ron_revelation.name
+Wagyu luxury_ration_pack_1 exact localized name resources.assets: item.luxury_ration_pack_1.name
+Wailing Rags possessed_shirt_2 exact localized name resources.assets: item.possessed_shirt_2.name
+War Crash unc_smg_1 exact localized name resources.assets: item.unc_smg_1.name
+Warlord Pattern rwa_power_armor_1 exact localized name resources.assets: item.rwa_power_armor_1.name
+Warlord Pattern rwa_power_boots_1 exact localized name resources.assets: item.rwa_power_boots_1.name
+Warlord Pattern rwa_power_helmet_1 exact localized name resources.assets: item.rwa_power_helmet_1.name
+Warlord Pattern rwa_power_pants_1 exact localized name resources.assets: item.rwa_power_pants_1.name
+Water Bottle water_bottle_1 exact localized name resources.assets: item.water_bottle_1.name
+Water Container water_container exact localized name resources.assets: item.water_container.name
+Watermelon watermelon exact localized name resources.assets: item.watermelon.name
+Watermelon Slice watermelon_slice exact localized name resources.assets: item.watermelon_slice.name
+Weapon Parts weapon_parts exact localized name resources.assets: item.weapon_parts.name
+Weapons Case weapon_container exact localized name resources.assets: item.weapon_container.name
+Web Gland web_gland exact localized name resources.assets: item.web_gland.name
+Welding Machine welding_machine_device exact localized name resources.assets: item.welding_machine_device.name
+Westside unc_pistol_1 exact localized name resources.assets: item.unc_pistol_1.name
+Wheel of Pain moon_assault_1 exact localized name resources.assets: item.moon_assault_1.name
+Whisper of Euphos trembling_whisper exact localized name resources.assets: item.trembling_whisper.name
+White Buttondown common_blouse_1 exact localized name resources.assets: item.common_blouse_1.name
+Whiteout sun_cryolaser_pistol_1 exact localized name resources.assets: item.sun_cryolaser_pistol_1.name
+Wintermute sun_cryolaser_assault_1 exact localized name resources.assets: item.sun_cryolaser_assault_1.name
+Wire metal_tread exact localized name resources.assets: item.metal_tread.name
+Woadcap jupiter_mushrooms exact localized name resources.assets: item.jupiter_mushrooms.name
+Woodcock ANCM anc_pistol_1 exact localized name resources.assets: item.anc_pistol_1.name
+Work Clothes worker_clothing_container exact localized name resources.assets: item.worker_clothing_container.name
+Wrathful Mantra skull_olirna_cold_rage exact localized name resources.assets: item.skull_olirna_cold_rage.name
+Wreck trash_shotgun_1 exact localized name resources.assets: item.trash_shotgun_1.name
+Wrench worker_wrench_1 exact localized name resources.assets: item.worker_wrench_1.name
+Wrist human_wrist exact localized name resources.assets: item.human_wrist.name
+Wz. 150 highexplosion_grenade exact localized name resources.assets: item.highexplosion_grenade.name
+X-Trembolone pills_steroids exact localized name resources.assets: item.pills_steroids.name
+Xiuhcoatl venus_assault_1 exact localized name resources.assets: item.venus_assault_1.name
+XTS-665 laser_smg_2 exact localized name resources.assets: item.laser_smg_2.name
+Xunlei t100 spec_smg_2 exact localized name resources.assets: item.spec_smg_2.name
+Yerecho Flame Front skull_mars_brass_feed exact localized name resources.assets: item.skull_mars_brass_feed.name
+Yerecho Trumpets skull_mars_riot exact localized name resources.assets: item.skull_mars_riot.name
+Yongli tia_light_armor_1 exact localized name resources.assets: item.tia_light_armor_1.name
+Yongli tia_light_boots_1 exact localized name resources.assets: item.tia_light_boots_1.name
+Yongli tia_light_helmet_1 exact localized name resources.assets: item.tia_light_helmet_1.name
+Yongli tia_light_pants_1 exact localized name resources.assets: item.tia_light_pants_1.name
+Z skull_ron_invisibility exact localized name resources.assets: item.skull_ron_invisibility.name
+Z skull_ron_static_field exact localized name resources.assets: item.skull_ron_static_field.name
+Zeus fra_police_club_1 exact localized name resources.assets: item.fra_police_club_1.name

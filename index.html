@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quasimorph Save Editor</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <header id="topbar">
+    <h1>Quasimorph Save Editor</h1>
+    <label class="primary">
+      <input type="file" id="fileInput" accept=".dat,application/json,text/plain" hidden />
+      <button type="button" id="btnOpen" class="primary">Open save…</button>
+    </label>
+    <button type="button" id="btnSave" class="ok" disabled>Download save</button>
+    <span id="status">Load a slot_*_session.dat file. Prefer serving this folder over HTTP so catalogs load.</span>
+  </header>
+
+  <div id="layout">
+    <nav id="nav">
+      <button type="button" data-view="home" class="active">Home</button>
+      <button type="button" data-view="mercs" disabled>Mercenaries</button>
+      <button type="button" data-view="cargo" disabled>Cargo</button>
+      <button type="button" data-view="projects" disabled>Projects</button>
+      <button type="button" data-view="unlocks" disabled>Unlocks</button>
+      <button type="button" data-view="factions" disabled>Factions</button>
+      <button type="button" data-view="difficulty" disabled>Difficulty</button>
+      <button type="button" data-view="world" disabled>World</button>
+      <button type="button" data-view="raw" disabled>Raw</button>
+    </nav>
+    <main id="main"></main>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
