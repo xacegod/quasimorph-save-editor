@@ -29,6 +29,7 @@ import {
   copyStack,
   spawnItem,
   giveOneOfEach,
+  giveOneOfEachIds,
   loadRecycleList,
   saveRecycleList,
   moveMatchingToRecycler,
@@ -42,7 +43,7 @@ import {
   findFreePos,
 } from "./cargo.js";
 import { fieldRow } from "./fields.js";
-import { loadPerkLibrary, mergedTalentCatalog, addTalent, addAllTalents, paramValueKey } from "./perkLibrary.js";
+import { loadPerkLibrary, mergedTalentCatalog, setTalent, perkHasExp, paramValueKey } from "./perkLibrary.js";
 import {
   loadUnlockBaseline,
   getUnlockLists,
@@ -431,26 +432,33 @@ function renderMercDetail(m, all) {
       <p class="doc">${group.help}</p>
       <div class="toolbar">
         <select data-add></select>
-        <button type="button" class="ok" data-addbtn title="Adds this perk even if the merc already has other talents.">Add</button>
-        ${isTalent ? `<button type="button" class="primary" data-addall title="Adds every library talent that is not already on this merc. Stacking all talents is allowed here.">Add all 15 talents</button>` : ""}
+        <button type="button" class="ok" data-addbtn title="${
+          isTalent
+            ? "Replaces the merc's current talent with the selected one (one talent only)."
+            : "Clone this perk onto the merc from another copy in this save."
+        }">${isTalent ? "Set talent" : "Add"}</button>
       </div>
       <div data-list></div>
     </div>`);
     const sel = wrap.querySelector("[data-add]");
+    const currentTalentId = isTalent ? rows[0]?.p?.PerkId : null;
     for (const id of [...cat.keys()].sort()) {
       const opt = document.createElement("option");
       opt.value = id;
-      const owned = (cd.Perks || []).some((p) => p.PerkId === id);
-      opt.textContent = owned ? `${id} (on merc)` : id;
+      if (isTalent) {
+        opt.textContent = id === currentTalentId ? `${id} (current)` : id;
+        if (id === currentTalentId) opt.selected = true;
+      } else {
+        const owned = (cd.Perks || []).some((p) => p.PerkId === id);
+        opt.textContent = owned ? `${id} (on merc)` : id;
+      }
       sel.appendChild(opt);
     }
     wrap.querySelector("[data-addbtn]").onclick = () => {
       const id = sel.value;
       if (isTalent) {
-        if (!addTalent(m, id, state.data)) {
-          setStatus(`${id} is already on this merc`);
-          return;
-        }
+        if (!setTalent(m, id, state.data)) return;
+        setStatus(`Talent set to ${id}`);
       } else {
         const tmpl = cat.get(id);
         if (!tmpl) return;
@@ -460,37 +468,42 @@ function renderMercDetail(m, all) {
       markDirty();
       renderMercs();
     };
-    wrap.querySelector("[data-addall]")?.addEventListener("click", () => {
-      const n = addAllTalents(m);
-      markDirty();
-      setStatus(n ? `Added ${n} talents` : "All library talents already present");
-      renderMercs();
-    });
 
     const list = wrap.querySelector("[data-list]");
     if (!rows.length) {
-      list.innerHTML = `<div class="empty-state">None on this merc. Use Add${isTalent ? " or Add all 15 talents" : ""}.</div>`;
+      list.innerHTML = `<div class="empty-state">None on this merc. Use ${isTalent ? "Set talent" : "Add"}.</div>`;
     } else {
       for (const { p, i } of rows) {
         const card = el(`<div class="panel" style="margin:0.5rem 0">
           <div class="toolbar">
             <strong>${p.PerkId}</strong>
             <span class="badge">${p.PerkType}</span>
-            <span class="muted">exp</span>
             <button type="button" class="danger" data-del>Remove</button>
           </div>
           <div data-params></div>
         </div>`);
-        const exp = document.createElement("input");
-        exp.type = "number";
-        exp.style.width = "5rem";
-        exp.value = p.CurrentExp || "0";
-        exp.title = "CurrentExp";
-        exp.onchange = () => {
-          p.CurrentExp = exp.value;
-          markDirty();
-        };
-        card.querySelector(".toolbar").insertBefore(exp, card.querySelector("[data-del]"));
+        const toolbar = card.querySelector(".toolbar");
+        const delBtn = card.querySelector("[data-del]");
+        if (perkHasExp(p)) {
+          const expLabel = document.createElement("span");
+          expLabel.className = "muted";
+          expLabel.textContent = "exp";
+          const exp = document.createElement("input");
+          exp.type = "number";
+          exp.style.width = "5rem";
+          exp.value = p.CurrentExp || "0";
+          exp.title = `CurrentExp / MaxExp ${p.MaxExp}${p.NextPerkId && typeof p.NextPerkId === "string" ? ` → ${p.NextPerkId}` : ""}`;
+          exp.onchange = () => {
+            p.CurrentExp = exp.value;
+            markDirty();
+          };
+          const maxHint = document.createElement("span");
+          maxHint.className = "muted";
+          maxHint.textContent = `/ ${p.MaxExp}`;
+          toolbar.insertBefore(expLabel, delBtn);
+          toolbar.insertBefore(exp, delBtn);
+          toolbar.insertBefore(maxHint, delBtn);
+        }
         const paramsBox = card.querySelector("[data-params]");
         if (!(p.Parameters || []).length && !(p.AIParameters || []).length) {
           paramsBox.innerHTML = `<p class="muted">No parameters</p>`;
@@ -703,7 +716,7 @@ function renderCargo() {
   // Spawn panel
   const spawn = el(`<div class="panel">
     <h2>Spawn from item catalog</h2>
-    <p class="doc">Search the full playable item list (~1231 ids), then scroll the list to browse. Click a row to select it. Template spawn clones a similar item from the save; thin spawn writes a bare PickupItem for testing.</p>
+    <p class="doc">Search the full playable item list (~1231 ids), then scroll the list to browse. Click a row to select it. Template spawn clones a similar item from the save; thin spawn writes a bare PickupItem for testing. <strong>Spawn each from filter</strong> adds one stack of every catalog match (needs a search string; uses qty).</p>
     <input type="search" id="spawnQ" placeholder="Search item catalog (display name or item id)…" value="${(state.spawnQuery || "").replace(/"/g, "&quot;")}" />
     <div class="catalog-meta" id="catalogMeta"></div>
     <div class="catalog-list" id="catalogList"></div>
@@ -712,6 +725,7 @@ function renderCargo() {
       <input type="number" id="spawnCount" value="1" min="1" style="width:5rem" title="How many separate stacks to create" />
       <button type="button" id="btnSpawn" class="ok">Spawn selected (template)</button>
       <button type="button" id="btnThin" title="Minimal PickupItem with empty components — use to test if the game fills them in.">Thin spawn (prototype)</button>
+      <button type="button" id="btnSpawnFiltered" class="ok" title="Spawn one stack of every item matching the catalog search above (uses qty).">Spawn each from filter</button>
       <button type="button" id="btnGiveAll" class="primary">Give one of each</button>
     </div>
     <h3>Always recycle + fridge</h3>
@@ -962,6 +976,31 @@ function renderCargo() {
     setStatus(`Thin-spawned ${id}: ${JSON.stringify(r)}`);
     renderCargo();
   };
+  spawn.querySelector("#btnSpawnFiltered").onclick = () => {
+    const q = (state.spawnQuery || "").trim();
+    if (!q) {
+      alert("Type a catalog search first (e.g. “ammo” or “rifle”), then spawn each match.");
+      return;
+    }
+    const { items, total } = searchCatalog(q, { limit: 1e9, offset: 0 });
+    if (!total) {
+      alert("No catalog items match that filter.");
+      return;
+    }
+    const qty = +spawn.querySelector("#spawnQty").value || 1;
+    if (!confirm(`Spawn ${total} item(s) matching “${q}” into ShipCargo[0] (qty ${qty} each)?`)) return;
+    setStatus(`Spawning ${total} filtered…`);
+    setTimeout(() => {
+      const r = giveOneOfEachIds(
+        state.data,
+        items.map((x) => x.id),
+        { qty }
+      );
+      markDirty();
+      setStatus(`Spawned each from filter (${total}): ${JSON.stringify(r)}`);
+      renderCargo();
+    }, 20);
+  };
   spawn.querySelector("#btnGiveAll").onclick = () => {
     if (!confirm("Spawn 1 of each playable non-quest item into ShipCargo[0]? This can add ~1231 items.")) return;
     setStatus("Spawning…");
@@ -1036,8 +1075,8 @@ function renderProjects() {
       <button type="button" data-tab="class" class="${tab === "class" ? "active" : ""}">Class</button>
     </div>
     <div class="toolbar">
-      <button type="button" id="btnFin" class="ok">Instant-finish selected</button>
-      <button type="button" id="btnFinAll" class="ok">Instant-finish tab</button>
+      <button type="button" id="btnFin" class="ok" title="Sets FinishTime = StartTime on checked projects only.">Instant-finish selected</button>
+      <button type="button" id="btnFinAll" class="ok" title="Sets FinishTime = StartTime on every project in the current list (Equipment, Mercenary, or Class).">Instant-finish all projects</button>
       ${tab === "equipment" ? `<button type="button" id="btnDel" class="danger">Delete selected</button>
       <button type="button" id="btnDelDone" class="danger">Delete finished equipment</button>` : ""}
       ${tab === "mercenary" ? `<button type="button" id="btnCopyKit" class="primary">Copy buffed kit from first selected → other selected</button>` : ""}
@@ -1081,15 +1120,15 @@ function renderProjects() {
   }
 
   panel.querySelector("#btnFin").onclick = () => {
-    instantFinishProjects(selectedProjects());
+    const n = instantFinishProjects(selectedProjects());
     markDirty();
-    setStatus("Instant-finished selected");
+    setStatus(`Instant-finished ${n} selected project(s)`);
     renderProjects();
   };
   panel.querySelector("#btnFinAll").onclick = () => {
-    instantFinishProjects(list);
+    const n = instantFinishProjects(list);
     markDirty();
-    setStatus("Instant-finished tab");
+    setStatus(`Instant-finished all ${n} project(s) in this list`);
     renderProjects();
   };
   panel.querySelector("#btnDel")?.addEventListener("click", () => {

@@ -115,7 +115,7 @@ export const COPY_SECTIONS = [
   { id: "augeffects", label: "Augment effects", help: "FromAugment wound effects + ImplicitAugEffect. IDs are remapped." },
   { id: "rankPerks", label: "Class ranks", help: "PerkType Rank only (rank_4, rank_5). These come from class progression, not pacts." },
   { id: "pactUltimate", label: "Pact / ultimate", help: "Ultimate perks + HasUltimate + skull item + pact level. Ultimates are unlocked via bramfatura pacts." },
-  { id: "talents", label: "Talents (traits)", help: "All PerkType Talent entries. You can stack every library talent on one merc." },
+  { id: "talents", label: "Talents (traits)", help: "The single PerkType Talent on the merc (game allows one)." },
   { id: "otherPerks", label: "Passives / triggers", help: "Passive and Trigger perks only (not talents, ranks, or ultimates)." },
   { id: "stats", label: "Stats", help: "Numeric combat stats and ignore flags. Does not copy name or class id." },
 ];
@@ -137,7 +137,7 @@ export const PERK_GROUPS = [
     id: "Talent",
     title: "Talents (traits)",
     types: ["Talent"],
-    help: "Game normally allows one talent. This editor can stack every talent from the library and edit each parameter (Int/Float/Bool).",
+    help: "One talent per merc. Choose from the library to replace the current talent; edit Int/Float/Bool parameters as needed.",
   },
   {
     id: "Other",

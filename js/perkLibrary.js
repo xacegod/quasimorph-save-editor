@@ -1,6 +1,6 @@
 /**
- * Built-in mercenary talent (trait) library. Game normally allows one talent;
- * this editor can stack all of them. Parameter values stay strings.
+ * Built-in mercenary talent (trait) library. Game allows one talent per merc;
+ * setting a talent replaces any existing Talent perk. Parameter values stay strings.
  */
 import { deepClone } from "./parse.js";
 import { collectPerkCatalogByType } from "./merc.js";
@@ -42,25 +42,23 @@ export function mergedTalentCatalog(data) {
   return map;
 }
 
-export function addTalent(merc, perkId, data = null) {
+/** Replace any existing Talent perk(s) with the chosen one (game allows a single talent). */
+export function setTalent(merc, perkId, data = null) {
   const tmpl = talentTemplate(perkId) || (data ? collectPerkCatalogByType(data, "Talent").get(perkId) : null);
   if (!tmpl || !merc?.CreatureData) return false;
-  if (!merc.CreatureData.Perks) merc.CreatureData.Perks = [];
-  if (merc.CreatureData.Perks.some((p) => p.PerkId === perkId)) return false;
-  merc.CreatureData.Perks.push(deepClone(tmpl));
+  const kept = (merc.CreatureData.Perks || []).filter((p) => p.PerkType !== "Talent");
+  merc.CreatureData.Perks = [...kept, deepClone(tmpl)];
   return true;
-}
-
-export function addAllTalents(merc) {
-  let n = 0;
-  for (const id of talentLib.keys()) {
-    if (addTalent(merc, id)) n++;
-  }
-  return n;
 }
 
 export function paramValueKey(param) {
   if (param.ValType === "Float") return "FloatVal";
   if (param.ValType === "Boolean") return "BoolVal";
   return "IntVal";
+}
+
+/** True when the perk uses CurrentExp toward MaxExp (leveling chain). */
+export function perkHasExp(p) {
+  const max = parseInt(p?.MaxExp, 10);
+  return Number.isFinite(max) && max > 0;
 }

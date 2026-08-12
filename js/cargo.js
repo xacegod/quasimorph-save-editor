@@ -206,15 +206,19 @@ export function spawnItem(data, id, { qty = 1, count = 1, thin = false, storeInd
   return report;
 }
 
-export function giveOneOfEach(data, { storeIndex = 0, onProgress } = {}) {
-  const ids = getSpawnableIds().filter((id) => !isQuestItem(id));
+export function giveOneOfEachIds(data, ids, { storeIndex = 0, qty = 1, onProgress } = {}) {
   const report = { total: ids.length, exact: 0, family: 0, fallback: 0, thin: 0 };
   ids.forEach((id, i) => {
-    const r = spawnItem(data, id, { qty: 1, count: 1, thin: false, storeIndex });
+    const r = spawnItem(data, id, { qty, count: 1, thin: false, storeIndex });
     for (const k of Object.keys(r)) report[k] = (report[k] || 0) + r[k];
     if (onProgress && i % 50 === 0) onProgress(i + 1, ids.length);
   });
   return report;
+}
+
+export function giveOneOfEach(data, { storeIndex = 0, onProgress } = {}) {
+  const ids = getSpawnableIds().filter((id) => !isQuestItem(id));
+  return giveOneOfEachIds(data, ids, { storeIndex, qty: 1, onProgress });
 }
 
 function moveItemBetweenStores(fromStore, itemIndex, toStore, { freeze = false, gameTime } = {}) {
