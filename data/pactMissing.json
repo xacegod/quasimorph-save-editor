@@ -1,0 +1,203 @@
+{
+  "source": "wiki-scrape-progress.json status=missing",
+  "builtAt": "2026-08-12T13:21:10.616Z",
+  "count": 39,
+  "note": "Re-run npm run scrape:pacts when the wiki adds these pages, then build:pacts + build:pact-missing.",
+  "missing": [
+    {
+      "title": "Amergin's Hunt Traps",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Arawn's Painroots",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Arawn's Stillness",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Ash",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Beat of the Damaru",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Blasphemy",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Cathbad's Poisoned Oath",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Cathbad's Thornline",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Chöd",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Conflagrate",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Consecration",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Flauros' Hunters",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Flauros' Venom Hail",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Gibil's Extra",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Gnyann's Binding",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Gnyann's Gaze",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Hell March",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Horncall",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Marah’s Loyal Lion",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Marah's Mantle",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Marduk's Power Soak",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Miasma",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Morriganah's Harrier",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Morriganah's Servant Shape",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Nergal's Cuneiform",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Nergal's Red Edict",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Paimon's Standing Guard",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Phurba of Golden Halls",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Red-and-Gold Guard",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Red-and-Gold Idol",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Shedu's Thousand Fires",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Shinar's Cruel Statute",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "The Kangling's Breath",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Tsernnunos Seed",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Tsernnunos' Fury",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Urparp's Ziggurat",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Wrathful Mantra",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Yerekhon Flame Front",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    },
+    {
+      "title": "Yerekhon Trumpets",
+      "url": "",
+      "note": "The page you specified doesn't exist."
+    }
+  ]
+}

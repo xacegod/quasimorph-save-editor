@@ -13,11 +13,14 @@ const args = new Set(process.argv.slice(2));
 const steps = [
   { name: "scrape:pacts", cmd: ["node", "scripts/scrape-wiki-pacts.mjs"], skip: args.has("--skip-pacts") },
   { name: "build:pacts", cmd: ["node", "scripts/build-pact-library.mjs"], skip: args.has("--skip-pacts") },
+  { name: "build:pact-missing", cmd: ["node", "scripts/build-pact-missing.mjs"], skip: args.has("--skip-pacts") },
   { name: "scrape:classes", cmd: ["node", "scripts/scrape-merc-classes.mjs"] },
   { name: "scrape:tech", cmd: ["node", "scripts/scrape-tech-tree.mjs"] },
   { name: "scrape:icons", cmd: ["node", "scripts/scrape-wiki-icons.mjs"], skip: args.has("--skip-icons") },
   { name: "build:perk-meta", cmd: ["node", "scripts/build-perk-meta.mjs"] },
   { name: "build:equip-projects", cmd: ["node", "scripts/build-equip-project-library.mjs"] },
+  { name: "build:passive-triggers", cmd: ["node", "scripts/build-passive-trigger-library.mjs"] },
+  { name: "build:unlock-baseline", cmd: ["node", "scripts/build-unlock-baseline.mjs"] },
 ];
 
 function run(cmd) {

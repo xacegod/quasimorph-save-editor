@@ -43,7 +43,29 @@ import {
   findFreePos,
 } from "./cargo.js";
 import { fieldRow } from "./fields.js";
-import { loadPerkLibrary, loadPactLibrary, mergedTalentCatalog, mergedUltimateCatalog, setTalent, addTalent, setUltimate, clearUltimate, pactLabel, pactMeta, getPactLibrary, perkHasExp, paramValueKey, inferParamKind, paramTypeHint, applyParamValue, maxPerkExp, canPromotePerk, promotePerkToMaxRank, perkNextId } from "./perkLibrary.js";
+import {
+  loadPerkLibrary,
+  loadPactLibrary,
+  loadPassiveTriggerLibrary,
+  mergedTalentCatalog,
+  mergedUltimateCatalog,
+  setTalent,
+  addTalent,
+  setUltimate,
+  clearUltimate,
+  pactLabel,
+  pactMeta,
+  getPactLibrary,
+  perkHasExp,
+  paramValueKey,
+  inferParamKind,
+  paramTypeHint,
+  applyParamValue,
+  maxPerkExp,
+  canPromotePerk,
+  promotePerkToMaxRank,
+  perkNextId,
+} from "./perkLibrary.js";
 import { loadMercClasses, mercClassLabel, mercClassInfo, mercClassPerkLabels, classPerkInfo, classPerkSummary, getMercClasses, applyMercClass, classPerkDropdownLabel, classPerkSearchText } from "./mercClasses.js";
 import {
   loadRankLibrary,
@@ -87,6 +109,13 @@ import {
   unlockMaxEquipProjectSlots,
   addEquipProject,
   copyEquipMods,
+  listModdedEquipTemplates,
+  listBestBuffProfiles,
+  bestEquipModTemplate,
+  inferEquipProjectType,
+  equipTypeAmbiguous,
+  applyEquipBuffMods,
+  applyBuffToAllOfType,
   isWeaponProject,
   isArmorProject,
 } from "./unlocks.js";
@@ -94,6 +123,34 @@ import { getFactions, uniqueFieldValues, bulkSet } from "./factions.js";
 import { getDifficultyPreset, DIFFICULTY_GROUPS } from "./difficulty.js";
 import { getTravel, getSpaceTime, getDebug, getRaid, isInDungeon } from "./world.js";
 import { listComponents, schemaFor, renderSchemaHtml, bindFlatFields } from "./editor.js";
+import { pushUndo, canUndo, undoLabel, applyUndo, clearUndo } from "./history.js";
+import {
+  getStations,
+  filterStations,
+  stationSummary,
+  setStationOwner,
+  setStationImmune,
+  setStationUncapturable,
+  clearStationStash,
+  clearStationInternal,
+} from "./stations.js";
+import {
+  getActiveMissions,
+  getReversedMissions,
+  filterMissions,
+  missionSummary,
+  unblockMission,
+  expireMissionNow,
+  deleteMissions,
+} from "./missions.js";
+import {
+  getShippings,
+  filterShippings,
+  shippingSummary,
+  deleteShippings,
+  forceArriveShippings,
+  clearAllShippings,
+} from "./shippings.js";
 
 const state = {
   data: null,
@@ -110,21 +167,44 @@ const state = {
   projectTab: "equipment",
   projectSelected: new Set(),
   catalogOk: false,
+  stationSelected: new Set(),
+  missionList: "Values",
+  missionSelected: new Set(),
+  shippingSelected: new Set(),
+  magnumQuery: "",
 };
 
 const main = document.getElementById("main");
 const statusEl = document.getElementById("status");
 const btnSave = document.getElementById("btnSave");
+const btnUndo = document.getElementById("btnUndo");
 
 function setStatus(msg, cls = "") {
   statusEl.className = cls;
   statusEl.textContent = msg;
 }
 
-function markDirty() {
+function updateUndoBtn() {
+  if (!btnUndo) return;
+  btnUndo.disabled = !canUndo();
+  btnUndo.title = canUndo() ? `Undo: ${undoLabel()}` : "Nothing to undo";
+}
+
+function markDirty(extraWarn = "") {
   state.dirty = true;
   btnSave.disabled = !state.data;
-  if (state.data) setStatus(`${state.fileName} · edited · SaveVersion ${state.data.SaveVersion}`, "warn");
+  updateUndoBtn();
+  if (state.data) {
+    const sv = String(state.data.SaveVersion);
+    const svWarn = sv !== "50" ? ` · SaveVersion ${sv} ≠ 50` : "";
+    setStatus(`${state.fileName} · edited${svWarn}${extraWarn ? ` · ${extraWarn}` : ""}`, "warn");
+  }
+}
+
+/** Snapshot before destructive bulk ops (one-level undo). */
+function markDirtyDestructive(reason, extraWarn = "") {
+  pushUndo(state.data, reason);
+  markDirty(extraWarn);
 }
 
 function enableNav(on) {
@@ -140,6 +220,7 @@ async function initCatalogs() {
     await loadUnlockBaseline();
     const talentN = await loadPerkLibrary();
     const pactN = await loadPactLibrary();
+    const ptN = await loadPassiveTriggerLibrary();
     const classN = await loadMercClasses();
     const rankN = await loadRankLibrary();
     const defN = await loadPerkDefaults();
@@ -148,7 +229,7 @@ async function initCatalogs() {
     const equipN = await loadEquipProjectLibrary();
     state.catalogOk = true;
     setStatus(
-      `Catalogs ready: ${info.spawnableCount} items, ${talentN} talents, ${pactN} pacts, ${classN} classes, ${rankN} ranks, ${defN} perk defaults, ${iconN} icons, ${techN} techs, ${equipN} equip projects. Open a save.`
+      `Catalogs ready: ${info.spawnableCount} items, ${talentN} talents, ${pactN} pacts, ${ptN} passive/trigger, ${classN} classes, ${rankN} ranks, ${defN} perk defaults, ${iconN} icons, ${techN} techs, ${equipN} equip projects. Open a save.`
     );
   } catch (e) {
     state.catalogOk = false;
@@ -166,12 +247,18 @@ async function openFile(file) {
     state.mercIndex = 0;
     state.cargoSelected.clear();
     state.projectSelected.clear();
+    state.stationSelected.clear();
+    state.missionSelected.clear();
+    state.shippingSelected.clear();
+    clearUndo();
+    updateUndoBtn();
     const tmpl = indexItemsFromSave(data);
     const catalogAdded = mergeSpawnableFromSave(data);
     btnSave.disabled = false;
     enableNav(true);
     const catalogNote = catalogAdded ? ` · +${catalogAdded} catalog ids` : "";
-    if (data.SaveVersion !== 50) {
+    const svOk = String(data.SaveVersion) === "50";
+    if (!svOk) {
       setStatus(`Loaded ${fileName} (${(size / 1e6).toFixed(1)} MB). Warning: SaveVersion ${data.SaveVersion} ≠ 50.${catalogNote}`, "warn");
     } else {
       setStatus(
@@ -195,6 +282,14 @@ document.getElementById("btnSave").addEventListener("click", () => {
   downloadSave(state.data, state.fileName);
   state.dirty = false;
   setStatus(`Downloaded ${state.fileName}`);
+});
+btnUndo?.addEventListener("click", () => {
+  if (!state.data || !canUndo()) return;
+  const reason = applyUndo(state.data);
+  state.dirty = true;
+  updateUndoBtn();
+  setStatus(`Undid: ${reason || "edit"}`, "warn");
+  render();
 });
 
 document.getElementById("nav").addEventListener("click", (e) => {
@@ -236,6 +331,15 @@ function render() {
     case "unlocks":
       renderUnlocks();
       break;
+    case "stations":
+      renderStations();
+      break;
+    case "missions":
+      renderMissions();
+      break;
+    case "shippings":
+      renderShippings();
+      break;
     case "factions":
       renderFactions();
       break;
@@ -264,8 +368,10 @@ function renderHome() {
       <li>Mercs — stats, perks (Talent / Rank / Passive / Ultimate hints), copy kit, clear curse, training, heal</li>
       <li>Pacts — edit/remove the <em>current</em> ultimate here; unlock others by absorbing a skull in-game</li>
       <li>Cargo — filter, qty (Count may exceed Max), spawn / thin-spawn, recycle &amp; fridge autosort</li>
-      <li>Projects — equipment templates (your modded weapons/armor), copy mods, edit JSON; max Weaponry/Arsenal slots via tech</li>
-      <li>Unlocks — restore full unlocks from late-game baseline</li>
+      <li>Projects — Magnum blueprints: add templates, stamp typed buffs onto other item ids, Key/Value mod editor</li>
+      <li>Unlocks / tech — restore baseline; toggle Magnum tech tree</li>
+      <li>Stations / Missions / Shippings — Magnum world lists (ownership, expire, clear transit)</li>
+      <li>Undo — one-level snapshot before destructive bulk actions</li>
     </ul>
   </div>`);
   main.appendChild(panel);
@@ -496,7 +602,9 @@ function renderMercDetail(m, all) {
     } else if (m.MercClassId) {
       const tip = document.createElement("p");
       tip.className = "doc muted";
-      tip.textContent = `No wiki perk roster for ${mercClassLabel(m.MercClassId)} yet — Apply still sets MercClassId.`;
+      tip.textContent =
+        classInfo?.rosterNote ||
+        `No wiki perk roster for ${mercClassLabel(m.MercClassId)} yet — Apply still sets MercClassId.`;
       ident.appendChild(tip);
     }
   }
@@ -1469,8 +1577,8 @@ function renderCargo() {
     if (!id) return alert("Click an item in the catalog list first.");
     const qty = +spawn.querySelector("#spawnQty").value || 1;
     const r = spawnItem(state.data, id, { qty, count: 1, thin: true });
-    markDirty();
-    setStatus(`Thin-spawned ${id}: ${JSON.stringify(r)}`);
+    markDirty("thin spawn — may lack components");
+    setStatus(`Thin-spawned ${id}: ${JSON.stringify(r)} · warning: thin items may lack components`, "warn");
     renderCargo();
   };
   spawn.querySelector("#btnSpawnFiltered").onclick = () => {
@@ -1575,29 +1683,64 @@ function renderProjects() {
     </div>
     ${
       tab === "equipment"
-        ? `<p class="doc">Weaponry slots <strong>${counts.weapons}/${caps.weapons || "?"}</strong> (max ${caps.weaponsMax}) · Arsenal slots <strong>${counts.armor}/${caps.armor || "?"}</strong> (max ${caps.armorMax}). Caps come from Magnum tech unlocks — not a hard save-array limit.</p>
-    <div class="toolbar">
-      <button type="button" id="btnMaxSlots" class="primary" title="Adds Weaponry/Arsenal department + more-projects techs to _purchasedPerks">Max project slots (tech)</button>
-      <select id="equipAdd" style="min-width:18rem"></select>
-      <button type="button" id="btnEquipAdd" class="ok">Add from template</button>
-      <button type="button" id="btnEquipReplace" title="Replace if DevelopId already exists">Replace</button>
-      <label title="Ignore estimated slot caps when adding"><input type="checkbox" id="equipForce" /> Force</label>
-    </div>`
+        ? `<p class="doc">Project mods are <strong>researched Magnum blueprints</strong>. Physical stacks in cargo / merc bags are separate. Weaponry <strong>${counts.weapons}/${caps.weapons || "?"}</strong> (max ${caps.weaponsMax}) · Arsenal <strong>${counts.armor}/${caps.armor || "?"}</strong> (max ${caps.armorMax}).</p>
+    <fieldset class="toolbar-group">
+      <legend>Slots</legend>
+      <div class="toolbar">
+        <button type="button" id="btnMaxSlots" class="primary" title="Adds Weaponry/Arsenal department + more-projects techs to _purchasedPerks">Max project slots (tech)</button>
+        <label title="Ignore estimated slot caps when adding"><input type="checkbox" id="equipForce" /> Force add</label>
+      </div>
+    </fieldset>
+    <fieldset class="toolbar-group">
+      <legend>Add project</legend>
+      <div class="toolbar">
+        <select id="equipAdd" style="min-width:18rem"></select>
+        <button type="button" id="btnEquipAdd" class="ok">Add from template</button>
+        <button type="button" id="btnEquipReplace" title="Replace if DevelopId already exists">Replace</button>
+      </div>
+    </fieldset>
+    <fieldset class="toolbar-group">
+      <legend>Apply buff</legend>
+      <p class="muted doc">Stamp AppliedModifications from a buffed Helmet/Armor/Weapon onto other ids of the <em>same</em> type. CachedItems are not copied.</p>
+      <div class="toolbar">
+        <select id="buffSource" style="min-width:18rem" title="★ = best profile for that type"></select>
+        <button type="button" id="btnBuffSelected" class="primary">Apply to selected</button>
+        <button type="button" id="btnBuffAllType" title="All projects matching the buff source ProjectType">Apply to all of type</button>
+        <button type="button" id="btnBuffBestTypes" title="Each selected gets best buff of its ProjectType">Best buff → selected</button>
+      </div>
+      <div class="toolbar">
+        <input type="search" id="buffTargetQ" placeholder="Target item id / name…" style="min-width:12rem" />
+        <select id="buffTargetId" style="min-width:16rem"></select>
+        <select id="buffForceType" title="Required when type cannot be inferred">
+          <option value="">ProjectType (auto)</option>
+          <option>Helmet</option><option>Armor</option><option>Boots</option><option>Leggings</option>
+          <option>RangeWeapon</option><option>MeleeWeapon</option>
+        </select>
+        <button type="button" id="btnBuffAddId" class="ok">Apply to item id</button>
+      </div>
+      <div class="toolbar">
+        <textarea id="buffIdList" rows="2" placeholder="Paste multiple item ids (one per line or comma-separated)" style="min-width:24rem;flex:1"></textarea>
+        <button type="button" id="btnBuffIdList" class="ok">Apply to id list</button>
+      </div>
+    </fieldset>`
         : ""
     }
-    <div class="toolbar">
-      <button type="button" id="btnFin" class="ok" title="Sets FinishTime = StartTime on checked projects only.">Instant-finish selected</button>
-      <button type="button" id="btnFinAll" class="ok" title="Sets FinishTime = StartTime on every project in the current list.">Instant-finish all projects</button>
-      ${
-        tab === "equipment"
-          ? `<button type="button" id="btnDel" class="danger">Delete selected</button>
-      <button type="button" id="btnDelDone" class="danger">Delete finished equipment</button>
-      <button type="button" id="btnCopyEquipMods" class="primary">Copy mods from first selected → other selected</button>`
-          : ""
-      }
-      ${tab === "mercenary" ? `<button type="button" id="btnCopyKit" class="primary">Copy buffed kit from first selected → other selected</button>` : ""}
-      ${tab === "class" ? `<button type="button" id="btnCopyMods" class="primary">Copy mods from first selected → other selected</button>` : ""}
-    </div>
+    <fieldset class="toolbar-group">
+      <legend>Bulk actions</legend>
+      <div class="toolbar">
+        <button type="button" id="btnFin" class="ok" title="Sets FinishTime = StartTime on checked projects only.">Instant-finish selected</button>
+        <button type="button" id="btnFinAll" class="ok" title="Sets FinishTime = StartTime on every project in the current list.">Instant-finish all projects</button>
+        ${
+          tab === "equipment"
+            ? `<button type="button" id="btnDel" class="danger">Delete selected</button>
+        <button type="button" id="btnDelDone" class="danger">Delete finished equipment</button>
+        <button type="button" id="btnCopyEquipMods" class="primary">Copy mods from first selected → other selected</button>`
+            : ""
+        }
+        ${tab === "mercenary" ? `<button type="button" id="btnCopyKit" class="primary">Copy buffed kit from first selected → other selected</button>` : ""}
+        ${tab === "class" ? `<button type="button" id="btnCopyMods" class="primary">Copy mods from first selected → other selected</button>` : ""}
+      </div>
+    </fieldset>
     <div class="scroll-table" id="projTable"></div>
     <div id="equipMods"></div>
     <div id="classMods"></div>
@@ -1635,17 +1778,78 @@ function renderProjects() {
       const id = sel.value;
       if (!id) return;
       const force = panel.querySelector("#equipForce").checked;
+      if (force) pushUndo(state.data, "force add project");
       const r = addEquipProject(state.data, id, { replace, force });
       if (!r.ok) {
         setStatus(r.message, "warn");
         return;
       }
-      markDirty();
-      setStatus(r.message);
+      markDirty(force ? "Force bypassed slot caps" : "");
+      setStatus(r.message + (force ? " (Force)" : ""));
       renderProjects();
     };
     panel.querySelector("#btnEquipAdd").onclick = () => doAdd(false);
     panel.querySelector("#btnEquipReplace").onclick = () => doAdd(true);
+
+    const buffSel = panel.querySelector("#buffSource");
+    const bestIds = new Set(listBestBuffProfiles().map((p) => p.DevelopId));
+    const modded = listModdedEquipTemplates();
+    const bestFirst = [...modded].sort((a, b) => {
+      const ab = bestIds.has(a.DevelopId) ? 0 : 1;
+      const bb = bestIds.has(b.DevelopId) ? 0 : 1;
+      return ab - bb || a.ProjectType.localeCompare(b.ProjectType) || a.DevelopId.localeCompare(b.DevelopId);
+    });
+    for (const t of bestFirst) {
+      const opt = document.createElement("option");
+      opt.value = t.DevelopId;
+      const mark = bestIds.has(t.DevelopId) ? " ★" : "";
+      opt.textContent = `${t.ProjectType} · ${displayName(t.DevelopId)} (${t.DevelopId}) · ${t.AppliedModifications.length} mods${mark}`;
+      buffSel.appendChild(opt);
+    }
+    if (!modded.length) {
+      const opt = document.createElement("option");
+      opt.value = "";
+      opt.textContent = "No modded templates — npm run build:equip-projects";
+      buffSel.appendChild(opt);
+    }
+
+    const targetSel = panel.querySelector("#buffTargetId");
+    const refreshBuffTargets = () => {
+      const src = getEquipProjectLibrary().get(buffSel.value);
+      const type = src?.ProjectType || "";
+      const q = panel.querySelector("#buffTargetQ").value;
+      targetSel.innerHTML = "";
+      const { items } = searchCatalog(q, { limit: 120 });
+      let n = 0;
+      for (const { id, name } of items) {
+        const inferred = inferEquipProjectType(id);
+        const amb = equipTypeAmbiguous(id);
+        if (type && inferred && inferred !== type) continue;
+        if (type && !inferred && !amb && String(q).trim().length < 2) continue;
+        const opt = document.createElement("option");
+        opt.value = id;
+        opt.textContent = `${name} (${id})${inferred ? ` · ${inferred}` : amb ? " · ambiguous" : ""}`;
+        targetSel.appendChild(opt);
+        n++;
+      }
+      if (!n) {
+        const opt = document.createElement("option");
+        opt.value = "";
+        opt.textContent = type ? `No ${type}-like ids — type full item id` : "Search for a target item";
+        targetSel.appendChild(opt);
+      }
+    };
+    buffSel.onchange = () => {
+      const src = getEquipProjectLibrary().get(buffSel.value);
+      if (src?.ProjectType) panel.querySelector("#buffForceType").value = src.ProjectType;
+      refreshBuffTargets();
+    };
+    panel.querySelector("#buffTargetQ").oninput = refreshBuffTargets;
+    if (buffSel.value) {
+      const src = getEquipProjectLibrary().get(buffSel.value);
+      if (src?.ProjectType) panel.querySelector("#buffForceType").value = src.ProjectType;
+    }
+    refreshBuffTargets();
   }
 
   const tbody = list
@@ -1703,8 +1907,8 @@ function renderProjects() {
   panel.querySelector("#btnDel")?.addEventListener("click", () => {
     const sel = selectedProjects();
     if (!confirm(`Delete ${sel.length} equipment projects?`)) return;
+    markDirtyDestructive("delete equipment projects");
     deleteProjects(state.data, sel);
-    markDirty();
     state.projectSelected.clear();
     setStatus(`Deleted ${sel.length}`);
     renderProjects();
@@ -1712,17 +1916,99 @@ function renderProjects() {
   panel.querySelector("#btnDelDone")?.addEventListener("click", () => {
     const done = list.filter((p) => p.IsInDevelopment === "False");
     if (!confirm(`Delete ${done.length} finished equipment projects?`)) return;
+    markDirtyDestructive("delete finished equipment");
     deleteProjects(state.data, done);
-    markDirty();
     setStatus(`Deleted ${done.length}`);
     renderProjects();
   });
   panel.querySelector("#btnCopyEquipMods")?.addEventListener("click", () => {
     const sel = selectedProjects();
     if (sel.length < 2) return alert("Select source first, then targets");
-    const n = copyEquipMods(sel[0], sel.slice(1));
+    const n = copyEquipMods(sel[0], sel.slice(1), { includeCached: true });
     markDirty();
     setStatus(`Copied equip mods to ${n}`);
+    renderProjects();
+  });
+  panel.querySelector("#btnBuffSelected")?.addEventListener("click", () => {
+    const srcId = panel.querySelector("#buffSource")?.value;
+    if (!srcId) return;
+    const sel = selectedProjects();
+    if (!sel.length) return alert("Select target equipment projects first");
+    markDirtyDestructive("buff selected projects");
+    const r = applyEquipBuffMods(state.data, {
+      sourceDevelopId: srcId,
+      targets: sel,
+      force: panel.querySelector("#equipForce")?.checked,
+    });
+    setStatus(r.message + (r.skipped.length ? ` · ${r.skipped.slice(0, 4).join("; ")}` : ""), r.ok ? "warn" : "warn");
+    renderProjects();
+  });
+  panel.querySelector("#btnBuffAllType")?.addEventListener("click", () => {
+    const srcId = panel.querySelector("#buffSource")?.value;
+    const src = getEquipProjectLibrary().get(srcId);
+    if (!src) return;
+    if (!confirm(`Apply ${src.DevelopId} buff to ALL ${src.ProjectType} projects?`)) return;
+    markDirtyDestructive(`buff all ${src.ProjectType}`);
+    const r = applyBuffToAllOfType(state.data, src.ProjectType, srcId);
+    setStatus(r.message, "warn");
+    renderProjects();
+  });
+  panel.querySelector("#btnBuffAddId")?.addEventListener("click", () => {
+    const srcId = panel.querySelector("#buffSource")?.value;
+    const id =
+      panel.querySelector("#buffTargetId")?.value?.trim() ||
+      panel.querySelector("#buffTargetQ")?.value?.trim();
+    if (!srcId || !id) return alert("Pick a buff source and a target item id");
+    const forceType = panel.querySelector("#buffForceType")?.value || "";
+    const force = panel.querySelector("#equipForce")?.checked;
+    markDirtyDestructive("buff item id");
+    const r = applyEquipBuffMods(state.data, {
+      sourceDevelopId: srcId,
+      targetIds: [id],
+      explicitProjectType: forceType || undefined,
+      force,
+      createMissing: true,
+    });
+    setStatus(r.message + (r.skipped.length ? ` · ${r.skipped.join("; ")}` : ""), r.ok ? "" : "warn");
+    renderProjects();
+  });
+  panel.querySelector("#btnBuffIdList")?.addEventListener("click", () => {
+    const srcId = panel.querySelector("#buffSource")?.value;
+    const raw = panel.querySelector("#buffIdList")?.value || "";
+    const ids = raw
+      .split(/[\s,;]+/)
+      .map((s) => s.trim())
+      .filter(Boolean);
+    if (!srcId || !ids.length) return alert("Pick a buff source and paste item ids");
+    const forceType = panel.querySelector("#buffForceType")?.value || "";
+    markDirtyDestructive("buff id list");
+    const r = applyEquipBuffMods(state.data, {
+      sourceDevelopId: srcId,
+      targetIds: ids,
+      explicitProjectType: forceType || undefined,
+      force: panel.querySelector("#equipForce")?.checked,
+      createMissing: true,
+    });
+    setStatus(r.message + (r.skipped.length ? ` · ${r.skipped.slice(0, 5).join("; ")}` : ""), r.ok ? "warn" : "warn");
+    renderProjects();
+  });
+  panel.querySelector("#btnBuffBestTypes")?.addEventListener("click", () => {
+    const sel = selectedProjects();
+    if (!sel.length) return alert("Select equipment projects first");
+    markDirtyDestructive("best buff by type");
+    let updated = 0;
+    const skipped = [];
+    for (const p of sel) {
+      const best = bestEquipModTemplate(p.ProjectType);
+      if (!best) {
+        skipped.push(`${p.DevelopId} (no ${p.ProjectType} buff)`);
+        continue;
+      }
+      const r = applyEquipBuffMods(state.data, { sourceDevelopId: best.DevelopId, targets: [p] });
+      updated += r.updated;
+      skipped.push(...r.skipped);
+    }
+    setStatus(`Best-by-type buff: updated ${updated}${skipped.length ? ` · skipped ${skipped.length}` : ""}`);
     renderProjects();
   });
   panel.querySelector("#btnCopyKit")?.addEventListener("click", () => {
@@ -1758,13 +2044,65 @@ function renderEquipMods(panel, list) {
     box.innerHTML = `<p class="muted">Select an equipment project to edit AppliedModifications / CachedItems.</p>`;
     return;
   }
+  const mods = p.AppliedModifications || [];
+  const rows = mods
+    .map(
+      (m, idx) =>
+        `<tr data-mi="${idx}"><td><input data-k="${idx}" value="${String(m.Key || "").replace(/"/g, "&quot;")}" /></td>
+      <td><input data-v="${idx}" value="${String(m.Value ?? "").replace(/"/g, "&quot;")}" /></td>
+      <td><button type="button" data-rm="${idx}" class="danger">×</button></td></tr>`
+    )
+    .join("");
   box.innerHTML = `<h3>${iconHtml(p.DevelopId, 28)} ${displayName(p.DevelopId)} <code>${p.DevelopId}</code></h3>
-    <p class="doc muted">${p.ProjectType} · ${(p.AppliedModifications || []).length} applied mods · ${(p.CachedItems || []).length} cached items</p>
-    <p class="muted">AppliedModifications</p>
-    <pre class="json-mini" contenteditable="true" id="equipApplied">${JSON.stringify(p.AppliedModifications || [], null, 2)}</pre>
-    <p class="muted">CachedItems</p>
-    <pre class="json-mini" contenteditable="true" id="equipCached">${JSON.stringify(p.CachedItems || [], null, 2)}</pre>
-    <button type="button" id="btnSaveEquipMods" class="ok">Apply JSON</button>`;
+    <p class="doc muted">${p.ProjectType} · ${mods.length} applied mods · ${(p.CachedItems || []).length} cached items</p>
+    <h3>AppliedModifications</h3>
+    <div class="scroll-table" style="max-height:16rem"><table class="data"><thead><tr><th>Key</th><th>Value</th><th></th></tr></thead>
+    <tbody id="modRows">${rows || `<tr><td colspan="3" class="muted">No mods</td></tr>`}</tbody></table></div>
+    <div class="toolbar">
+      <button type="button" id="btnAddModRow" class="ok">Add row</button>
+      <button type="button" id="btnSaveModForm" class="primary">Apply Key/Value</button>
+    </div>
+    <details class="adv">
+      <summary>Advanced JSON</summary>
+      <p class="muted">AppliedModifications</p>
+      <pre class="json-mini" contenteditable="true" id="equipApplied">${JSON.stringify(mods, null, 2)}</pre>
+      <p class="muted">CachedItems</p>
+      <pre class="json-mini" contenteditable="true" id="equipCached">${JSON.stringify(p.CachedItems || [], null, 2)}</pre>
+      <button type="button" id="btnSaveEquipMods" class="ok">Apply JSON</button>
+    </details>`;
+
+  const readFormMods = () => {
+    const out = [];
+    box.querySelectorAll("#modRows tr[data-mi]").forEach((tr) => {
+      const idx = tr.dataset.mi;
+      const key = box.querySelector(`input[data-k="${idx}"]`)?.value?.trim();
+      const val = box.querySelector(`input[data-v="${idx}"]`)?.value ?? "";
+      if (key) out.push({ Key: key, Value: String(val) });
+    });
+    return out;
+  };
+
+  box.querySelector("#btnAddModRow").onclick = () => {
+    const tb = box.querySelector("#modRows");
+    if (tb.querySelector(".muted")) tb.innerHTML = "";
+    const idx = tb.querySelectorAll("tr[data-mi]").length;
+    const tr = document.createElement("tr");
+    tr.dataset.mi = String(idx);
+    tr.innerHTML = `<td><input data-k="${idx}" value="" /></td><td><input data-v="${idx}" value="" /></td>
+      <td><button type="button" data-rm="${idx}" class="danger">×</button></td>`;
+    tb.appendChild(tr);
+    tr.querySelector("[data-rm]").onclick = () => tr.remove();
+  };
+  box.querySelectorAll("[data-rm]").forEach((b) => {
+    b.onclick = () => b.closest("tr")?.remove();
+  });
+  box.querySelector("#btnSaveModForm").onclick = () => {
+    p.AppliedModifications = readFormMods();
+    p.ModificationsCount = String(p.AppliedModifications.length);
+    markDirty();
+    setStatus(`Updated mods on ${p.DevelopId}`);
+    renderProjects();
+  };
   box.querySelector("#btnSaveEquipMods").onclick = () => {
     try {
       p.AppliedModifications = JSON.parse(box.querySelector("#equipApplied").textContent);
@@ -1778,6 +2116,7 @@ function renderEquipMods(panel, list) {
     }
   };
 }
+
 
 function renderClassMods(panel, list) {
   const box = panel.querySelector("#classMods");
@@ -1832,8 +2171,8 @@ function renderUnlocks() {
   panel.querySelector("#btnRestore").onclick = () => {
     if (!confirm("Overwrite unlock lists with the late-game baseline?")) return;
     try {
+      markDirtyDestructive("restore full unlocks");
       restoreFullUnlocks(state.data);
-      markDirty();
       setStatus("Restored full unlocks");
       renderUnlocks();
     } catch (e) {
@@ -2041,5 +2380,256 @@ function renderRaw() {
   panel.querySelector("#btnSchema").onclick = show;
   show();
 }
+
+function renderStations() {
+  const all = getStations(state.data);
+  const q = state.magnumQuery || "";
+  const list = filterStations(all, q);
+  main.innerHTML = "";
+  const panel = el(`<div class="panel">
+    <h2>Stations (${list.length} / ${all.length})</h2>
+    <p class="doc muted">Safe edits: owner, immune flags, clear stash/internal storage. Production graphs stay untouched.</p>
+    <div class="toolbar">
+      <input type="search" id="stQ" placeholder="Filter id / owner / bram…" value="${q.replace(/"/g, "&quot;")}" style="min-width:16rem" />
+      <button type="button" id="btnStClearStash" class="danger">Clear stash (selected)</button>
+      <button type="button" id="btnStClearInt" class="danger">Clear internal (selected)</button>
+    </div>
+    <div class="scroll-table" id="stTable"></div>
+    <div id="stDetail"></div>
+  </div>`);
+  main.appendChild(panel);
+  const tbody = list
+    .map((s, i) => {
+      const sum = stationSummary(s);
+      return `<tr data-i="${i}"><td><input type="checkbox" data-i="${i}" ${state.stationSelected.has(i) ? "checked" : ""}/></td>
+      <td><code>${sum.id}</code></td><td>${sum.owner}</td><td>${sum.bram}</td><td>${sum.space}</td>
+      <td>${sum.immune ? "Y" : ""}</td><td>${sum.uncapturable ? "Y" : ""}</td>
+      <td>${sum.stash}</td><td>${sum.internal}</td><td>${sum.population}</td></tr>`;
+    })
+    .join("");
+  panel.querySelector("#stTable").innerHTML = `<table class="data"><thead><tr>
+    <th></th><th>Id</th><th>Owner</th><th>Bram</th><th>Space</th><th>Immune</th><th>Uncapt</th><th>Stash</th><th>Internal</th><th>Pop</th>
+  </tr></thead><tbody>${tbody || `<tr><td colspan="10" class="muted">None</td></tr>`}</tbody></table>`;
+  panel.querySelector("#stQ").onchange = (e) => {
+    state.magnumQuery = e.target.value;
+    state.stationSelected.clear();
+    renderStations();
+  };
+  panel.querySelector("#stQ").onkeydown = (e) => {
+    if (e.key === "Enter") {
+      state.magnumQuery = e.target.value;
+      state.stationSelected.clear();
+      renderStations();
+    }
+  };
+  panel.querySelectorAll("input[data-i]").forEach((chk) => {
+    chk.onchange = () => {
+      const i = +chk.dataset.i;
+      if (chk.checked) state.stationSelected.add(i);
+      else state.stationSelected.delete(i);
+      const first = list[[...state.stationSelected][0]];
+      const box = panel.querySelector("#stDetail");
+      if (!first) {
+        box.innerHTML = "";
+        return;
+      }
+      box.innerHTML = `<h3>${first.Id}</h3>
+        <div class="toolbar">
+          <label>Owner <input id="stOwner" value="${String(first.OwnerFactionId || "").replace(/"/g, "&quot;")}" /></label>
+          <label><input type="checkbox" id="stImmune" ${first.ImmuneToAttack === "True" ? "checked" : ""}/> Immune</label>
+          <label><input type="checkbox" id="stUncap" ${first.UncapturableByDefault === "True" ? "checked" : ""}/> Uncapturable</label>
+          <button type="button" id="btnStApply" class="ok">Apply to selected</button>
+        </div>`;
+      box.querySelector("#btnStApply").onclick = () => {
+        const owner = box.querySelector("#stOwner").value;
+        const immune = box.querySelector("#stImmune").checked;
+        const uncap = box.querySelector("#stUncap").checked;
+        for (const idx of state.stationSelected) {
+          const s = list[idx];
+          if (!s) continue;
+          setStationOwner(s, owner);
+          setStationImmune(s, immune);
+          setStationUncapturable(s, uncap);
+        }
+        markDirty();
+        setStatus(`Updated ${state.stationSelected.size} station(s)`);
+        renderStations();
+      };
+    };
+  });
+  panel.querySelector("#btnStClearStash").onclick = () => {
+    const sel = [...state.stationSelected].map((i) => list[i]).filter(Boolean);
+    if (!sel.length) return alert("Select stations");
+    if (!confirm(`Clear stash on ${sel.length} station(s)?`)) return;
+    markDirtyDestructive("clear station stash");
+    let n = 0;
+    for (const s of sel) n += clearStationStash(s);
+    setStatus(`Cleared ${n} stash items`);
+    renderStations();
+  };
+  panel.querySelector("#btnStClearInt").onclick = () => {
+    const sel = [...state.stationSelected].map((i) => list[i]).filter(Boolean);
+    if (!sel.length) return alert("Select stations");
+    if (!confirm(`Clear internal storage on ${sel.length} station(s)?`)) return;
+    markDirtyDestructive("clear station internal");
+    let n = 0;
+    for (const s of sel) n += clearStationInternal(s);
+    setStatus(`Cleared ${n} internal items`);
+    renderStations();
+  };
+}
+
+function renderMissions() {
+  const active = getActiveMissions(state.data);
+  const reversed = getReversedMissions(state.data);
+  const which = state.missionList === "Reversed" ? "Reversed" : "Values";
+  const all = which === "Reversed" ? reversed : active;
+  const q = state.magnumQuery || "";
+  const list = filterMissions(all, q);
+  main.innerHTML = "";
+  const panel = el(`<div class="panel">
+    <h2>Missions (${list.length} / ${all.length})</h2>
+    <div class="tabs">
+      <button type="button" data-ml="Values" class="${which === "Values" ? "active" : ""}">Active (${active.length})</button>
+      <button type="button" data-ml="Reversed" class="${which === "Reversed" ? "active" : ""}">Reversed (${reversed.length})</button>
+    </div>
+    <div class="toolbar">
+      <input type="search" id="miQ" placeholder="Filter station / story / type…" value="${q.replace(/"/g, "&quot;")}" style="min-width:16rem" />
+      <button type="button" id="btnMiUnblock" class="ok">Unblock selected</button>
+      <button type="button" id="btnMiExpire" class="primary">Expire selected now</button>
+      <button type="button" id="btnMiDel" class="danger">Delete selected</button>
+    </div>
+    <div class="scroll-table" id="miTable"></div>
+  </div>`);
+  main.appendChild(panel);
+  panel.querySelectorAll("[data-ml]").forEach((b) => {
+    b.onclick = () => {
+      state.missionList = b.dataset.ml;
+      state.missionSelected.clear();
+      renderMissions();
+    };
+  });
+  const tbody = list
+    .map((m, i) => {
+      const s = missionSummary(m);
+      return `<tr data-i="${i}"><td><input type="checkbox" data-i="${i}" ${state.missionSelected.has(i) ? "checked" : ""}/></td>
+      <td>${s.station}</td><td>${s.type}</td><td><code>${s.story}</code></td>
+      <td>${s.beneficiary}</td><td>${s.victim}</td><td>${s.blocked ? "Y" : ""}</td>
+      <td>${s.storyMission ? "Y" : ""}</td><td>${s.rewardCount}: ${(s.rewards || []).join(", ")}</td></tr>`;
+    })
+    .join("");
+  panel.querySelector("#miTable").innerHTML = `<table class="data"><thead><tr>
+    <th></th><th>Station</th><th>Type</th><th>StoryId</th><th>Beneficiary</th><th>Victim</th><th>Blocked</th><th>Story</th><th>Rewards</th>
+  </tr></thead><tbody>${tbody || `<tr><td colspan="9" class="muted">None</td></tr>`}</tbody></table>`;
+  panel.querySelector("#miQ").onkeydown = (e) => {
+    if (e.key === "Enter") {
+      state.magnumQuery = e.target.value;
+      state.missionSelected.clear();
+      renderMissions();
+    }
+  };
+  panel.querySelectorAll("input[data-i]").forEach((chk) => {
+    chk.onchange = () => {
+      const i = +chk.dataset.i;
+      if (chk.checked) state.missionSelected.add(i);
+      else state.missionSelected.delete(i);
+    };
+  });
+  const selected = () => [...state.missionSelected].map((i) => list[i]).filter(Boolean);
+  panel.querySelector("#btnMiUnblock").onclick = () => {
+    const sel = selected();
+    for (const m of sel) unblockMission(m);
+    markDirty();
+    setStatus(`Unblocked ${sel.length}`);
+    renderMissions();
+  };
+  panel.querySelector("#btnMiExpire").onclick = () => {
+    const sel = selected();
+    for (const m of sel) expireMissionNow(state.data, m);
+    markDirty();
+    setStatus(`Expired ${sel.length}`);
+    renderMissions();
+  };
+  panel.querySelector("#btnMiDel").onclick = () => {
+    const sel = selected();
+    if (!confirm(`Delete ${sel.length} mission(s) from ${which}?`)) return;
+    markDirtyDestructive("delete missions");
+    deleteMissions(state.data, sel, { list: which });
+    state.missionSelected.clear();
+    setStatus(`Deleted ${sel.length}`);
+    renderMissions();
+  };
+}
+
+function renderShippings() {
+  const all = getShippings(state.data);
+  const q = state.magnumQuery || "";
+  const list = filterShippings(all, q).slice(0, 500);
+  main.innerHTML = "";
+  const panel = el(`<div class="panel">
+    <h2>Shippings (${list.length}${all.length > 500 ? ` shown of ${all.length}` : ` / ${all.length}`})</h2>
+    <p class="doc muted">In-transit cargo. Force-arrive sets DeliveryDate to current SpaceTime. Clear is destructive — use Undo if needed.</p>
+    <div class="toolbar">
+      <input type="search" id="shQ" placeholder="Filter stations / item id…" value="${q.replace(/"/g, "&quot;")}" style="min-width:16rem" />
+      <button type="button" id="btnShArrive" class="primary">Force-arrive selected</button>
+      <button type="button" id="btnShDel" class="danger">Clear selected</button>
+      <button type="button" id="btnShClearAll" class="danger">Clear ALL shippings</button>
+    </div>
+    <div class="scroll-table" id="shTable"></div>
+  </div>`);
+  main.appendChild(panel);
+  const tbody = list
+    .map((s, i) => {
+      const sum = shippingSummary(s);
+      return `<tr data-i="${i}"><td><input type="checkbox" data-i="${i}" ${state.shippingSelected.has(i) ? "checked" : ""}/></td>
+      <td>${sum.from}</td><td>${sum.to}</td><td>${sum.itemCount}</td>
+      <td>${(sum.sampleIds || []).join(", ")}</td><td class="muted">${sum.delivery}</td></tr>`;
+    })
+    .join("");
+  panel.querySelector("#shTable").innerHTML = `<table class="data"><thead><tr>
+    <th></th><th>From</th><th>To</th><th>Items</th><th>Sample ids</th><th>DeliveryDate</th>
+  </tr></thead><tbody>${tbody || `<tr><td colspan="6" class="muted">None</td></tr>`}</tbody></table>`;
+  panel.querySelector("#shQ").onkeydown = (e) => {
+    if (e.key === "Enter") {
+      state.magnumQuery = e.target.value;
+      state.shippingSelected.clear();
+      renderShippings();
+    }
+  };
+  panel.querySelectorAll("input[data-i]").forEach((chk) => {
+    chk.onchange = () => {
+      const i = +chk.dataset.i;
+      if (chk.checked) state.shippingSelected.add(i);
+      else state.shippingSelected.delete(i);
+    };
+  });
+  const selected = () => [...state.shippingSelected].map((i) => list[i]).filter(Boolean);
+  panel.querySelector("#btnShArrive").onclick = () => {
+    const sel = selected();
+    if (!sel.length) return alert("Select shippings");
+    markDirtyDestructive("force-arrive shippings");
+    const n = forceArriveShippings(state.data, sel);
+    setStatus(`Force-arrived ${n} shipping(s)`);
+    renderShippings();
+  };
+  panel.querySelector("#btnShDel").onclick = () => {
+    const sel = selected();
+    if (!confirm(`Clear ${sel.length} selected shipping(s)?`)) return;
+    markDirtyDestructive("clear shippings");
+    deleteShippings(state.data, sel);
+    state.shippingSelected.clear();
+    setStatus(`Cleared ${sel.length}`);
+    renderShippings();
+  };
+  panel.querySelector("#btnShClearAll").onclick = () => {
+    if (!confirm(`Clear ALL ${all.length} shippings? Back up first.`)) return;
+    markDirtyDestructive("clear all shippings");
+    const n = clearAllShippings(state.data);
+    state.shippingSelected.clear();
+    setStatus(`Cleared ${n} shippings`);
+    renderShippings();
+  };
+}
+
 
 initCatalogs().then(() => render());

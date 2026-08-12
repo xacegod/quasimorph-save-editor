@@ -24,6 +24,8 @@ const ARMOR_SLOT_TECHS = [
 let unlockBaseline = null;
 /** @type {Map<string, object>} */
 const equipLib = new Map();
+/** @type {Record<string, string>} ProjectType -> DevelopId */
+let bestByTypeIndex = {};
 
 export async function loadUnlockBaseline(url = "data/unlockBaseline.json") {
   try {
@@ -49,9 +51,11 @@ export async function loadEquipProjectLibrary(url = "data/equipProjectLibrary.js
     for (const p of data.projects || []) {
       if (p?.DevelopId) equipLib.set(p.DevelopId, p);
     }
+    bestByTypeIndex = data.bestByType || {};
   } catch (e) {
     console.warn("equip project library not loaded", e);
     equipLib.clear();
+    bestByTypeIndex = {};
   }
   return equipLib.size;
 }
@@ -208,7 +212,7 @@ export function addEquipProject(data, developId, { replace = false, force = fals
   return { ok: true, message: `Added ${developId}`, project };
 }
 
-export function copyEquipMods(source, targets) {
+export function copyEquipMods(source, targets, { includeCached = false } = {}) {
   let n = 0;
   for (const t of targets) {
     if (t === source) continue;
@@ -216,10 +220,260 @@ export function copyEquipMods(source, targets) {
     t.UpcomingModifications = deepClone(source.UpcomingModifications || []);
     t.ModificationsCount = String(t.AppliedModifications.length);
     t.UpcomingModificationsCount = String((t.UpcomingModifications || []).length);
-    t.CachedItems = deepClone(source.CachedItems || []);
+    if (includeCached) t.CachedItems = deepClone(source.CachedItems || []);
     n++;
   }
   return n;
+}
+
+function modTemplateScore(p) {
+  let s = (p.AppliedModifications?.length || 0) * 1000;
+  for (const m of p.AppliedModifications || []) {
+    const v = parseFloat(m.Value);
+    if (!Number.isNaN(v)) s += Math.abs(v);
+  }
+  return s;
+}
+
+/** Modded templates only, best-first within each ProjectType. */
+export function listModdedEquipTemplates() {
+  return [...equipLib.values()]
+    .filter((p) => (p.AppliedModifications || []).length > 0)
+    .sort(
+      (a, b) =>
+        a.ProjectType.localeCompare(b.ProjectType) ||
+        modTemplateScore(b) - modTemplateScore(a) ||
+        a.DevelopId.localeCompare(b.DevelopId)
+    );
+}
+
+/** Highest-scoring buffed template for a ProjectType (Helmet, Armor, …). */
+export function bestEquipModTemplate(projectType) {
+  const indexed = bestByTypeIndex[projectType];
+  if (indexed && equipLib.has(indexed)) return deepClone(equipLib.get(indexed));
+  let best = null;
+  let bestScore = -1;
+  for (const p of equipLib.values()) {
+    if (p.ProjectType !== projectType) continue;
+    const s = modTemplateScore(p);
+    if (s <= 0) continue;
+    if (s > bestScore) {
+      best = p;
+      bestScore = s;
+    }
+  }
+  return best ? deepClone(best) : null;
+}
+
+/** One ★ profile per ProjectType (for buff UI defaults). */
+export function listBestBuffProfiles() {
+  const types = ["Helmet", "Armor", "Boots", "Leggings", "RangeWeapon", "MeleeWeapon"];
+  return types.map((t) => bestEquipModTemplate(t)).filter(Boolean);
+}
+
+/**
+ * True when id could be melee or range (caller should force ProjectType).
+ */
+export function equipTypeAmbiguous(itemId) {
+  const s = String(itemId || "").toLowerCase();
+  if (!s) return false;
+  const melee =
+    /(sword|knife|blade|axe|club|mace|fist|staff|pipe|wrench|crowbar|maul|poleaxe|sickle|baton|dagger|spear|hammer)/.test(s);
+  const range =
+    /(pistol|smg|assault|shotgun|sniper|marksman|hmg|minigun|crossbow|flamethrower|rifle|rail|plasma|laser|disc|launcher|thrower)/.test(
+      s
+    );
+  return melee && range;
+}
+
+/**
+ * Guess Magnum ProjectType from an item id (library first, then name heuristics).
+ * @returns {string|null}
+ */
+export function inferEquipProjectType(itemId) {
+  const known = equipLib.get(itemId)?.ProjectType;
+  if (known) return known;
+  const s = String(itemId || "").toLowerCase();
+  if (!s) return null;
+  if (equipTypeAmbiguous(itemId)) return null;
+  if (/(helmet|gasmask|mask|hat|hood|cap)(_|$)/.test(s) || s.includes("_helmet") || s.includes("_gasmask") || s.includes("_mask")) {
+    return "Helmet";
+  }
+  if (/(boots|sneakers|shoes)(_|$)/.test(s) || s.includes("_boots") || s.includes("_sneakers")) return "Boots";
+  if (/(pants|leggings)(_|$)/.test(s) || s.includes("_pants") || s.includes("_leggings")) return "Leggings";
+  if (
+    /(armor|vest|shirt|coat|exoskeleton|plate|jacket|suit)(_|$)/.test(s) ||
+    s.includes("_armor") ||
+    s.includes("_vest") ||
+    s.includes("_shirt") ||
+    s.includes("exoskeleton")
+  ) {
+    return "Armor";
+  }
+  if (
+    /(sword|knife|blade|axe|club|mace|fist|staff|pipe|wrench|crowbar|maul|poleaxe|sickle|baton|dagger|spear|hammer)(_|$)/.test(s) ||
+    s.includes("_sword") ||
+    s.includes("_knife") ||
+    s.includes("_blade") ||
+    s.includes("_axe")
+  ) {
+    return "MeleeWeapon";
+  }
+  if (
+    /(pistol|smg|assault|shotgun|sniper|marksman|hmg|minigun|crossbow|flamethrower|rifle|rail|plasma|laser|disc|launcher|thrower)(_|$)/.test(
+      s
+    ) ||
+    s.includes("_pistol") ||
+    s.includes("_smg") ||
+    s.includes("_assault") ||
+    s.includes("_shotgun") ||
+    s.includes("_sniper") ||
+    s.includes("_minigun") ||
+    s.includes("_hmg")
+  ) {
+    return "RangeWeapon";
+  }
+  return null;
+}
+
+function bareEquipProject(projectType, developId, mods) {
+  const applied = deepClone(mods || []);
+  return {
+    ProjectType: projectType,
+    DevelopId: developId,
+    StartTime: "0",
+    FinishTime: "0",
+    IsInDevelopment: "False",
+    ModificationsCount: String(applied.length),
+    UpcomingModificationsCount: "0",
+    ModifyStartPrice: "0",
+    AppliedModifications: applied,
+    UpcomingModifications: [],
+    CachedItems: [],
+  };
+}
+
+/**
+ * Stamp buff mods from a typed template onto target item ids / projects.
+ * Same ProjectType only (Helmet → Helmet, etc.). Does not copy CachedItems.
+ *
+ * @param {object} data save root
+ * @param {{ sourceDevelopId?: string, projectType?: string, explicitProjectType?: string, targetIds?: string[], targets?: object[], force?: boolean, createMissing?: boolean }} opts
+ * @returns {{ ok: boolean, message: string, updated: number, created: number, skipped: string[] }}
+ */
+export function applyEquipBuffMods(data, opts = {}) {
+  const {
+    sourceDevelopId = "",
+    projectType = "",
+    explicitProjectType = "",
+    targetIds = [],
+    targets = [],
+    force = false,
+    createMissing = true,
+  } = opts;
+
+  let source = sourceDevelopId ? equipProjectTemplate(sourceDevelopId) : null;
+  if (!source && projectType) source = bestEquipModTemplate(projectType);
+  if (!source) {
+    return { ok: false, message: "No buffed template (pick a modded source or type)", updated: 0, created: 0, skipped: [] };
+  }
+  if (!(source.AppliedModifications || []).length) {
+    return { ok: false, message: `${source.DevelopId} has no AppliedModifications`, updated: 0, created: 0, skipped: [] };
+  }
+
+  const type = source.ProjectType;
+  const root = getComponent(data, "MGSC.MagnumProjects");
+  if (!root) return { ok: false, message: "MagnumProjects missing", updated: 0, created: 0, skipped: [] };
+  if (!Array.isArray(root.Values)) root.Values = [];
+
+  const skipped = [];
+  let updated = 0;
+  let created = 0;
+
+  const stamp = (project) => {
+    project.AppliedModifications = deepClone(source.AppliedModifications || []);
+    project.UpcomingModifications = [];
+    project.ModificationsCount = String(project.AppliedModifications.length);
+    project.UpcomingModificationsCount = "0";
+    instantFinishProject(project);
+  };
+
+  for (const p of targets) {
+    if (!p) continue;
+    if (p.ProjectType !== type) {
+      skipped.push(`${p.DevelopId} (${p.ProjectType} ≠ ${type})`);
+      continue;
+    }
+    stamp(p);
+    updated++;
+  }
+
+  for (const rawId of targetIds) {
+    const id = String(rawId || "").trim();
+    if (!id) continue;
+    const inferred = inferEquipProjectType(id);
+    if (equipTypeAmbiguous(id) && !explicitProjectType) {
+      skipped.push(`${id} (ambiguous melee/range — set ProjectType)`);
+      continue;
+    }
+    if (!inferred && !explicitProjectType && createMissing) {
+      skipped.push(`${id} (unknown type — set ProjectType)`);
+      continue;
+    }
+    if (inferred && inferred !== type) {
+      skipped.push(`${id} (looks like ${inferred}, buff is ${type})`);
+      continue;
+    }
+    if (explicitProjectType && explicitProjectType !== type) {
+      skipped.push(`${id} (forced type ${explicitProjectType} ≠ buff ${type})`);
+      continue;
+    }
+    const existing = root.Values.find((p) => p.DevelopId === id && EQUIP_TYPES.has(p.ProjectType));
+    if (existing) {
+      if (existing.ProjectType !== type) {
+        skipped.push(`${id} (existing project is ${existing.ProjectType})`);
+        continue;
+      }
+      stamp(existing);
+      updated++;
+      continue;
+    }
+    if (!createMissing) {
+      skipped.push(`${id} (not in projects)`);
+      continue;
+    }
+    if (!force) {
+      const caps = getEquipProjectCaps(data);
+      const counts = countEquipProjects(data);
+      const fake = { ProjectType: type };
+      if (isWeaponProject(fake) && caps.weapons > 0 && counts.weapons >= caps.weapons) {
+        skipped.push(`${id} (weapon cap ${counts.weapons}/${caps.weapons})`);
+        continue;
+      }
+      if (isArmorProject(fake) && caps.armor > 0 && counts.armor >= caps.armor) {
+        skipped.push(`${id} (armor cap ${counts.armor}/${caps.armor})`);
+        continue;
+      }
+    }
+    const project = bareEquipProject(type, id, source.AppliedModifications);
+    root.Values.push(project);
+    created++;
+  }
+
+  const message = `Buff from ${source.DevelopId} (${type}): updated ${updated}, created ${created}${
+    skipped.length ? `, skipped ${skipped.length}` : ""
+  }`;
+  return { ok: updated + created > 0, message, updated, created, skipped };
+}
+
+/** Apply a buff source (or best-of-type) to every equipment project of that type. */
+export function applyBuffToAllOfType(data, projectType, sourceDevelopId = "") {
+  const list = getProjects(data).filter((p) => p.ProjectType === projectType);
+  return applyEquipBuffMods(data, {
+    sourceDevelopId: sourceDevelopId || bestEquipModTemplate(projectType)?.DevelopId || "",
+    projectType,
+    targets: list,
+  });
 }
 
 export function copyClassMods(source, targets) {

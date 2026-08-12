@@ -14,6 +14,8 @@ export const MAX_MERC_RANK_ID = "rank_5";
 const talentLib = new Map();
 /** @type {Map<string, object>} perkId -> ultimate template (+ meta) */
 const pactLib = new Map();
+/** @type {Map<string, object>} Passive/Trigger templates from saves */
+const passiveTriggerLib = new Map();
 
 export async function loadPerkLibrary(url = "data/talentLibrary.json") {
   try {
@@ -28,6 +30,31 @@ export async function loadPerkLibrary(url = "data/talentLibrary.json") {
     console.warn("talent library not loaded", e);
   }
   return talentLib.size;
+}
+
+export async function loadPassiveTriggerLibrary(url = "data/passiveTriggerLibrary.json") {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(String(res.status));
+    const data = await res.json();
+    passiveTriggerLib.clear();
+    for (const p of data.perks || []) {
+      if (p?.PerkId) passiveTriggerLib.set(p.PerkId, p);
+    }
+  } catch (e) {
+    console.warn("passive/trigger library not loaded", e);
+    passiveTriggerLib.clear();
+  }
+  return passiveTriggerLib.size;
+}
+
+export function getPassiveTriggerTemplate(perkId) {
+  const t = passiveTriggerLib.get(perkId);
+  return t ? deepClone(t) : null;
+}
+
+export function listPassiveTriggerLibrary() {
+  return [...passiveTriggerLib.values()];
 }
 
 export async function loadPactLibrary(url = "data/pactLibrary.json") {

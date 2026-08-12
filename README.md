@@ -12,7 +12,7 @@ Browser tool for editing Quasimorph `slot_*_session.dat` saves (UTF-8 JSON with 
 
 Typical Windows save location:
 
-`%USERPROFILE%\AppData\LocalLow\Magnum Scripta\Quasimorph\`
+`%USERPROFILE%\AppData\LocalLow\Magnum Scriptum LTD\Quasimorph\`
 
 (Exact path can vary by platform / launcher; look for `slot_*_session.dat`.)
 
@@ -34,6 +34,7 @@ Open `http://localhost:5173`. Equivalent: `npx --yes serve -p 5173` (or any stat
 - Empty C# optionals stay as `{}`, not `null`.
 - Download writes compact JSON **with a UTF-8 BOM**, same as the game.
 - Warns if `SaveVersion` is not `50`.
+- Destructive bulk actions keep a one-level **Undo** snapshot in memory.
 - Everything stays in your browser; nothing is uploaded.
 
 ## Perk types (important)
@@ -45,7 +46,7 @@ Merc `CreatureData.Perks` mix several `PerkType` values. They are easy to confus
 | **Talent** | Character | No (`MaxExp` 0) | Game UI normally allows **one**. Stacking many in the save has been observed to **work**. Use **Set / replace** or **Add (stack)** in the editor. |
 | **Rank** | Merc **class** | Yes (toward next rank) | Typically through legend. **Max exp** / **Max rank** in the editor. Difficulty `ExpMult` scales MaxExp. |
 | **Ultimate** | Pact / skull | No | **One** active pact. See below. |
-| **Passive** / **Trigger** | Class or character | Often yes | Most flexible. Clone from the save; you can remix `Parameters` onto a perk as long as **`PerkId` stays a valid existing id**. Exp UI only when `MaxExp > 0`. |
+| **Passive** / **Trigger** | Class or character | Often yes | Most flexible. Clone from the save or from `passiveTriggerLibrary.json`. Exp UI only when `MaxExp > 0`. |
 
 ### Pacts / ultimates in this editor
 
@@ -56,6 +57,7 @@ Merc `CreatureData.Perks` mix several `PerkType` values. They are easy to confus
 
 ### Mercenaries
 - Pick who to edit with a dropdown (full-width detail panel)
+- **Apply class** from wiki roster (`mercClasses.json`); ranks / passives / triggers when templates exist
 - Edit stats/health (bools are True/False dropdowns; hover **?** for field help)
 - **Pact / ultimate:** see above — edit/remove current ultimate safely; absorb new pacts in-game
 - **Talents:** set/replace or stack; parameters editable; not a leveling perk type
@@ -78,14 +80,25 @@ Merc `CreatureData.Perks` mix several `PerkType` values. They are easy to confus
 - Storage table shows **Width × Height = capacity** (Magnum tabs / recycler+fridge / shuttle). Ship cargo tabs are often already huge (e.g. 8×1910). Grow **Height** on smaller stores if you need more cells — never shrinks after deletes.
 
 ### Projects
-- Equipment / Mercenary / Class lists: **Instant-finish selected** or **Instant-finish all projects** (sets `FinishTime = StartTime` for the current list)
-- Equipment: delete junk to free the ~10 project cap; delete finished
+Magnum project mods are **researched blueprints** on Magnum. Physical stacks in cargo / merc bags are separate.
+
+- Equipment / Mercenary / Class lists: **Instant-finish selected** or **Instant-finish all projects**
+- **Equipment slots:** Weaponry (max **8**) and Arsenal (max **16**) come from Magnum tech unlocks (`weaponstation_department` / `armorstation_department` + “more projects” techs). Use **Max project slots (tech)** to unlock those. Caps are not a hard save-array limit; **Force** can bypass the estimate when adding.
+- **Add project** from `equipProjectLibrary.json` templates (Add / Replace)
+- **Apply buff:** stamp `AppliedModifications` from a buffed Helmet/Armor/Weapon template onto other item ids of the **same ProjectType** (Key/Value form + bulk apply). CachedItems are not copied.
+- Equipment: delete selected / finished; copy mods between selected
 - Mercenary: copy buffed kit from one DevelopId to others
-- Class: edit Applied/Upcoming mods JSON; copy mods
+- Class: edit Applied/Upcoming mods; copy mods
 
 ### Unlocks
 - View merc / class / production / ship perk unlock lists
+- Toggle Magnum tech tree (`_purchasedPerks`); unlock filtered / all
 - **Restore full unlocks** from `data/unlockBaseline.json` (extracted from a late-game save)
+
+### Stations / Missions / Shippings
+- **Stations:** list, filter, edit ownership / immune flags, clear stash items
+- **Missions:** active + reversed lists; unblock, expire now, delete selected
+- **Shippings:** list in-transit; inspect item counts; clear selected or force DeliveryDate to now (backup first)
 
 ### Factions / Difficulty / World
 - Faction power, reputation, tech, alliance
@@ -104,34 +117,54 @@ Floor/mob entities are **not** in session files; only `RaidMetadata` exists for 
 ## Catalogs
 
 - `data/quasimorph Item name.txt` — display names
-- `data/spawnableItems.txt` — spawnable non-quest ids (includes extras like `lens` and custom gear found in sample saves)
+- `data/spawnableItems.txt` — spawnable non-quest ids
 - `data/questItems.txt` — protected quest ids (excluded from spawn lists)
 - `data/talentLibrary.json` — clean templates for all 15 talents
 - `data/pactLibrary.json` — complete 1.0+ pact ultimates (skull ↔ perk id, display names, wiki effects)
-- `data/wiki-scrape-progress.json` — resumable wiki scrape checkpoint (list diffs + per-page status)
-- `data/mercClasses.json` — mercenary class roster from [Mercenary Classes](https://quasimorph.wiki.gg/wiki/Mercenary_Classes) (`MercClassId`, blurbs, perk tier ids)
-- `data/classPerkLibrary.json` — per-perk wiki pages (InternalName, trigger, ExpNeed, tier effects, cooldown) via `npm run scrape:classes`
-- `data/rankLibrary.json` — Rookie→Commander (`rank_0`…`rank_5`) labels + Parameter defaults
-- `data/perkDefaults.json` — Parameter / MaxExp / NextPerkId snapshots for Reset in the perk editor
-- `data/class-perk-scrape-progress.json` — resumable checkpoint for perk page scrapes
-- `data/iconMap.json` + `data/icons/` — local item/perk icons (wiki CDN blocks browser hotlinking). Build with `npm run scrape:icons` (resumable). Editor only loads known local paths — one request per id, no wiki spam.
-- `data/techLibrary.json` — Magnum tech-tree upgrades (`_purchasedPerks`) via `npm run scrape:tech`
-- `data/equipProjectLibrary.json` — equipment Magnum project templates from local saves (`npm run build:equip-projects`)
-- `data/unlockBaseline.json` — full unlock snapshot from a late-game save
+- `data/pactMissing.json` — wiki titles still missing pages (re-scrape when the wiki grows)
+- `data/wiki-scrape-progress.json` — resumable wiki scrape checkpoint
+- `data/mercClasses.json` — mercenary class roster (`MercClassId`, blurbs, perk tier ids). Unit 317 / Golem Group may have empty perk rosters until wiki data exists.
+- `data/classPerkLibrary.json` — per-perk wiki pages via `npm run scrape:classes`
+- `data/passiveTriggerLibrary.json` — Passive/Trigger perk shapes harvested from local saves
+- `data/rankLibrary.json` — Rookie→Commander (`rank_0`…`rank_5`)
+- `data/perkDefaults.json` — Parameter / MaxExp / NextPerkId snapshots for Reset
+- `data/iconMap.json` + `data/icons/` — local item/perk icons (wiki CDN blocks browser hotlinking)
+- `data/techLibrary.json` — Magnum tech-tree upgrades (`_purchasedPerks`)
+- `data/equipProjectLibrary.json` — equipment Magnum project templates + `bestByType` (mods only; CachedItems stripped for Pages size)
+- `data/unlockBaseline.json` — full unlock snapshot from a late-game save (includes `SaveVersion` meta)
+
+### Catalog health checklist
+
+After maintenance, spot-check approximate counts:
+
+| Catalog | Healthy ballpark |
+|---------|------------------|
+| Pacts (complete) | ~100+ (`pactLibrary.json`) |
+| Pact missing wiki pages | listed in `pactMissing.json` |
+| Classes | 14 (`mercClasses.json`) |
+| Techs | ~100+ (`techLibrary.json`) |
+| Icons | `iconMap.json` ids with files under `data/icons/` |
+| Equip templates / modded | `equipProjectLibrary.json` stats + `bestByType` |
 
 Maintenance (all scrapers + builds):
 ```bash
-npm run scrape:all          # pacts, classes, tech, icons, perk-meta, equip projects
+npm run scrape:all          # pacts, classes, tech, icons, perk-meta, equip, passive/trigger, unlock baseline, pact-missing
 npm run scrape:all:fast     # skip icons + pacts (quicker refresh)
+npm test                    # Node smoke tests
 ```
 
 Rebuild pacts from the wiki (current **1.0+** List of Pacts only):
 1. `npm run scrape:pacts` — re-reads the live list each run, reports **added/removed** pacts, scrapes new links; ignores pre-1.0 sections
 2. `npm run build:pacts` — writes only **complete** current entries to `data/pactLibrary.json`
+3. `npm run build:pact-missing` — writes `data/pactMissing.json` from scrape progress
 
-Class + perk pages: `npm run scrape:classes` (resumable; opens each perk like [Berserkgang](https://quasimorph.wiki.gg/wiki/Berserkgang) for InternalName / effects / exp needs)
+Class + perk pages: `npm run scrape:classes`
 
-After opening local `slot_*_session.dat` files: `npm run build:perk-meta` refreshes rank/class defaults from those saves.
+After opening local `slot_*_session.dat` files:
+- `npm run build:perk-meta` — rank/class defaults
+- `npm run build:equip-projects` — equipment buff templates
+- `npm run build:passive-triggers` — Passive/Trigger shapes
+- `npm run build:unlock-baseline` — refresh unlock snapshot from newest local slot
 
 Helpers: `npm run scrape:pacts:status`, `npm run scrape:pacts:retry`
 
@@ -139,8 +172,10 @@ Helpers: `npm run scrape:pacts:status`, `npm run scrape:pacts:retry`
 
 On save load, any non-quest item ids present in inventories/cargo but missing from the spawnable list are **merged into the catalog** for that session.
 
-## Not in scope (yet)
+See also [`ROADMAP.md`](ROADMAP.md) for the improvement backlog.
 
-- Stations / missions / shippings editors
+## Not in scope
+
 - Dungeon floor entities (not stored in session saves)
 - Full in-editor “absorb pact” simulation (use inventory + game for new pacts)
+- Shipping real `slot_*_session.dat` files in the repo

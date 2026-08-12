@@ -1626,6 +1626,8 @@
       "classIdGuess": "unit_317",
       "section": "unlockable",
       "perks": [],
+      "rosterEmpty": true,
+      "rosterNote": "Wiki page has no perk roster yet — Apply class will not add Passive/Trigger perks until scrape fills this.",
       "description": "An operator who's been through Unit 317 stops having a feel for what you \"can't\" do under NCE regs. In the end, the urge to run nonconventional tactical protocols outweighs even the self-preservation module."
     },
     {
@@ -1633,6 +1635,8 @@
       "classIdGuess": "golem_group",
       "section": "unlockable",
       "perks": [],
+      "rosterEmpty": true,
+      "rosterNote": "Wiki page has no perk roster yet — Apply class will not add Passive/Trigger perks until scrape fills this.",
       "description": "A Golem Group operator can throw up an automated fire line fast, keeping hands-on work for absolute last resort."
     }
   ],

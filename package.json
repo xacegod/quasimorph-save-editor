@@ -4,17 +4,21 @@
   "type": "module",
   "scripts": {
     "start": "npx --yes serve -p 5173",
+    "test": "node scripts/smoke-test.mjs",
     "scrape:all": "node scripts/scrape-all.mjs",
     "scrape:all:fast": "node scripts/scrape-all.mjs --skip-icons --skip-pacts",
     "scrape:pacts": "node scripts/scrape-wiki-pacts.mjs",
     "scrape:pacts:status": "node scripts/scrape-wiki-pacts.mjs --status",
     "scrape:pacts:retry": "node scripts/scrape-wiki-pacts.mjs --retry-errors",
     "build:pacts": "node scripts/build-pact-library.mjs",
+    "build:pact-missing": "node scripts/build-pact-missing.mjs",
     "scrape:classes": "node scripts/scrape-merc-classes.mjs",
     "build:perk-meta": "node scripts/build-perk-meta.mjs",
     "scrape:icons": "node scripts/scrape-wiki-icons.mjs",
     "scrape:icons:status": "node scripts/scrape-wiki-icons.mjs --status",
     "scrape:tech": "node scripts/scrape-tech-tree.mjs",
-    "build:equip-projects": "node scripts/build-equip-project-library.mjs"
+    "build:equip-projects": "node scripts/build-equip-project-library.mjs",
+    "build:passive-triggers": "node scripts/build-passive-trigger-library.mjs",
+    "build:unlock-baseline": "node scripts/build-unlock-baseline.mjs"
   }
 }

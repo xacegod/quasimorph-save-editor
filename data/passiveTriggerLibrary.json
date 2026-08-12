@@ -1,0 +1,3425 @@
+{
+  "source": "local slot_*_session.dat CreatureData.Perks (Passive/Trigger)",
+  "builtAt": "2026-08-12T13:21:11.109Z",
+  "stats": {
+    "perks": 72,
+    "sources": [
+      {
+        "file": "slot_0_session.dat",
+        "passiveTrigger": 24
+      },
+      {
+        "file": "slot_1_session.dat",
+        "passiveTrigger": 42
+      },
+      {
+        "file": "slot_2_session.dat",
+        "passiveTrigger": 102
+      }
+    ]
+  },
+  "perks": [
+    {
+      "PerkId": "agent_training_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "agent_training_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPistolAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        },
+        {
+          "Name": "IAddedPistolRange",
+          "ValType": "Int",
+          "IntVal": "1"
+        }
+      ]
+    },
+    {
+      "PerkId": "agent_training_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPistolAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        },
+        {
+          "Name": "IAddedPistolRange",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ]
+    },
+    {
+      "PerkId": "athletics_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FSprintAccDebuff",
+          "ValType": "Float",
+          "FloatVal": "-0.8"
+        }
+      ]
+    },
+    {
+      "PerkId": "athletics_master",
+      "PerkType": "Passive",
+      "MaxExp": "600",
+      "CurrentExp": "0",
+      "NextPerkId": "athletics_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FSprintAccDebuff",
+          "ValType": "Float",
+          "FloatVal": "-0.65"
+        }
+      ]
+    },
+    {
+      "PerkId": "battle_physicist_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "battle_physicist_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FEnergySaving",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        }
+      ]
+    },
+    {
+      "PerkId": "bodybuilding_basic",
+      "PerkType": "Passive",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "bodybuilding_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IMaxHealth",
+          "ValType": "Int",
+          "IntVal": "20"
+        }
+      ]
+    },
+    {
+      "PerkId": "cold_weapon_wielding_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FMeleeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    {
+      "PerkId": "cqc_specialist_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FScatter",
+          "ValType": "Float",
+          "FloatVal": "-0.4"
+        },
+        {
+          "Name": "FRangeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        }
+      ]
+    },
+    {
+      "PerkId": "cyber_compatibility_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "cyber_compatibility_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FCyberCompDodge",
+          "ValType": "Float",
+          "FloatVal": "0.025"
+        }
+      ]
+    },
+    {
+      "PerkId": "cyber_compatibility_basic",
+      "PerkType": "Passive",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "cyber_compatibility_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FCyberCompDodge",
+          "ValType": "Float",
+          "FloatVal": "0.02"
+        }
+      ]
+    },
+    {
+      "PerkId": "cyber_compatibility_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FCyberCompDodge",
+          "ValType": "Float",
+          "FloatVal": "0.035"
+        }
+      ]
+    },
+    {
+      "PerkId": "cyber_compatibility_master",
+      "PerkType": "Passive",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "cyber_compatibility_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FCyberCompDodge",
+          "ValType": "Float",
+          "FloatVal": "0.03"
+        }
+      ]
+    },
+    {
+      "PerkId": "gear_maintenance_basic",
+      "PerkType": "Passive",
+      "MaxExp": "100",
+      "CurrentExp": "0",
+      "NextPerkId": "gear_maintenance_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPhysicalResists",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        },
+        {
+          "Name": "FArmorDurability",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        }
+      ]
+    },
+    {
+      "PerkId": "gear_maintenance_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPhysicalResists",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        },
+        {
+          "Name": "FArmorDurability",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        }
+      ]
+    },
+    {
+      "PerkId": "grenadier_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "grenadier_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FGrenadeDamage",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    {
+      "PerkId": "heavy_weaponary_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "heavy_weaponary_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FScatter",
+          "ValType": "Float",
+          "FloatVal": "-0.3"
+        },
+        {
+          "Name": "FRangeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        }
+      ]
+    },
+    {
+      "PerkId": "insanity_basic",
+      "PerkType": "Passive",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "insanity_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FAffectedQuasimorph",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    {
+      "PerkId": "insanity_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FAffectedQuasimorph",
+          "ValType": "Float",
+          "FloatVal": "0.45"
+        }
+      ]
+    },
+    {
+      "PerkId": "insanity_master",
+      "PerkType": "Passive",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "insanity_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FAffectedQuasimorph",
+          "ValType": "Float",
+          "FloatVal": "0.4"
+        }
+      ]
+    },
+    {
+      "PerkId": "lightweight_gear_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "30",
+      "CurrentExp": "0",
+      "NextPerkId": "lightweight_gear_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FEquipmentWeight",
+          "ValType": "Float",
+          "FloatVal": "-0.35"
+        }
+      ]
+    },
+    {
+      "PerkId": "lightweight_gear_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FEquipmentWeight",
+          "ValType": "Float",
+          "FloatVal": "-0.55"
+        }
+      ]
+    },
+    {
+      "PerkId": "military_training_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "500",
+      "CurrentExp": "0",
+      "NextPerkId": "military_training_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-3"
+        }
+      ]
+    },
+    {
+      "PerkId": "military_training_basic",
+      "PerkType": "Passive",
+      "MaxExp": "20",
+      "CurrentExp": "0",
+      "NextPerkId": "military_training_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-2"
+        }
+      ]
+    },
+    {
+      "PerkId": "military_training_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-5"
+        }
+      ]
+    },
+    {
+      "PerkId": "military_training_master",
+      "PerkType": "Passive",
+      "MaxExp": "800",
+      "CurrentExp": "0",
+      "NextPerkId": "military_training_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-4"
+        }
+      ]
+    },
+    {
+      "PerkId": "muffled_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "muffled_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FNoiseSuppression",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        }
+      ]
+    },
+    {
+      "PerkId": "muffled_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FNoiseSuppression",
+          "ValType": "Float",
+          "FloatVal": "0.8"
+        }
+      ]
+    },
+    {
+      "PerkId": "possession_basic",
+      "PerkType": "Passive",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "possession_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPactCooldown",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        },
+        {
+          "Name": "FPactDebuff",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    {
+      "PerkId": "possession_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPactCooldown",
+          "ValType": "Float",
+          "FloatVal": "0.8"
+        },
+        {
+          "Name": "FPactDebuff",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        }
+      ]
+    },
+    {
+      "PerkId": "possession_master",
+      "PerkType": "Passive",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "possession_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPactCooldown",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        },
+        {
+          "Name": "FPactDebuff",
+          "ValType": "Float",
+          "FloatVal": "0.5"
+        }
+      ]
+    },
+    {
+      "PerkId": "pyromaniac_basic",
+      "PerkType": "Passive",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "pyromaniac_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IFireDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "FBurnChanceBonus",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        }
+      ]
+    },
+    {
+      "PerkId": "pyromaniac_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IFireDuration",
+          "ValType": "Int",
+          "IntVal": "4"
+        },
+        {
+          "Name": "FBurnChanceBonus",
+          "ValType": "Float",
+          "FloatVal": "0.35"
+        }
+      ]
+    },
+    {
+      "PerkId": "reaction_training_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FDodge",
+          "ValType": "Float",
+          "FloatVal": "0.22"
+        }
+      ]
+    },
+    {
+      "PerkId": "reaction_training_master",
+      "PerkType": "Passive",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "reaction_training_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FDodge",
+          "ValType": "Float",
+          "FloatVal": "0.18"
+        }
+      ]
+    },
+    {
+      "PerkId": "reinforced_battery_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "reinforced_battery_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FBatteryAmmoDamage",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        }
+      ]
+    },
+    {
+      "PerkId": "sandman_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FSandmanScatter",
+          "ValType": "Float",
+          "FloatVal": "-0.7"
+        },
+        {
+          "Name": "FSandmanFalloff",
+          "ValType": "Float",
+          "FloatVal": "-0.1"
+        }
+      ]
+    },
+    {
+      "PerkId": "scholar_master",
+      "PerkType": "Passive",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "scholar_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IScholarCraft",
+          "ValType": "Int",
+          "IntVal": "3"
+        }
+      ]
+    },
+    {
+      "PerkId": "shielding_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "shielding_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FElementalResists",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    {
+      "PerkId": "stationary_defense_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "stationary_defense_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FTurretDamage",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        },
+        {
+          "Name": "ITurretHealth",
+          "ValType": "Int",
+          "IntVal": "30"
+        },
+        {
+          "Name": "IPlacementRange",
+          "ValType": "Int",
+          "IntVal": "1"
+        }
+      ]
+    },
+    {
+      "PerkId": "stationary_defense_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FTurretDamage",
+          "ValType": "Float",
+          "FloatVal": "0.4"
+        },
+        {
+          "Name": "ITurretHealth",
+          "ValType": "Int",
+          "IntVal": "40"
+        },
+        {
+          "Name": "IPlacementRange",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ]
+    },
+    {
+      "PerkId": "tomahawk_basic",
+      "PerkType": "Passive",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "tomahawk_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FThrowCritChance",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    {
+      "PerkId": "unconventional_munitions_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "F9mm42AmmoDamage",
+          "ValType": "Float",
+          "FloatVal": "0.35"
+        },
+        {
+          "Name": "F9mm42WoundChance",
+          "ValType": "Float",
+          "FloatVal": "0.5"
+        }
+      ]
+    },
+    {
+      "PerkId": "assault_reflex_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "9"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IAddedAP",
+          "ValType": "Int",
+          "IntVal": "3"
+        }
+      ]
+    },
+    {
+      "PerkId": "assault_reflex_master",
+      "PerkType": "Trigger",
+      "MaxExp": "400",
+      "CurrentExp": "0",
+      "NextPerkId": "assault_reflex_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IAddedAP",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ]
+    },
+    {
+      "PerkId": "axe_rage_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "axe_rage_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "7"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "25"
+        },
+        {
+          "Name": "IMultiHit",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "BActionPointDuration",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    {
+      "PerkId": "berserk_gang_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IHealthRegen",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IPainRegen",
+          "ValType": "Int",
+          "IntVal": "6"
+        }
+      ]
+    },
+    {
+      "PerkId": "berserk_gang_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "berserk_gang_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IHealthRegen",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "IPainRegen",
+          "ValType": "Int",
+          "IntVal": "5"
+        }
+      ]
+    },
+    {
+      "PerkId": "blind_fury_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "100",
+      "CurrentExp": "0",
+      "NextPerkId": "blind_fury_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "9"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.55"
+        }
+      ]
+    },
+    {
+      "PerkId": "blind_fury_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "9"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.7"
+        }
+      ]
+    },
+    {
+      "PerkId": "blind_fury_master",
+      "PerkType": "Trigger",
+      "MaxExp": "400",
+      "CurrentExp": "0",
+      "NextPerkId": "blind_fury_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "9"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.65"
+        }
+      ]
+    },
+    {
+      "PerkId": "blurred_silhouette_advanced",
+      "PerkType": "Trigger",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "blurred_silhouette_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "25"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "FDodge",
+          "ValType": "Float",
+          "FloatVal": "0.4"
+        }
+      ]
+    },
+    {
+      "PerkId": "cannibalism_master",
+      "PerkType": "Trigger",
+      "MaxExp": "400",
+      "CurrentExp": "0",
+      "NextPerkId": "cannibalism_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.55"
+        }
+      ]
+    },
+    {
+      "PerkId": "carnage_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "20"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "FRestoreAP",
+          "ValType": "Float",
+          "FloatVal": "1"
+        }
+      ]
+    },
+    {
+      "PerkId": "carnage_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "carnage_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "20"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "FRestoreAP",
+          "ValType": "Float",
+          "FloatVal": "0.85"
+        }
+      ]
+    },
+    {
+      "PerkId": "cauterize_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "cauterize_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "4"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "40"
+        },
+        {
+          "Name": "BBurnImmune",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        },
+        {
+          "Name": "IHealthRegen",
+          "ValType": "Int",
+          "IntVal": "8"
+        }
+      ]
+    },
+    {
+      "PerkId": "cheap_shot_advanced",
+      "PerkType": "Trigger",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "cheap_shot_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "16"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FCritChance",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    {
+      "PerkId": "cheap_shot_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "cheap_shot_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "18"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FCritChance",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        }
+      ]
+    },
+    {
+      "PerkId": "cobra_throw_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "cobra_throw_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "ICobraRadius",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "BActionPointDuration",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        },
+        {
+          "Name": "BCobraThrow",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    {
+      "PerkId": "cyberpsychosis_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "cyberpsychosis_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        }
+      ]
+    },
+    {
+      "PerkId": "fire_transfer_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "FCritChance",
+          "ValType": "Float",
+          "FloatVal": "0.65"
+        },
+        {
+          "Name": "BActionPointDuration",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    {
+      "PerkId": "hidden_potential_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "hidden_potential_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "200"
+        },
+        {
+          "Name": "IAddedAP",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ]
+    },
+    {
+      "PerkId": "revealing_flame_advanced",
+      "PerkType": "Trigger",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "revealing_flame_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "12"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IRevealRange",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "BRevealingSignal",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    {
+      "PerkId": "selfhealing_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "selfhealing_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "BFixAllHumanWounds",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        },
+        {
+          "Name": "FFixateHumanAddedChance",
+          "ValType": "Float",
+          "FloatVal": "0.35"
+        }
+      ]
+    },
+    {
+      "PerkId": "shock_awe_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "shock_awe_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FExplStunChance",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        },
+        {
+          "Name": "IExplStunDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ]
+    },
+    {
+      "PerkId": "spray_and_pray_advanced",
+      "PerkType": "Trigger",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "spray_and_pray_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "14"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.4"
+        },
+        {
+          "Name": "FPierce",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        },
+        {
+          "Name": "FRangeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        }
+      ]
+    },
+    {
+      "PerkId": "spray_and_pray_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "spray_and_pray_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "12"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.5"
+        },
+        {
+          "Name": "FPierce",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        },
+        {
+          "Name": "FRangeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        }
+      ]
+    },
+    {
+      "PerkId": "surgeon_advanced",
+      "PerkType": "Trigger",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "surgeon_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "18"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        },
+        {
+          "Name": "FAccuracyBonus",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    {
+      "PerkId": "tactical_camouflage_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "tactical_camouflage_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "40"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "200"
+        },
+        {
+          "Name": "BTacticalCamo",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    {
+      "PerkId": "tactical_camouflage_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "20"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "100"
+        },
+        {
+          "Name": "BTacticalCamo",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    {
+      "PerkId": "tactical_camouflage_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "tactical_camouflage_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "30"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "150"
+        },
+        {
+          "Name": "BTacticalCamo",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    {
+      "PerkId": "war_crime_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IEnemyStunDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "IEnemyCount",
+          "ValType": "Int",
+          "IntVal": "6"
+        }
+      ]
+    },
+    {
+      "PerkId": "war_crime_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "war_crime_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IEnemyStunDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "IEnemyCount",
+          "ValType": "Int",
+          "IntVal": "5"
+        }
+      ]
+    }
+  ],
+  "byPerkId": {
+    "agent_training_advanced": {
+      "PerkId": "agent_training_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "agent_training_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPistolAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        },
+        {
+          "Name": "IAddedPistolRange",
+          "ValType": "Int",
+          "IntVal": "1"
+        }
+      ]
+    },
+    "agent_training_legend": {
+      "PerkId": "agent_training_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPistolAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        },
+        {
+          "Name": "IAddedPistolRange",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ]
+    },
+    "athletics_legend": {
+      "PerkId": "athletics_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FSprintAccDebuff",
+          "ValType": "Float",
+          "FloatVal": "-0.8"
+        }
+      ]
+    },
+    "athletics_master": {
+      "PerkId": "athletics_master",
+      "PerkType": "Passive",
+      "MaxExp": "600",
+      "CurrentExp": "0",
+      "NextPerkId": "athletics_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FSprintAccDebuff",
+          "ValType": "Float",
+          "FloatVal": "-0.65"
+        }
+      ]
+    },
+    "battle_physicist_advanced": {
+      "PerkId": "battle_physicist_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "battle_physicist_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FEnergySaving",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        }
+      ]
+    },
+    "bodybuilding_basic": {
+      "PerkId": "bodybuilding_basic",
+      "PerkType": "Passive",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "bodybuilding_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IMaxHealth",
+          "ValType": "Int",
+          "IntVal": "20"
+        }
+      ]
+    },
+    "cold_weapon_wielding_legend": {
+      "PerkId": "cold_weapon_wielding_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FMeleeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    "cqc_specialist_legend": {
+      "PerkId": "cqc_specialist_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FScatter",
+          "ValType": "Float",
+          "FloatVal": "-0.4"
+        },
+        {
+          "Name": "FRangeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        }
+      ]
+    },
+    "cyber_compatibility_advanced": {
+      "PerkId": "cyber_compatibility_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "cyber_compatibility_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FCyberCompDodge",
+          "ValType": "Float",
+          "FloatVal": "0.025"
+        }
+      ]
+    },
+    "cyber_compatibility_basic": {
+      "PerkId": "cyber_compatibility_basic",
+      "PerkType": "Passive",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "cyber_compatibility_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FCyberCompDodge",
+          "ValType": "Float",
+          "FloatVal": "0.02"
+        }
+      ]
+    },
+    "cyber_compatibility_legend": {
+      "PerkId": "cyber_compatibility_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FCyberCompDodge",
+          "ValType": "Float",
+          "FloatVal": "0.035"
+        }
+      ]
+    },
+    "cyber_compatibility_master": {
+      "PerkId": "cyber_compatibility_master",
+      "PerkType": "Passive",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "cyber_compatibility_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FCyberCompDodge",
+          "ValType": "Float",
+          "FloatVal": "0.03"
+        }
+      ]
+    },
+    "gear_maintenance_basic": {
+      "PerkId": "gear_maintenance_basic",
+      "PerkType": "Passive",
+      "MaxExp": "100",
+      "CurrentExp": "0",
+      "NextPerkId": "gear_maintenance_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPhysicalResists",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        },
+        {
+          "Name": "FArmorDurability",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        }
+      ]
+    },
+    "gear_maintenance_legend": {
+      "PerkId": "gear_maintenance_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPhysicalResists",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        },
+        {
+          "Name": "FArmorDurability",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        }
+      ]
+    },
+    "grenadier_advanced": {
+      "PerkId": "grenadier_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "grenadier_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FGrenadeDamage",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    "heavy_weaponary_advanced": {
+      "PerkId": "heavy_weaponary_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "heavy_weaponary_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FScatter",
+          "ValType": "Float",
+          "FloatVal": "-0.3"
+        },
+        {
+          "Name": "FRangeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        }
+      ]
+    },
+    "insanity_basic": {
+      "PerkId": "insanity_basic",
+      "PerkType": "Passive",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "insanity_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FAffectedQuasimorph",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    "insanity_legend": {
+      "PerkId": "insanity_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FAffectedQuasimorph",
+          "ValType": "Float",
+          "FloatVal": "0.45"
+        }
+      ]
+    },
+    "insanity_master": {
+      "PerkId": "insanity_master",
+      "PerkType": "Passive",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "insanity_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FAffectedQuasimorph",
+          "ValType": "Float",
+          "FloatVal": "0.4"
+        }
+      ]
+    },
+    "lightweight_gear_advanced": {
+      "PerkId": "lightweight_gear_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "30",
+      "CurrentExp": "0",
+      "NextPerkId": "lightweight_gear_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FEquipmentWeight",
+          "ValType": "Float",
+          "FloatVal": "-0.35"
+        }
+      ]
+    },
+    "lightweight_gear_legend": {
+      "PerkId": "lightweight_gear_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FEquipmentWeight",
+          "ValType": "Float",
+          "FloatVal": "-0.55"
+        }
+      ]
+    },
+    "military_training_advanced": {
+      "PerkId": "military_training_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "500",
+      "CurrentExp": "0",
+      "NextPerkId": "military_training_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-3"
+        }
+      ]
+    },
+    "military_training_basic": {
+      "PerkId": "military_training_basic",
+      "PerkType": "Passive",
+      "MaxExp": "20",
+      "CurrentExp": "0",
+      "NextPerkId": "military_training_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-2"
+        }
+      ]
+    },
+    "military_training_legend": {
+      "PerkId": "military_training_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-5"
+        }
+      ]
+    },
+    "military_training_master": {
+      "PerkId": "military_training_master",
+      "PerkType": "Passive",
+      "MaxExp": "800",
+      "CurrentExp": "0",
+      "NextPerkId": "military_training_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-4"
+        }
+      ]
+    },
+    "muffled_advanced": {
+      "PerkId": "muffled_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "muffled_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FNoiseSuppression",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        }
+      ]
+    },
+    "muffled_legend": {
+      "PerkId": "muffled_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FNoiseSuppression",
+          "ValType": "Float",
+          "FloatVal": "0.8"
+        }
+      ]
+    },
+    "possession_basic": {
+      "PerkId": "possession_basic",
+      "PerkType": "Passive",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "possession_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPactCooldown",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        },
+        {
+          "Name": "FPactDebuff",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    "possession_legend": {
+      "PerkId": "possession_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPactCooldown",
+          "ValType": "Float",
+          "FloatVal": "0.8"
+        },
+        {
+          "Name": "FPactDebuff",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        }
+      ]
+    },
+    "possession_master": {
+      "PerkId": "possession_master",
+      "PerkType": "Passive",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "possession_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FPactCooldown",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        },
+        {
+          "Name": "FPactDebuff",
+          "ValType": "Float",
+          "FloatVal": "0.5"
+        }
+      ]
+    },
+    "pyromaniac_basic": {
+      "PerkId": "pyromaniac_basic",
+      "PerkType": "Passive",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "pyromaniac_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IFireDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "FBurnChanceBonus",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        }
+      ]
+    },
+    "pyromaniac_legend": {
+      "PerkId": "pyromaniac_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IFireDuration",
+          "ValType": "Int",
+          "IntVal": "4"
+        },
+        {
+          "Name": "FBurnChanceBonus",
+          "ValType": "Float",
+          "FloatVal": "0.35"
+        }
+      ]
+    },
+    "reaction_training_legend": {
+      "PerkId": "reaction_training_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FDodge",
+          "ValType": "Float",
+          "FloatVal": "0.22"
+        }
+      ]
+    },
+    "reaction_training_master": {
+      "PerkId": "reaction_training_master",
+      "PerkType": "Passive",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "reaction_training_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FDodge",
+          "ValType": "Float",
+          "FloatVal": "0.18"
+        }
+      ]
+    },
+    "reinforced_battery_advanced": {
+      "PerkId": "reinforced_battery_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "reinforced_battery_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FBatteryAmmoDamage",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        }
+      ]
+    },
+    "sandman_legend": {
+      "PerkId": "sandman_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FSandmanScatter",
+          "ValType": "Float",
+          "FloatVal": "-0.7"
+        },
+        {
+          "Name": "FSandmanFalloff",
+          "ValType": "Float",
+          "FloatVal": "-0.1"
+        }
+      ]
+    },
+    "scholar_master": {
+      "PerkId": "scholar_master",
+      "PerkType": "Passive",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "scholar_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IScholarCraft",
+          "ValType": "Int",
+          "IntVal": "3"
+        }
+      ]
+    },
+    "shielding_advanced": {
+      "PerkId": "shielding_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "shielding_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FElementalResists",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    "stationary_defense_advanced": {
+      "PerkId": "stationary_defense_advanced",
+      "PerkType": "Passive",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "stationary_defense_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FTurretDamage",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        },
+        {
+          "Name": "ITurretHealth",
+          "ValType": "Int",
+          "IntVal": "30"
+        },
+        {
+          "Name": "IPlacementRange",
+          "ValType": "Int",
+          "IntVal": "1"
+        }
+      ]
+    },
+    "stationary_defense_legend": {
+      "PerkId": "stationary_defense_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FTurretDamage",
+          "ValType": "Float",
+          "FloatVal": "0.4"
+        },
+        {
+          "Name": "ITurretHealth",
+          "ValType": "Int",
+          "IntVal": "40"
+        },
+        {
+          "Name": "IPlacementRange",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ]
+    },
+    "tomahawk_basic": {
+      "PerkId": "tomahawk_basic",
+      "PerkType": "Passive",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "tomahawk_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "FThrowCritChance",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    "unconventional_munitions_legend": {
+      "PerkId": "unconventional_munitions_legend",
+      "PerkType": "Passive",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "F9mm42AmmoDamage",
+          "ValType": "Float",
+          "FloatVal": "0.35"
+        },
+        {
+          "Name": "F9mm42WoundChance",
+          "ValType": "Float",
+          "FloatVal": "0.5"
+        }
+      ]
+    },
+    "assault_reflex_legend": {
+      "PerkId": "assault_reflex_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "9"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IAddedAP",
+          "ValType": "Int",
+          "IntVal": "3"
+        }
+      ]
+    },
+    "assault_reflex_master": {
+      "PerkId": "assault_reflex_master",
+      "PerkType": "Trigger",
+      "MaxExp": "400",
+      "CurrentExp": "0",
+      "NextPerkId": "assault_reflex_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IAddedAP",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ]
+    },
+    "axe_rage_basic": {
+      "PerkId": "axe_rage_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "axe_rage_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "7"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "25"
+        },
+        {
+          "Name": "IMultiHit",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "BActionPointDuration",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    "berserk_gang_legend": {
+      "PerkId": "berserk_gang_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IHealthRegen",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IPainRegen",
+          "ValType": "Int",
+          "IntVal": "6"
+        }
+      ]
+    },
+    "berserk_gang_master": {
+      "PerkId": "berserk_gang_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "berserk_gang_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IHealthRegen",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "IPainRegen",
+          "ValType": "Int",
+          "IntVal": "5"
+        }
+      ]
+    },
+    "blind_fury_basic": {
+      "PerkId": "blind_fury_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "100",
+      "CurrentExp": "0",
+      "NextPerkId": "blind_fury_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "9"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.55"
+        }
+      ]
+    },
+    "blind_fury_legend": {
+      "PerkId": "blind_fury_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "9"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.7"
+        }
+      ]
+    },
+    "blind_fury_master": {
+      "PerkId": "blind_fury_master",
+      "PerkType": "Trigger",
+      "MaxExp": "400",
+      "CurrentExp": "0",
+      "NextPerkId": "blind_fury_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "9"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.65"
+        }
+      ]
+    },
+    "blurred_silhouette_advanced": {
+      "PerkId": "blurred_silhouette_advanced",
+      "PerkType": "Trigger",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "blurred_silhouette_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "25"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "FDodge",
+          "ValType": "Float",
+          "FloatVal": "0.4"
+        }
+      ]
+    },
+    "cannibalism_master": {
+      "PerkId": "cannibalism_master",
+      "PerkType": "Trigger",
+      "MaxExp": "400",
+      "CurrentExp": "0",
+      "NextPerkId": "cannibalism_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.55"
+        }
+      ]
+    },
+    "carnage_legend": {
+      "PerkId": "carnage_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "20"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "FRestoreAP",
+          "ValType": "Float",
+          "FloatVal": "1"
+        }
+      ]
+    },
+    "carnage_master": {
+      "PerkId": "carnage_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "carnage_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "20"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "FRestoreAP",
+          "ValType": "Float",
+          "FloatVal": "0.85"
+        }
+      ]
+    },
+    "cauterize_master": {
+      "PerkId": "cauterize_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "cauterize_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "4"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "40"
+        },
+        {
+          "Name": "BBurnImmune",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        },
+        {
+          "Name": "IHealthRegen",
+          "ValType": "Int",
+          "IntVal": "8"
+        }
+      ]
+    },
+    "cheap_shot_advanced": {
+      "PerkId": "cheap_shot_advanced",
+      "PerkType": "Trigger",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "cheap_shot_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "16"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FCritChance",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    "cheap_shot_basic": {
+      "PerkId": "cheap_shot_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "cheap_shot_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "18"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FCritChance",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        }
+      ]
+    },
+    "cobra_throw_basic": {
+      "PerkId": "cobra_throw_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "cobra_throw_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "ICobraRadius",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "BActionPointDuration",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        },
+        {
+          "Name": "BCobraThrow",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    "cyberpsychosis_basic": {
+      "PerkId": "cyberpsychosis_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "cyberpsychosis_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        }
+      ]
+    },
+    "fire_transfer_legend": {
+      "PerkId": "fire_transfer_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "FCritChance",
+          "ValType": "Float",
+          "FloatVal": "0.65"
+        },
+        {
+          "Name": "BActionPointDuration",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    "hidden_potential_basic": {
+      "PerkId": "hidden_potential_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "hidden_potential_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "200"
+        },
+        {
+          "Name": "IAddedAP",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ]
+    },
+    "revealing_flame_advanced": {
+      "PerkId": "revealing_flame_advanced",
+      "PerkType": "Trigger",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "revealing_flame_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "12"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IRevealRange",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "BRevealingSignal",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    "selfhealing_master": {
+      "PerkId": "selfhealing_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "selfhealing_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "BFixAllHumanWounds",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        },
+        {
+          "Name": "FFixateHumanAddedChance",
+          "ValType": "Float",
+          "FloatVal": "0.35"
+        }
+      ]
+    },
+    "shock_awe_master": {
+      "PerkId": "shock_awe_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "shock_awe_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FExplStunChance",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        },
+        {
+          "Name": "IExplStunDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ]
+    },
+    "spray_and_pray_advanced": {
+      "PerkId": "spray_and_pray_advanced",
+      "PerkType": "Trigger",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "spray_and_pray_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "14"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.4"
+        },
+        {
+          "Name": "FPierce",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        },
+        {
+          "Name": "FRangeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        }
+      ]
+    },
+    "spray_and_pray_master": {
+      "PerkId": "spray_and_pray_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "spray_and_pray_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "12"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.5"
+        },
+        {
+          "Name": "FPierce",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        },
+        {
+          "Name": "FRangeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        }
+      ]
+    },
+    "surgeon_advanced": {
+      "PerkId": "surgeon_advanced",
+      "PerkType": "Trigger",
+      "MaxExp": "25",
+      "CurrentExp": "0",
+      "NextPerkId": "surgeon_master",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "18"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        },
+        {
+          "Name": "FAccuracyBonus",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ]
+    },
+    "tactical_camouflage_basic": {
+      "PerkId": "tactical_camouflage_basic",
+      "PerkType": "Trigger",
+      "MaxExp": "10",
+      "CurrentExp": "0",
+      "NextPerkId": "tactical_camouflage_advanced",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "40"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "200"
+        },
+        {
+          "Name": "BTacticalCamo",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    "tactical_camouflage_legend": {
+      "PerkId": "tactical_camouflage_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "20"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "100"
+        },
+        {
+          "Name": "BTacticalCamo",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    "tactical_camouflage_master": {
+      "PerkId": "tactical_camouflage_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "tactical_camouflage_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "30"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "150"
+        },
+        {
+          "Name": "BTacticalCamo",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ]
+    },
+    "war_crime_legend": {
+      "PerkId": "war_crime_legend",
+      "PerkType": "Trigger",
+      "MaxExp": "0",
+      "CurrentExp": "0",
+      "NextPerkId": {},
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IEnemyStunDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "IEnemyCount",
+          "ValType": "Int",
+          "IntVal": "6"
+        }
+      ]
+    },
+    "war_crime_master": {
+      "PerkId": "war_crime_master",
+      "PerkType": "Trigger",
+      "MaxExp": "40",
+      "CurrentExp": "0",
+      "NextPerkId": "war_crime_legend",
+      "IsAvailable": "True",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IEnemyStunDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "IEnemyCount",
+          "ValType": "Int",
+          "IntVal": "5"
+        }
+      ]
+    }
+  }
+}
