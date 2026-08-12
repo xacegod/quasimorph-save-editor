@@ -5,6 +5,10 @@
  */
 import { deepClone } from "./parse.js";
 import { collectPerkCatalogByType, setUltimateSkull, getMercenaries, listPerks } from "./merc.js";
+import { perkDefaultTemplate, rankMeta } from "./perkMeta.js";
+
+/** Max mercenary hierarchy rank (Commander). Lower ranks exist; Max rank jumps here. */
+export const MAX_MERC_RANK_ID = "rank_5";
 
 /** @type {Map<string, object>} */
 const talentLib = new Map();
@@ -279,8 +283,60 @@ export function perkNextId(p) {
   return typeof p?.NextPerkId === "string" && p.NextPerkId ? p.NextPerkId : null;
 }
 
-/** Follow NextPerkId using templates found in the open save; returns the highest available perk. */
+export function isMercRankPerk(p) {
+  return p?.PerkType === "Rank" || /^rank_\d+$/.test(String(p?.PerkId || ""));
+}
+
+/** Build a Rank perk object from library / save (for intermediates or Commander). */
+export function mercRankTemplate(perkId, data = null) {
+  if (!perkId) return null;
+  const fromDefaults = perkDefaultTemplate(perkId);
+  if (fromDefaults) {
+    fromDefaults.PerkType = "Rank";
+    fromDefaults.PerkId = perkId;
+    fromDefaults.CurrentExp = "0";
+    return fromDefaults;
+  }
+  const meta = rankMeta(perkId);
+  if (meta) {
+    return {
+      PerkId: perkId,
+      PerkType: "Rank",
+      Parameters: deepClone(meta.Parameters || []),
+      AIParameters: deepClone(meta.AIParameters || []),
+      NextPerkId: meta.NextPerkId ?? {},
+      LevelUpActionType: meta.LevelUpActionType || "AnyKill",
+      CurrentExp: "0",
+      ExpPerAction: meta.ExpPerAction != null ? String(meta.ExpPerAction) : "0",
+      MaxExp: meta.MaxExp != null ? String(meta.MaxExp) : "0",
+    };
+  }
+  if (data) {
+    for (const m of getMercenaries(data)) {
+      for (const p of listPerks(m)) {
+        if (p.PerkId === perkId) {
+          const c = deepClone(p);
+          c.CurrentExp = "0";
+          return c;
+        }
+      }
+    }
+  }
+  return null;
+}
+
+/**
+ * Highest perk in a leveling chain.
+ * Rank perks: always resolve to rank_5 (Commander) with full bonuses — intermediates may be missing from the save.
+ * Passive/Trigger: walk NextPerkId using templates found in the open save.
+ */
 export function resolveMaxRankPerk(perk, data) {
+  if (isMercRankPerk(perk)) {
+    if (perk.PerkId === MAX_MERC_RANK_ID) return deepClone(perk);
+    const maxed = mercRankTemplate(MAX_MERC_RANK_ID, data);
+    return maxed || deepClone(perk);
+  }
+
   const map = new Map();
   if (data) {
     for (const m of getMercenaries(data)) {
@@ -303,18 +359,20 @@ export function resolveMaxRankPerk(perk, data) {
 }
 
 export function canPromotePerk(perk, data) {
+  if (isMercRankPerk(perk)) {
+    return perk.PerkId !== MAX_MERC_RANK_ID && !!mercRankTemplate(MAX_MERC_RANK_ID, data);
+  }
   const maxed = resolveMaxRankPerk(perk, data);
   return maxed?.PerkId && maxed.PerkId !== perk.PerkId;
 }
 
-/** Replace perk at index with the end of its NextPerkId chain (e.g. rank_4 → rank_5). */
+/** Replace perk at index with max rank (rank_5) or end of Passive/Trigger NextPerkId chain. */
 export function promotePerkToMaxRank(merc, perkIndex, data) {
   const list = merc?.CreatureData?.Perks;
   if (!Array.isArray(list) || perkIndex < 0 || perkIndex >= list.length) return null;
   const current = list[perkIndex];
   const maxed = resolveMaxRankPerk(current, data);
   if (!maxed || maxed.PerkId === current.PerkId) return null;
-  // Preserve type if promoting within same family
   list[perkIndex] = maxed;
   return maxed;
 }

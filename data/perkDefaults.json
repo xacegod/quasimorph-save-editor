@@ -1,0 +1,2421 @@
+{
+  "source": "local saves: slot_0_session.dat, slot_1_session.dat, slot_2_session.dat",
+  "builtAt": "2026-08-12T10:46:28.530Z",
+  "note": "Default Parameters/AIParameters/MaxExp/NextPerkId snapshots for Reset in the editor. Values are from a real save (difficulty ExpMult may already be applied to MaxExp).",
+  "paramLabels": {
+    "IDuration": "Duration (turns)",
+    "ICooldown": "Cooldown (turns)",
+    "IActivation": "Activation cost / threshold",
+    "IHealthRegen": "Health regen",
+    "IPainRegen": "Pain regeneration",
+    "IMaxHealth": "Max health bonus",
+    "IAddedAP": "Extra AP",
+    "IRevealRange": "Reveal / detection range",
+    "IEnemyStunDuration": "Enemy stun duration",
+    "IEnemyCount": "Affected enemies",
+    "IPlacementRange": "Placement range",
+    "ITurretHealth": "Deployable health",
+    "IAddedPistolRange": "Pistol range bonus",
+    "IStarvStanceBonus": "Starvation stance / limit bonus",
+    "IWeaponDistance": "Weapon distance",
+    "IEnemyHuntBonus": "Enemy hunt bonus",
+    "IResists": "Resistances",
+    "IKiloDmgThreshold": "Weight damage threshold",
+    "FDamage": "Damage multiplier",
+    "FPierce": "Pierce chance / mult",
+    "FRangeAccuracy": "Ranged accuracy",
+    "FScatter": "Scatter (negative = tighter)",
+    "FCritChance": "Crit chance",
+    "FDodge": "Dodge chance",
+    "FPistolAccuracy": "Pistol accuracy",
+    "FTurretDamage": "Deployable damage",
+    "FEquipmentWeight": "Equipment weight",
+    "FNoiseSuppression": "Noise suppression / no-sound chance",
+    "FFixateAddedChance": "Wound heal / fixate chance",
+    "FFixateHumanAddedChance": "Organic wound heal chance",
+    "FWoundChance": "Receive wound chance (negative = safer)",
+    "FGrenadeDamage": "Grenade / explosion damage",
+    "FWeaponDurability": "Weapon durability",
+    "FEquipWeaponWeight": "Equipped weapon weight",
+    "FWeightMeleeDmgIncrease": "Melee damage from weight",
+    "FMissingHealthDamageIncrease": "Damage from missing health",
+    "FIncomeCritMult": "Incoming crit multiplier",
+    "FExplosionIncomeDamageMult": "Incoming explosion damage",
+    "BSecondChance": "Negate one lethal hit",
+    "BFixAllHumanWounds": "Stabilize organic wounds",
+    "BIgnoreInfection": "Ignore infection",
+    "BIgnorePain": "Ignore pain",
+    "BBackstabResistIgnore": "Ignore backstab resist",
+    "BThirdWeaponSlot": "Third weapon slot"
+  },
+  "stats": {
+    "perkIds": 79,
+    "bases": 51
+  },
+  "perks": {
+    "rank_0": {
+      "PerkId": "rank_0",
+      "PerkType": "Rank",
+      "Parameters": [],
+      "AIParameters": [],
+      "NextPerkId": "rank_1",
+      "LevelUpActionType": "2300",
+      "CurrentExp": "0",
+      "ExpPerAction": "1",
+      "MaxExp": "35"
+    },
+    "cqc_specialist_legend": {
+      "PerkId": "cqc_specialist_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FScatter",
+          "ValType": "Float",
+          "FloatVal": "-0.4"
+        },
+        {
+          "Name": "FRangeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "ShotRangedWeapon",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "military_training_advanced": {
+      "PerkId": "military_training_advanced",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-3"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "military_training_master",
+      "LevelUpActionType": "2300",
+      "CurrentExp": "0",
+      "ExpPerAction": "1",
+      "MaxExp": "500"
+    },
+    "gear_maintenance_basic": {
+      "PerkId": "gear_maintenance_basic",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FPhysicalResists",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        },
+        {
+          "Name": "FArmorDurability",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "gear_maintenance_advanced",
+      "LevelUpActionType": "PhysicalDmgAbsorbedByResist",
+      "CurrentExp": "0",
+      "ExpPerAction": "2",
+      "MaxExp": "100"
+    },
+    "blind_fury_basic": {
+      "PerkId": "blind_fury_basic",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "9"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.55"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "blind_fury_advanced",
+      "LevelUpActionType": "PlayerHitted",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "100"
+    },
+    "fire_transfer_legend": {
+      "PerkId": "fire_transfer_legend",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "FCritChance",
+          "ValType": "Float",
+          "FloatVal": "0.65"
+        },
+        {
+          "Name": "BActionPointDuration",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "AnyKill",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "assault_reflex_legend": {
+      "PerkId": "assault_reflex_legend",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "9"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IAddedAP",
+          "ValType": "Int",
+          "IntVal": "3"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "EnemyAttackMissed",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "military_training_master": {
+      "PerkId": "military_training_master",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-4"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "military_training_legend",
+      "LevelUpActionType": "2300",
+      "CurrentExp": "0",
+      "ExpPerAction": "1",
+      "MaxExp": "800"
+    },
+    "gear_maintenance_legend": {
+      "PerkId": "gear_maintenance_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FPhysicalResists",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        },
+        {
+          "Name": "FArmorDurability",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "PhysicalDmgAbsorbedByResist",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "blind_fury_master": {
+      "PerkId": "blind_fury_master",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "9"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.65"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "blind_fury_legend",
+      "LevelUpActionType": "PlayerHitted",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "400"
+    },
+    "assault_reflex_master": {
+      "PerkId": "assault_reflex_master",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IAddedAP",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "assault_reflex_legend",
+      "LevelUpActionType": "EnemyAttackMissed",
+      "CurrentExp": "0",
+      "ExpPerAction": "5",
+      "MaxExp": "400"
+    },
+    "blind_fury_legend": {
+      "PerkId": "blind_fury_legend",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "9"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.7"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "PlayerHitted",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "berserk_gang_legend": {
+      "PerkId": "berserk_gang_legend",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IHealthRegen",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IPainRegen",
+          "ValType": "Int",
+          "IntVal": "6"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "ReceiveDamagingWound",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "athletics_master": {
+      "PerkId": "athletics_master",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FSprintAccDebuff",
+          "ValType": "Float",
+          "FloatVal": "-0.65"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "athletics_legend",
+      "LevelUpActionType": "8000",
+      "CurrentExp": "0",
+      "ExpPerAction": "1",
+      "MaxExp": "600"
+    },
+    "reaction_training_legend": {
+      "PerkId": "reaction_training_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FDodge",
+          "ValType": "Float",
+          "FloatVal": "0.22"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "EnemyAttackMissed",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "cold_weapon_wielding_legend": {
+      "PerkId": "cold_weapon_wielding_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FMeleeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "MeleeHitOnEnemy",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "cannibalism_master": {
+      "PerkId": "cannibalism_master",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.55"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "cannibalism_legend",
+      "LevelUpActionType": "EatRawHumanMeat",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "400"
+    },
+    "carnage_legend": {
+      "PerkId": "carnage_legend",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "20"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "FRestoreAP",
+          "ValType": "Float",
+          "FloatVal": "1"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "OnMeleeWoundInflict",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "heavy_weaponary_advanced": {
+      "PerkId": "heavy_weaponary_advanced",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FScatter",
+          "ValType": "Float",
+          "FloatVal": "-0.3"
+        },
+        {
+          "Name": "FRangeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "heavy_weaponary_master",
+      "LevelUpActionType": "ShotRangedWeapon",
+      "CurrentExp": "0",
+      "ExpPerAction": "2",
+      "MaxExp": "25"
+    },
+    "grenadier_advanced": {
+      "PerkId": "grenadier_advanced",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FGrenadeDamage",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "grenadier_master",
+      "LevelUpActionType": "ThrowGrenade",
+      "CurrentExp": "0",
+      "ExpPerAction": "25",
+      "MaxExp": "25"
+    },
+    "selfhealing_master": {
+      "PerkId": "selfhealing_master",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "BFixAllHumanWounds",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        },
+        {
+          "Name": "FFixateHumanAddedChance",
+          "ValType": "Float",
+          "FloatVal": "0.35"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "selfhealing_legend",
+      "LevelUpActionType": "ReceiveHumanWound",
+      "CurrentExp": "0",
+      "ExpPerAction": "15",
+      "MaxExp": "40"
+    },
+    "stationary_defense_legend": {
+      "PerkId": "stationary_defense_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FTurretDamage",
+          "ValType": "Float",
+          "FloatVal": "0.4"
+        },
+        {
+          "Name": "ITurretHealth",
+          "ValType": "Int",
+          "IntVal": "40"
+        },
+        {
+          "Name": "IPlacementRange",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "PlaceTurret",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "spray_and_pray_master": {
+      "PerkId": "spray_and_pray_master",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "12"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.5"
+        },
+        {
+          "Name": "FPierce",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        },
+        {
+          "Name": "FRangeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "spray_and_pray_legend",
+      "LevelUpActionType": "AmmoBelow40Percent",
+      "CurrentExp": "0",
+      "ExpPerAction": "40",
+      "MaxExp": "40"
+    },
+    "shock_awe_master": {
+      "PerkId": "shock_awe_master",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FExplStunChance",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        },
+        {
+          "Name": "IExplStunDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "shock_awe_legend",
+      "LevelUpActionType": "ExplosionHitOnEnemy",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "40"
+    },
+    "shielding_advanced": {
+      "PerkId": "shielding_advanced",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FElementalResists",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "shielding_master",
+      "LevelUpActionType": "ElementalDmgAbsorbedByResist",
+      "CurrentExp": "0",
+      "ExpPerAction": "4",
+      "MaxExp": "25"
+    },
+    "battle_physicist_advanced": {
+      "PerkId": "battle_physicist_advanced",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FEnergySaving",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "battle_physicist_master",
+      "LevelUpActionType": "DisassembleBatteryGuns",
+      "CurrentExp": "0",
+      "ExpPerAction": "5",
+      "MaxExp": "25"
+    },
+    "reinforced_battery_advanced": {
+      "PerkId": "reinforced_battery_advanced",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FBatteryAmmoDamage",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "reinforced_battery_master",
+      "LevelUpActionType": "OnAttackWithBatteryAmmo",
+      "CurrentExp": "0",
+      "ExpPerAction": "2",
+      "MaxExp": "25"
+    },
+    "revealing_flame_advanced": {
+      "PerkId": "revealing_flame_advanced",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "12"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IRevealRange",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "BRevealingSignal",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "revealing_flame_master",
+      "LevelUpActionType": "PutFireOnEnemy",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "25"
+    },
+    "cauterize_master": {
+      "PerkId": "cauterize_master",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "4"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "40"
+        },
+        {
+          "Name": "BBurnImmune",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        },
+        {
+          "Name": "IHealthRegen",
+          "ValType": "Int",
+          "IntVal": "8"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "cauterize_legend",
+      "LevelUpActionType": "OnTakingBurn",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "40"
+    },
+    "scholar_master": {
+      "PerkId": "scholar_master",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "IScholarCraft",
+          "ValType": "Int",
+          "IntVal": "3"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "scholar_legend",
+      "LevelUpActionType": "OnProductionCraft",
+      "CurrentExp": "0",
+      "ExpPerAction": "1",
+      "MaxExp": "40"
+    },
+    "berserk_gang_master": {
+      "PerkId": "berserk_gang_master",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IHealthRegen",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "IPainRegen",
+          "ValType": "Int",
+          "IntVal": "5"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "berserk_gang_legend",
+      "LevelUpActionType": "ReceiveDamagingWound",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "40"
+    },
+    "athletics_legend": {
+      "PerkId": "athletics_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FSprintAccDebuff",
+          "ValType": "Float",
+          "FloatVal": "-0.8"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "Run",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "reaction_training_master": {
+      "PerkId": "reaction_training_master",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FDodge",
+          "ValType": "Float",
+          "FloatVal": "0.18"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "reaction_training_legend",
+      "LevelUpActionType": "EnemyAttackMissed",
+      "CurrentExp": "0",
+      "ExpPerAction": "4",
+      "MaxExp": "40"
+    },
+    "carnage_master": {
+      "PerkId": "carnage_master",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "20"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "FRestoreAP",
+          "ValType": "Float",
+          "FloatVal": "0.85"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "carnage_legend",
+      "LevelUpActionType": "OnMeleeWoundInflict",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "40"
+    },
+    "rank_3": {
+      "PerkId": "rank_3",
+      "PerkType": "Rank",
+      "Parameters": [
+        {
+          "Name": "IMaxHealth",
+          "ValType": "Int",
+          "IntVal": "25"
+        },
+        {
+          "Name": "FFixateAddedChance",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        },
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-2"
+        },
+        {
+          "Name": "IPainRegen",
+          "ValType": "Int",
+          "IntVal": "1"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "rank_4",
+      "LevelUpActionType": "AnyKill",
+      "CurrentExp": "0",
+      "ExpPerAction": "1",
+      "MaxExp": "28"
+    },
+    "stationary_defense_advanced": {
+      "PerkId": "stationary_defense_advanced",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FTurretDamage",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        },
+        {
+          "Name": "ITurretHealth",
+          "ValType": "Int",
+          "IntVal": "30"
+        },
+        {
+          "Name": "IPlacementRange",
+          "ValType": "Int",
+          "IntVal": "1"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "stationary_defense_master",
+      "LevelUpActionType": "PlaceTurret",
+      "CurrentExp": "0",
+      "ExpPerAction": "50",
+      "MaxExp": "25"
+    },
+    "spray_and_pray_advanced": {
+      "PerkId": "spray_and_pray_advanced",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "14"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.4"
+        },
+        {
+          "Name": "FPierce",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        },
+        {
+          "Name": "FRangeAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "spray_and_pray_master",
+      "LevelUpActionType": "AmmoBelow30Percent",
+      "CurrentExp": "0",
+      "ExpPerAction": "40",
+      "MaxExp": "25"
+    },
+    "agent_training_legend": {
+      "PerkId": "agent_training_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FPistolAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        },
+        {
+          "Name": "IAddedPistolRange",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "ShotRangedWeapon",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "muffled_legend": {
+      "PerkId": "muffled_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FNoiseSuppression",
+          "ValType": "Float",
+          "FloatVal": "0.8"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "IdleKill",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "lightweight_gear_legend": {
+      "PerkId": "lightweight_gear_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FEquipmentWeight",
+          "ValType": "Float",
+          "FloatVal": "-0.55"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "WeightStealth",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "cheap_shot_basic": {
+      "PerkId": "cheap_shot_basic",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "6"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "18"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FCritChance",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "cheap_shot_advanced",
+      "LevelUpActionType": "OnStealthAttack",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "10"
+    },
+    "war_crime_legend": {
+      "PerkId": "war_crime_legend",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IEnemyStunDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "IEnemyCount",
+          "ValType": "Int",
+          "IntVal": "6"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "AnyKill",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "agent_training_advanced": {
+      "PerkId": "agent_training_advanced",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FPistolAccuracy",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        },
+        {
+          "Name": "IAddedPistolRange",
+          "ValType": "Int",
+          "IntVal": "1"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "agent_training_master",
+      "LevelUpActionType": "ShotRangedWeapon",
+      "CurrentExp": "0",
+      "ExpPerAction": "2",
+      "MaxExp": "25"
+    },
+    "muffled_advanced": {
+      "PerkId": "muffled_advanced",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FNoiseSuppression",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "muffled_master",
+      "LevelUpActionType": "IdleKill",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "25"
+    },
+    "lightweight_gear_advanced": {
+      "PerkId": "lightweight_gear_advanced",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FEquipmentWeight",
+          "ValType": "Float",
+          "FloatVal": "-0.35"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "lightweight_gear_master",
+      "LevelUpActionType": "WeightStealth",
+      "CurrentExp": "0",
+      "ExpPerAction": "1",
+      "MaxExp": "30"
+    },
+    "cheap_shot_advanced": {
+      "PerkId": "cheap_shot_advanced",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "16"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FCritChance",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "cheap_shot_master",
+      "LevelUpActionType": "OnStealthAttack",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "25"
+    },
+    "war_crime_master": {
+      "PerkId": "war_crime_master",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "10"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "IEnemyStunDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "IEnemyCount",
+          "ValType": "Int",
+          "IntVal": "5"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "war_crime_legend",
+      "LevelUpActionType": "AnyKill",
+      "CurrentExp": "0",
+      "ExpPerAction": "5",
+      "MaxExp": "40"
+    },
+    "rank_1": {
+      "PerkId": "rank_1",
+      "PerkType": "Rank",
+      "Parameters": [
+        {
+          "Name": "IMaxHealth",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "FFixateAddedChance",
+          "ValType": "Float",
+          "FloatVal": "0.1"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "rank_2",
+      "LevelUpActionType": "AnyKill",
+      "CurrentExp": "0",
+      "ExpPerAction": "1",
+      "MaxExp": "7"
+    },
+    "mercury_transportation": {
+      "PerkId": "mercury_transportation",
+      "PerkType": "Ultimate",
+      "Parameters": [],
+      "AIParameters": [
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "12"
+        }
+      ],
+      "NextPerkId": {},
+      "LevelUpActionType": "None",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "cyber_compatibility_advanced": {
+      "PerkId": "cyber_compatibility_advanced",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FCyberCompDodge",
+          "ValType": "Float",
+          "FloatVal": "0.025"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "cyber_compatibility_master",
+      "LevelUpActionType": "EnemyAttackMissed",
+      "CurrentExp": "0",
+      "ExpPerAction": "2",
+      "MaxExp": "25"
+    },
+    "sandman_legend": {
+      "PerkId": "sandman_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FSandmanScatter",
+          "ValType": "Float",
+          "FloatVal": "-0.7"
+        },
+        {
+          "Name": "FSandmanFalloff",
+          "ValType": "Float",
+          "FloatVal": "-0.1"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "IdleKill",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "unconventional_munitions_legend": {
+      "PerkId": "unconventional_munitions_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "F9mm42AmmoDamage",
+          "ValType": "Float",
+          "FloatVal": "0.35"
+        },
+        {
+          "Name": "F9mm42WoundChance",
+          "ValType": "Float",
+          "FloatVal": "0.5"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "Shot9mm42Ammo",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "tactical_camouflage_legend": {
+      "PerkId": "tactical_camouflage_legend",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "20"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "100"
+        },
+        {
+          "Name": "BTacticalCamo",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "OnEnemyAlert",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "blurred_silhouette_advanced": {
+      "PerkId": "blurred_silhouette_advanced",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "25"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "FDodge",
+          "ValType": "Float",
+          "FloatVal": "0.4"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "blurred_silhouette_master",
+      "LevelUpActionType": "Run",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "25"
+    },
+    "cyberpsychosis_basic": {
+      "PerkId": "cyberpsychosis_basic",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "5"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "cyberpsychosis_advanced",
+      "LevelUpActionType": "ImplantActivation",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "10"
+    },
+    "rank_5": {
+      "PerkId": "rank_5",
+      "PerkType": "Rank",
+      "Parameters": [
+        {
+          "Name": "IMaxHealth",
+          "ValType": "Int",
+          "IntVal": "30"
+        },
+        {
+          "Name": "FFixateAddedChance",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        },
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-3"
+        },
+        {
+          "Name": "IPainRegen",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "FWoundChance",
+          "ValType": "Float",
+          "FloatVal": "-0.1"
+        },
+        {
+          "Name": "BSecondChance",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "AnyKill",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "mars_solar_flare": {
+      "PerkId": "mars_solar_flare",
+      "PerkType": "Ultimate",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "4"
+        }
+      ],
+      "AIParameters": [
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "25"
+        }
+      ],
+      "NextPerkId": {},
+      "LevelUpActionType": "None",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "bodybuilding_basic": {
+      "PerkId": "bodybuilding_basic",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "IMaxHealth",
+          "ValType": "Int",
+          "IntVal": "20"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "bodybuilding_advanced",
+      "LevelUpActionType": "PlayerHitted",
+      "CurrentExp": "0",
+      "ExpPerAction": "1",
+      "MaxExp": "10"
+    },
+    "axe_rage_basic": {
+      "PerkId": "axe_rage_basic",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "7"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "25"
+        },
+        {
+          "Name": "IMultiHit",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "BActionPointDuration",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "axe_rage_advanced",
+      "LevelUpActionType": "OnMeleeWoundInflict",
+      "CurrentExp": "0",
+      "ExpPerAction": "5",
+      "MaxExp": "10"
+    },
+    "tomahawk_basic": {
+      "PerkId": "tomahawk_basic",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FThrowCritChance",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "tomahawk_advanced",
+      "LevelUpActionType": "ThrowMeleeWeapon",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "10"
+    },
+    "hidden_potential_basic": {
+      "PerkId": "hidden_potential_basic",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "200"
+        },
+        {
+          "Name": "IAddedAP",
+          "ValType": "Int",
+          "IntVal": "2"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "hidden_potential_advanced",
+      "LevelUpActionType": "HealthBelow20Percent",
+      "CurrentExp": "0",
+      "ExpPerAction": "50",
+      "MaxExp": "10"
+    },
+    "cobra_throw_basic": {
+      "PerkId": "cobra_throw_basic",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "1"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "80"
+        },
+        {
+          "Name": "ICobraRadius",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "BActionPointDuration",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        },
+        {
+          "Name": "BCobraThrow",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "cobra_throw_advanced",
+      "LevelUpActionType": "AnyThrowKill",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "10"
+    },
+    "surgeon_advanced": {
+      "PerkId": "surgeon_advanced",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "8"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "18"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "120"
+        },
+        {
+          "Name": "FDamage",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        },
+        {
+          "Name": "FAccuracyBonus",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "surgeon_master",
+      "LevelUpActionType": "OnWoundInflict",
+      "CurrentExp": "0",
+      "ExpPerAction": "10",
+      "MaxExp": "25"
+    },
+    "cyber_compatibility_legend": {
+      "PerkId": "cyber_compatibility_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FCyberCompDodge",
+          "ValType": "Float",
+          "FloatVal": "0.035"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "EnemyAttackMissed",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "possession_legend": {
+      "PerkId": "possession_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FPactCooldown",
+          "ValType": "Float",
+          "FloatVal": "0.8"
+        },
+        {
+          "Name": "FPactDebuff",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "UltimateActivation",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "insanity_legend": {
+      "PerkId": "insanity_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FAffectedQuasimorph",
+          "ValType": "Float",
+          "FloatVal": "0.45"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "OnQmorphStageChanged",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "military_training_legend": {
+      "PerkId": "military_training_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-5"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "WeightMove",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "pyromaniac_legend": {
+      "PerkId": "pyromaniac_legend",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "IFireDuration",
+          "ValType": "Int",
+          "IntVal": "4"
+        },
+        {
+          "Name": "FBurnChanceBonus",
+          "ValType": "Float",
+          "FloatVal": "0.35"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": {},
+      "LevelUpActionType": "PutFireOnEnemy",
+      "CurrentExp": "0",
+      "ExpPerAction": "0",
+      "MaxExp": "0"
+    },
+    "insanity_master": {
+      "PerkId": "insanity_master",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FAffectedQuasimorph",
+          "ValType": "Float",
+          "FloatVal": "0.4"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "insanity_legend",
+      "LevelUpActionType": "OnQmorphStageChanged",
+      "CurrentExp": "0",
+      "ExpPerAction": "5",
+      "MaxExp": "40"
+    },
+    "tactical_camouflage_master": {
+      "PerkId": "tactical_camouflage_master",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "3"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "30"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "150"
+        },
+        {
+          "Name": "BTacticalCamo",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "tactical_camouflage_legend",
+      "LevelUpActionType": "OnEnemyAlert",
+      "CurrentExp": "0",
+      "ExpPerAction": "25",
+      "MaxExp": "40"
+    },
+    "rank_4": {
+      "PerkId": "rank_4",
+      "PerkType": "Rank",
+      "Parameters": [
+        {
+          "Name": "IMaxHealth",
+          "ValType": "Int",
+          "IntVal": "30"
+        },
+        {
+          "Name": "FFixateAddedChance",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        },
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-3"
+        },
+        {
+          "Name": "IPainRegen",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "FWoundChance",
+          "ValType": "Float",
+          "FloatVal": "-0.1"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "rank_5",
+      "LevelUpActionType": "AnyKill",
+      "CurrentExp": "0",
+      "ExpPerAction": "1",
+      "MaxExp": "37"
+    },
+    "cyber_compatibility_basic": {
+      "PerkId": "cyber_compatibility_basic",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FCyberCompDodge",
+          "ValType": "Float",
+          "FloatVal": "0.02"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "cyber_compatibility_advanced",
+      "LevelUpActionType": "EnemyAttackMissed",
+      "CurrentExp": "0",
+      "ExpPerAction": "2",
+      "MaxExp": "10"
+    },
+    "possession_basic": {
+      "PerkId": "possession_basic",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FPactCooldown",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        },
+        {
+          "Name": "FPactDebuff",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "possession_advanced",
+      "LevelUpActionType": "UltimateActivation",
+      "CurrentExp": "0",
+      "ExpPerAction": "25",
+      "MaxExp": "10"
+    },
+    "insanity_basic": {
+      "PerkId": "insanity_basic",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FAffectedQuasimorph",
+          "ValType": "Float",
+          "FloatVal": "0.3"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "insanity_advanced",
+      "LevelUpActionType": "OnQmorphStageChanged",
+      "CurrentExp": "0",
+      "ExpPerAction": "5",
+      "MaxExp": "10"
+    },
+    "tactical_camouflage_basic": {
+      "PerkId": "tactical_camouflage_basic",
+      "PerkType": "Trigger",
+      "Parameters": [
+        {
+          "Name": "IDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "ICooldown",
+          "ValType": "Int",
+          "IntVal": "40"
+        },
+        {
+          "Name": "IActivation",
+          "ValType": "Int",
+          "IntVal": "200"
+        },
+        {
+          "Name": "BTacticalCamo",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "tactical_camouflage_advanced",
+      "LevelUpActionType": "OnEnemyAlert",
+      "CurrentExp": "0",
+      "ExpPerAction": "25",
+      "MaxExp": "10"
+    },
+    "military_training_basic": {
+      "PerkId": "military_training_basic",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-2"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "military_training_advanced",
+      "LevelUpActionType": "WeightMove",
+      "CurrentExp": "0",
+      "ExpPerAction": "1",
+      "MaxExp": "20"
+    },
+    "pyromaniac_basic": {
+      "PerkId": "pyromaniac_basic",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "IFireDuration",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "FBurnChanceBonus",
+          "ValType": "Float",
+          "FloatVal": "0.15"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "pyromaniac_advanced",
+      "LevelUpActionType": "PutFireOnEnemy",
+      "CurrentExp": "0",
+      "ExpPerAction": "5",
+      "MaxExp": "10"
+    },
+    "cyber_compatibility_master": {
+      "PerkId": "cyber_compatibility_master",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FCyberCompDodge",
+          "ValType": "Float",
+          "FloatVal": "0.03"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "cyber_compatibility_legend",
+      "LevelUpActionType": "EnemyAttackMissed",
+      "CurrentExp": "0",
+      "ExpPerAction": "2",
+      "MaxExp": "40"
+    },
+    "possession_master": {
+      "PerkId": "possession_master",
+      "PerkType": "Passive",
+      "Parameters": [
+        {
+          "Name": "FPactCooldown",
+          "ValType": "Float",
+          "FloatVal": "0.6"
+        },
+        {
+          "Name": "FPactDebuff",
+          "ValType": "Float",
+          "FloatVal": "0.5"
+        }
+      ],
+      "AIParameters": [],
+      "NextPerkId": "possession_legend",
+      "LevelUpActionType": "UltimateActivation",
+      "CurrentExp": "0",
+      "ExpPerAction": "25",
+      "MaxExp": "40"
+    }
+  },
+  "byBase": {
+    "rank_0": {
+      "base": "rank_0",
+      "tiers": {
+        "bare": "rank_0"
+      }
+    },
+    "cqc_specialist": {
+      "base": "cqc_specialist",
+      "tiers": {
+        "legend": "cqc_specialist_legend"
+      }
+    },
+    "military_training": {
+      "base": "military_training",
+      "tiers": {
+        "advanced": "military_training_advanced",
+        "master": "military_training_master",
+        "legend": "military_training_legend",
+        "basic": "military_training_basic"
+      }
+    },
+    "gear_maintenance": {
+      "base": "gear_maintenance",
+      "tiers": {
+        "basic": "gear_maintenance_basic",
+        "legend": "gear_maintenance_legend"
+      }
+    },
+    "blind_fury": {
+      "base": "blind_fury",
+      "tiers": {
+        "basic": "blind_fury_basic",
+        "master": "blind_fury_master",
+        "legend": "blind_fury_legend"
+      }
+    },
+    "fire_transfer": {
+      "base": "fire_transfer",
+      "tiers": {
+        "legend": "fire_transfer_legend"
+      }
+    },
+    "assault_reflex": {
+      "base": "assault_reflex",
+      "tiers": {
+        "legend": "assault_reflex_legend",
+        "master": "assault_reflex_master"
+      }
+    },
+    "berserk_gang": {
+      "base": "berserk_gang",
+      "tiers": {
+        "legend": "berserk_gang_legend",
+        "master": "berserk_gang_master"
+      }
+    },
+    "athletics": {
+      "base": "athletics",
+      "tiers": {
+        "master": "athletics_master",
+        "legend": "athletics_legend"
+      }
+    },
+    "reaction_training": {
+      "base": "reaction_training",
+      "tiers": {
+        "legend": "reaction_training_legend",
+        "master": "reaction_training_master"
+      }
+    },
+    "cold_weapon_wielding": {
+      "base": "cold_weapon_wielding",
+      "tiers": {
+        "legend": "cold_weapon_wielding_legend"
+      }
+    },
+    "cannibalism": {
+      "base": "cannibalism",
+      "tiers": {
+        "master": "cannibalism_master"
+      }
+    },
+    "carnage": {
+      "base": "carnage",
+      "tiers": {
+        "legend": "carnage_legend",
+        "master": "carnage_master"
+      }
+    },
+    "heavy_weaponary": {
+      "base": "heavy_weaponary",
+      "tiers": {
+        "advanced": "heavy_weaponary_advanced"
+      }
+    },
+    "grenadier": {
+      "base": "grenadier",
+      "tiers": {
+        "advanced": "grenadier_advanced"
+      }
+    },
+    "selfhealing": {
+      "base": "selfhealing",
+      "tiers": {
+        "master": "selfhealing_master"
+      }
+    },
+    "stationary_defense": {
+      "base": "stationary_defense",
+      "tiers": {
+        "legend": "stationary_defense_legend",
+        "advanced": "stationary_defense_advanced"
+      }
+    },
+    "spray_and_pray": {
+      "base": "spray_and_pray",
+      "tiers": {
+        "master": "spray_and_pray_master",
+        "advanced": "spray_and_pray_advanced"
+      }
+    },
+    "shock_awe": {
+      "base": "shock_awe",
+      "tiers": {
+        "master": "shock_awe_master"
+      }
+    },
+    "shielding": {
+      "base": "shielding",
+      "tiers": {
+        "advanced": "shielding_advanced"
+      }
+    },
+    "battle_physicist": {
+      "base": "battle_physicist",
+      "tiers": {
+        "advanced": "battle_physicist_advanced"
+      }
+    },
+    "reinforced_battery": {
+      "base": "reinforced_battery",
+      "tiers": {
+        "advanced": "reinforced_battery_advanced"
+      }
+    },
+    "revealing_flame": {
+      "base": "revealing_flame",
+      "tiers": {
+        "advanced": "revealing_flame_advanced"
+      }
+    },
+    "cauterize": {
+      "base": "cauterize",
+      "tiers": {
+        "master": "cauterize_master"
+      }
+    },
+    "scholar": {
+      "base": "scholar",
+      "tiers": {
+        "master": "scholar_master"
+      }
+    },
+    "rank_3": {
+      "base": "rank_3",
+      "tiers": {
+        "bare": "rank_3"
+      }
+    },
+    "agent_training": {
+      "base": "agent_training",
+      "tiers": {
+        "legend": "agent_training_legend",
+        "advanced": "agent_training_advanced"
+      }
+    },
+    "muffled": {
+      "base": "muffled",
+      "tiers": {
+        "legend": "muffled_legend",
+        "advanced": "muffled_advanced"
+      }
+    },
+    "lightweight_gear": {
+      "base": "lightweight_gear",
+      "tiers": {
+        "legend": "lightweight_gear_legend",
+        "advanced": "lightweight_gear_advanced"
+      }
+    },
+    "cheap_shot": {
+      "base": "cheap_shot",
+      "tiers": {
+        "basic": "cheap_shot_basic",
+        "advanced": "cheap_shot_advanced"
+      }
+    },
+    "war_crime": {
+      "base": "war_crime",
+      "tiers": {
+        "legend": "war_crime_legend",
+        "master": "war_crime_master"
+      }
+    },
+    "rank_1": {
+      "base": "rank_1",
+      "tiers": {
+        "bare": "rank_1"
+      }
+    },
+    "mercury_transportation": {
+      "base": "mercury_transportation",
+      "tiers": {
+        "bare": "mercury_transportation"
+      }
+    },
+    "cyber_compatibility": {
+      "base": "cyber_compatibility",
+      "tiers": {
+        "advanced": "cyber_compatibility_advanced",
+        "legend": "cyber_compatibility_legend",
+        "basic": "cyber_compatibility_basic",
+        "master": "cyber_compatibility_master"
+      }
+    },
+    "sandman": {
+      "base": "sandman",
+      "tiers": {
+        "legend": "sandman_legend"
+      }
+    },
+    "unconventional_munitions": {
+      "base": "unconventional_munitions",
+      "tiers": {
+        "legend": "unconventional_munitions_legend"
+      }
+    },
+    "tactical_camouflage": {
+      "base": "tactical_camouflage",
+      "tiers": {
+        "legend": "tactical_camouflage_legend",
+        "master": "tactical_camouflage_master",
+        "basic": "tactical_camouflage_basic"
+      }
+    },
+    "blurred_silhouette": {
+      "base": "blurred_silhouette",
+      "tiers": {
+        "advanced": "blurred_silhouette_advanced"
+      }
+    },
+    "cyberpsychosis": {
+      "base": "cyberpsychosis",
+      "tiers": {
+        "basic": "cyberpsychosis_basic"
+      }
+    },
+    "rank_5": {
+      "base": "rank_5",
+      "tiers": {
+        "bare": "rank_5"
+      }
+    },
+    "mars_solar_flare": {
+      "base": "mars_solar_flare",
+      "tiers": {
+        "bare": "mars_solar_flare"
+      }
+    },
+    "bodybuilding": {
+      "base": "bodybuilding",
+      "tiers": {
+        "basic": "bodybuilding_basic"
+      }
+    },
+    "axe_rage": {
+      "base": "axe_rage",
+      "tiers": {
+        "basic": "axe_rage_basic"
+      }
+    },
+    "tomahawk": {
+      "base": "tomahawk",
+      "tiers": {
+        "basic": "tomahawk_basic"
+      }
+    },
+    "hidden_potential": {
+      "base": "hidden_potential",
+      "tiers": {
+        "basic": "hidden_potential_basic"
+      }
+    },
+    "cobra_throw": {
+      "base": "cobra_throw",
+      "tiers": {
+        "basic": "cobra_throw_basic"
+      }
+    },
+    "surgeon": {
+      "base": "surgeon",
+      "tiers": {
+        "advanced": "surgeon_advanced"
+      }
+    },
+    "possession": {
+      "base": "possession",
+      "tiers": {
+        "legend": "possession_legend",
+        "basic": "possession_basic",
+        "master": "possession_master"
+      }
+    },
+    "insanity": {
+      "base": "insanity",
+      "tiers": {
+        "legend": "insanity_legend",
+        "master": "insanity_master",
+        "basic": "insanity_basic"
+      }
+    },
+    "pyromaniac": {
+      "base": "pyromaniac",
+      "tiers": {
+        "legend": "pyromaniac_legend",
+        "basic": "pyromaniac_basic"
+      }
+    },
+    "rank_4": {
+      "base": "rank_4",
+      "tiers": {
+        "bare": "rank_4"
+      }
+    }
+  }
+}

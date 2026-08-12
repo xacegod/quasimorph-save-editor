@@ -44,7 +44,32 @@ import {
 } from "./cargo.js";
 import { fieldRow } from "./fields.js";
 import { loadPerkLibrary, loadPactLibrary, mergedTalentCatalog, mergedUltimateCatalog, setTalent, addTalent, setUltimate, clearUltimate, pactLabel, pactMeta, getPactLibrary, perkHasExp, paramValueKey, inferParamKind, paramTypeHint, applyParamValue, maxPerkExp, canPromotePerk, promotePerkToMaxRank, perkNextId } from "./perkLibrary.js";
-import { loadMercClasses, mercClassLabel, mercClassInfo, mercClassPerkLabels, classPerkInfo, classPerkSummary } from "./mercClasses.js";
+import { loadMercClasses, mercClassLabel, mercClassInfo, mercClassPerkLabels, classPerkInfo, classPerkSummary, getMercClasses, applyMercClass, classPerkDropdownLabel, classPerkSearchText } from "./mercClasses.js";
+import {
+  loadRankLibrary,
+  loadPerkDefaults,
+  rankLabel,
+  rankMeta,
+  paramLabel,
+  formatDefaultHint,
+  resetParamToDefault,
+  resetPerkToDefaults,
+  perkDefaultTemplate,
+  getRankLibrary,
+  resolveClassPerkTemplate,
+  basePerkId,
+  getPerkDefaults,
+} from "./perkMeta.js";
+import { loadIconMap, iconHtml, iconEl } from "./icons.js";
+import {
+  loadTechLibrary,
+  getPurchasedPerks,
+  addPurchasedPerk,
+  removePurchasedPerk,
+  unlockAllTechs,
+  filterTechs,
+  techSummary,
+} from "./tech.js";
 import {
   loadUnlockBaseline,
   getUnlockLists,
@@ -107,8 +132,14 @@ async function initCatalogs() {
     const talentN = await loadPerkLibrary();
     const pactN = await loadPactLibrary();
     const classN = await loadMercClasses();
+    const rankN = await loadRankLibrary();
+    const defN = await loadPerkDefaults();
+    const iconN = await loadIconMap();
+    const techN = await loadTechLibrary();
     state.catalogOk = true;
-    setStatus(`Catalogs ready: ${info.spawnableCount} items, ${talentN} talents, ${pactN} pacts, ${classN} classes. Open a save.`);
+    setStatus(
+      `Catalogs ready: ${info.spawnableCount} items, ${talentN} talents, ${pactN} pacts, ${classN} classes, ${rankN} ranks, ${defN} perk defaults, ${iconN} icons, ${techN} techs. Open a save.`
+    );
   } catch (e) {
     state.catalogOk = false;
     setStatus(`Catalog load failed (${e.message}). Serve this folder over HTTP, or continue — names may be missing.`, "warn");
@@ -357,22 +388,105 @@ function renderMercDetail(m, all) {
 
   const ident = box.querySelector("#identityFields");
   ident.appendChild(fieldRow(m, "State", { onChange: markDirty }));
-  if (m.MercClassId != null) {
+
+  {
     const classInfo = mercClassInfo(m.MercClassId);
-    const row = el(`<div class="field-row"><label>MercClassId <abbr class="help" title="Class id from the save. Ranks and many passives/triggers come from this class.">?</abbr></label><div></div></div>`);
-    const span = document.createElement("code");
-    span.textContent = mercClassLabel(m.MercClassId);
-    row.lastChild.appendChild(span);
+    const row = el(`<div class="field-row"><label>Merc class <abbr class="help" title="Sets MercClassId from the wiki roster. Optionally swaps class Passive/Trigger perks using templates gathered from your saves (perkDefaults). Talent, Ultimate, Rank, and custom extras are kept.">?</abbr></label><div class="toolbar" style="flex-wrap:wrap"></div></div>`);
+    const tools = row.lastChild;
+    const sel = document.createElement("select");
+    sel.style.minWidth = "16rem";
+    const classes = getMercClasses();
+    const cur = typeof m.MercClassId === "string" ? m.MercClassId : "";
+    if (cur && !mercClassInfo(cur)) {
+      const opt = document.createElement("option");
+      opt.value = cur;
+      opt.textContent = `${cur} (not in wiki list)`;
+      sel.appendChild(opt);
+    }
+    for (const c of classes) {
+      const opt = document.createElement("option");
+      opt.value = c.classIdGuess;
+      const n = (c.perks || []).length;
+      opt.textContent = `${c.wikiTitle} (${c.classIdGuess}) · ${n} wiki perks`;
+      sel.appendChild(opt);
+    }
+    if (cur) sel.value = cur;
+    else if (classes[0]) sel.value = classes[0].classIdGuess;
+
+    const tierSel = document.createElement("select");
+    tierSel.title = "Which tier to pick when multiple templates exist in perkDefaults / this save";
+    tierSel.innerHTML = `
+      <option value="highest">Highest tier available</option>
+      <option value="basic">Prefer basic</option>
+      <option value="advanced">Prefer advanced</option>
+      <option value="master">Prefer master</option>
+      <option value="legend">Prefer legend</option>`;
+
+    const replaceLbl = el(`<label title="Remove old class roster Passive/Trigger, add the new class wiki set. Keeps Talent / Ultimate / Rank and any non-class extras."><input type="checkbox" data-replace checked /> Replace class perks</label>`);
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "primary";
+    btn.textContent = "Apply class";
+    btn.onclick = () => {
+      const classId = sel.value;
+      if (!classId) return;
+      const extra = new Map();
+      for (const t of ["Passive", "Trigger"]) {
+        for (const [id, perk] of collectPerkCatalogByType(state.data, t)) extra.set(id, perk);
+      }
+      const result = applyMercClass(m, classId, {
+        replaceClassPerks: replaceLbl.querySelector("input").checked,
+        resolveTemplate: (base, wikiPerk) => {
+          const resolved = resolveClassPerkTemplate(base, {
+            preference: tierSel.value,
+            extraCatalog: extra,
+            tierIds: wikiPerk.tierIds,
+          });
+          if (!resolved) return { perkId: basePerkId(base) || base, template: null };
+          return {
+            perkId: resolved.perkId,
+            template: resolved.template,
+            fromLibrary: resolved.fromLibrary,
+          };
+        },
+      });
+      if (!result.ok) {
+        setStatus(result.message, "warn");
+        return;
+      }
+      markDirty();
+      setStatus(result.message);
+      renderMercs();
+    };
+
+    tools.appendChild(sel);
+    tools.appendChild(tierSel);
+    tools.appendChild(replaceLbl);
+    tools.appendChild(btn);
     ident.appendChild(row);
+
+    if (classInfo?.description) {
+      const desc = document.createElement("p");
+      desc.className = "doc muted";
+      desc.textContent = classInfo.description;
+      ident.appendChild(desc);
+    }
     const labels = mercClassPerkLabels(m.MercClassId);
     if (labels.length) {
       const tip = document.createElement("p");
       tip.className = "doc muted";
       tip.textContent = `Wiki class perks (${labels.length}): ${labels.join(", ")}`;
-      tip.title = classInfo?.perks
-        ?.map((p) => classPerkSummary(p.internalName || p.wikiTitle))
-        .filter(Boolean)
-        .join("\n\n") || "";
+      tip.title =
+        classInfo?.perks
+          ?.map((p) => classPerkSummary(p.internalName || p.wikiTitle))
+          .filter(Boolean)
+          .join("\n\n") || "";
+      ident.appendChild(tip);
+    } else if (m.MercClassId) {
+      const tip = document.createElement("p");
+      tip.className = "doc muted";
+      tip.textContent = `No wiki perk roster for ${mercClassLabel(m.MercClassId)} yet — Apply still sets MercClassId.`;
       ident.appendChild(tip);
     }
   }
@@ -442,12 +556,17 @@ function renderMercDetail(m, all) {
   skullRow.appendChild(skullSel);
   pactBox.appendChild(skullRow);
 
-  function paramEditor(param, onChange) {
+  function paramEditor(param, onChange, perkId = null) {
     const kind = inferParamKind(param);
     const key = paramValueKey(param);
+    const defHint = perkId ? formatDefaultHint(perkId, param) : "";
     if (kind === "Boolean") {
+      const wrap = document.createElement("span");
+      wrap.style.display = "inline-flex";
+      wrap.style.alignItems = "center";
+      wrap.style.gap = "0.35rem";
       const sel = document.createElement("select");
-      sel.title = paramTypeHint(param);
+      sel.title = `${paramTypeHint(param)}${defHint ? ` · ${defHint}` : ""}`;
       sel.innerHTML = `<option value="True">True</option><option value="False">False</option>`;
       sel.value = param.BoolVal === "False" || param[key] === "False" ? "False" : "True";
       sel.onchange = () => {
@@ -459,7 +578,27 @@ function renderMercDetail(m, all) {
         sel.classList.remove("invalid");
         onChange();
       };
-      return sel;
+      wrap.appendChild(sel);
+      if (perkId && defaultHasParam(perkId, param.Name)) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = "↺";
+        btn.title = `Reset to default (${defaultParamDisplay(perkId, param.Name)})`;
+        btn.onclick = () => {
+          if (!resetParamToDefault(perkId, param)) return;
+          sel.value = param.BoolVal === "False" ? "False" : "True";
+          onChange();
+        };
+        wrap.appendChild(btn);
+      }
+      if (defHint) {
+        const hint = document.createElement("span");
+        hint.className = "muted";
+        hint.style.fontSize = "0.85em";
+        hint.textContent = defHint;
+        wrap.appendChild(hint);
+      }
+      return wrap;
     }
     const wrap = document.createElement("span");
     wrap.style.display = "inline-flex";
@@ -474,7 +613,7 @@ function renderMercDetail(m, all) {
     input.inputMode = kind === "Float" ? "decimal" : "numeric";
     input.style.width = "7rem";
     input.value = param[key] ?? "";
-    input.title = paramTypeHint(param);
+    input.title = `${paramTypeHint(param)}${defHint ? ` · ${defHint}` : ""}`;
     const err = document.createElement("span");
     err.className = "muted";
     err.style.color = "#c44";
@@ -496,8 +635,41 @@ function renderMercDetail(m, all) {
     input.onblur = sync;
     wrap.appendChild(badge);
     wrap.appendChild(input);
+    if (perkId && defaultHasParam(perkId, param.Name)) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = "↺";
+      btn.title = `Reset to default (${defaultParamDisplay(perkId, param.Name)})`;
+      btn.onclick = () => {
+        if (!resetParamToDefault(perkId, param)) return;
+        input.value = param[paramValueKey(param)] ?? "";
+        input.classList.remove("invalid");
+        err.textContent = "";
+        onChange();
+      };
+      wrap.appendChild(btn);
+    }
+    if (defHint) {
+      const hint = document.createElement("span");
+      hint.className = "muted";
+      hint.style.fontSize = "0.85em";
+      hint.textContent = defHint;
+      wrap.appendChild(hint);
+    }
     wrap.appendChild(err);
     return wrap;
+  }
+
+  function defaultHasParam(perkId, name) {
+    const t = perkDefaultTemplate(perkId);
+    if (!t) return false;
+    return [...(t.Parameters || []), ...(t.AIParameters || [])].some((x) => x.Name === name);
+  }
+
+  function defaultParamDisplay(perkId, name) {
+    const t = perkDefaultTemplate(perkId);
+    const p = [...(t?.Parameters || []), ...(t?.AIParameters || [])].find((x) => x.Name === name);
+    return p ? p.IntVal ?? p.FloatVal ?? p.BoolVal : "?";
   }
 
   function difficultyExpNote() {
@@ -522,13 +694,73 @@ function renderMercDetail(m, all) {
       for (const t of group.types) {
         for (const [id, perk] of collectPerkCatalogByType(state.data, t)) cat.set(id, perk);
       }
+      if (group.id === "Rank") {
+        for (const [id, meta] of getRankLibrary()) {
+          if (cat.has(id)) continue;
+          const tmpl = perkDefaultTemplate(id);
+          if (tmpl) cat.set(id, tmpl);
+          else {
+            cat.set(id, {
+              PerkId: id,
+              PerkType: "Rank",
+              Parameters: meta.Parameters || [],
+              AIParameters: [],
+              NextPerkId: meta.NextPerkId ?? {},
+              LevelUpActionType: meta.LevelUpActionType || "AnyKill",
+              CurrentExp: "0",
+              ExpPerAction: meta.ExpPerAction || "1",
+              MaxExp: meta.MaxExp || "0",
+            });
+          }
+        }
+      }
+      if (group.id === "Other") {
+        // Library + wiki roster so the dropdown is browsable by human names, not only save ids
+        for (const [id, tmpl] of getPerkDefaults()) {
+          if ((tmpl.PerkType === "Passive" || tmpl.PerkType === "Trigger") && !cat.has(id)) {
+            cat.set(id, perkDefaultTemplate(id));
+          }
+        }
+        for (const c of getMercClasses()) {
+          for (const wp of c.perks || []) {
+            if (!wp.internalName) continue;
+            const resolved = resolveClassPerkTemplate(wp.internalName, {
+              preference: "highest",
+              tierIds: wp.tierIds,
+              extraCatalog: cat,
+            });
+            const perkId = resolved?.perkId || wp.internalName;
+            if (cat.has(perkId)) continue;
+            if (resolved?.template) {
+              cat.set(perkId, resolved.template);
+            } else {
+              const type = /trigger/i.test(wp.mainClass || "") ? "Trigger" : "Passive";
+              cat.set(perkId, {
+                PerkId: perkId,
+                PerkType: type,
+                Parameters: [],
+                AIParameters: [],
+                NextPerkId: {},
+                LevelUpActionType: "None",
+                CurrentExp: "0",
+                ExpPerAction: "0",
+                MaxExp: "0",
+              });
+            }
+          }
+        }
+      }
     }
     const primaryLabel = isTalent ? "Set / replace" : isUltimate ? "Set / edit ultimate" : "Add";
     const wrap = el(`<div>
       <p class="doc">${group.help}${group.id === "Rank" || group.id === "Other" ? difficultyExpNote() : ""}</p>
       <div class="toolbar">
-        <input type="search" data-perkq placeholder="Filter by display name or perk id…" style="min-width:14rem" />
-        <select data-add></select>
+        <input type="search" data-perkq placeholder="${
+          group.id === "Other"
+            ? "Filter by name, effect, class, or perk id…"
+            : "Filter by display name or perk id…"
+        }" style="min-width:14rem" />
+        <select data-add style="${group.id === "Other" ? "min-width:28rem;max-width:min(52rem,100%)" : ""}"></select>
         <button type="button" class="ok" data-addbtn title="${
           isTalent
             ? "Replace all Talent perks on this merc with the selected one."
@@ -550,17 +782,44 @@ function renderMercDetail(m, all) {
 
     function fillPerkOptions(filter) {
       const prev = sel.value;
+      const isOther = group.id === "Other";
       const ids = [...cat.keys()].sort((a, b) => {
         if (isUltimate) return pactLabel(a).localeCompare(pactLabel(b)) || a.localeCompare(b);
+        if (group.id === "Rank") return rankLabel(a).localeCompare(rankLabel(b)) || a.localeCompare(b);
+        if (isOther) return classPerkDropdownLabel(a).localeCompare(classPerkDropdownLabel(b)) || a.localeCompare(b);
         return a.localeCompare(b);
       });
       sel.innerHTML = "";
       for (const id of ids) {
         const meta = isUltimate ? pactMeta(id) : null;
-        const label = isUltimate ? pactLabel(id) : id;
-        if (!matchesSearch(filter, id, label, meta?.displayName, meta?.wikiTitle, meta?.skullId)) continue;
+        const cp = !isUltimate && group.id !== "Rank" ? classPerkInfo(id) : null;
+        let label = id;
+        if (isUltimate) label = pactLabel(id);
+        else if (group.id === "Rank") label = rankLabel(id);
+        else if (isOther) label = classPerkDropdownLabel(id);
+        else if (cp) label = `${cp.wikiTitle} (${id})`;
+        const flavorBits = isOther ? classPerkSearchText(id) : [];
+        if (
+          !matchesSearch(
+            filter,
+            id,
+            label,
+            meta?.displayName,
+            meta?.wikiTitle,
+            meta?.skullId,
+            cp?.wikiTitle,
+            cp?.mainClass,
+            cp?.perkTrigger,
+            rankMeta(id)?.displayName,
+            ...flavorBits
+          )
+        ) {
+          continue;
+        }
         const opt = document.createElement("option");
         opt.value = id;
+        const tip = isOther ? classPerkSummary(id) : "";
+        if (tip) opt.title = tip;
         if (isUltimate) {
           opt.textContent = id === currentUltimateId ? `${label} (current)` : label;
         } else {
@@ -610,11 +869,18 @@ function renderMercDetail(m, all) {
     } else {
       for (const { p, i } of rows) {
         const meta = isUltimate ? pactMeta(p.PerkId) : null;
-        const classPerk = !isUltimate ? classPerkInfo(p.PerkId) : null;
-        const title = isUltimate ? pactLabel(p.PerkId) : classPerk ? `${classPerk.wikiTitle} (${p.PerkId})` : p.PerkId;
-        const wikiBlurb = meta?.effect || classPerkSummary(p.PerkId) || "";
+        const rMeta = group.id === "Rank" ? rankMeta(p.PerkId) : null;
+        const classPerk = !isUltimate && group.id !== "Rank" ? classPerkInfo(p.PerkId) : null;
+        let title = p.PerkId;
+        if (isUltimate) title = pactLabel(p.PerkId);
+        else if (rMeta) title = rankLabel(p.PerkId);
+        else if (classPerk) title = `${classPerk.wikiTitle} (${p.PerkId})`;
+        const wikiBlurb =
+          meta?.effect || rMeta?.wikiBonuses || classPerkSummary(p.PerkId) || "";
+        const hasDefaults = !!perkDefaultTemplate(p.PerkId);
         const card = el(`<div class="panel" style="margin:0.5rem 0">
           <div class="toolbar">
+            <span data-icon></span>
             <strong title="${wikiBlurb.replace(/"/g, "&quot;")}">${title}</strong>
             <span class="badge">${p.PerkType}</span>
             <button type="button" class="danger" data-del title="${
@@ -626,8 +892,27 @@ function renderMercDetail(m, all) {
           ${wikiBlurb ? `<p class="doc muted">${wikiBlurb}</p>` : ""}
           <div data-params></div>
         </div>`);
+        card.querySelector("[data-icon]").replaceWith(
+          iconEl(isUltimate ? meta?.skullId || `skull_${p.PerkId}` : p.PerkId, {
+            size: 28,
+            title,
+          })
+        );
         const toolbar = card.querySelector(".toolbar");
         const delBtn = card.querySelector("[data-del]");
+        if (hasDefaults) {
+          const btnReset = document.createElement("button");
+          btnReset.type = "button";
+          btnReset.textContent = "Reset params";
+          btnReset.title = "Restore Parameters / MaxExp / NextPerkId from the default template library.";
+          btnReset.onclick = () => {
+            if (!resetPerkToDefaults(p)) return;
+            markDirty();
+            setStatus(`Reset ${p.PerkId} parameters to defaults`);
+            renderMercs();
+          };
+          toolbar.insertBefore(btnReset, delBtn);
+        }
         if (perkHasExp(p)) {
           const expLabel = document.createElement("span");
           expLabel.className = "muted";
@@ -671,37 +956,56 @@ function renderMercDetail(m, all) {
           btnMaxRank.type = "button";
           btnMaxRank.className = "primary";
           btnMaxRank.textContent = p.PerkType === "Rank" ? "Max rank" : "Max tier";
-          btnMaxRank.title = `Promote along NextPerkId using templates from this save (e.g. ${p.PerkId} → … → highest available).`;
+          btnMaxRank.title =
+            p.PerkType === "Rank"
+              ? "Set to rank_5 (Commander) with full max-rank bonuses. Lower ranks remain selectable if you want them."
+              : `Promote along NextPerkId using templates from this save (e.g. ${p.PerkId} → … → highest available).`;
           btnMaxRank.onclick = () => {
             const next = promotePerkToMaxRank(m, i, state.data);
             if (!next) {
-              setStatus(`Cannot promote ${p.PerkId} — next tier not found in this save`);
+              setStatus(
+                p.PerkType === "Rank"
+                  ? `Cannot max rank — rank_5 template missing from library`
+                  : `Cannot promote ${p.PerkId} — next tier not found in this save`
+              );
               return;
             }
             markDirty();
-            setStatus(`Promoted ${p.PerkId} → ${next.PerkId}`);
+            setStatus(
+              p.PerkType === "Rank"
+                ? `Max rank: ${p.PerkId} → rank_5 (Commander)`
+                : `Promoted ${p.PerkId} → ${next.PerkId}`
+            );
             renderMercs();
           };
           toolbar.insertBefore(btnMaxRank, delBtn);
         }
         const paramsBox = card.querySelector("[data-params]");
         if (!(p.Parameters || []).length && !(p.AIParameters || []).length) {
-          paramsBox.innerHTML = `<p class="muted">No parameters on this copy yet — pick one that already exists in the save (or edit after the game writes them).</p>`;
+          paramsBox.innerHTML = hasDefaults
+            ? `<p class="muted">No parameters on this copy — use <strong>Reset params</strong> to load defaults, or pick a copy from the save.</p>`
+            : `<p class="muted">No parameters on this copy yet — pick one that already exists in the save (or edit after the game writes them).</p>`;
         } else {
           const table = el(`<table class="data"><thead><tr><th>Parameter</th><th>Type</th><th>Value</th></tr></thead><tbody></tbody></table>`);
           const tb = table.querySelector("tbody");
           for (const param of p.Parameters || []) {
             const tr = document.createElement("tr");
             const kind = inferParamKind(param);
-            tr.innerHTML = `<td><code title="${paramTypeHint(param).replace(/"/g, "&quot;")}">${param.Name}</code></td><td>${kind}</td><td></td>`;
-            tr.lastChild.appendChild(paramEditor(param, markDirty));
+            const label = paramLabel(param.Name);
+            tr.innerHTML = `<td><code title="${paramTypeHint(param).replace(/"/g, "&quot;")}">${param.Name}</code>${
+              label && label !== param.Name ? `<div class="muted" style="font-size:0.85em">${label}</div>` : ""
+            }</td><td>${kind}</td><td></td>`;
+            tr.lastChild.appendChild(paramEditor(param, markDirty, p.PerkId));
             tb.appendChild(tr);
           }
           for (const param of p.AIParameters || []) {
             const tr = document.createElement("tr");
             const kind = inferParamKind(param);
-            tr.innerHTML = `<td><code title="${paramTypeHint(param).replace(/"/g, "&quot;")}">${param.Name}</code> <span class="badge">AI</span></td><td>${kind}</td><td></td>`;
-            tr.lastChild.appendChild(paramEditor(param, markDirty));
+            const label = paramLabel(param.Name);
+            tr.innerHTML = `<td><code title="${paramTypeHint(param).replace(/"/g, "&quot;")}">${param.Name}</code> <span class="badge">AI</span>${
+              label && label !== param.Name ? `<div class="muted" style="font-size:0.85em">${label}</div>` : ""
+            }</td><td>${kind}</td><td></td>`;
+            tr.lastChild.appendChild(paramEditor(param, markDirty, p.PerkId));
             tb.appendChild(tr);
           }
           paramsBox.appendChild(table);
@@ -756,7 +1060,7 @@ function renderMercDetail(m, all) {
         ? inv
             .map(
               (r, i) => `<tr>
-        <td>${r.slot}</td><td>${r.name}</td><td><code>${r.id}</code></td>
+        <td>${r.slot}</td><td>${iconHtml(r.id, 22)} ${r.name}</td><td><code>${r.id}</code></td>
         <td>${
           r.stackable || r.editable
             ? `<input type="number" data-qty="${i}" value="${r.stack || 1}" min="1" style="width:5rem" title="StackCount / Count. May exceed Max."/>`
@@ -952,7 +1256,7 @@ function renderCargo() {
         const sel = state.cargoSelected.has(key) ? "selected" : "";
         return `<tr class="${sel}" data-key="${key}">
           <td><input type="checkbox" data-key="${key}" ${state.cargoSelected.has(key) ? "checked" : ""}/></td>
-          <td>${r.storeKey}</td><td>${r.name}${r.quest ? ' <span class="badge warn">quest</span>' : ""}</td>
+          <td>${r.storeKey}</td><td>${iconHtml(r.id, 22)} ${r.name}${r.quest ? ' <span class="badge warn">quest</span>' : ""}</td>
           <td><code>${r.id}</code></td><td>${r.stack}</td><td>${r.count ?? "—"}/${r.max ?? "—"}</td><td>${r.pos || ""}</td></tr>`;
       })
       .join("")}
@@ -1116,7 +1420,7 @@ function renderCargo() {
     for (const x of items) {
       const b = document.createElement("button");
       b.type = "button";
-      b.textContent = `${x.name}  (${x.id})`;
+      b.replaceChildren(iconEl(x.id, { size: 22, title: x.name }), document.createTextNode(` ${x.name}  (${x.id})`));
       if (x.id === state.spawnSelectedId) b.classList.add("active");
       b.onclick = () => {
         state.spawnSelectedId = x.id;
@@ -1382,6 +1686,8 @@ function renderClassMods(panel, list) {
 
 function renderUnlocks() {
   const lists = getUnlockLists(state.data);
+  const purchased = new Set(getPurchasedPerks(state.data));
+  const modules = [...new Set(filterTechs().map((t) => t.module).filter(Boolean))].sort();
   main.innerHTML = "";
   const panel = el(`<div class="panel">
     <h2>Unlocks</h2>
@@ -1389,6 +1695,17 @@ function renderUnlocks() {
       <button type="button" id="btnRestore" class="primary">Restore full unlocks (slot-2 baseline)</button>
     </div>
     <div class="grid-2" id="unlockGrid"></div>
+    <h3>Technology trees</h3>
+    <p class="doc">These are Magnum ship upgrades in <code>_purchasedPerks</code> (not equipment MagnumProjects). Names/effects from the wiki tech trees. Icons hotlink the wiki.</p>
+    <div class="toolbar">
+      <input type="search" id="techQ" placeholder="Filter techs…" style="min-width:14rem" />
+      <select id="techModule"><option value="">All modules</option>${modules
+        .map((m) => `<option value="${m}">${m}</option>`)
+        .join("")}</select>
+      <button type="button" id="btnUnlockFiltered" class="ok">Unlock filtered</button>
+      <button type="button" id="btnUnlockAllTech" class="primary">Unlock all wiki techs</button>
+    </div>
+    <div class="scroll-table" id="techTable" style="max-height:28rem"></div>
   </div>`);
   main.appendChild(panel);
   panel.querySelector("#btnRestore").onclick = () => {
@@ -1408,6 +1725,61 @@ function renderUnlocks() {
       <pre class="json-mini">${arr.slice(0, 80).join("\n")}${arr.length > 80 ? "\n…" : ""}</pre></div>`);
     grid.appendChild(card);
   }
+
+  const techTable = panel.querySelector("#techTable");
+  function paintTechs() {
+    const q = panel.querySelector("#techQ").value;
+    const mod = panel.querySelector("#techModule").value;
+    const rows = filterTechs(q, mod);
+    techTable.innerHTML = `<table class="data"><thead><tr>
+      <th></th><th>Owned</th><th>Name</th><th>Module</th><th>Id</th><th>Effect</th>
+    </tr></thead><tbody>
+    ${rows
+      .map((t) => {
+        const owned = purchased.has(t.internalName);
+        return `<tr>
+          <td>${iconHtml(t.internalName, 22)}</td>
+          <td><input type="checkbox" data-tech="${t.internalName}" ${owned ? "checked" : ""}/></td>
+          <td title="${(techSummary(t.internalName) || "").replace(/"/g, "&quot;")}">${t.wikiTitle}</td>
+          <td>${t.module || t.department || ""}</td>
+          <td><code>${t.internalName}</code></td>
+          <td class="muted">${(t.effect || "").slice(0, 120)}</td>
+        </tr>`;
+      })
+      .join("")}
+    </tbody></table>`;
+    techTable.querySelectorAll("[data-tech]").forEach((chk) => {
+      chk.onchange = () => {
+        const id = chk.dataset.tech;
+        if (chk.checked) addPurchasedPerk(state.data, id);
+        else removePurchasedPerk(state.data, id);
+        purchased.clear();
+        for (const x of getPurchasedPerks(state.data)) purchased.add(x);
+        markDirty();
+      };
+    });
+  }
+  paintTechs();
+  panel.querySelector("#techQ").oninput = paintTechs;
+  panel.querySelector("#techModule").onchange = paintTechs;
+  panel.querySelector("#btnUnlockFiltered").onclick = () => {
+    const q = panel.querySelector("#techQ").value;
+    const mod = panel.querySelector("#techModule").value;
+    let n = 0;
+    for (const t of filterTechs(q, mod)) {
+      if (addPurchasedPerk(state.data, t.internalName)) n++;
+    }
+    markDirty();
+    setStatus(`Unlocked ${n} tech(s)`);
+    renderUnlocks();
+  };
+  panel.querySelector("#btnUnlockAllTech").onclick = () => {
+    if (!confirm(`Add all ${filterTechs().length} wiki techs to _purchasedPerks?`)) return;
+    const n = unlockAllTechs(state.data);
+    markDirty();
+    setStatus(`Unlocked ${n} new tech(s)`);
+    renderUnlocks();
+  };
 }
 
 function renderFactions() {

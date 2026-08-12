@@ -109,9 +109,13 @@ Floor/mob entities are **not** in session files; only `RaidMetadata` exists for 
 - `data/talentLibrary.json` — clean templates for all 15 talents
 - `data/pactLibrary.json` — complete 1.0+ pact ultimates (skull ↔ perk id, display names, wiki effects)
 - `data/wiki-scrape-progress.json` — resumable wiki scrape checkpoint (list diffs + per-page status)
-- `data/mercClasses.json` — mercenary class roster from [Mercenary Classes](https://quasimorph.wiki.gg/wiki/Mercenary_Classes)
+- `data/mercClasses.json` — mercenary class roster from [Mercenary Classes](https://quasimorph.wiki.gg/wiki/Mercenary_Classes) (`MercClassId`, blurbs, perk tier ids)
 - `data/classPerkLibrary.json` — per-perk wiki pages (InternalName, trigger, ExpNeed, tier effects, cooldown) via `npm run scrape:classes`
+- `data/rankLibrary.json` — Rookie→Commander (`rank_0`…`rank_5`) labels + Parameter defaults
+- `data/perkDefaults.json` — Parameter / MaxExp / NextPerkId snapshots for Reset in the perk editor
 - `data/class-perk-scrape-progress.json` — resumable checkpoint for perk page scrapes
+- `data/iconMap.json` + `data/icons/` — local item/perk icons (wiki CDN blocks browser hotlinking). Build with `npm run scrape:icons` (resumable). Editor only loads known local paths — one request per id, no wiki spam.
+- `data/techLibrary.json` — Magnum tech-tree upgrades (`_purchasedPerks`) via `npm run scrape:tech`
 - `data/unlockBaseline.json` — full unlock snapshot from a late-game save
 
 Rebuild pacts from the wiki (current **1.0+** List of Pacts only):
@@ -119,6 +123,8 @@ Rebuild pacts from the wiki (current **1.0+** List of Pacts only):
 2. `npm run build:pacts` — writes only **complete** current entries to `data/pactLibrary.json`
 
 Class + perk pages: `npm run scrape:classes` (resumable; opens each perk like [Berserkgang](https://quasimorph.wiki.gg/wiki/Berserkgang) for InternalName / effects / exp needs)
+
+After opening local `slot_*_session.dat` files: `npm run build:perk-meta` refreshes rank/class defaults from those saves.
 
 Helpers: `npm run scrape:pacts:status`, `npm run scrape:pacts:retry`
 
@@ -128,6 +134,7 @@ On save load, any non-quest item ids present in inventories/cargo but missing fr
 
 ## Not in scope (yet)
 
+- Full Magnum **equipment project** editor for researched weapons/armor (DevelopId list, AppliedModifications, CachedItems) — instant-finish/delete exist today; richer edit later
 - Full equipment project mods UI
 - Stations / missions / shippings editors
 - Dungeon floor entities (not stored in session saves)

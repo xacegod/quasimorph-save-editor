@@ -1,7 +1,7 @@
 {
   "source": "https://quasimorph.wiki.gg/wiki/Mercenary_Classes",
   "scrapedAt": "2026-08-12T10:38:57.363Z",
-  "note": "classIdGuess matches MercClassId. Perks enriched from individual wiki pages when available.",
+  "note": "classIdGuess matches MercClassId in saves. description from wiki. perks[].tierIds from local saves when available.",
   "classes": [
     {
       "wikiTitle": "Scouts of Hades",
@@ -30,6 +30,10 @@
             "2": "11",
             "3": "10",
             "4": "9"
+          },
+          "tierIds": {
+            "legend": "assault_reflex_legend",
+            "master": "assault_reflex_master"
           }
         },
         {
@@ -53,6 +57,11 @@
           },
           "cooldown": {
             "1": "9"
+          },
+          "tierIds": {
+            "basic": "blind_fury_basic",
+            "master": "blind_fury_master",
+            "legend": "blind_fury_legend"
           }
         },
         {
@@ -76,6 +85,9 @@
           },
           "cooldown": {
             "1": ""
+          },
+          "tierIds": {
+            "legend": "cqc_specialist_legend"
           }
         },
         {
@@ -100,6 +112,9 @@
             "2": "4",
             "3": "3",
             "4": "2"
+          },
+          "tierIds": {
+            "legend": "fire_transfer_legend"
           }
         },
         {
@@ -123,6 +138,10 @@
           },
           "cooldown": {
             "1": ""
+          },
+          "tierIds": {
+            "basic": "gear_maintenance_basic",
+            "legend": "gear_maintenance_legend"
           }
         },
         {
@@ -144,9 +163,16 @@
           },
           "cooldown": {
             "1": ""
+          },
+          "tierIds": {
+            "advanced": "military_training_advanced",
+            "master": "military_training_master",
+            "legend": "military_training_legend",
+            "basic": "military_training_basic"
           }
         }
-      ]
+      ],
+      "description": "A contractor put through the Scouts of Hades pipeline. False trails, mapping stations' soft spots, selling infiltration routes and services to both sides of the same shooting war. To them, people are just mobile assets with opinions."
     },
     {
       "wikiTitle": "Eclipse Blades",
@@ -174,6 +200,10 @@
           },
           "cooldown": {
             "1": ""
+          },
+          "tierIds": {
+            "master": "athletics_master",
+            "legend": "athletics_legend"
           }
         },
         {
@@ -221,6 +251,9 @@
           },
           "cooldown": {
             "1": "15"
+          },
+          "tierIds": {
+            "master": "cannibalism_master"
           }
         },
         {
@@ -244,6 +277,10 @@
           },
           "cooldown": {
             "1": "20"
+          },
+          "tierIds": {
+            "legend": "carnage_legend",
+            "master": "carnage_master"
           }
         },
         {
@@ -267,6 +304,10 @@
           },
           "cooldown": {
             "1": ""
+          },
+          "tierIds": {
+            "legend": "reaction_training_legend",
+            "master": "reaction_training_master"
           }
         },
         {
@@ -290,13 +331,17 @@
           },
           "cooldown": {
             "1": ""
+          },
+          "tierIds": {
+            "legend": "cold_weapon_wielding_legend"
           }
         }
-      ]
+      ],
+      "description": "The Eclipse Blades program is built for taking station chokepoints. First the lights and comms die. Then the door pops. Then the contract becomes enforceable."
     },
     {
       "wikiTitle": "Tifton's Elite",
-      "classIdGuess": "tiftons_elite",
+      "classIdGuess": "tifton_elite",
       "section": "unlockable",
       "perks": [
         {
@@ -318,7 +363,10 @@
             "3": "Explosion damage +45%",
             "4": "Explosion damage +55%"
           },
-          "cooldown": {}
+          "cooldown": {},
+          "tierIds": {
+            "advanced": "grenadier_advanced"
+          }
         },
         {
           "wikiTitle": "Heavy Weapons",
@@ -341,6 +389,9 @@
           },
           "cooldown": {
             "1": ""
+          },
+          "tierIds": {
+            "advanced": "heavy_weaponary_advanced"
           }
         },
         {
@@ -365,6 +416,9 @@
             "2": "20",
             "3": "15",
             "4": "10"
+          },
+          "tierIds": {
+            "master": "selfhealing_master"
           }
         },
         {
@@ -388,6 +442,9 @@
           },
           "cooldown": {
             "1": "15"
+          },
+          "tierIds": {
+            "master": "shock_awe_master"
           }
         },
         {
@@ -412,6 +469,10 @@
             "2": "10",
             "3": "8",
             "4": "6"
+          },
+          "tierIds": {
+            "master": "spray_and_pray_master",
+            "advanced": "spray_and_pray_advanced"
           }
         },
         {
@@ -433,9 +494,14 @@
             "3": "Deployable damage +35% / Deployable's health 35 / Placement Range +2",
             "4": "Deployable damage +40% / Deployable's health 40 / Placement Range +2"
           },
-          "cooldown": {}
+          "cooldown": {},
+          "tierIds": {
+            "legend": "stationary_defense_legend",
+            "advanced": "stationary_defense_advanced"
+          }
         }
-      ]
+      ],
+      "description": "An operator forged on the Tifton Proving Grounds (Earth, the south of old Georgia), where the ground has gone glassy from constant heavy-weapon trials."
     },
     {
       "wikiTitle": "Tunnel Rats",
@@ -575,7 +641,8 @@
             "1": ""
           }
         }
-      ]
+      ],
+      "description": "Tunnel Rat conditioning makes graduates instinctively track along service runs and vent trunks. That same instinct drives them to pull maximum salvage with minimum contact: stay in the ducts, stay off the feed, get paid."
     },
     {
       "wikiTitle": "Phoenix Brigade",
@@ -606,6 +673,9 @@
             "2": "6",
             "3": "5",
             "4": "4"
+          },
+          "tierIds": {
+            "master": "cauterize_master"
           }
         },
         {
@@ -627,6 +697,9 @@
           },
           "cooldown": {
             "1": "30"
+          },
+          "tierIds": {
+            "advanced": "battle_physicist_advanced"
           }
         },
         {
@@ -650,6 +723,9 @@
           },
           "cooldown": {
             "1": "12"
+          },
+          "tierIds": {
+            "advanced": "revealing_flame_advanced"
           }
         },
         {
@@ -673,6 +749,9 @@
           },
           "cooldown": {
             "1": ""
+          },
+          "tierIds": {
+            "advanced": "reinforced_battery_advanced"
           }
         },
         {
@@ -717,9 +796,13 @@
           },
           "cooldown": {
             "1": ""
+          },
+          "tierIds": {
+            "advanced": "shielding_advanced"
           }
         }
-      ]
+      ],
+      "description": "A Phoenix Brigade operator is tech-literate and can field-assemble robots in the dirt. They don't \"win\" fights. They scale production until resistance stops making financial sense."
     },
     {
       "wikiTitle": "Spaceborn Ghosts",
@@ -743,7 +826,11 @@
             "3": "Pistol accuracy +25% / Pistol Range +2",
             "4": "Pistol accuracy +30% / Pistol Range +2"
           },
-          "cooldown": {}
+          "cooldown": {},
+          "tierIds": {
+            "legend": "agent_training_legend",
+            "advanced": "agent_training_advanced"
+          }
         },
         {
           "wikiTitle": "Assault Reflex",
@@ -767,6 +854,10 @@
             "2": "11",
             "3": "10",
             "4": "9"
+          },
+          "tierIds": {
+            "legend": "assault_reflex_legend",
+            "master": "assault_reflex_master"
           }
         },
         {
@@ -786,7 +877,11 @@
             "3": "Equipment weight -45%",
             "4": "Equipment weight -55%"
           },
-          "cooldown": {}
+          "cooldown": {},
+          "tierIds": {
+            "legend": "lightweight_gear_legend",
+            "advanced": "lightweight_gear_advanced"
+          }
         },
         {
           "wikiTitle": "Muffled",
@@ -805,7 +900,11 @@
             "3": "No Sound Chance 70%",
             "4": "No Sound Chance 80%"
           },
-          "cooldown": {}
+          "cooldown": {},
+          "tierIds": {
+            "legend": "muffled_legend",
+            "advanced": "muffled_advanced"
+          }
         },
         {
           "wikiTitle": "Sneaky Shot",
@@ -829,6 +928,10 @@
             "2": "16",
             "3": "14",
             "4": "12"
+          },
+          "tierIds": {
+            "basic": "cheap_shot_basic",
+            "advanced": "cheap_shot_advanced"
           }
         },
         {
@@ -850,9 +953,14 @@
           },
           "cooldown": {
             "1": "10"
+          },
+          "tierIds": {
+            "legend": "war_crime_legend",
+            "master": "war_crime_master"
           }
         }
-      ]
+      ],
+      "description": "An infiltrator trained under the Spaceborn Ghosts schema prefers to work far from their own base. The contract goes to the one who's already on the area, already close to the asset."
     },
     {
       "wikiTitle": "Angels of Spades",
@@ -985,7 +1093,8 @@
           },
           "cooldown": {}
         }
-      ]
+      ],
+      "description": "The Angels of Spades pipeline produces what the System calls a \"staff sniper\". The black market calls them the \"Lee Harvey Brigade\"."
     },
     {
       "wikiTitle": "Terror Pack",
@@ -1014,6 +1123,9 @@
             "2": "6",
             "3": "5",
             "4": "4"
+          },
+          "tierIds": {
+            "basic": "axe_rage_basic"
           }
         },
         {
@@ -1056,6 +1168,11 @@
           },
           "cooldown": {
             "1": ""
+          },
+          "tierIds": {
+            "legend": "insanity_legend",
+            "master": "insanity_master",
+            "basic": "insanity_basic"
           }
         },
         {
@@ -1101,6 +1218,11 @@
           },
           "cooldown": {
             "1": ""
+          },
+          "tierIds": {
+            "legend": "possession_legend",
+            "basic": "possession_basic",
+            "master": "possession_master"
           }
         },
         {
@@ -1127,7 +1249,8 @@
             "4": "12"
           }
         }
-      ]
+      ],
+      "description": "No one knows what conditions birthed the Terror Pack training package. Their operators run well past the guardrails - far beyond any \"safe settings\"."
     },
     {
       "wikiTitle": "Valkyrie Squad",
@@ -1245,6 +1368,9 @@
             "2": "20",
             "3": "15",
             "4": "10"
+          },
+          "tierIds": {
+            "master": "selfhealing_master"
           }
         },
         {
@@ -1268,7 +1394,8 @@
             "1": ""
           }
         }
-      ]
+      ],
+      "description": "A Valkyrie Squad medic-operator does everything to keep the executor in one piece., minimizing damage to the body during the job. Rumor has it the pipeline was commissioned by Daydream Chems' insurance arm."
     },
     {
       "wikiTitle": "Martian Mech Inf",
@@ -1313,7 +1440,8 @@
           },
           "cooldown": {}
         }
-      ]
+      ],
+      "description": "Martian Mech Inf training is built on an outdated framework from one of RealWare’s security services. These operators hate the constraints and weakness of their own flesh, and they keep trying to outgrow it."
     },
     {
       "wikiTitle": "Tongkong",
@@ -1426,9 +1554,14 @@
           },
           "cooldown": {
             "1": ""
+          },
+          "tierIds": {
+            "legend": "pyromaniac_legend",
+            "basic": "pyromaniac_basic"
           }
         }
-      ]
+      ],
+      "description": "A training program that deliberately walked away from \"the system.\" Personality-mod modules, licensed habits, tactical gimmicks — everything is stitched into a bespoke SOF profile, built to order."
     },
     {
       "wikiTitle": "Co.B.R.A.",
@@ -1456,6 +1589,9 @@
           },
           "cooldown": {
             "1": ""
+          },
+          "tierIds": {
+            "basic": "bodybuilding_basic"
           }
         },
         {
@@ -1477,21 +1613,28 @@
             "3": "Throw Crit. Chance +50%",
             "4": "Throw Crit. Chance +60%"
           },
-          "cooldown": {}
+          "cooldown": {},
+          "tierIds": {
+            "basic": "tomahawk_basic"
+          }
         }
-      ]
+      ],
+      "description": "The Contact Brigade for Repossession of Assets is tuned for one thing: minimal harm to the asset, maximum harm to the personnel guarding it."
     },
     {
       "wikiTitle": "Unit 317",
       "classIdGuess": "unit_317",
       "section": "unlockable",
-      "perks": []
+      "perks": [],
+      "description": "An operator who's been through Unit 317 stops having a feel for what you \"can't\" do under NCE regs. In the end, the urge to run nonconventional tactical protocols outweighs even the self-preservation module."
     },
     {
       "wikiTitle": "Golem Group",
       "classIdGuess": "golem_group",
       "section": "unlockable",
-      "perks": []
+      "perks": [],
+      "description": "A Golem Group operator can throw up an automated fire line fast, keeping hands-on work for absolute last resort."
     }
-  ]
+  ],
+  "metaBuiltAt": "2026-08-12T10:46:29.308Z"
 }

@@ -117,7 +117,7 @@ export const COPY_SECTIONS = [
   { id: "pactUltimate", label: "Pact / ultimate", help: "Ultimate perk + HasUltimate + skull. Prefer absorb/remove via items in-game for full pact flow." },
   { id: "talents", label: "Talents (traits)", help: "PerkType Talent entries (character-tied; game normally allows one, stacking works in practice)." },
   { id: "otherPerks", label: "Passives / triggers", help: "Passive and Trigger perks (class or character). Best place to experiment with custom parameter mixes." },
-  { id: "stats", label: "Stats", help: "Numeric combat stats and ignore flags. Does not copy name or class id." },
+  { id: "stats", label: "Stats", help: "Numeric combat stats and ignore flags. Does not copy name or class id — change class with Apply class on the merc." },
 ];
 
 export const PERK_GROUPS = [
@@ -125,7 +125,7 @@ export const PERK_GROUPS = [
     id: "Rank",
     title: "Class ranks",
     types: ["Rank"],
-    help: "PerkType <code>Rank</code> — tied to the mercenary <strong>class</strong> (Magnum class project), not the character talent slot. Typically up to legend (~6 ranks). Use <strong>Max exp</strong> to fill CurrentExp, or <strong>Max rank</strong> to jump to the highest <code>NextPerkId</code> tier found in this save. Difficulty <code>ExpMult</code> affects how much MaxExp is needed to level.",
+    help: "PerkType <code>Rank</code> — mercenary hierarchy (<code>rank_0</code> Rookie … <code>rank_5</code> Commander). Lower ranks exist; <strong>Max rank</strong> always applies <code>rank_5</code> with the full Commander bonuses (does not require intermediate ranks in the save). You can still Set a specific lower rank from the list.",
   },
   {
     id: "Ultimate",

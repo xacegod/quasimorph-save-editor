@@ -1,0 +1,5 @@
+slot_*_session.dat
+.cursor/
+data/icon-scrape-progress.json
+data/icon-url-progress.json
+data/iconMap.wiki-urls.json

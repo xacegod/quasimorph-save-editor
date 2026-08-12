@@ -1,0 +1,174 @@
+{
+  "source": "https://quasimorph.wiki.gg/wiki/Rank + local save templates",
+  "builtAt": "2026-08-12T10:46:28.528Z",
+  "note": "Display names from wiki. Parameter defaults from local saves when present (preferred over wiki text).",
+  "ranks": [
+    {
+      "PerkId": "rank_0",
+      "displayName": "Rookie",
+      "wikiBonuses": "none",
+      "NextPerkId": "rank_1",
+      "LevelUpActionType": "2300",
+      "MaxExp": "35",
+      "ExpPerAction": "1",
+      "Parameters": [],
+      "AIParameters": [],
+      "defaultsFrom": "save",
+      "source": "https://quasimorph.wiki.gg/wiki/Rank"
+    },
+    {
+      "PerkId": "rank_1",
+      "displayName": "Squaddie",
+      "wikiBonuses": "Health +10, Starvation limit +150 (wiki; live Parameters may differ)",
+      "NextPerkId": "rank_2",
+      "LevelUpActionType": "AnyKill",
+      "MaxExp": "7",
+      "ExpPerAction": "1",
+      "Parameters": [
+        {
+          "Name": "IMaxHealth",
+          "ValType": "Int",
+          "IntVal": "15"
+        },
+        {
+          "Name": "FFixateAddedChance",
+          "ValType": "Float",
+          "FloatVal": "0.1"
+        }
+      ],
+      "AIParameters": [],
+      "defaultsFrom": "save",
+      "source": "https://quasimorph.wiki.gg/wiki/Rank"
+    },
+    {
+      "PerkId": "rank_2",
+      "displayName": "Sergeant",
+      "wikiBonuses": "Health +10, Starvation limit +250, Heal wound +10% (wiki; live Parameters may differ)",
+      "NextPerkId": "rank_3",
+      "LevelUpActionType": "AnyKill",
+      "MaxExp": null,
+      "ExpPerAction": null,
+      "Parameters": [],
+      "AIParameters": [],
+      "defaultsFrom": "wiki-only",
+      "source": "https://quasimorph.wiki.gg/wiki/Rank"
+    },
+    {
+      "PerkId": "rank_3",
+      "displayName": "Captain",
+      "wikiBonuses": "Health +10, Starvation limit +250, Heal wound +10%, Dodge +5%, Pain threshold +2 (wiki; live Parameters may differ)",
+      "NextPerkId": "rank_4",
+      "LevelUpActionType": "AnyKill",
+      "MaxExp": "28",
+      "ExpPerAction": "1",
+      "Parameters": [
+        {
+          "Name": "IMaxHealth",
+          "ValType": "Int",
+          "IntVal": "25"
+        },
+        {
+          "Name": "FFixateAddedChance",
+          "ValType": "Float",
+          "FloatVal": "0.2"
+        },
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-2"
+        },
+        {
+          "Name": "IPainRegen",
+          "ValType": "Int",
+          "IntVal": "1"
+        }
+      ],
+      "AIParameters": [],
+      "defaultsFrom": "save",
+      "source": "https://quasimorph.wiki.gg/wiki/Rank"
+    },
+    {
+      "PerkId": "rank_4",
+      "displayName": "Colonel",
+      "wikiBonuses": "Health +10, Starvation limit +250, Heal wound +10%, Dodge +5%, Pain threshold +4, Receive wound chance -10% (wiki; live Parameters may differ)",
+      "NextPerkId": "rank_5",
+      "LevelUpActionType": "AnyKill",
+      "MaxExp": "37",
+      "ExpPerAction": "1",
+      "Parameters": [
+        {
+          "Name": "IMaxHealth",
+          "ValType": "Int",
+          "IntVal": "30"
+        },
+        {
+          "Name": "FFixateAddedChance",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        },
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-3"
+        },
+        {
+          "Name": "IPainRegen",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "FWoundChance",
+          "ValType": "Float",
+          "FloatVal": "-0.1"
+        }
+      ],
+      "AIParameters": [],
+      "defaultsFrom": "save",
+      "source": "https://quasimorph.wiki.gg/wiki/Rank"
+    },
+    {
+      "PerkId": "rank_5",
+      "displayName": "Commander",
+      "wikiBonuses": "Max mercenary rank (Commander). Full bonuses at this tier: prior rank stats + negate one lethal hit (BSecondChance). Max rank jumps here from any lower rank_*.",
+      "NextPerkId": {},
+      "LevelUpActionType": "AnyKill",
+      "MaxExp": "0",
+      "ExpPerAction": "0",
+      "Parameters": [
+        {
+          "Name": "IMaxHealth",
+          "ValType": "Int",
+          "IntVal": "30"
+        },
+        {
+          "Name": "FFixateAddedChance",
+          "ValType": "Float",
+          "FloatVal": "0.25"
+        },
+        {
+          "Name": "IStarvStanceBonus",
+          "ValType": "Int",
+          "IntVal": "-3"
+        },
+        {
+          "Name": "IPainRegen",
+          "ValType": "Int",
+          "IntVal": "2"
+        },
+        {
+          "Name": "FWoundChance",
+          "ValType": "Float",
+          "FloatVal": "-0.1"
+        },
+        {
+          "Name": "BSecondChance",
+          "ValType": "Boolean",
+          "BoolVal": "True"
+        }
+      ],
+      "AIParameters": [],
+      "defaultsFrom": "save",
+      "source": "https://quasimorph.wiki.gg/wiki/Rank"
+    }
+  ]
+}

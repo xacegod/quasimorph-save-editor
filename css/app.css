@@ -269,3 +269,24 @@ pre.json-mini, pre.raw {
 .catalog-list button.active { background: #1f4a72; }
 .catalog-meta { font-size: 0.8rem; color: var(--muted); margin: 0.25rem 0 0.4rem; }
 .size-group { font-size: 0.8rem; color: var(--accent2); margin: 0.6rem 0 0.2rem; }
+
+img.icon {
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+  image-rendering: pixelated;
+  background: #0c1016;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+img.icon.missing,
+span.icon.missing {
+  display: inline-block;
+  vertical-align: middle;
+  background: transparent;
+}
+.catalog-list button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}

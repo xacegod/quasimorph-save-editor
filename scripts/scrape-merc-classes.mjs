@@ -35,7 +35,7 @@ const CLASS_ID_OVERRIDES = {
   "Angels of Spades": "angels_of_spades",
   "Scouts of Hades": "scouts_of_hades",
   "Eclipse Blades": "eclipse_blades",
-  "Tifton's Elite": "tiftons_elite",
+  "Tifton's Elite": "tifton_elite",
   "Tunnel Rats": "tunnel_rats",
   "Phoenix Brigade": "phoenix_brigade",
   "Spaceborn Ghosts": "spaceborn_ghosts",

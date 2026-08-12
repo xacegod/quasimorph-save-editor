@@ -8,6 +8,10 @@
     "scrape:pacts:status": "node scripts/scrape-wiki-pacts.mjs --status",
     "scrape:pacts:retry": "node scripts/scrape-wiki-pacts.mjs --retry-errors",
     "build:pacts": "node scripts/build-pact-library.mjs",
-    "scrape:classes": "node scripts/scrape-merc-classes.mjs"
+    "scrape:classes": "node scripts/scrape-merc-classes.mjs",
+    "build:perk-meta": "node scripts/build-perk-meta.mjs",
+    "scrape:icons": "node scripts/scrape-wiki-icons.mjs",
+    "scrape:icons:status": "node scripts/scrape-wiki-icons.mjs --status",
+    "scrape:tech": "node scripts/scrape-tech-tree.mjs"
   }
 }
