@@ -4,6 +4,8 @@
   "type": "module",
   "scripts": {
     "start": "npx --yes serve -p 5173",
+    "scrape:all": "node scripts/scrape-all.mjs",
+    "scrape:all:fast": "node scripts/scrape-all.mjs --skip-icons --skip-pacts",
     "scrape:pacts": "node scripts/scrape-wiki-pacts.mjs",
     "scrape:pacts:status": "node scripts/scrape-wiki-pacts.mjs --status",
     "scrape:pacts:retry": "node scripts/scrape-wiki-pacts.mjs --retry-errors",
@@ -12,6 +14,7 @@
     "build:perk-meta": "node scripts/build-perk-meta.mjs",
     "scrape:icons": "node scripts/scrape-wiki-icons.mjs",
     "scrape:icons:status": "node scripts/scrape-wiki-icons.mjs --status",
-    "scrape:tech": "node scripts/scrape-tech-tree.mjs"
+    "scrape:tech": "node scripts/scrape-tech-tree.mjs",
+    "build:equip-projects": "node scripts/build-equip-project-library.mjs"
   }
 }

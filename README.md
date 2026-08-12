@@ -116,7 +116,14 @@ Floor/mob entities are **not** in session files; only `RaidMetadata` exists for 
 - `data/class-perk-scrape-progress.json` — resumable checkpoint for perk page scrapes
 - `data/iconMap.json` + `data/icons/` — local item/perk icons (wiki CDN blocks browser hotlinking). Build with `npm run scrape:icons` (resumable). Editor only loads known local paths — one request per id, no wiki spam.
 - `data/techLibrary.json` — Magnum tech-tree upgrades (`_purchasedPerks`) via `npm run scrape:tech`
+- `data/equipProjectLibrary.json` — equipment Magnum project templates from local saves (`npm run build:equip-projects`)
 - `data/unlockBaseline.json` — full unlock snapshot from a late-game save
+
+Maintenance (all scrapers + builds):
+```bash
+npm run scrape:all          # pacts, classes, tech, icons, perk-meta, equip projects
+npm run scrape:all:fast     # skip icons + pacts (quicker refresh)
+```
 
 Rebuild pacts from the wiki (current **1.0+** List of Pacts only):
 1. `npm run scrape:pacts` — re-reads the live list each run, reports **added/removed** pacts, scrapes new links; ignores pre-1.0 sections
@@ -134,8 +141,6 @@ On save load, any non-quest item ids present in inventories/cargo but missing fr
 
 ## Not in scope (yet)
 
-- Full Magnum **equipment project** editor for researched weapons/armor (DevelopId list, AppliedModifications, CachedItems) — instant-finish/delete exist today; richer edit later
-- Full equipment project mods UI
 - Stations / missions / shippings editors
 - Dungeon floor entities (not stored in session saves)
 - Full in-editor “absorb pact” simulation (use inventory + game for new pacts)

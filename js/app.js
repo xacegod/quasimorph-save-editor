@@ -72,6 +72,7 @@ import {
 } from "./tech.js";
 import {
   loadUnlockBaseline,
+  loadEquipProjectLibrary,
   getUnlockLists,
   restoreFullUnlocks,
   getProjects,
@@ -80,6 +81,14 @@ import {
   deleteProjects,
   copyClassMods,
   copyMercKitFromProject,
+  getEquipProjectLibrary,
+  getEquipProjectCaps,
+  countEquipProjects,
+  unlockMaxEquipProjectSlots,
+  addEquipProject,
+  copyEquipMods,
+  isWeaponProject,
+  isArmorProject,
 } from "./unlocks.js";
 import { getFactions, uniqueFieldValues, bulkSet } from "./factions.js";
 import { getDifficultyPreset, DIFFICULTY_GROUPS } from "./difficulty.js";
@@ -136,9 +145,10 @@ async function initCatalogs() {
     const defN = await loadPerkDefaults();
     const iconN = await loadIconMap();
     const techN = await loadTechLibrary();
+    const equipN = await loadEquipProjectLibrary();
     state.catalogOk = true;
     setStatus(
-      `Catalogs ready: ${info.spawnableCount} items, ${talentN} talents, ${pactN} pacts, ${classN} classes, ${rankN} ranks, ${defN} perk defaults, ${iconN} icons, ${techN} techs. Open a save.`
+      `Catalogs ready: ${info.spawnableCount} items, ${talentN} talents, ${pactN} pacts, ${classN} classes, ${rankN} ranks, ${defN} perk defaults, ${iconN} icons, ${techN} techs, ${equipN} equip projects. Open a save.`
     );
   } catch (e) {
     state.catalogOk = false;
@@ -254,7 +264,7 @@ function renderHome() {
       <li>Mercs — stats, perks (Talent / Rank / Passive / Ultimate hints), copy kit, clear curse, training, heal</li>
       <li>Pacts — edit/remove the <em>current</em> ultimate here; unlock others by absorbing a skull in-game</li>
       <li>Cargo — filter, qty (Count may exceed Max), spawn / thin-spawn, recycle &amp; fridge autosort</li>
-      <li>Projects — delete equipment (≈10 slot cap), instant-finish all, class mods, copy buffed merc</li>
+      <li>Projects — equipment templates (your modded weapons/armor), copy mods, edit JSON; max Weaponry/Arsenal slots via tech</li>
       <li>Unlocks — restore full unlocks from late-game baseline</li>
     </ul>
   </div>`);
@@ -1553,6 +1563,8 @@ function renderProjects() {
   const all = getProjects(state.data);
   const tab = state.projectTab;
   const list = filterProjects(all, tab);
+  const caps = getEquipProjectCaps(state.data);
+  const counts = countEquipProjects(state.data);
   main.innerHTML = "";
   const panel = el(`<div class="panel">
     <h2>Magnum projects (${list.length})</h2>
@@ -1561,15 +1573,33 @@ function renderProjects() {
       <button type="button" data-tab="mercenary" class="${tab === "mercenary" ? "active" : ""}">Mercenary</button>
       <button type="button" data-tab="class" class="${tab === "class" ? "active" : ""}">Class</button>
     </div>
+    ${
+      tab === "equipment"
+        ? `<p class="doc">Weaponry slots <strong>${counts.weapons}/${caps.weapons || "?"}</strong> (max ${caps.weaponsMax}) · Arsenal slots <strong>${counts.armor}/${caps.armor || "?"}</strong> (max ${caps.armorMax}). Caps come from Magnum tech unlocks — not a hard save-array limit.</p>
+    <div class="toolbar">
+      <button type="button" id="btnMaxSlots" class="primary" title="Adds Weaponry/Arsenal department + more-projects techs to _purchasedPerks">Max project slots (tech)</button>
+      <select id="equipAdd" style="min-width:18rem"></select>
+      <button type="button" id="btnEquipAdd" class="ok">Add from template</button>
+      <button type="button" id="btnEquipReplace" title="Replace if DevelopId already exists">Replace</button>
+      <label title="Ignore estimated slot caps when adding"><input type="checkbox" id="equipForce" /> Force</label>
+    </div>`
+        : ""
+    }
     <div class="toolbar">
       <button type="button" id="btnFin" class="ok" title="Sets FinishTime = StartTime on checked projects only.">Instant-finish selected</button>
-      <button type="button" id="btnFinAll" class="ok" title="Sets FinishTime = StartTime on every project in the current list (Equipment, Mercenary, or Class).">Instant-finish all projects</button>
-      ${tab === "equipment" ? `<button type="button" id="btnDel" class="danger">Delete selected</button>
-      <button type="button" id="btnDelDone" class="danger">Delete finished equipment</button>` : ""}
+      <button type="button" id="btnFinAll" class="ok" title="Sets FinishTime = StartTime on every project in the current list.">Instant-finish all projects</button>
+      ${
+        tab === "equipment"
+          ? `<button type="button" id="btnDel" class="danger">Delete selected</button>
+      <button type="button" id="btnDelDone" class="danger">Delete finished equipment</button>
+      <button type="button" id="btnCopyEquipMods" class="primary">Copy mods from first selected → other selected</button>`
+          : ""
+      }
       ${tab === "mercenary" ? `<button type="button" id="btnCopyKit" class="primary">Copy buffed kit from first selected → other selected</button>` : ""}
       ${tab === "class" ? `<button type="button" id="btnCopyMods" class="primary">Copy mods from first selected → other selected</button>` : ""}
     </div>
     <div class="scroll-table" id="projTable"></div>
+    <div id="equipMods"></div>
     <div id="classMods"></div>
   </div>`);
   main.appendChild(panel);
@@ -1581,17 +1611,58 @@ function renderProjects() {
     };
   });
 
+  if (tab === "equipment") {
+    const sel = panel.querySelector("#equipAdd");
+    const owned = new Set(list.map((p) => p.DevelopId));
+    const templates = [...getEquipProjectLibrary().values()].sort(
+      (a, b) => a.ProjectType.localeCompare(b.ProjectType) || a.DevelopId.localeCompare(b.DevelopId)
+    );
+    for (const t of templates) {
+      const opt = document.createElement("option");
+      opt.value = t.DevelopId;
+      const mods = (t.AppliedModifications || []).length;
+      const name = displayName(t.DevelopId);
+      opt.textContent = `${t.ProjectType} · ${name} (${t.DevelopId}) · ${mods} mods${owned.has(t.DevelopId) ? " · in save" : ""}`;
+      sel.appendChild(opt);
+    }
+    panel.querySelector("#btnMaxSlots").onclick = () => {
+      const n = unlockMaxEquipProjectSlots(state.data);
+      markDirty();
+      setStatus(n ? `Unlocked ${n} project-slot tech(s)` : "All Weaponry/Arsenal slot techs already owned");
+      renderProjects();
+    };
+    const doAdd = (replace) => {
+      const id = sel.value;
+      if (!id) return;
+      const force = panel.querySelector("#equipForce").checked;
+      const r = addEquipProject(state.data, id, { replace, force });
+      if (!r.ok) {
+        setStatus(r.message, "warn");
+        return;
+      }
+      markDirty();
+      setStatus(r.message);
+      renderProjects();
+    };
+    panel.querySelector("#btnEquipAdd").onclick = () => doAdd(false);
+    panel.querySelector("#btnEquipReplace").onclick = () => doAdd(true);
+  }
+
   const tbody = list
     .map((p, i) => {
-      const key = `${p.ProjectType}:${p.DevelopId}:${i}`;
-      return `<tr data-key="${key}"><td><input type="checkbox" data-i="${i}" ${state.projectSelected.has(i) ? "checked" : ""}/></td>
-      <td>${p.ProjectType}</td><td>${p.DevelopId}</td><td>${p.IsInDevelopment}</td>
-      <td>${p.ModificationsCount}</td><td>${p.StartTime}</td><td>${p.FinishTime}</td></tr>`;
+      const mods = (p.AppliedModifications || []).length;
+      const name = displayName(p.DevelopId);
+      const pool = isWeaponProject(p) ? "W" : isArmorProject(p) ? "A" : "";
+      return `<tr data-i="${i}"><td><input type="checkbox" data-i="${i}" ${state.projectSelected.has(i) ? "checked" : ""}/></td>
+      <td>${iconHtml(p.DevelopId, 22)}</td>
+      <td>${p.ProjectType}${pool ? ` <span class="badge">${pool}</span>` : ""}</td>
+      <td>${name}</td><td><code>${p.DevelopId}</code></td><td>${p.IsInDevelopment}</td>
+      <td>${mods}</td><td>${p.StartTime}</td><td>${p.FinishTime}</td></tr>`;
     })
     .join("");
   panel.querySelector("#projTable").innerHTML = `<table class="data"><thead><tr>
-    <th></th><th>Type</th><th>DevelopId</th><th>InDev</th><th>Mods</th><th>Start</th><th>Finish</th>
-  </tr></thead><tbody>${tbody}</tbody></table>`;
+    <th></th><th></th><th>Type</th><th>Name</th><th>DevelopId</th><th>InDev</th><th>Mods</th><th>Start</th><th>Finish</th>
+  </tr></thead><tbody>${tbody || `<tr><td colspan="9" class="muted">None</td></tr>`}</tbody></table>`;
 
   panel.querySelectorAll("input[data-i]").forEach((chk) => {
     chk.onchange = () => {
@@ -1599,6 +1670,17 @@ function renderProjects() {
       if (chk.checked) state.projectSelected.add(i);
       else state.projectSelected.delete(i);
       if (tab === "class") renderClassMods(panel, list);
+      if (tab === "equipment") renderEquipMods(panel, list);
+    };
+  });
+  panel.querySelectorAll("tr[data-i]").forEach((tr) => {
+    tr.onclick = (e) => {
+      if (e.target.closest("input")) return;
+      const i = +tr.dataset.i;
+      const chk = tr.querySelector("input[data-i]");
+      if (!chk) return;
+      chk.checked = !chk.checked;
+      chk.dispatchEvent(new Event("change"));
     };
   });
 
@@ -1635,6 +1717,14 @@ function renderProjects() {
     setStatus(`Deleted ${done.length}`);
     renderProjects();
   });
+  panel.querySelector("#btnCopyEquipMods")?.addEventListener("click", () => {
+    const sel = selectedProjects();
+    if (sel.length < 2) return alert("Select source first, then targets");
+    const n = copyEquipMods(sel[0], sel.slice(1));
+    markDirty();
+    setStatus(`Copied equip mods to ${n}`);
+    renderProjects();
+  });
   panel.querySelector("#btnCopyKit")?.addEventListener("click", () => {
     const sel = selectedProjects();
     if (sel.length < 2) return alert("Select source first, then targets");
@@ -1656,6 +1746,37 @@ function renderProjects() {
   });
 
   if (tab === "class") renderClassMods(panel, list);
+  if (tab === "equipment") renderEquipMods(panel, list);
+}
+
+function renderEquipMods(panel, list) {
+  const box = panel.querySelector("#equipMods");
+  if (!box) return;
+  const i = [...state.projectSelected][0];
+  const p = list[i];
+  if (!p) {
+    box.innerHTML = `<p class="muted">Select an equipment project to edit AppliedModifications / CachedItems.</p>`;
+    return;
+  }
+  box.innerHTML = `<h3>${iconHtml(p.DevelopId, 28)} ${displayName(p.DevelopId)} <code>${p.DevelopId}</code></h3>
+    <p class="doc muted">${p.ProjectType} · ${(p.AppliedModifications || []).length} applied mods · ${(p.CachedItems || []).length} cached items</p>
+    <p class="muted">AppliedModifications</p>
+    <pre class="json-mini" contenteditable="true" id="equipApplied">${JSON.stringify(p.AppliedModifications || [], null, 2)}</pre>
+    <p class="muted">CachedItems</p>
+    <pre class="json-mini" contenteditable="true" id="equipCached">${JSON.stringify(p.CachedItems || [], null, 2)}</pre>
+    <button type="button" id="btnSaveEquipMods" class="ok">Apply JSON</button>`;
+  box.querySelector("#btnSaveEquipMods").onclick = () => {
+    try {
+      p.AppliedModifications = JSON.parse(box.querySelector("#equipApplied").textContent);
+      p.CachedItems = JSON.parse(box.querySelector("#equipCached").textContent);
+      p.ModificationsCount = String(p.AppliedModifications.length);
+      markDirty();
+      setStatus(`Updated mods on ${p.DevelopId}`);
+      renderProjects();
+    } catch (e) {
+      alert("Invalid JSON: " + e.message);
+    }
+  };
 }
 
 function renderClassMods(panel, list) {
