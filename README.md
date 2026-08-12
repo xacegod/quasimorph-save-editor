@@ -41,7 +41,7 @@ Open `http://localhost:5173`. Equivalent: `npx --yes serve -p 5173` (or any stat
 ### Mercenaries
 - Pick who to edit with a dropdown (full-width detail panel)
 - Edit stats/health (bools are True/False dropdowns; hover **?** for field help)
-- **Pact / ultimate** is separate from class ranks. Ultimates come from bramfatura pacts (skull item + `HasUltimate` + `PerkType: Ultimate`). Ranks (`rank_4` / `rank_5`) come from the class.
+- **Pact / ultimate:** one per merc. **Set / edit ultimate** from the pact library (`data/pactLibrary.json`); syncs skull item + `HasUltimate`. Parameters editable when present on the perk.
 - **Talents (traits):** one talent per merc (as in the game). Pick from `data/talentLibrary.json` to **set/replace** it; Int/Float/Bool parameters are editable. Exp is only shown on perks that level (`MaxExp > 0`).
 - Passives / triggers and other perk types are listed and editable where supported
 - Backpack/vest **qty is editable**; **Add stack** searches the item catalog
@@ -90,7 +90,14 @@ Floor/mob entities are **not** in session files; only `RaidMetadata` exists for 
 - `data/spawnableItems.txt` — spawnable non-quest ids (includes extras like `lens` and custom gear found in sample saves)
 - `data/questItems.txt` — protected quest ids (excluded from spawn lists)
 - `data/talentLibrary.json` — clean templates for all 15 talents
+- `data/pactLibrary.json` — pact ultimates (skull id ↔ perk id, display names; wiki effects when scraped)
 - `data/unlockBaseline.json` — full unlock snapshot from a late-game save
+
+Rebuild pacts from the wiki (current **1.0+** List of Pacts only):
+1. `npm run scrape:pacts` — re-reads the live list each run, reports **added/removed** pacts, scrapes new links; ignores pre-1.0 sections; checkpoints to `data/wiki-scrape-progress.json`
+2. `npm run build:pacts` — writes only **complete** current entries to `data/pactLibrary.json`
+
+Helpers: `npm run scrape:pacts:status`, `npm run scrape:pacts:retry`
 
 On save load, any non-quest item ids present in inventories/cargo but missing from the spawnable list are **merged into the catalog** for that session.
 

@@ -131,7 +131,7 @@ export const PERK_GROUPS = [
     id: "Ultimate",
     title: "Pact ultimates",
     types: ["Ultimate"],
-    help: "Unlocked by making a pact (skull item). Handled separately from class ranks.",
+    help: "One pact ultimate per merc. Set/replace from the library (synced with skull item + HasUltimate).",
   },
   {
     id: "Talent",

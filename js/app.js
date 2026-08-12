@@ -43,7 +43,7 @@ import {
   findFreePos,
 } from "./cargo.js";
 import { fieldRow } from "./fields.js";
-import { loadPerkLibrary, mergedTalentCatalog, setTalent, perkHasExp, paramValueKey } from "./perkLibrary.js";
+import { loadPerkLibrary, loadPactLibrary, mergedTalentCatalog, mergedUltimateCatalog, setTalent, setUltimate, clearUltimate, pactLabel, pactMeta, getPactLibrary, perkHasExp, paramValueKey } from "./perkLibrary.js";
 import {
   loadUnlockBaseline,
   getUnlockLists,
@@ -104,8 +104,9 @@ async function initCatalogs() {
     const info = await loadCatalogs();
     await loadUnlockBaseline();
     const talentN = await loadPerkLibrary();
+    const pactN = await loadPactLibrary();
     state.catalogOk = true;
-    setStatus(`Catalogs ready: ${info.spawnableCount} items, ${talentN} talents. Open a save.`);
+    setStatus(`Catalogs ready: ${info.spawnableCount} items, ${talentN} talents, ${pactN} pacts. Open a save.`);
   } catch (e) {
     state.catalogOk = false;
     setStatus(`Catalog load failed (${e.message}). Serve this folder over HTTP, or continue — names may be missing.`, "warn");
@@ -317,7 +318,7 @@ function renderMercDetail(m, all) {
     <h3>Health</h3>
     <div id="healthFields"></div>
     <h3>Pact / ultimate</h3>
-    <p class="doc">Pact ultimates are unlocked with a skull item after a bramfatura pact — not by class rank. <code>HasUltimate</code> + skull id + an Ultimate perk should stay in sync.</p>
+    <p class="doc">One pact ultimate per merc. Use <strong>Set / edit ultimate</strong> to replace it — that keeps <code>HasUltimate</code>, skull id, and the Ultimate perk in sync.</p>
     <div id="pactFields"></div>
     <div id="ultPerks"></div>
     <h3>Class ranks</h3>
@@ -372,10 +373,23 @@ function renderMercDetail(m, all) {
   const pactBox = box.querySelector("#pactFields");
   if (m._pactLevel !== undefined) pactBox.appendChild(fieldRow(m, "_pactLevel", { onChange: markDirty }));
   if (cd.HasUltimate !== undefined) pactBox.appendChild(fieldRow(cd, "HasUltimate", { onChange: markDirty }));
-  const skulls = collectSkullIds(state.data);
-  const skullRow = el(`<div class="field-row"><label>UltimateSkullItemId <abbr class="help" title="Skull that grants the pact ultimate. Empty {} means none.">?</abbr></label></div>`);
+  const skullSet = new Set(collectSkullIds(state.data));
+  for (const p of getPactLibrary().values()) {
+    if (p.skullId) skullSet.add(p.skullId);
+  }
+  const skulls = [...skullSet].sort();
+  const skullRow = el(`<div class="field-row"><label>UltimateSkullItemId <abbr class="help" title="Skull that grants the pact ultimate. Prefer Set ultimate below — it keeps skull + Ultimate perk in sync. Empty = none.">?</abbr></label></div>`);
   const skullSel = document.createElement("select");
-  skullSel.innerHTML = `<option value="">(none)</option>` + skulls.map((s) => `<option value="${s}">${displayName(s)} (${s})</option>`).join("");
+  skullSel.innerHTML =
+    `<option value="">(none)</option>` +
+    skulls
+      .map((s) => {
+        const perkId = s.replace(/^skull_/, "");
+        const meta = pactMeta(perkId);
+        const label = meta?.displayName || displayName(s);
+        return `<option value="${s}">${label} (${s})</option>`;
+      })
+      .join("");
   const curSkull = typeof cd.UltimateSkullItemId === "string" ? cd.UltimateSkullItemId : "";
   if (curSkull && !skulls.includes(curSkull)) {
     const o = document.createElement("option");
@@ -385,7 +399,15 @@ function renderMercDetail(m, all) {
   }
   skullSel.value = curSkull;
   skullSel.onchange = () => {
-    setUltimateSkull(state.data, m, skullSel.value);
+    const skull = skullSel.value;
+    if (!skull) {
+      clearUltimate(m, state.data);
+    } else {
+      const perkId = skull.replace(/^skull_/, "");
+      if (!setUltimate(m, perkId, state.data)) {
+        setUltimateSkull(state.data, m, skull);
+      }
+    }
     markDirty();
     renderMercs();
   };
@@ -422,12 +444,19 @@ function renderMercDetail(m, all) {
       .map((p, i) => ({ p, i }))
       .filter(({ p }) => typeSet.has(p.PerkType));
     const isTalent = group.id === "Talent";
-    const cat = isTalent ? mergedTalentCatalog(state.data) : new Map();
-    if (!isTalent) {
+    const isUltimate = group.id === "Ultimate";
+    const isSingle = isTalent || isUltimate;
+    const cat = isTalent
+      ? mergedTalentCatalog(state.data)
+      : isUltimate
+        ? mergedUltimateCatalog(state.data)
+        : new Map();
+    if (!isSingle) {
       for (const t of group.types) {
         for (const [id, perk] of collectPerkCatalogByType(state.data, t)) cat.set(id, perk);
       }
     }
+    const setLabel = isTalent ? "Set talent" : isUltimate ? "Set / edit ultimate" : "Add";
     const wrap = el(`<div>
       <p class="doc">${group.help}</p>
       <div class="toolbar">
@@ -435,19 +464,27 @@ function renderMercDetail(m, all) {
         <button type="button" class="ok" data-addbtn title="${
           isTalent
             ? "Replaces the merc's current talent with the selected one (one talent only)."
-            : "Clone this perk onto the merc from another copy in this save."
-        }">${isTalent ? "Set talent" : "Add"}</button>
+            : isUltimate
+              ? "Replaces the merc's current pact ultimate and syncs the skull item (one ultimate only)."
+              : "Clone this perk onto the merc from another copy in this save."
+        }">${setLabel}</button>
       </div>
       <div data-list></div>
     </div>`);
     const sel = wrap.querySelector("[data-add]");
-    const currentTalentId = isTalent ? rows[0]?.p?.PerkId : null;
-    for (const id of [...cat.keys()].sort()) {
+    const currentId = isSingle ? rows[0]?.p?.PerkId : null;
+    for (const id of [...cat.keys()].sort((a, b) => {
+      if (isUltimate) return pactLabel(a).localeCompare(pactLabel(b)) || a.localeCompare(b);
+      return a.localeCompare(b);
+    })) {
       const opt = document.createElement("option");
       opt.value = id;
-      if (isTalent) {
-        opt.textContent = id === currentTalentId ? `${id} (current)` : id;
-        if (id === currentTalentId) opt.selected = true;
+      if (isUltimate) {
+        opt.textContent = id === currentId ? `${pactLabel(id)} (current)` : pactLabel(id);
+        if (id === currentId) opt.selected = true;
+      } else if (isTalent) {
+        opt.textContent = id === currentId ? `${id} (current)` : id;
+        if (id === currentId) opt.selected = true;
       } else {
         const owned = (cd.Perks || []).some((p) => p.PerkId === id);
         opt.textContent = owned ? `${id} (on merc)` : id;
@@ -459,6 +496,9 @@ function renderMercDetail(m, all) {
       if (isTalent) {
         if (!setTalent(m, id, state.data)) return;
         setStatus(`Talent set to ${id}`);
+      } else if (isUltimate) {
+        if (!setUltimate(m, id, state.data)) return;
+        setStatus(`Ultimate set to ${pactLabel(id)}`);
       } else {
         const tmpl = cat.get(id);
         if (!tmpl) return;
@@ -471,15 +511,18 @@ function renderMercDetail(m, all) {
 
     const list = wrap.querySelector("[data-list]");
     if (!rows.length) {
-      list.innerHTML = `<div class="empty-state">None on this merc. Use ${isTalent ? "Set talent" : "Add"}.</div>`;
+      list.innerHTML = `<div class="empty-state">None on this merc. Use ${setLabel}.</div>`;
     } else {
       for (const { p, i } of rows) {
+        const meta = isUltimate ? pactMeta(p.PerkId) : null;
+        const title = isUltimate ? pactLabel(p.PerkId) : p.PerkId;
         const card = el(`<div class="panel" style="margin:0.5rem 0">
           <div class="toolbar">
-            <strong>${p.PerkId}</strong>
+            <strong title="${(meta?.effect || "").replace(/"/g, "&quot;")}">${title}</strong>
             <span class="badge">${p.PerkType}</span>
             <button type="button" class="danger" data-del>Remove</button>
           </div>
+          ${meta?.effect ? `<p class="doc muted">${meta.effect}</p>` : ""}
           <div data-params></div>
         </div>`);
         const toolbar = card.querySelector(".toolbar");
@@ -506,7 +549,7 @@ function renderMercDetail(m, all) {
         }
         const paramsBox = card.querySelector("[data-params]");
         if (!(p.Parameters || []).length && !(p.AIParameters || []).length) {
-          paramsBox.innerHTML = `<p class="muted">No parameters</p>`;
+          paramsBox.innerHTML = `<p class="muted">No parameters on this copy yet — pick one that already exists in the save (or edit after the game writes them).</p>`;
         } else {
           const table = el(`<table class="data"><thead><tr><th>Parameter</th><th>Type</th><th>Value</th></tr></thead><tbody></tbody></table>`);
           const tb = table.querySelector("tbody");
@@ -525,7 +568,8 @@ function renderMercDetail(m, all) {
           paramsBox.appendChild(table);
         }
         card.querySelector("[data-del]").onclick = () => {
-          cd.Perks.splice(i, 1);
+          if (isUltimate) clearUltimate(m, state.data);
+          else cd.Perks.splice(i, 1);
           markDirty();
           renderMercs();
         };
