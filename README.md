@@ -60,11 +60,11 @@ Merc `CreatureData.Perks` mix several `PerkType` values. They are easy to confus
 - **Apply class** from wiki roster (`mercClasses.json`); ranks / passives / triggers when templates exist
 - Edit stats/health (bools are True/False dropdowns; hover **?** for field help)
 - **Pact / ultimate:** see above — edit/remove current ultimate safely; absorb new pacts in-game
-- **Talents:** set/replace or stack; parameters editable; not a leveling perk type
-- **Ranks / passives / triggers:** **Max exp** fills `CurrentExp`; **Max rank/tier** promotes along `NextPerkId` when the next template exists in the save. Difficulty **ExpMult** scales perk MaxExp.
+- **Talents:** set/replace or stack; parameters editable; **Add parameter** to graft extras (e.g. `IWeaponDistance` onto Tactical Reload). Not a leveling perk type.
+- **Ranks / passives / triggers:** **Max exp** fills `CurrentExp`; **Max rank/tier** promotes along `NextPerkId` when the next template exists in the save. Difficulty **ExpMult** scales perk MaxExp. Same **Add parameter** UI.
 - Parameter names: `I*` = integer, `F*` = float, `B*` = bool (validated on edit)
 - Backpack/vest **qty is editable**; **Add stack** searches the item catalog
-- **Copy to selected / all others**: inventory, augs, implants, augment effects, ranks, pact/ultimate, other perks, stats
+- **Copy to selected / all others**: copies each checked section **as it currently is** on the source (edited perk params, baked bonus stats like `CanFly` / `WeaponDistanceBonus`, **Merc class** id). Name/gender/profile are never overwritten. `martian_mech` in saves is treated as **Martian Mech Inf**.
 - Clear curse (`CurseData` → `{}`), instant-finish training, heal non-augment wounds
 
 ### Cargo

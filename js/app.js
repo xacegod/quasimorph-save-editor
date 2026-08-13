@@ -4,7 +4,8 @@ import { indexItemsFromSave, getTemplateStats, createItemFromTemplates } from ".
 import {
   getMercenaries,
   mercLabel,
-  STAT_FIELDS,
+  CORE_STAT_FIELDS,
+  BONUS_STAT_FIELDS,
   COPY_SECTIONS,
   PERK_GROUPS,
   copyMercSections,
@@ -66,12 +67,16 @@ import {
   inferParamKind,
   paramTypeHint,
   applyParamValue,
+  addPerkParameter,
+  removePerkParameter,
+  collectKnownPerkParameters,
+  defaultParamSeed,
   maxPerkExp,
   canPromotePerk,
   promotePerkToMaxRank,
   perkNextId,
 } from "./perkLibrary.js";
-import { loadMercClasses, mercClassLabel, mercClassInfo, mercClassPerkLabels, classPerkInfo, classPerkSummary, getMercClasses, applyMercClass, classPerkDropdownLabel, classPerkSearchText } from "./mercClasses.js";
+import { loadMercClasses, mercClassLabel, mercClassInfo, mercClassPerkLabels, classPerkInfo, classPerkSummary, getMercClasses, applyMercClass, classPerkDropdownLabel, classPerkSearchText, canonicalClassId } from "./mercClasses.js";
 import {
   loadRankLibrary,
   loadPerkDefaults,
@@ -496,7 +501,7 @@ function renderMercDetail(m, all) {
     </div>
     <div class="scroll-table" id="invTable"></div>
     <h3>Copy to other mercenaries</h3>
-    <p class="doc">Each checked section is written into the same field on the target. Identity (name, profile, unique id) is never overwritten.</p>
+    <p class="doc">Each checked section is written onto the target <strong>as it currently is</strong> on this merc (including edited perk parameters and baked bonus stats). Identity (name, profile, gender, unique id) is never overwritten. Include <strong>Merc class</strong> to copy infantry / class id.</p>
     <div class="checks" id="copySections"></div>
     <div class="checks" id="copyTargets" style="max-height:12rem;overflow:auto;margin:0.4rem 0"></div>
     <div class="toolbar">
@@ -518,6 +523,7 @@ function renderMercDetail(m, all) {
     sel.style.minWidth = "16rem";
     const classes = getMercClasses();
     const cur = typeof m.MercClassId === "string" ? m.MercClassId : "";
+    const curCanon = canonicalClassId(cur);
     if (cur && !mercClassInfo(cur)) {
       const opt = document.createElement("option");
       opt.value = cur;
@@ -531,7 +537,8 @@ function renderMercDetail(m, all) {
       opt.textContent = `${c.wikiTitle} (${c.classIdGuess}) · ${n} wiki perks`;
       sel.appendChild(opt);
     }
-    if (cur) sel.value = cur;
+    if (cur && [...sel.options].some((o) => o.value === cur)) sel.value = cur;
+    else if (curCanon && [...sel.options].some((o) => o.value === curCanon)) sel.value = curCanon;
     else if (classes[0]) sel.value = classes[0].classIdGuess;
 
     const tierSel = document.createElement("select");
@@ -615,9 +622,20 @@ function renderMercDetail(m, all) {
   }
 
   const statBox = box.querySelector("#statFields");
-  for (const f of STAT_FIELDS.filter((k) => k !== "HasUltimate")) {
+  for (const f of CORE_STAT_FIELDS.filter((k) => k !== "HasUltimate")) {
     if (cd[f] === undefined) continue;
     statBox.appendChild(fieldRow(cd, f, { onChange: markDirty }));
+  }
+  const bonusPresent = BONUS_STAT_FIELDS.filter((k) => cd[k] !== undefined);
+  if (bonusPresent.length) {
+    statBox.appendChild(
+      el(
+        `<p class="doc muted">Derived / bonus fields the game uses in combat (CanFly, weapon distance, aug resist, …). Copy these with stats or perks — perk Parameters alone often stay “base” until these are stamped.</p>`
+      )
+    );
+    for (const f of bonusPresent) {
+      statBox.appendChild(fieldRow(cd, f, { onChange: markDirty }));
+    }
   }
 
   const hf = box.querySelector("#healthFields");
@@ -799,6 +817,73 @@ function renderMercDetail(m, all) {
     const expMult = getDifficultyPreset(state.data)?.ExpMult;
     if (expMult == null) return "";
     return ` Difficulty <code>ExpMult</code> is <strong>${expMult}</strong> — it scales how much exp is needed to level perks (MaxExp in the save already reflects your run).`;
+  }
+
+  const knownPerkParams = collectKnownPerkParameters(state.data);
+
+  function paramValueOf(param) {
+    return param?.BoolVal ?? param?.FloatVal ?? param?.IntVal ?? "";
+  }
+
+  function bindAddParamUi(paramsBox, perk) {
+    const add = el(`<div class="toolbar" style="flex-wrap:wrap;margin-top:0.4rem">
+      <input type="search" data-pq placeholder="Search or type param name (I*/F*/B*)…" style="min-width:12rem" title="Graft params from other perks, e.g. IWeaponDistance onto Tactical Reload. Prefix sets type: I int, F float, B bool." />
+      <select data-ps style="min-width:14rem"></select>
+      <input type="text" data-pv placeholder="Value" style="width:7rem" />
+      <label title="Add to AIParameters instead of Parameters"><input type="checkbox" data-pai /> AI</label>
+      <button type="button" class="ok" data-padd>Add parameter</button>
+    </div>`);
+    const q = add.querySelector("[data-pq]");
+    const sel = add.querySelector("[data-ps]");
+    const val = add.querySelector("[data-pv]");
+    const ai = add.querySelector("[data-pai]");
+
+    function fillParamOptions(filter) {
+      const prev = sel.value;
+      sel.innerHTML = `<option value="">Custom: use search box as name</option>`;
+      for (const tmpl of knownPerkParams) {
+        const label = paramLabel(tmpl.Name) || tmpl.Name;
+        if (!matchesSearch(filter, tmpl.Name, label, tmpl._sourcePerkId)) continue;
+        const opt = document.createElement("option");
+        opt.value = tmpl.Name;
+        const src = tmpl._sourcePerkId ? ` · ${tmpl._sourcePerkId}` : "";
+        opt.textContent = `${label} (${tmpl.Name}${src})`;
+        sel.appendChild(opt);
+      }
+      if (prev && [...sel.options].some((o) => o.value === prev)) sel.value = prev;
+    }
+    fillParamOptions("");
+    q.oninput = () => fillParamOptions(q.value);
+    sel.onchange = () => {
+      const tmpl = knownPerkParams.find((x) => x.Name === sel.value);
+      if (tmpl) {
+        val.value = paramValueOf(tmpl);
+        ai.checked = !!tmpl._ai;
+      }
+    };
+    add.querySelector("[data-padd]").onclick = () => {
+      const tmpl = knownPerkParams.find((x) => x.Name === sel.value);
+      const name = sel.value || q.value.trim();
+      if (!name && !tmpl) {
+        setStatus("Enter or pick a parameter name", "warn");
+        return;
+      }
+      const result = tmpl
+        ? addPerkParameter(perk, tmpl, val.value, { ai: ai.checked })
+        : addPerkParameter(perk, name, val.value || defaultParamSeed(name), { ai: ai.checked });
+      if (!result.ok) {
+        setStatus(result.message, "warn");
+        return;
+      }
+      markDirty();
+      setStatus(
+        result.replaced
+          ? `Updated ${result.param.Name} on ${perk.PerkId}`
+          : `Added ${result.param.Name} to ${perk.PerkId}`
+      );
+      renderMercs();
+    };
+    paramsBox.appendChild(add);
   }
 
   function renderPerkGroup(container, group) {
@@ -1115,33 +1200,37 @@ function renderMercDetail(m, all) {
         const paramsBox = card.querySelector("[data-params]");
         if (!(p.Parameters || []).length && !(p.AIParameters || []).length) {
           paramsBox.innerHTML = hasDefaults
-            ? `<p class="muted">No parameters on this copy — use <strong>Reset params</strong> to load defaults, or pick a copy from the save.</p>`
-            : `<p class="muted">No parameters on this copy yet — pick one that already exists in the save (or edit after the game writes them).</p>`;
+            ? `<p class="muted">No parameters on this copy — use <strong>Reset params</strong>, <strong>Add parameter</strong>, or pick a copy from the save.</p>`
+            : `<p class="muted">No parameters yet — <strong>Add parameter</strong> (graft IWeaponDistance etc. onto this perk) or wait until the game writes them.</p>`;
         } else {
-          const table = el(`<table class="data"><thead><tr><th>Parameter</th><th>Type</th><th>Value</th></tr></thead><tbody></tbody></table>`);
+          const table = el(`<table class="data"><thead><tr><th>Parameter</th><th>Type</th><th>Value</th><th></th></tr></thead><tbody></tbody></table>`);
           const tb = table.querySelector("tbody");
-          for (const param of p.Parameters || []) {
+          const addParamRow = (param, ai) => {
             const tr = document.createElement("tr");
             const kind = inferParamKind(param);
             const label = paramLabel(param.Name);
             tr.innerHTML = `<td><code title="${paramTypeHint(param).replace(/"/g, "&quot;")}">${param.Name}</code>${
               label && label !== param.Name ? `<div class="muted" style="font-size:0.85em">${label}</div>` : ""
-            }</td><td>${kind}</td><td></td>`;
-            tr.lastChild.appendChild(paramEditor(param, markDirty, p.PerkId));
+            }${ai ? ` <span class="badge">AI</span>` : ""}</td><td>${kind}</td><td></td><td></td>`;
+            tr.children[2].appendChild(paramEditor(param, markDirty, p.PerkId));
+            const rm = document.createElement("button");
+            rm.type = "button";
+            rm.className = "danger";
+            rm.textContent = "×";
+            rm.title = "Remove this parameter";
+            rm.onclick = () => {
+              removePerkParameter(p, param.Name, { ai });
+              markDirty();
+              renderMercs();
+            };
+            tr.children[3].appendChild(rm);
             tb.appendChild(tr);
-          }
-          for (const param of p.AIParameters || []) {
-            const tr = document.createElement("tr");
-            const kind = inferParamKind(param);
-            const label = paramLabel(param.Name);
-            tr.innerHTML = `<td><code title="${paramTypeHint(param).replace(/"/g, "&quot;")}">${param.Name}</code> <span class="badge">AI</span>${
-              label && label !== param.Name ? `<div class="muted" style="font-size:0.85em">${label}</div>` : ""
-            }</td><td>${kind}</td><td></td>`;
-            tr.lastChild.appendChild(paramEditor(param, markDirty, p.PerkId));
-            tb.appendChild(tr);
-          }
+          };
+          for (const param of p.Parameters || []) addParamRow(param, false);
+          for (const param of p.AIParameters || []) addParamRow(param, true);
           paramsBox.appendChild(table);
         }
+        bindAddParamUi(paramsBox, p);
         card.querySelector("[data-del]").onclick = () => {
           if (isUltimate) clearUltimate(m, state.data);
           else cd.Perks.splice(i, 1);

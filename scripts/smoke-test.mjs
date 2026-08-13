@@ -79,6 +79,97 @@ async function main() {
   });
   assert(skipAmbiguous.skipped.length >= 1, "unknown type skipped without explicit ProjectType");
 
+  const mercMod = await import(pathToFileURL(path.join(ROOT, "js/merc.js")).href);
+  const perkLib = await import(pathToFileURL(path.join(ROOT, "js/perkLibrary.js")).href);
+  const classMod = await import(pathToFileURL(path.join(ROOT, "js/mercClasses.js")).href);
+
+  await classMod.loadMercClasses(await loadJsonAsDataUrl("data/mercClasses.json"), "data:application/json,{}");
+  const inf = classMod.mercClassInfo("martian_mech");
+  assert(inf?.classIdGuess === "martian_mech_inf", "martian_mech aliases to infantry");
+  assert(classMod.canonicalClassId("martian_mech") === "martian_mech_inf", "canonical infantry id");
+
+  const source = {
+    MercClassId: "martian_mech",
+    CreatureData: {
+      BaseHealth: "930",
+      CanFly: "True",
+      WeaponDistanceBonus: "6",
+      AugResistBonusMult: "1.5",
+      HasSecondChance: "True",
+      UpgradePerksCount: "25",
+      Health: { MaxValue: "960", _value: "960" },
+      MeleeDamage: { minDmg: "53" },
+      Perks: [
+        {
+          PerkId: "talent_tactical_reload",
+          PerkType: "Talent",
+          Parameters: [
+            { Name: "IConstReload", ValType: "Int", IntVal: "1" },
+            { Name: "IWeaponDistance", ValType: "Int", IntVal: "6" },
+          ],
+          AIParameters: [],
+        },
+        {
+          PerkId: "rank_5",
+          PerkType: "Rank",
+          Parameters: [{ Name: "IMaxHealth", ValType: "Int", IntVal: "300" }],
+          AIParameters: [],
+        },
+      ],
+    },
+  };
+  const dest = {
+    MercClassId: "unit_317",
+    CreatureData: {
+      BaseHealth: "100",
+      CanFly: "False",
+      WeaponDistanceBonus: "2",
+      AugResistBonusMult: "1",
+      HasSecondChance: "False",
+      UpgradePerksCount: "0",
+      Health: { MaxValue: "100", _value: "100" },
+      MeleeDamage: { minDmg: "10" },
+      Perks: [
+        {
+          PerkId: "talent_tactical_reload",
+          PerkType: "Talent",
+          Parameters: [{ Name: "IConstReload", ValType: "Int", IntVal: "1" }],
+          AIParameters: [],
+        },
+      ],
+    },
+  };
+  const copied = mercMod.copyMercSections(source, [dest], [
+    "classId",
+    "talents",
+    "rankPerks",
+    "otherPerks",
+    "pactUltimate",
+    "stats",
+  ]);
+  assert(copied === 1, "copyMercSections count");
+  assert(dest.MercClassId === "martian_mech", "class copied as-is");
+  assert(dest.CreatureData.CanFly === "True", "CanFly baked bonus copied");
+  assert(dest.CreatureData.WeaponDistanceBonus === "6", "WeaponDistanceBonus copied");
+  assert(dest.CreatureData.BaseHealth === "930", "BaseHealth copied");
+  assert(dest.CreatureData.Perks.length === 2, "exact perk list");
+  assert(
+    dest.CreatureData.Perks[0].Parameters.some((p) => p.Name === "IWeaponDistance" && p.IntVal === "6"),
+    "custom talent param copied as-is"
+  );
+
+  const perk = { PerkId: "talent_tactical_reload", PerkType: "Talent", Parameters: [], AIParameters: [] };
+  const added = perkLib.addPerkParameter(perk, "IQMorphGain", "-3");
+  assert(added.ok && perk.Parameters[0].IntVal === "-3", "addPerkParameter int");
+  const grafted = perkLib.addPerkParameter(
+    perk,
+    { Name: "FIncomeCritMult", ValType: "Float", FloatVal: "-0.5" },
+    "-0.8"
+  );
+  assert(grafted.ok && perk.Parameters[1].FloatVal === "-0.8", "graft float param");
+  assert(perkLib.removePerkParameter(perk, "IQMorphGain"), "removePerkParameter");
+  assert(perk.Parameters.length === 1, "one param left");
+
   // catalog files exist
   for (const f of [
     "data/pactLibrary.json",

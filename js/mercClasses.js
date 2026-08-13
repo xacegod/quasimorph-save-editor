@@ -10,6 +10,17 @@ const perkByTitle = new Map();
 /** @type {object[]} */
 let classList = [];
 
+/** Save ids that map to a wiki classIdGuess (Martian Mech Inf is `martian_mech` in sessions). */
+const CLASS_ID_ALIASES = {
+  martian_mech: "martian_mech_inf",
+};
+
+export function canonicalClassId(classId) {
+  if (!classId) return classId;
+  const s = String(classId);
+  return CLASS_ID_ALIASES[s] || CLASS_ID_ALIASES[s.toLowerCase()] || s;
+}
+
 export async function loadMercClasses(
   classUrl = "data/mercClasses.json",
   perkUrl = "data/classPerkLibrary.json"
@@ -25,6 +36,10 @@ export async function loadMercClasses(
     byId.clear();
     for (const c of classList) {
       if (c.classIdGuess) byId.set(c.classIdGuess, c);
+    }
+    for (const [alias, canon] of Object.entries(CLASS_ID_ALIASES)) {
+      const info = byId.get(canon);
+      if (info) byId.set(alias, info);
     }
 
     perkByInternal.clear();
@@ -55,12 +70,19 @@ export function getMercClasses() {
 
 export function mercClassInfo(classId) {
   if (!classId) return null;
-  return byId.get(classId) || byId.get(String(classId).toLowerCase()) || null;
+  return (
+    byId.get(classId) ||
+    byId.get(String(classId).toLowerCase()) ||
+    byId.get(canonicalClassId(classId)) ||
+    null
+  );
 }
 
 export function mercClassLabel(classId) {
   const info = mercClassInfo(classId);
   if (!info) return classId || "";
+  const canon = info.classIdGuess;
+  if (canon && canon !== classId) return `${info.wikiTitle} (${classId} → ${canon})`;
   return `${info.wikiTitle} (${classId})`;
 }
 

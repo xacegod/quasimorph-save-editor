@@ -5,7 +5,7 @@
  */
 import { deepClone } from "./parse.js";
 import { collectPerkCatalogByType, setUltimateSkull, getMercenaries, listPerks } from "./merc.js";
-import { perkDefaultTemplate, rankMeta } from "./perkMeta.js";
+import { perkDefaultTemplate, rankMeta, getPerkDefaults, paramLabel } from "./perkMeta.js";
 
 /** Max mercenary hierarchy rank (Commander). Lower ranks exist; Max rank jumps here. */
 export const MAX_MERC_RANK_ID = "rank_5";
@@ -291,6 +291,114 @@ export function applyParamValue(param, raw) {
     delete param.BoolVal;
   }
   return result;
+}
+
+export function inferValTypeFromName(name) {
+  const n = String(name || "");
+  if (n.startsWith("B")) return "Boolean";
+  if (n.startsWith("F")) return "Float";
+  return "Int";
+}
+
+export function defaultParamSeed(name, valType) {
+  const kind = valType || inferValTypeFromName(name);
+  if (kind === "Boolean") return "True";
+  if (kind === "Float") return "0";
+  return "0";
+}
+
+/** Build a perk parameter object (I* int / F* float / B* bool). */
+export function makePerkParameter(name, value, { valType } = {}) {
+  const kind = valType || inferValTypeFromName(name);
+  const param = {
+    Name: String(name || "").trim(),
+    ValType: kind === "Boolean" ? "Boolean" : kind === "Float" ? "Float" : "Int",
+  };
+  const seed = value == null || value === "" ? defaultParamSeed(param.Name, kind) : value;
+  const applied = applyParamValue(param, seed);
+  if (!applied.ok) {
+    if (kind === "Boolean") param.BoolVal = "True";
+    else if (kind === "Float") param.FloatVal = "0";
+    else param.IntVal = "0";
+  }
+  return param;
+}
+
+/**
+ * Add (or replace) a parameter on a perk. Clones a known template when given an object.
+ * @returns {{ ok: true, param: object, replaced: boolean } | { ok: false, message: string }}
+ */
+export function addPerkParameter(perk, nameOrTemplate, value, { ai = false, replace = true } = {}) {
+  if (!perk) return { ok: false, message: "Missing perk" };
+  const listKey = ai ? "AIParameters" : "Parameters";
+  if (!Array.isArray(perk[listKey])) perk[listKey] = [];
+
+  let param;
+  if (nameOrTemplate && typeof nameOrTemplate === "object" && nameOrTemplate.Name) {
+    param = deepClone(nameOrTemplate);
+    delete param._sourcePerkId;
+    delete param._ai;
+    if (value != null && value !== "") {
+      const r = applyParamValue(param, value);
+      if (!r.ok) return { ok: false, message: r.message };
+    }
+  } else {
+    const name = String(nameOrTemplate || "").trim();
+    if (!name) return { ok: false, message: "Parameter name required" };
+    param = makePerkParameter(name, value);
+  }
+  if (!param.Name) return { ok: false, message: "Parameter name required" };
+
+  const idx = perk[listKey].findIndex((p) => p.Name === param.Name);
+  if (idx >= 0) {
+    if (!replace) return { ok: false, message: `${param.Name} is already on this perk` };
+    perk[listKey][idx] = param;
+    return { ok: true, param, replaced: true };
+  }
+  perk[listKey].push(param);
+  return { ok: true, param, replaced: false };
+}
+
+export function removePerkParameter(perk, name, { ai = false } = {}) {
+  if (!perk) return false;
+  const listKey = ai ? "AIParameters" : "Parameters";
+  const list = perk[listKey];
+  if (!Array.isArray(list)) return false;
+  const before = list.length;
+  perk[listKey] = list.filter((p) => p.Name !== name);
+  return perk[listKey].length !== before;
+}
+
+function ingestPerkParams(map, perk) {
+  if (!perk) return;
+  const src = perk.PerkId || "";
+  for (const p of perk.Parameters || []) {
+    if (!p?.Name || map.has(p.Name)) continue;
+    map.set(p.Name, { ...deepClone(p), _sourcePerkId: src });
+  }
+  for (const p of perk.AIParameters || []) {
+    if (!p?.Name || map.has(p.Name)) continue;
+    map.set(p.Name, { ...deepClone(p), _sourcePerkId: src, _ai: true });
+  }
+}
+
+/** Unique perk parameters from libraries + this save, for the Add parameter picker. */
+export function collectKnownPerkParameters(data = null) {
+  const map = new Map();
+  if (data) {
+    for (const m of getMercenaries(data)) {
+      for (const perk of listPerks(m)) ingestPerkParams(map, perk);
+    }
+  }
+  for (const t of talentLib.values()) ingestPerkParams(map, t);
+  for (const t of pactLib.values()) ingestPerkParams(map, t);
+  for (const t of passiveTriggerLib.values()) ingestPerkParams(map, t);
+  for (const t of getPerkDefaults().values()) ingestPerkParams(map, t);
+  return [...map.values()].sort((a, b) => {
+    const la = paramLabel(a.Name) || a.Name;
+    const lb = paramLabel(b.Name) || b.Name;
+    return la.localeCompare(lb) || a.Name.localeCompare(b.Name);
+  });
 }
 
 /** True when the perk uses CurrentExp toward MaxExp (leveling chain). */

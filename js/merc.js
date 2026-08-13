@@ -4,7 +4,8 @@
 import { getComponent, deepClone } from "./parse.js";
 import { displayName } from "./catalog.js";
 
-export const STAT_FIELDS = [
+/** Core combat stats shown first in the editor. Copied with the Stats section. */
+export const CORE_STAT_FIELDS = [
   "BaseHealth",
   "BaseActionPoints",
   "BaseLosLevel",
@@ -24,6 +25,43 @@ export const STAT_FIELDS = [
   "HasUltimate",
   "UpgradePerksCount",
 ];
+
+/**
+ * Baked CreatureData bonuses the game actually uses in combat.
+ * These are often written when a merc is active; perk Parameters alone are not enough.
+ * Copied with Stats, and also with any perk section.
+ */
+export const BONUS_STAT_FIELDS = [
+  "BaseOverallDmgMult",
+  "BaseOverallDodgeMult",
+  "OverallResistMult",
+  "GrenadeDamageMult",
+  "QmorphDamageMult",
+  "ReceiveWoundChanceMult",
+  "AttackWoundChanceMult",
+  "MeleeStunChance",
+  "MeleeStunDuration",
+  "MeleeThrowbackChance",
+  "ReceiveAmputationChance",
+  "QmorphResistBonus",
+  "WeaponDistanceBonus",
+  "CoverHitChanceBonus",
+  "CoverBlockChanceBonus",
+  "AugResistBonusMult",
+  "AugResistDebuffMult",
+  "PactCooldownBonus",
+  "PerksMaxHealth",
+  "PerksMaxPain",
+  "PerksPainMult",
+  "PerksMaxStarvation",
+  "CanFly",
+  "Immobile",
+  "IgnoreByMonsters",
+  "CanBeAllyPushed",
+  "IsPushBlocked",
+];
+
+export const STAT_FIELDS = [...CORE_STAT_FIELDS, ...BONUS_STAT_FIELDS];
 
 export const EQUIP_SLOTS = [
   "PrimarySlot",
@@ -113,11 +151,12 @@ export const COPY_SECTIONS = [
   { id: "augments", label: "AugmentationMap", help: "Cyborg/body-part slots (BattleCyborgArm → part id)." },
   { id: "woundsockets", label: "WoundSlotMap (implants)", help: "Implant sockets per body slot." },
   { id: "augeffects", label: "Augment effects", help: "FromAugment wound effects + ImplicitAugEffect. IDs are remapped." },
-  { id: "rankPerks", label: "Class ranks", help: "PerkType Rank only (class progression; usually up to 6 ranks). Not from pacts." },
-  { id: "pactUltimate", label: "Pact / ultimate", help: "Ultimate perk + HasUltimate + skull. Prefer absorb/remove via items in-game for full pact flow." },
-  { id: "talents", label: "Talents (traits)", help: "PerkType Talent entries (character-tied; game normally allows one, stacking works in practice)." },
-  { id: "otherPerks", label: "Passives / triggers", help: "Passive and Trigger perks (class or character). Best place to experiment with custom parameter mixes." },
-  { id: "stats", label: "Stats", help: "Numeric combat stats and ignore flags. Does not copy name or class id — change class with Apply class on the merc." },
+  { id: "classId", label: "Merc class", help: "Copies MercClassId as it currently is (e.g. martian_mech / Martian Mech Inf). Does not change name, gender, or portrait." },
+  { id: "rankPerks", label: "Class ranks", help: "PerkType Rank as currently on the source (including custom parameter values). Not reconstructed from defaults." },
+  { id: "pactUltimate", label: "Pact / ultimate", help: "Ultimate perk + HasUltimate + skull, copied as they currently are. Prefer absorb/remove via items in-game for full pact flow." },
+  { id: "talents", label: "Talents (traits)", help: "PerkType Talent entries as they currently are, including extra parameters you added and edited values." },
+  { id: "otherPerks", label: "Passives / triggers", help: "Passive and Trigger perks as they currently are (class or extra). Includes custom parameter mixes." },
+  { id: "stats", label: "Stats", help: "Combat stats and baked bonus fields (CanFly, WeaponDistanceBonus, aug resist, …) as they currently are. Does not copy name/gender." },
 ];
 
 export const PERK_GROUPS = [
@@ -205,18 +244,33 @@ export function setUltimateSkull(data, merc, skullId) {
   }
 }
 
+function copyScalarFields(src, dest, fields) {
+  for (const f of fields) {
+    if (src[f] !== undefined) dest[f] = deepClone(src[f]);
+  }
+}
+
+const PERK_COPY_SECTIONS = ["rankPerks", "talents", "otherPerks", "pactUltimate"];
+
 /**
  * Copy selected sections from source merc onto targets (replace same fields).
+ * Perks and stats are cloned as they currently are — not rebuilt from library defaults.
  */
 export function copyMercSections(source, targets, sections, data = null) {
   const set = new Set(sections);
   let count = 0;
+  const copyAnyPerks = PERK_COPY_SECTIONS.some((id) => set.has(id));
+  const copyAllPerks = PERK_COPY_SECTIONS.every((id) => set.has(id));
+
   for (const dest of targets) {
     if (dest === source) continue;
     const sc = source.CreatureData;
     const dc = dest.CreatureData;
     if (!sc || !dc) continue;
 
+    if (set.has("classId") && source.MercClassId !== undefined) {
+      dest.MercClassId = source.MercClassId;
+    }
     if (set.has("inventory") && sc.Inventory) {
       dc.Inventory = deepClone(sc.Inventory);
     }
@@ -226,17 +280,23 @@ export function copyMercSections(source, targets, sections, data = null) {
     if (set.has("woundsockets") && sc.WoundSlotMap) {
       dc.WoundSlotMap = deepClone(sc.WoundSlotMap);
     }
-    if (set.has("rankPerks")) {
-      replacePerksOfTypes(dest, ["Rank"], perksOfTypes(source, ["Rank"]));
-    }
-    if (set.has("talents")) {
-      replacePerksOfTypes(dest, ["Talent"], perksOfTypes(source, ["Talent"]));
-    }
-    if (set.has("otherPerks")) {
-      replacePerksOfTypes(dest, ["Passive", "Trigger"], perksOfTypes(source, ["Passive", "Trigger"]));
+    if (copyAllPerks) {
+      dc.Perks = deepClone(sc.Perks || []);
+    } else {
+      if (set.has("rankPerks")) {
+        replacePerksOfTypes(dest, ["Rank"], perksOfTypes(source, ["Rank"]));
+      }
+      if (set.has("talents")) {
+        replacePerksOfTypes(dest, ["Talent"], perksOfTypes(source, ["Talent"]));
+      }
+      if (set.has("otherPerks")) {
+        replacePerksOfTypes(dest, ["Passive", "Trigger"], perksOfTypes(source, ["Passive", "Trigger"]));
+      }
+      if (set.has("pactUltimate")) {
+        replacePerksOfTypes(dest, ["Ultimate"], perksOfTypes(source, ["Ultimate"]));
+      }
     }
     if (set.has("pactUltimate")) {
-      replacePerksOfTypes(dest, ["Ultimate"], perksOfTypes(source, ["Ultimate"]));
       if (sc.HasUltimate !== undefined) dc.HasUltimate = sc.HasUltimate;
       if (sc.UltimateSkullItemId !== undefined) dc.UltimateSkullItemId = deepClone(sc.UltimateSkullItemId);
       if (source._pactLevel !== undefined) dest._pactLevel = source._pactLevel;
@@ -244,19 +304,23 @@ export function copyMercSections(source, targets, sections, data = null) {
       if (data) setUltimateSkull(data, dest, skull);
     }
     if (set.has("stats")) {
-      for (const f of STAT_FIELDS) {
-        if (sc[f] !== undefined) dc[f] = deepClone(sc[f]);
-      }
+      copyScalarFields(sc, dc, CORE_STAT_FIELDS);
       if (sc.Health) dc.Health = deepClone(sc.Health);
       if (sc.MeleeDamage) dc.MeleeDamage = deepClone(sc.MeleeDamage);
       if (sc.ResistSheet) dc.ResistSheet = deepClone(sc.ResistSheet);
       if (source._pactLevel !== undefined) dest._pactLevel = source._pactLevel;
     }
+    if (set.has("stats") || copyAnyPerks) {
+      copyScalarFields(sc, dc, BONUS_STAT_FIELDS);
+      if (!set.has("stats")) {
+        if (sc.Health) dc.Health = deepClone(sc.Health);
+        if (sc.MeleeDamage) dc.MeleeDamage = deepClone(sc.MeleeDamage);
+        if (sc.UpgradePerksCount !== undefined) dc.UpgradePerksCount = deepClone(sc.UpgradePerksCount);
+        if (sc.HasSecondChance !== undefined) dc.HasSecondChance = deepClone(sc.HasSecondChance);
+      }
+    }
     if (set.has("augeffects") && sc.EffectsController?.Effects && dc.EffectsController?.Effects) {
       const destEffects = dc.EffectsController.Effects;
-      const kept = destEffects.filter((e) => isCoreEffect(e) || !isAugmentEffect(e));
-      // Also drop old augment effects
-      const cleaned = kept.filter((e) => !isAugmentEffect(e) || isCoreEffect(e));
       const core = destEffects.filter(isCoreEffect);
       const nonAugNonCore = destEffects.filter((e) => !isCoreEffect(e) && !isAugmentEffect(e));
       const srcAug = sc.EffectsController.Effects.filter(isAugmentEffect);
